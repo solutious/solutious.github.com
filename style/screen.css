@@ -45,6 +45,10 @@ ol, ul, li, dl, dd, dt {
 	padding-left: 10px;
 	}	
 	
+.reset { 
+	display:block;
+	clear: both;
+	}
 
 
 /*
@@ -65,6 +69,18 @@ ol, ul, li, dl, dd, dt {
 	#top .corset {
 		width: 620px !important;
 		}
+	
+	.logoNew a {
+		position: absolute;
+		width: 305px; height: 122px;
+		padding: 15px 0 15px 0;
+		margin-bottom: 20px;
+		text-indent: -3000px;
+		background: url(http://solutious.com/images/logoNew.jpg) no-repeat 0 22px;
+		border-bottom: none;		
+		}
+		
+		.logoNew a:hover { border: 0 none !important; }
 		
 	.logo a {
 		float: left;
@@ -144,45 +160,112 @@ ol, ul, li, dl, dd, dt {
 	
 /* h o m e */	
 	
-#home .corset, #products .corset {
+#home .corset { 
+	width: 945px !important;
+	margin: 0 auto;
+	top: 70px;
+	}
+#products .corset {
 	width: 620px;
 	margin: 0 auto;
 	}	
-	
+		
 	#home #top {
 		margin-bottom: 50px;
 		}
 	
-	.tagline { 
-		padding: 20px 0;
-		line-height: 3em;
-		letter-spacing: -1px;
-		color: #66CCCC; 
+	#home .introduction {
+		clear: both;
+		padding: 35px 0 65px 0;
+		border-top: 1px dotted #000;
+		width: 945px;
 		}
-		
-	.tagline h2, .tagline span {
-		font-weight: normal;
-		font-size: 70px;
-		margin: 52px 0;
-		}
-		
-		.tagline .hope { display: inline; }
-		
-	.tagline span, .tagline p {
-		font-family: Georgia, serif;
-		font-style: italic;
-		}
-		
-	.tagline p { 
-		margin-top: 50px; 
-		line-height: 1.5em;
-		font-size: 11px;
-		letter-spacing: 6px;
-		color: #ccc;
-		}	
-		
+
+		.introduction h2 {
+			float: left;
+			width: 410px;
+			margin: 0 52px 0 0;
+			font-size: 23px;
+			font-weight: normal;
+			line-height: 30px;
+			}
+
+		.introduction p {
+			float: left;
+			width: 215px;
+			margin: 10px 0 0 25px;
+			line-height: 1.25em;
+			color: #666;
+			}
+			
+		.introduction .blue {
+			color: #66CCCC;
+			}	
+			
+		.products div {
+			position: relative;
+			float: left;
+			width: 280px;
+			padding-left: 145px;
+			margin-bottom: 50px;
+			}
+			
+			.products .stella {
+				position: relative;
+				left: -25px;
+				background: url(http://solutious.com/images/stellaLogo.jpg) no-repeat;
+				}
+
+			.products .rudy {
+				position: relative;
+				left: 62px;
+				background: url(http://solutious.com/images/rudyLogo.jpg) no-repeat;
+				}
+			
+			.products h3 {
+				font-size: 30px;
+				margin: 0;
+				}	
+				
+			.products h4 {
+				margin: 5px 0 0 0;
+				font-family: arial, sans-serif;
+				font-style: normal;
+				font-weight: normal;
+				color: #00cccc;
+				font-size: 12px;
+				}	
+				
+			.products .tagline {
+				padding: 10px 0;
+				margin: 10px 0 0 0;
+				line-height: 24px;
+				font-size: 20px;
+				font-family: Georgia, serif;
+				font-style: italic;
+				border-top: 1px dotted #000;
+				border-bottom: 1px dotted #000;
+				color: #000;
+				}	
+				
+			.products p {
+				line-height: 15px;
+				font-size: 11px;
+				color: #666;
+				}	
+				
+			.products a { border-bottom: 0 none !important; }	
+			
+			.products .logo {
+				position: absolute;
+				display: block;
+				width: 129px; height: 123px;
+				margin: -192px -145px;
+				border: 0;
+				}
+			
 #home #footer {
-	margin-top: 120px;
+	margin-top: 50px !important;
 	}	
 
 
