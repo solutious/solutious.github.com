@@ -125,7 +125,8 @@ ol, ul, li, dl, dd, dt {
 	}		
 	
 	.offset { position: relative; width: 485px; margin-left: -70px; }
-		
+	.notice { position:relative; text-align: center; margin-top: 25px; font-size: 150%; font-weight: bolder;}
+	
 #footer {
 	margin-top: 70px !important;
 	padding-top: 10px;
