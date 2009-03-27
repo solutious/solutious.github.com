@@ -1,0 +1,383 @@
+/*
+
+Title:      Solutious Screen Stylesheet
+Author:     Andrew Simpson / www.andrewsimpsondesign.com
+Date: 		6:26am November 21st, 2008
+
+*/
+
+
+
+/*
+//----------------------------------------------
+//   G l o b a l
+//----------------------------------------------
+*/
+
+body {
+	position: relative;	
+	overflow-x: hidden;
+	margin: 0;
+	font-family: arial, sans-serif;
+	font-size: 12px;
+	line-height: 1.667em;
+	}
+
+a {
+	color: black;	
+	text-decoration: none;
+	border-bottom: 1px solid #111;
+	}
+	
+	a:hover {
+		border-bottom: 1px solid #66CCCC;
+		}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Georgia, serif;
+	font-style: italic;
+	font-weight: bold;
+	color: #111;
+	}
+	
+ol, ul, li, dl, dd, dt {
+	list-style: none;
+	padding-left: 10px;
+	}	
+	
+.reset { 
+	display:block;
+	clear: both;
+	}
+
+
+/*
+//----------------------------------------------
+//   L a y o u t
+//----------------------------------------------
+*/
+
+#top {
+	height: 50px;
+	margin-bottom: 125px;
+	padding-top: 8px;
+	background: transparent url(http://solutious.com/images/top.jpg) repeat-x scroll 0 0;
+	background-color: #000;
+	color: white;
+	}
+	
+	#top .corset {
+		width: 620px !important;
+		}
+	
+	.logoNew a {
+		position: absolute;
+		width: 305px; height: 122px;
+		padding: 15px 0 15px 0;
+		margin-bottom: 20px;
+		text-indent: -3000px;
+		background: url(http://solutious.com/images/logoNew.jpg) no-repeat 0 22px;
+		border-bottom: none;		
+		}
+		
+		.logoNew a:hover { border: 0 none !important; }
+		
+	.logo a {
+		float: left;
+		width: 128px; height: 20px;
+		padding: 15px 0 15px 0;
+		text-indent: -3000px;
+		background: url(http://solutious.com/images/solutious.jpg) no-repeat center 15px;
+		border-bottom: none;
+		}
+		
+		#top h1 { margin: 0; }
+			
+	#top ul {
+		position: relative;
+		float: right;
+		margin: 0 -30px 0 0;
+		padding: 0;
+		font-size: 13px;
+		font-family: Georgia, serif;
+		font-style: italic;
+		font-weight: bold;
+		}
+		
+		#top ul a {
+			display: block;
+			padding: 20px 20px 10px 20px;
+			color: white;
+			border-bottom: none;
+			}
+			
+			#top a:hover { color: #66CCCC; border-bottom: 4px solid #66CCCC; }
+			
+		#top li { float: left; height: 100%; padding: 0; margin: 0; border-left: 1px dotted #999; }	
+		#top li.first { border: none; }
+		
+		#top li.on { height: 100px; border: 0; background: url(http://solutious.com/images/navOn.jpg) no-repeat center 0; }
+			#top li.on a:hover { color: #fff; border: none; }
+			
+.corset {
+	width: 485px;
+	margin: 0 auto;
+	}		
+	
+	.offset { position: relative; width: 485px; margin-left: -70px; }
+	.notice { position:relative; text-align: center; margin-top: 25px; font-size: 150%; font-weight: bolder;}
+	
+#footer {
+	margin-top: 70px !important;
+	padding-top: 10px;
+	border-top: 1px dotted black;
+	color: #666;
+	font-size: 10px;
+	text-align: center;
+	}
+	
+	#footer .big {
+		font-size: 12px;
+		font-family: Georgia, serif;
+		font-style: italic;
+		color: #111;
+		}
+
+.hilite {
+	background-color: #ff6;
+	padding: 2px 4px;
+	}
+	
+.numeral {
+	color: #66CCCC;
+	}	
+	
+			
+/*
+//----------------------------------------------
+//   P a g e   S p e c i f i c
+//----------------------------------------------
+*/	
+	
+/* h o m e */	
+	
+#home .corset { 
+	width: 945px !important;
+	margin: 0 auto;
+	top: 70px;
+	}
+#products .corset {
+	width: 620px;
+	margin: 0 auto;
+	}	
+		
+	#home #top {
+		margin-bottom: 50px;
+		}
+	
+	#home .introduction {
+		clear: both;
+		padding: 35px 0 65px 0;
+		border-top: 1px dotted #000;
+		width: 945px;
+		}
+
+		.introduction h2 {
+			float: left;
+			width: 410px;
+			margin: 0 52px 0 0;
+			font-size: 23px;
+			font-weight: normal;
+			line-height: 30px;
+			}
+
+		.introduction p {
+			float: left;
+			width: 215px;
+			margin: 10px 0 0 25px;
+			line-height: 1.25em;
+			color: #666;
+			}
+			
+		.introduction .blue {
+			color: #66CCCC;
+			}	
+			
+		.products div {
+			position: relative;
+			float: left;
+			width: 280px;
+			padding-left: 145px;
+			margin-bottom: 50px;
+			}
+			
+			.products .stella {
+				position: relative;
+				left: -25px;
+				background: url(http://solutious.com/images/stellaLogo.jpg) no-repeat;
+				}
+
+			.products .rudy {
+				position: relative;
+				left: 62px;
+				background: url(http://solutious.com/images/rudyLogo.jpg) no-repeat;
+				}
+			
+			.products h3 {
+				font-size: 30px;
+				margin: 0;
+				}	
+				
+			.products h4 {
+				margin: 5px 0 0 0;
+				font-family: arial, sans-serif;
+				font-style: normal;
+				font-weight: normal;
+				color: #00cccc;
+				font-size: 12px;
+				}	
+				
+			.products .tagline {
+				padding: 10px 0;
+				margin: 10px 0 0 0;
+				line-height: 24px;
+				font-size: 20px;
+				font-family: Georgia, serif;
+				font-style: italic;
+				border-top: 1px dotted #000;
+				border-bottom: 1px dotted #000;
+				color: #000;
+				}	
+				
+			.products p {
+				line-height: 15px;
+				font-size: 11px;
+				color: #666;
+				}	
+				
+			.products a { border-bottom: 0 none !important; }	
+			
+			.products .logo {
+				position: absolute;
+				display: block;
+				width: 129px; height: 123px;
+				margin: -192px -145px;
+				border: 0;
+				}
+			
+#home #footer {
+	margin-top: 50px !important;
+	}	
+
+
+/* b l o g */
+
+#disqus_thread {
+	
+	margin-top: 40px;
+}
+
+.entry {
+	padding-bottom: 50px;
+	margin-top: 50px;
+	background: url(http://solutious.com/images/dot.jpg) no-repeat bottom center;
+	}
+.entry li {
+	list-style: circle;
+	
+}
+	.entry.last {
+		padding-bottom: 0;
+		background: none;
+		}
+		
+	.entry .info {	
+		position: absolute;
+		text-align: center;
+		margin-left: -100px;
+		padding-top: 4px;
+		color: white;
+		background: url(http://solutious.com/images/info.jpg) no-repeat top center;
+		border-bottom: none;
+		}	
+
+
+		.entry .info span {
+			display: block;
+			margin: .25em 0;
+			font-family: Georgia, serif;
+			font-style: italic;
+			font-weight: bold;
+			}
+			
+			.info .day { font-size: 20px; }	
+				.info .day sup { font-size: 12px; }	
+			.info .month { font-size: 18px; }
+			.info .year { font-size: 12px; }	
+			
+		.entry .comments {
+			padding-top: 3em;
+			font-size: 12px;
+			color: #66CCCC;
+			}	
+			
+			.entry .comments span { margin: 0; }
+			.entry .comments .count { font-size: 22px; }
+			
+		.author {
+			font-family: Georgia, serif;
+			font-style: italic;
+			font-weight: bold;
+			font-size: 1.25em;
+			color: #66CCCC;
+			border-bottom: none;
+			}
+	
+	.entry h2 { display: inline; line-height: 26px;}
+		.entry h2:hover { background: white; border-bottom: 1px solid #66CCCC; }
+	
+	#comment {
+		margin-top: 50px;
+		}	
+
+		#comment .textfield {
+			margin-right: 10px;
+			padding: 5px;
+			border: 0;
+			font-size: 14px;
+			font-family: Georgia, serif;
+			font-style: italic;
+			font-weight: bold;
+			background: #eee;
+			color: #333;
+			}
+			
+		#comment label {
+			font-size: 10px;
+			color: #999;		
+			}
+		
+		#comment .commentBox { 
+			width: 359px;
+			padding: 10px;
+			border: 3px solid #ccc;
+			font-size: 12px;
+			font-family: arial, serif;
+			}		
+		#comment .commentRules {
+			width: 305px;
+			float: left;
+			color: #999;
+			line-height: 1em;
+			}		
+		
+		#comment .submit {
+			width: 80px;
+			height: 40px;
+			border: 0;
+			font-family: Georgia, serif;
+			font-style: italic;
+			font-weight: bold;
+			background: #111;
+			color: #fff;
+			}
