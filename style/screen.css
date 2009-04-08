@@ -30,9 +30,14 @@ a {
 	}
 	
 	a:hover {
-		border-bottom: 1px solid #66CCCC;
+		border-bottom: 1px solid #00cccc;
 		}
-
+	
+	body .products div:hover h3,	
+	a h3:hover {
+		color: #666;
+		}	
+	
 h1, h2, h3, h4, h5, h6 {
 	font-family: Georgia, serif;
 	font-style: italic;
@@ -58,11 +63,11 @@ ol, ul, li, dl, dd, dt {
 */
 
 #top {
+	overflow: hidden;
 	height: 50px;
 	margin-bottom: 125px;
-	padding-top: 8px;
-	background: transparent url(http://solutious.com/images/top.jpg) repeat-x scroll 0 0;
 	background-color: #000;
+	border-top: 8px solid #00CCCC;
 	color: white;
 	}
 	
@@ -76,7 +81,7 @@ ol, ul, li, dl, dd, dt {
 		padding: 15px 0 15px 0;
 		margin-bottom: 20px;
 		text-indent: -3000px;
-		background: url(http://solutious.com/images/logoNew.jpg) no-repeat 0 22px;
+		background: url(/images/solutiousLogo.png) no-repeat 0 22px;
 		border-bottom: none;		
 		}
 		
@@ -87,7 +92,7 @@ ol, ul, li, dl, dd, dt {
 		width: 128px; height: 20px;
 		padding: 15px 0 15px 0;
 		text-indent: -3000px;
-		background: url(http://solutious.com/images/solutious.jpg) no-repeat center 15px;
+		background: url(/images/solutious.jpg) no-repeat center 15px;
 		border-bottom: none;
 		}
 		
@@ -111,12 +116,12 @@ ol, ul, li, dl, dd, dt {
 			border-bottom: none;
 			}
 			
-			#top a:hover { color: #66CCCC; border-bottom: 4px solid #66CCCC; }
+			#top a:hover { color: #00cccc; border-bottom: 4px solid #00cccc; }
 			
 		#top li { float: left; height: 100%; padding: 0; margin: 0; border-left: 1px dotted #999; }	
 		#top li.first { border: none; }
 		
-		#top li.on { height: 100px; border: 0; background: url(http://solutious.com/images/navOn.jpg) no-repeat center 0; }
+		#top li.on { height: 100px; border: 0; background: url(/images/navOn.png) no-repeat center 0; }
 			#top li.on a:hover { color: #fff; border: none; }
 			
 .corset {
@@ -131,7 +136,7 @@ ol, ul, li, dl, dd, dt {
 	margin-top: 70px !important;
 	padding-top: 10px;
 	border-top: 1px dotted black;
-	color: #666;
+	color: #333;
 	font-size: 10px;
 	text-align: center;
 	}
@@ -143,13 +148,21 @@ ol, ul, li, dl, dd, dt {
 		color: #111;
 		}
 
+	#footer .tagline {
+		margin: 0 25px;
+		font-size: 14px;
+		font-family: Georgia, serif;
+		font-style: italic;
+		color: #00CCCC;
+		}
+	
 .hilite {
 	background-color: #ff6;
 	padding: 2px 4px;
 	}
 	
 .numeral {
-	color: #66CCCC;
+	color: #00cccc;
 	}	
 	
 			
@@ -200,7 +213,7 @@ ol, ul, li, dl, dd, dt {
 			}
 			
 		.introduction .blue {
-			color: #66CCCC;
+			color: #00cccc;
 			}	
 			
 		.products div {
@@ -214,13 +227,13 @@ ol, ul, li, dl, dd, dt {
 			.products .stella {
 				position: relative;
 				left: -25px;
-				background: url(http://solutious.com/images/stellaLogo.jpg) no-repeat;
+				background: url(/images/stellaLogo.png) no-repeat;
 				}
 
 			.products .rudy {
 				position: relative;
 				left: 62px;
-				background: url(http://solutious.com/images/rudyLogo.jpg) no-repeat;
+				background: url(/images/rudyLogo.jpg) no-repeat;
 				}
 			
 			.products h3 {
@@ -280,7 +293,7 @@ ol, ul, li, dl, dd, dt {
 .entry {
 	padding-bottom: 50px;
 	margin-top: 50px;
-	background: url(http://solutious.com/images/dot.jpg) no-repeat bottom center;
+	background: url(/images/dot.jpg) no-repeat bottom center;
 	}
 .entry li {
 	list-style: circle;
@@ -297,7 +310,7 @@ ol, ul, li, dl, dd, dt {
 		margin-left: -100px;
 		padding-top: 4px;
 		color: white;
-		background: url(http://solutious.com/images/info.jpg) no-repeat top center;
+		background: url(/images/info.jpg) no-repeat top center;
 		border-bottom: none;
 		}	
 
@@ -318,7 +331,7 @@ ol, ul, li, dl, dd, dt {
 		.entry .comments {
 			padding-top: 3em;
 			font-size: 12px;
-			color: #66CCCC;
+			color: #00cccc;
 			}	
 			
 			.entry .comments span { margin: 0; }
@@ -329,12 +342,12 @@ ol, ul, li, dl, dd, dt {
 			font-style: italic;
 			font-weight: bold;
 			font-size: 1.25em;
-			color: #66CCCC;
+			color: #00cccc;
 			border-bottom: none;
 			}
 	
 	.entry h2 { display: inline; line-height: 26px;}
-		.entry h2:hover { background: white; border-bottom: 1px solid #66CCCC; }
+		.entry h2:hover { background: white; border-bottom: 1px solid #00cccc; }
 	
 	#comment {
 		margin-top: 50px;
