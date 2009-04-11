@@ -33,7 +33,7 @@ a {
 		border-bottom: 1px solid #00cccc;
 		}
 	
-	body .products div:hover h3,	
+	body .products h3:hover,	
 	a h3:hover {
 		color: #666;
 		}	
@@ -63,7 +63,6 @@ ol, ul, li, dl, dd, dt {
 */
 
 #top {
-	overflow: hidden;
 	height: 50px;
 	margin-bottom: 125px;
 	background-color: #000;
@@ -72,7 +71,7 @@ ol, ul, li, dl, dd, dt {
 	}
 	
 	#top .corset {
-		width: 620px;
+		position: relative;
 		margin-top: 0px !important;
 		}
 	
@@ -83,7 +82,7 @@ ol, ul, li, dl, dd, dt {
 		margin-left: -5px;
 		margin-bottom: 20px;
 		text-indent: -3000px;
-		background: url(/images/solutiousLogo.png) no-repeat 0 22px;
+		background: url(../images/solutiousLogo.png) no-repeat 0 22px;
 		border-bottom: none;		
 		}
 		
@@ -92,8 +91,8 @@ ol, ul, li, dl, dd, dt {
 		#top h1 { margin: 0; }
 			
 	#top ul {
-		position: relative;
-		float: right;
+		position: absolute;
+		right: 0;
 		margin: 0 -30px 0 0;
 		padding: 0;
 		font-size: 13px;
@@ -114,7 +113,7 @@ ol, ul, li, dl, dd, dt {
 		#top li { float: left; height: 100%; padding: 0; margin: 0; border-left: 1px dotted #999; }	
 		#top li.first { border: none; }
 		
-		#top li.on { height: 100px; border: 0; background: url(/images/navOn.png) no-repeat center 0; }
+		#top li.on { height: 100px; border: 0; background: url(../images/navOn.png) no-repeat center 0; }
 			#top li.on a:hover { color: #fff; border: none; }
 			
 .corset {
@@ -217,13 +216,13 @@ ol, ul, li, dl, dd, dt {
 			.products .stella {
 				position: relative;
 				left: -25px;
-				background: url(/images/stellaLogo.png) no-repeat;
+				background: url(../images/stellaLogo.png) no-repeat;
 				}
 
 			.products .rudy {
 				position: relative;
 				left: 62px;
-				background: url(/images/rudyLogo.jpg) no-repeat;
+				background: url(../images/rudyLogo.jpg) no-repeat;
 				}
 			
 			.products h3 {
@@ -252,6 +251,30 @@ ol, ul, li, dl, dd, dt {
 				color: #000;
 				}	
 				
+			.products .beta,
+			.products .follow {
+				margin: 8px 0;				
+				font-family: Georgia, serif;
+				font-style: italic;
+				}
+				
+				.products .beta {
+					font-size: 16px;				
+					color: #00CCCC;				
+					}
+				
+				.products .follow a {
+					display: inline;
+					padding: 2px;
+					font-size: 14px;
+					background: #efefef; 
+					}
+					
+					.products .follow a:hover { 
+						background: #333; 
+						color: #fff; 
+						}
+						
 			.products p {
 				line-height: 15px;
 				font-size: 11px;
@@ -283,7 +306,7 @@ ol, ul, li, dl, dd, dt {
 .entry {
 	padding-bottom: 50px;
 	margin-top: 50px;
-	background: url(/images/dot.jpg) no-repeat bottom center;
+	background: url(../images/dot.jpg) no-repeat bottom center;
 	}
 .entry li {
 	list-style: circle;
@@ -300,7 +323,7 @@ ol, ul, li, dl, dd, dt {
 		margin-left: -100px;
 		padding-top: 4px;
 		color: white;
-		background: url(/images/info.jpg) no-repeat top center;
+		background: url(../images/info.jpg) no-repeat top center;
 		border-bottom: none;
 		}	
 
