@@ -72,30 +72,23 @@ ol, ul, li, dl, dd, dt {
 	}
 	
 	#top .corset {
-		width: 620px !important;
+		width: 620px;
+		margin-top: 0px !important;
 		}
 	
-	.logoNew a {
+	#top .logo a {
 		position: absolute;
 		width: 305px; height: 122px;
 		padding: 15px 0 15px 0;
+		margin-left: -5px;
 		margin-bottom: 20px;
 		text-indent: -3000px;
 		background: url(/images/solutiousLogo.png) no-repeat 0 22px;
 		border-bottom: none;		
 		}
 		
-		.logoNew a:hover { border: 0 none !important; }
-		
-	.logo a {
-		float: left;
-		width: 128px; height: 20px;
-		padding: 15px 0 15px 0;
-		text-indent: -3000px;
-		background: url(/images/solutious.jpg) no-repeat center 15px;
-		border-bottom: none;
-		}
-		
+		.logo a:hover { border: 0 none !important; }
+				
 		#top h1 { margin: 0; }
 			
 	#top ul {
@@ -125,11 +118,9 @@ ol, ul, li, dl, dd, dt {
 			#top li.on a:hover { color: #fff; border: none; }
 			
 .corset {
-	width: 485px;
-	margin: 0 auto;
+	width: 645px;
+	margin: 180px auto 0 auto;
 	}		
-	
-	.offset { position: relative; width: 485px; margin-left: -70px; }
 	.notice { position:relative; text-align: center; margin-top: 25px; font-size: 150%; font-weight: bolder;}
 	
 #footer {
@@ -176,8 +167,7 @@ ol, ul, li, dl, dd, dt {
 	
 #home .corset { 
 	width: 945px !important;
-	margin: 0 auto;
-	top: 70px;
+	margin-top: 120px;
 	}
 #products .corset {
 	width: 620px;
