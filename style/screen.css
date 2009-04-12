@@ -65,7 +65,7 @@ ol, ul, li, dl, dd, dt {
 #top {
 	height: 50px;
 	margin-bottom: 125px;
-	background-color: #202020;
+	background-color: #211F1F;
 	border-top: 8px solid #00CCCC;
 	color: white;
 	}
@@ -147,7 +147,7 @@ ol, ul, li, dl, dd, dt {
 		}
 	
 .hilite {
-	background-color: #ff6;
+	background-color: #FCFCAA;
 	padding: 2px 4px;
 	}
 	
