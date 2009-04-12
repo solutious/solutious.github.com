@@ -122,6 +122,24 @@ ol, ul, li, dl, dd, dt {
 	}		
 	.notice { position:relative; text-align: center; margin-top: 25px; font-size: 150%; font-weight: bolder;}
 	
+	.corset pre, div.highlight {
+	        font-size: 12px;
+	        padding: 0;
+	        margin: 0;
+	        background: #f0f0f0;
+	        line-height: 20px; /*--Height of each line of code--*/
+	        background: url(pre_code_bg.gif) repeat-y left top; /*--Background of lined paper--*/
+	        width: 600px;
+	        overflow: auto; /*--If the Code exceeds the width, a scrolling is available--*/
+	        overflow-Y: hidden;  /*--Hides vertical scroll created by IE--*/
+	}
+	.corset pre code, div.highlight pre {
+	        margin: 0 0 0 20px;  /*--Left Margin--*/
+	        padding: 18px 0;
+	        display: block;
+	}
+	
+	
 #footer {
 	margin-top: 70px !important;
 	padding-top: 10px;
@@ -155,7 +173,7 @@ ol, ul, li, dl, dd, dt {
 	color: #00cccc;
 	}	
 	
-			
+	
 /*
 //----------------------------------------------
 //   P a g e   S p e c i f i c
