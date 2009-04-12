@@ -2,7 +2,7 @@
 
 Title:      Solutious Screen Stylesheet
 Author:     Andrew Simpson / www.andrewsimpsondesign.com
-Date: 		6:26am November 21st, 2008
+Date: 		  6:26am November 21st, 2008
 
 */
 
@@ -65,7 +65,7 @@ ol, ul, li, dl, dd, dt {
 #top {
 	height: 50px;
 	margin-bottom: 125px;
-	background-color: #000;
+	background-color: #202020;
 	border-top: 8px solid #00CCCC;
 	color: white;
 	}
@@ -287,7 +287,7 @@ ol, ul, li, dl, dd, dt {
 				position: absolute;
 				display: block;
 				width: 129px; height: 123px;
-				margin: -192px -145px;
+				margin: -245px -145px;
 				border: 0;
 				}
 			
