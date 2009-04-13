@@ -65,7 +65,7 @@ ol, ul, li, dl, dd, dt {
 #top {
 	height: 50px;
 	margin-bottom: 125px;
-	background-color: #211F1F;
+	background-color: #000000;
 	border-top: 8px solid #00CCCC;
 	color: white;
 	}
@@ -113,8 +113,13 @@ ol, ul, li, dl, dd, dt {
 		#top li { float: left; height: 100%; padding: 0; margin: 0; border-left: 1px dotted #999; }	
 		#top li.first { border: none; }
 		
-		#top li.on { height: 100px; border: 0; background: url(../images/navOn.png) no-repeat center 0; }
+		#top li.on,
+		#blogHome #navBlog,
+		#blogArchive #navArchive,
+		#blogPost #navBlog { height: 100px; border: 0; background: url(../images/navOn.png) no-repeat center 0; }
 			#top li.on a:hover { color: #fff; border: none; }
+			
+			
 			
 .corset {
 	width: 645px;
@@ -372,7 +377,7 @@ ol, ul, li, dl, dd, dt {
 			font-family: Georgia, serif;
 			font-style: italic;
 			font-weight: bold;
-			font-size: 1.25em;
+			font-size: 12px;
 			color: #00cccc;
 			border-bottom: none;
 			}
