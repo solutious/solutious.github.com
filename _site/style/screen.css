@@ -114,6 +114,7 @@ ol, ul, li, dl, dd, dt {
 		#top li.first { border: none; }
 		
 		#top li.on,
+		#about #navAbout,
 		#blogHome #navBlog,
 		#blogArchive #navArchive,
 		#blogPost #navBlog { height: 100px; border: 0; background: url(../images/navOn.png) no-repeat center 0; }
