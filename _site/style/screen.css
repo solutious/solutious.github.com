@@ -65,7 +65,7 @@ ol, ul, li, dl, dd, dt {
 #top {
 	height: 50px;
 	margin-bottom: 125px;
-	background-color: #211F1F;
+	background-color: #000000;
 	border-top: 8px solid #00CCCC;
 	color: white;
 	}
@@ -114,6 +114,7 @@ ol, ul, li, dl, dd, dt {
 		#top li.first { border: none; }
 		
 		#top li.on,
+		#about #navAbout,
 		#blogHome #navBlog,
 		#blogArchive #navArchive,
 		#blogPost #navBlog { height: 100px; border: 0; background: url(../images/navOn.png) no-repeat center 0; }
