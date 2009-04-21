@@ -132,7 +132,7 @@ ol, ul, li, dl, dd, dt {
 	        font-size: 12px;
 	        padding: 0;
 	        margin: 0;
-	        background: #f0f0f0;
+	        background-color: #fafafa;
 	        line-height: 20px; /*--Height of each line of code--*/
 	        background: url(pre_code_bg.gif) repeat-y left top; /*--Background of lined paper--*/
 	        width: 600px;
@@ -140,11 +140,22 @@ ol, ul, li, dl, dd, dt {
 	        overflow-Y: hidden;  /*--Hides vertical scroll created by IE--*/
 	}
 	.corset pre code, div.highlight pre {
-	        margin: 0 0 0 20px;  /*--Left Margin--*/
-	        padding: 18px 0;
+				  background-color: #fafafa;
+	        margin: 0px 0 0 20px;  /*--Left Margin--*/
+	        padding: 18px 10px;
 	        display: block;
 	}
+	.corset ul li {
+		list-style: circle;
+	}
 	
+	.corset ul.posts li {
+		list-style: none;
+	}
+	
+	.corset ul.nav li {
+		list-style: none;
+	}
 	
 #footer {
 	margin-top: 70px !important;
