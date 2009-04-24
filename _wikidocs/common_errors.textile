@@ -1,0 +1,29 @@
+This page contains the command errors that you may encounter when using Rudy for the first time. 
+
+*Feel free to email me directly if you can't the error here: <tt>delano@solutious.com</tt>*.
+
+
+h2. Rudy Errors
+
+* @No machines configuration. Check your configs!@
+** Rudy can't find your <tt>Rudyfile</tt>. Make sure you're in the directory that contains <tt>Rudyfile</tt> or specify the path with the <tt>-C</tt> global option:  <tt>$ rudy -C path/2/Rudyfile startup</tt>
+
+
+h2. SSH Errors
+
+* @"fingerprint ... does not match for 'ec2-11-22-33-44 ...'"@
+** This means the host SSH key for that machine does not match your <tt>~/.ssh/known_hosts</tt> file. Most EC2 images generate new host SSH keys on the first boot so is the most likely cause for this error message (it's safe to continue). If this is not a new instance, you should tell Rudy not to continue and investigate manually.
+
+
+h2. Ruby Errors
+
+* @"`require': no such file to load -- logger (LoadError)"@
+** You're probably running a mix of Rubygem and non-Rubygem libraries. Ryan Tomayko has you covered: http://gist.github.com/54177
+
+
+h2. Amazon Errors
+
+* @"The request signature we calculated does not match the signature you provided."@
+** Check that your Amazon Web Service access key and secret key are correct
+* @"AWS was not able to validate the provided access credentials"@
+** If it's a new Amazon Account, you need to sign up for EC2, SDB, and S3.
