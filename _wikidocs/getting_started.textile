@@ -146,3 +146,11 @@ When you want to shutdown the machine, you use the _shutdown_ routine:
   
   No instances running</code></pre>
 
+h2. Built-in Help
+
+The Rudy command line tools have plenty of built-in documentation. 
+
+* @$ rudy -h@
+* @$ rudy-ec2 -h@
+* @$ rudy-sdb -h@
+* @$ rudy-s3 -h@
