@@ -1,0 +1,13 @@
+
+h2. Current Release: Rudy v0.6 - ALPHA
+
+_Rudy is currently under active development to bring it up to a 1.0 release._
+
+h3. Alpha Notice
+
+Rudy has been well tested and is currently being used in production in a private beta, but it's not ready for general production use. There are a few things to keep in mind while Rudy is in alpha status.
+
+* *Back up your SSH keypairs* (if you already have some). Rudy is quite safe but hasn't been audited so backup your keys as a precaution.
+* *Create a new set of AWS credentials* (access key and secret key) to use with Rudy. Again this is just a precaution to ensure that Rudy has no access to your production instances, security groups, keypairs, etc...
+* *Rudy commands and APIs may change* in later releases. This means that if you create an environment with an alpha release and later upgrade Rudy, some things may not work as expected.
+

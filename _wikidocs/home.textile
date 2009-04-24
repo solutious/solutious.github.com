@@ -1,5 +1,4 @@
-
-See [[Getting Started]] for how to... _get started_!
+*See [[Getting Started]] for how to... _get started_!*
 
 
 h2. About Rudy
@@ -51,7 +50,7 @@ And this is the output:
 
 h2. Recent Changes
 
-* 2009-04-24 [[Getting Started]], [[Common Errors]]
+* 2009-04-24 [[Getting Started]], [[Common Errors]], [[Project Status]]
 * 2009-04-20 Rudy 0.6 is released
 
 
@@ -60,7 +59,6 @@ h2. More Information
 * Submit issues to the <a href="http://github.com/solutious/rudy/issues">Issue Tracker</a>
 * Send questions to the <a href="http://groups.google.com/group/rudy-deployment">Google Group</a>
 * For all other inquiries, email me directly: delano@solutious.com
-
 
 
 

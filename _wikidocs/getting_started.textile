@@ -1,6 +1,6 @@
 With Rudy you can launch complex environments in EC2 with a single command (that includes EBS volumes). This document takes you through all steps required to get started.
 
-*NOTE: The current release of Rudy (0.6) is still in alpha status. See the Alpha Notice in the README before continuing.*
+*NOTE: The current release of Rudy (0.6) is still in alpha status. See [[Project Status]] before continuing.*
 
 h2. Create an Amazon Web Services account
 
