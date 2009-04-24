@@ -1,0 +1,66 @@
+
+See [[Getting Started]] for how to... _get started_!
+
+
+h2. About Rudy
+
+Rudy is a command-line tool for developing and deploying with Amazon EC2.
+
+h3. Machines 
+
+It organizes EC2 instances into groups of _environments_ and _roles_. These are called _machine_ _groups_.  You can run multiple machines with the same role. These are called _positions_. Rudy also supports running machine groups across availability _zones_. Rudy assumes some default values to make the initial installation easier. <tt>stage</tt> is the default environment and <tt>app</tt> is the default role (these can be changed). 
+
+When you put all this together, you have a unique name for every machine. The default machine is:
+
+<pre><code>             zone     env  role
+              v        v    v   
+        m-us-east-1b-stage-app-01
+        ^                       ^
+     "machine"                position</pre></code>
+
+     
+h3. Routines
+
+Rudy breaks down the maintenance of EC2 instances into a set of routines. There are currently two routines available: <tt>startup</tt> and <tt>shutdown</tt>.
+
+This is how you call a routine:
+
+<pre><code>  $ rudy startup</pre></code>
+
+And this is the output:
+<pre><code>  Starting m-us-east-1b-stage-app-01
+    
+    ===  m-us-east-1b-stage-app-01  i-f6e9829f:pending  
+    Waiting for instance.............it's up!
+    Waiting for SSH daemon.....................it's up!
+    
+    ===  DISK ROUTINES  =======================================
+    Creating disk-us-east-1b-stage-app-01-rudy-disk1 
+    Creating volume... done
+    Attaching vol-fa0cef93 to i-f6e9829f... done
+    Creating ext3 filesystem for /dev/sdr... done
+    Mounting at /rudy/disk1... done
+    
+    ===  INFO  ================================================
+    Filesystem on m-us-east-1b-stage-app-01:
+      /dev/sdr              2.0G   68M  1.9G   4% /rudy/disk1
+    
+    The following machines are now available:
+    m-us-east-1b-stage-app-01  ec2-11-22-33-44.compute-1.amazonaws.com</code></pre>
+
+
+h2. Recent Changes
+
+* 2009-04-24 [[Getting Started]], [[Common Errors]]
+* 2009-04-20 Rudy 0.6 is released
+
+
+h2. More Information
+
+* Submit issues to the <a href="http://github.com/solutious/rudy/issues">Issue Tracker</a>
+* Send questions to the <a href="http://groups.google.com/group/rudy-deployment">Google Group</a>
+* For all other inquiries, email me directly: delano@solutious.com
+
+
+
+

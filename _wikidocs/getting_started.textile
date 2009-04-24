@@ -8,7 +8,7 @@ _Skip to this step if you have already signed up for EC2, S3, and SimpleDB._
 
 # Go to <a href="http://aws.amazon.com/">Amazon Web Services</a> and click, "Sign up now"
 # Fill out the form to create your account.
-# Sign up for each of the following services: <a href="http://aws.amazon.com/ec2/">EC2</a>, <a href="http://aws.amazon.com/s3/">S3</a>, <a href="http://aws.amazon.com/simpledb/">SimpleDB</a>, 
+# Sign up for each of the following services: <a href="http://aws.amazon.com/ec2/">EC2</a>, <a href="http://aws.amazon.com/s3/">S3</a>, <a href="http://aws.amazon.com/simpledb/">SimpleDB</a>
 # Go to the <a href="https://aws-portal.amazon.com/gp/aws/developer/account/index.html?ie=UTF8&amp;action=access-key">Access Indentifiers</a> page, and collect the following: Account Number, Access Key ID, Secret Key
 # At the bottom of the page, click the "Create New" button to create your private key and certificate. _Make sure you download the private key because Amazon does not keep a copy._
 
@@ -72,6 +72,13 @@ If you take a look at <tt>Rudyfile</tt>, you can see that the project configurat
 
 We'll use the configuration in the next section to launch a machine group within EC2.
 
+h4. What about security groups and keypairs?
+
+Rudy creates these for you based on the same naming convention as machines. The default group will get a key called <tt>key-stage-app</tt> and a security group called <tt>g-stage-app</tt>. 
+
+h4. Can I use my own keypair?
+
+Yep! You can specify your own keypairs in the machines config. You can find an example in the <tt>Rudyfile</tt> we generated above. Note: if you're specifying a launch keypair, the filename will need to match the name of the keypair that's registered with EC2. i.e. If the path is, /path/2/defaultkey it must be registered as defaultkey with EC2.
 
 h2. Launch a Machine Group
 
@@ -83,15 +90,15 @@ Rudy now has all everything it needs to launch the default machine group. To lau
     ===  m-us-east-1b-stage-app-01  i-f6e9829f:pending  
     Waiting for instance.............it's up!
     Waiting for SSH daemon.....................it's up!
-
-    ===  DISK ROUTINES  ---------------------------------------
+    
+    ===  DISK ROUTINES  =======================================
     Creating disk-us-east-1b-stage-app-01-rudy-disk1 
     Creating volume... done
     Attaching vol-fa0cef93 to i-f6e9829f... done
     Creating ext3 filesystem for /dev/sdr... done
     Mounting at /rudy/disk1... done
     
-    ---  INFO  ------------------------------------------------
+    ===  INFO  ================================================
     Filesystem on m-us-east-1b-stage-app-01:
       /dev/sdr              2.0G   68M  1.9G   4% /rudy/disk1
     
@@ -128,17 +135,14 @@ When you want to shutdown the machine, you use the _shutdown_ routine:
   Waiting for instance...it's up!
   Waiting for SSH daemon...it's up!
   
-  ---  DISK ROUTINES  ---------------------------------------
+  ===  DISK ROUTINES  =========================================
   Destroying disk-us-east-1b-stage-app-01-rudy-disk1
   Unmounting /rudy/disk1... done
   Detaching vol-fa0cef93... .done
   Destroying metadata... done
-
-  ---  m-us-east-1b-stage-app-01  ec2-11-22-33-44.compute-1.amazonaws.com 
+  
+  ===  m-us-east-1b-stage-app-01  ec2-11-22-33-44.compute-1.amazonaws.com 
   Destroying m-us-east-1b-stage-app-01
   
   No instances running</code></pre>
-
-
-
 
