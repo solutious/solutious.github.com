@@ -50,6 +50,7 @@ And this is the output:
 
 h2. Recent Changes
 
+* 2009-04-25 [[FAQ]]
 * 2009-04-24 [[Getting Started]], [[Common Errors]], [[Project Status]]
 * 2009-04-20 Rudy 0.6 is released
 
@@ -57,7 +58,7 @@ h2. Recent Changes
 h2. More Information
 
 * Submit issues to the <a href="http://github.com/solutious/rudy/issues">Issue Tracker</a>
-* Send questions to the <a href="http://groups.google.com/group/rudy-deployment">Google Group</a>
+* Start a discussion on the <a href="http://groups.google.com/group/rudy-deployment">Google Group</a>
 * For all other inquiries, email me directly: delano@solutious.com
 
 
