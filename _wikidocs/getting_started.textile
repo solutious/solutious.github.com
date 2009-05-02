@@ -1,6 +1,6 @@
 With Rudy you can launch complex environments in EC2 with a single command (that includes EBS volumes). This document takes you through all steps required to get started.
 
-*NOTE: The current release of Rudy (0.6) is still in alpha status. See [[Project Status]] before continuing.*
+*NOTE: The current release of Rudy (0.7) is now in BETA status. See [[Project Status]].*
 
 h2. Create an Amazon Web Services account
 
@@ -23,7 +23,7 @@ You should now have the following identifiers:
 
 h2. Install 
 
-You can install Rudy via Rubygems with the command below or download as a <a href="http://github.com/solutious/rudy/zipball/latest">tar</a> or <a href="http://github.com/solutious/rudy/zipball/latest">zip</a>. 
+You can install Rudy via Rubygems with the command below or download as a <a href="http://github.com/solutious/rudy/tarball/latest">tar</a> or <a href="http://github.com/solutious/rudy/zipball/latest">zip</a>. 
 
 <pre><code>  $ sudo gem install rudy
   Successfully installed rudy
@@ -84,28 +84,38 @@ h2. Launch a Machine Group
 
 Rudy now has all everything it needs to launch the default machine group. To launch a machine group, you call the _startup_ routine:
 
-<pre><code>  $ rudy startup
-  Starting m-us-east-1b-stage-app-01
-    
-  ===  m-us-east-1b-stage-app-01  i-f6e9829f:pending  
-  Waiting for instance.............it's up!
-  Waiting for SSH daemon.....................it's up!
+<pre><code>$ rudy startup
+
+ m-us-east-1b-stage-app-01                         awsid: i-aabbcc11 
+   -> Checking if instance is running........... done
+   -> Waiting for SSH daemon........ done
+   -> Setting hostame to m-us-east-1b-stage-app-01... done
+
+  ---  ADD USER  ---------------------------------------------------
   
-  ===  DISK ROUTINES  =======================================
+  delano$ useradd -m -d /home/delano -s /bin/bash delano
+  
+  ---  AUTHORIZE USER  ---------------------------------------------
+  
+  delano$ authorize_keys_remote
+  
+  ---  DISKS  ------------------------------------------------------
   Creating disk-us-east-1b-stage-app-01-rudy-disk1 
-  Creating volume... done
-  Attaching vol-fa0cef93 to i-f6e9829f... done
+  Creating volume...  done
+  Attaching vol-443322aa to i-aabbcc11...  done
   Creating ext3 filesystem for /dev/sdr... done
   Mounting at /rudy/disk1... done
+  Empty after config for delano
   
-  ===  INFO  ================================================
+  ---  INFO  -------------------------------------------------------
   Filesystem on m-us-east-1b-stage-app-01:
+    Filesystem            Size  Used Avail Use% Mounted on
     /dev/sdr              2.0G   68M  1.9G   4% /rudy/disk1
   
-  The following machines are now available:
-  m-us-east-1b-stage-app-01  ec2-11-22-33-44.compute-1.amazonaws.com</code></pre>
+The following machines are now available:
+m-us-east-1b-stage-app-01  ec2-11-22-33-44.compute-1.amazonaws.com</code></pre>
 
-We can now see that there is a new machine running:
+Using the `machines` command we can list the machines running in the default machine group. 
 
 <pre><code>  $ rudy machines
   m-us-east-1b-stage-app-01  ec2-11-22-33-44.compute-1.amazonaws.com</code></pre>
@@ -127,24 +137,32 @@ h2. Shutdown the Machine Group
 
 When you want to shutdown the machine, you use the _shutdown_ routine:
 
-<pre><code>  $ rudy shutdown
-  All machines in stage-app will be shutdown and
-  the following filesystems will be destroyed:
+
+<pre><code>$ rudy shutdown
+  All machines in stage-app will be shutdown
+  The following filesystems will be destroyed:
   /rudy/disk1
   Are you sure? To continue, resolve (5 * 2): 10
-  Waiting for instance...it's up!
-  Waiting for SSH daemon...it's up!
   
-  ===  DISK ROUTINES  =========================================
+   m-us-east-1b-stage-app-01                       awsid: i-dd0473b4 
+     -> Checking if instance is running... done
+     -> Waiting for SSH daemon... done
+     -> Setting hostame to m-us-east-1b-stage-app-01... done
+  
+  ---  DISKS  ------------------------------------------------------
   Destroying disk-us-east-1b-stage-app-01-rudy-disk1
   Unmounting /rudy/disk1... done
-  Detaching vol-fa0cef93... .done
-  Destroying metadata... done
+  Detaching vol-2b957742.... done
+  Destroying metadata... 
   
-  ===  m-us-east-1b-stage-app-01  ec2-11-22-33-44.compute-1.amazonaws.com 
-  Destroying m-us-east-1b-stage-app-01
+  ---  INFO  -------------------------------------------------------
+  Filesystem on m-us-east-1b-stage-app-01:
+    Filesystem            Size  Used Avail Use% Mounted on
+    /dev/sda2             147G  188M  140G   1% /mnt
   
-  No instances running</code></pre>
+The following instances have been destroyed:
+m-us-east-1b-stage-app-01 i-dd0473b4 </code></pre>
+
 
 h2. Built-in Help
 

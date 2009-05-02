@@ -20,36 +20,47 @@ When you put all this together, you have a unique name for every machine. The de
      
 h3. Routines
 
-Rudy breaks down the maintenance of EC2 instances into a set of routines. There are currently two routines available: <tt>startup</tt> and <tt>shutdown</tt>.
+Rudy breaks down the maintenance of EC2 instances into a set of routines. You can build as many routines as you like. The default ones are: <tt>startup</tt>, <tt>release</tt>, and <tt>shutdown</tt>.
 
 This is how you call a routine:
 
 <pre><code>  $ rudy startup</pre></code>
 
 And this is the output:
-<pre><code>  Starting m-us-east-1b-stage-app-01
-    
-    ===  m-us-east-1b-stage-app-01  i-f6e9829f:pending  
-    Waiting for instance.............it's up!
-    Waiting for SSH daemon.....................it's up!
-    
-    ===  DISK ROUTINES  =======================================
-    Creating disk-us-east-1b-stage-app-01-rudy-disk1 
-    Creating volume... done
-    Attaching vol-fa0cef93 to i-f6e9829f... done
-    Creating ext3 filesystem for /dev/sdr... done
-    Mounting at /rudy/disk1... done
-    
-    ===  INFO  ================================================
-    Filesystem on m-us-east-1b-stage-app-01:
-      /dev/sdr              2.0G   68M  1.9G   4% /rudy/disk1
-    
-    The following machines are now available:
-    m-us-east-1b-stage-app-01  ec2-11-22-33-44.compute-1.amazonaws.com</code></pre>
+<pre><code>m-us-east-1b-stage-app-01                         awsid: i-aabbcc11 
+   -> Checking if instance is running........... done
+   -> Waiting for SSH daemon........ done
+   -> Setting hostame to m-us-east-1b-stage-app-01... done
+
+  ---  ADD USER  ---------------------------------------------------
+  
+  delano$ useradd -m -d /home/delano -s /bin/bash delano
+  
+  ---  AUTHORIZE USER  ---------------------------------------------
+  
+  delano$ authorize_keys_remote
+  
+  ---  DISKS  ------------------------------------------------------
+  Creating disk-us-east-1b-stage-app-01-rudy-disk1 
+  Creating volume...  done
+  Attaching vol-443322aa to i-aabbcc11...  done
+  Creating ext3 filesystem for /dev/sdr... done
+  Mounting at /rudy/disk1... done
+  Empty after config for delano
+  
+  ---  INFO  -------------------------------------------------------
+  Filesystem on m-us-east-1b-stage-app-01:
+    Filesystem            Size  Used Avail Use% Mounted on
+    /dev/sdr              2.0G   68M  1.9G   4% /rudy/disk1
+  
+The following machines are now available:
+m-us-east-1b-stage-app-01  ec2-11-22-33-44.compute-1.amazonaws.com</code></pre>
 
 
 h2. Recent Changes
 
+* 2009-05-02 [[Getting Started]], [[Project Status]], [[Home]]
+* 2009-05-02 Rudy 0.7 is released
 * 2009-04-25 [[FAQ]]
 * 2009-04-24 [[Getting Started]], [[Common Errors]], [[Project Status]]
 * 2009-04-20 Rudy 0.6 is released
