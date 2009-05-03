@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+	
+	        (        )   (                  (        )          (
+	        )\ )  ( /(   )\ )         *   ) )\ )  ( /(          )\ )
+	       (()/(  )\()) (()/(    (  ` )  /((()/(  )\())     (  (()/(
+	        /(_))((_)\   /(_))   )\  ( )(_))/(_))((_)\      )\  /(_))
+	       (_))    ((_) (_))  _ ((_)(_(_())(_))    ((_)  _ ((_)(_))
+	       / __|  / _ \ | |  | | | ||_   _||_ _|  / _ \ | | | |/ __|
+	       \__ \ | (_) || |__| |_| |  | |   | |  | (_) || |_| |\__ \
+	       |___/  \___/ |____|\___/   |_|  |___|  \___/  \___/ |___/
+	
+	
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Rudy, not your grandparent's deployment tool -- On Deployment, Performance, and Good Natured Tools</title>
+  <meta name="keywords" content="deployment,performance,testing,ec2,amazon,cloud computing,ruby,open source" />
+	<meta name="description" content="We build the best deployment and testing tools money can't buy. There's no prohibition on performance!" />
+	<meta name="author" content="Solutious Inc" />
+	<meta name="verify-v1" content="/DvaKRaHTGuNyQBoIP+UgrFycJ+tPfSzWfQIwuKmqMI=" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link href="/style/screen.css" media="screen" rel="Stylesheet" type="text/css" />
+	<link href="/style/print.css" media="print" rel="Stylesheet" type="text/css" />
+	<link href="/style/syntax.css" media="screen" rel="Stylesheet" type="text/css" />
+	<link href="/blog/atom.rss" rel="alternate" title="The Solutious Blog" type="application/atom+xml" />
+  
+</head>
+<body id="blogPost">
+
+<div id="top">
+	<div class="corset">
+		<h1 class="logo"><a href="/">Solutious</a></h1>
+		<ul class="nav">
+			<li class="first"><a href="/about/">about</a></li>
+			<li id="navBlog"><a href="/blog/">blog</a></li>
+			<li id="navArchive"><a href="/blog/archive/">archive</a></li>
+		</ul>
+	</div>
+</div>
+
+
+
+<div class="corset">
+
+<a name="/blog/2009/04/21/rudy-not-your-grandparents-deployment-tool"></a>
+<h2><a href="/blog/2009/04/21/rudy-not-your-grandparents-deployment-tool" title="Rudy, not your grandparent's deployment tool">Rudy, not your grandparent's deployment tool</a></h2>
+
+<p class="author">posted by delano on Tue, Apr 21 2009</p>
+
+<!--
+<script>
+var idcomments_acct = 'defcf13babbc8ef58be95d5511a3b1a1';
+var idcomments_post_id;
+var idcomments_post_url;
+</script>
+<script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>
+-->
+
+<p><a href='http://github.com/solutious/rudy'>Rudy</a> is a command-line development and deployment tool. It&#8217;s been in private beta for about two months and today marks the day of the <a href='http://github.com/solutious/rudy/tree/0.6'>first public release</a> <code>[1]</code>. The project is still in alpha status and many features have yet to be developed but it&#8217;s already useful for exploring the features of Amazon EC2. In this post, I&#8217;ll introduce Rudy&#8217;s core features and demonstrate how these features can help build and manage environments in EC2.</p>
+
+<h2 id='a_quick_look'>A quick look</h2>
+
+<p>It&#8217;s useful to know what working with Rudy looks like before getting into the details:</p>
+
+<pre><code>$ rudy startup            # Launch the default machine group, stage-app
+$ rudy -e dev startup     # Launch the dev-app machine group
+$ rudy machines           # List all instances running in stage-app
+$ rudy -u root ssh        # SSH to root@m-us-east-1b-stage-app-01
+$ rudy ssh uptime         # Execute the uptime command on app stage-app machines
+$ rudy shutdown           # Terminate stage-app instances</code></pre>
+
+<p>See also:</p>
+
+<pre><code>$ rudy -h 
+$ rudy show-commands
+$ rudy COMMAND -h</code></pre>
+
+<h2 id='machine_groups'>Machine Groups</h2>
+
+<p>Rudy helps you build and manage machines in EC2 by organizing them into groups of <em>environments</em> and <em>roles</em>. These are called <em>machine groups</em>. You can run multiple machines with the same role. These are called <em>positions</em>. Rudy also supports running machine groups across availability <em>zones</em>. When you put all this together, you have a unique name for every machine. The default machine is:</p>
+
+<pre><code>         zone     env  role
+          v        v    v   
+    m-us-east-1b-stage-app-01
+    ^                       ^
+ &quot;machine&quot;                position</code></pre>
+
+<p><code>stage</code> is the default environment and <code>app</code> is the default role, but these can be changed too (see Defaults below). These machine groups are configured using a Ruby DSL (domain-specific language) that looks like this:</p>
+<div class='highlight'><pre><span class='n'>machines</span> <span class='k'>do</span>
+  <span class='c1'># Define two identical environments</span>
+  <span class='n'>environment</span> <span class='ss'>:dev</span><span class='p'>,</span> <span class='ss'>:stage</span> <span class='k'>do</span>
+    <span class='c1'># Default properties for all roles</span>
+    <span class='n'>ami</span> <span class='s2'>&quot;ami-235fba4a&quot;</span>
+    <span class='n'>positions</span> <span class='mi'>1</span>
+    
+    <span class='n'>role</span> <span class='ss'>:app</span> <span class='k'>do</span>
+      <span class='c1'># Create two identical instances in the :app role. </span>
+      <span class='n'>positions</span> <span class='mi'>2</span>
+      <span class='c1'># Elastic IP addresses to be associated on startup</span>
+      <span class='n'>addresses</span> <span class='s2'>&quot;11.22.33.44&quot;</span><span class='p'>,</span> <span class='s2'>&quot;55.66.77.88&quot;</span>
+    <span class='k'>end</span>
+    
+    <span class='n'>role</span> <span class='ss'>:analyzer</span> <span class='k'>do</span>
+      <span class='c1'># The :analyzer machines can have their own AMI</span>
+      <span class='n'>ami</span> <span class='s2'>&quot;ami-********&quot;</span>
+      <span class='c1'># Define EBS volumes for this machine</span>
+      <span class='n'>disks</span> <span class='k'>do</span>
+        <span class='n'>path</span> <span class='s2'>&quot;/data/disk1&quot;</span> <span class='k'>do</span>
+          <span class='n'>size</span> <span class='mi'>4</span>
+          <span class='n'>device</span> <span class='s2'>&quot;/dev/sdr&quot;</span>
+        <span class='k'>end</span>
+      <span class='k'>end</span>
+    <span class='k'>end</span>
+    
+  <span class='k'>end</span>    
+<span class='k'>end</span>
+</pre></div>
+<p>The configuration above describes the properties for 4 machine groups: <code>dev-app</code>, <code>dev-analyzer</code>, <code>stage-app</code>, and <code>stage-analyzer</code>. Since we&#8217;ve defined two <code>app</code> machines per environment, that makes 6 machines:</p>
+
+<ul>
+<li><code>m-us-east-1b-dev-app-01</code></li>
+
+<li><code>m-us-east-1b-dev-app-02</code></li>
+
+<li><code>m-us-east-1b-dev-analyzer-01</code></li>
+
+<li><code>m-us-east-1b-stage-app-01</code></li>
+
+<li><code>m-us-east-1b-stage-app-02</code></li>
+
+<li><code>m-us-east-1b-stage-analyzer-01</code></li>
+</ul>
+
+<h2 id='routines'>Routines</h2>
+
+<p>The machines configuration describes the whats or the &#8220;physical&#8221; characteristics of the environments. The routines configuration describes the repeatable processes.</p>
+<div class='highlight'><pre><span class='n'>routines</span> <span class='k'>do</span>
+  <span class='c1'># Define routines for the stage environment</span>
+  <span class='n'>environment</span> <span class='ss'>:stage</span> <span class='k'>do</span>
+
+    <span class='n'>role</span> <span class='ss'>:analyzer</span> <span class='k'>do</span>
+      <span class='c1'># Tell Rudy what to do when you run &quot;rudy startup&quot;</span>
+      <span class='n'>startup</span> <span class='k'>do</span>
+        <span class='c1'># Execute &quot;uname&quot; on the local machine</span>
+        <span class='n'>before_local</span> <span class='no'>Rudy</span><span class='o'>.</span><span class='n'>sysinfo</span><span class='o'>.</span><span class='n'>user</span> <span class='o'>=&gt;</span> <span class='o'>[</span><span class='ss'>:git</span><span class='p'>,</span> <span class='ss'>:commit</span><span class='p'>,</span> <span class='s1'>&#39;a&#39;</span><span class='p'>,</span> <span class='s1'>&#39;m&#39;</span><span class='p'>,</span> <span class='s2'>&quot;Rudy Startup&quot;</span><span class='o'>]</span>
+        <span class='n'>before_local</span> <span class='no'>Rudy</span><span class='o'>.</span><span class='n'>sysinfo</span><span class='o'>.</span><span class='n'>user</span> <span class='o'>=&gt;</span> <span class='o'>[</span><span class='ss'>:git</span><span class='p'>,</span> <span class='ss'>:push</span><span class='o'>]</span>
+        <span class='n'>disks</span> <span class='k'>do</span>
+          <span class='c1'># Create an EBS volume, attach it, format it, and mount it</span>
+          <span class='n'>create</span> <span class='s2'>&quot;/rudy/disk1&quot;</span>
+        <span class='k'>end</span>
+        <span class='n'>after</span> <span class='ss'>:username</span> <span class='o'>=&gt;</span> <span class='o'>[</span><span class='s1'>&#39;/a/release/script&#39;</span><span class='o'>]</span>
+        <span class='n'>after</span> <span class='ss'>:root</span> <span class='o'>=&gt;</span> <span class='o'>[</span><span class='s1'>&#39;/etc/init.d/nginx&#39;</span><span class='p'>,</span> <span class='s1'>&#39;restart&#39;</span><span class='o'>]</span>
+      <span class='k'>end</span>
+      <span class='n'>shutdown</span> <span class='k'>do</span>
+        <span class='n'>before</span> <span class='ss'>:root</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;/another/custom/script&#39;</span>
+        <span class='n'>before</span> <span class='ss'>:root</span> <span class='o'>=&gt;</span> <span class='o'>[</span><span class='ss'>:mysqladmin</span><span class='p'>,</span> <span class='ss'>:u</span><span class='p'>,</span> <span class='s1'>&#39;root&#39;</span><span class='p'>,</span> <span class='s1'>&#39;shutdown&#39;</span><span class='o'>]</span>
+        <span class='n'>disks</span> <span class='k'>do</span>
+          <span class='c1'># Umount the volume, detach it, delete it</span>
+          <span class='n'>destroy</span> <span class='s2'>&quot;/rudy/disk1&quot;</span>
+        <span class='k'>end</span>
+        <span class='c1'># Rudy.sysinfo.user returns the process&#39; current user (ENV[&#39;user&#39;])</span>
+        <span class='n'>after_local</span> <span class='no'>Rudy</span><span class='o'>.</span><span class='n'>sysinfo</span><span class='o'>.</span><span class='n'>user</span> <span class='o'>=&gt;</span> <span class='s2'>&quot;date&quot;</span>
+      <span class='k'>end</span>    
+    <span class='k'>end</span>
+    
+  <span class='k'>end</span>
+<span class='k'>end</span>
+</pre></div>
+<p>This routines configuration describes the processes for the <code>stage-analyzer</code> group.</p>
+
+<h2 id='running_a_routine'>Running a Routine</h2>
+
+<pre><code>$ rudy -r analyzer startup
+Starting stage-app
+
+---  BEFORE SCRIPTS (local)  ------------------------------
+Connecting to localhost
+...
+Starting m-us-east-1b-stage-app-01
+Associating 11.22.33.44 to i-11111111
+Starting m-us-east-1b-stage-app-02
+Associating 55.66.77.88 to i-22222222
+....
+
+---  DISK ROUTINES  ---------------------------------------
+...
+
+---  AFTER SCRIPTS  ---------------------------------------
+...
+
+The following machines are now available:
+m-us-east-1b-stage-app-01  ec2-11-22-33-44.compute-1.amazonaws.com
+m-us-east-1b-stage-app-02  ec2-55-66-77-88.compute-1.amazonaws.com</code></pre>
+
+<h2 id='defaults'>Defaults</h2>
+
+<p>You may be wondering where the <code>us-east-1b</code> value comes from. This is an EC2 availability zone and it&#8217;s one of several default values that Rudy assumes in order to function straight &#8220;out of the box&#8221;. The default values can be changed too:</p>
+<div class='highlight'><pre><span class='n'>defaults</span> <span class='k'>do</span>
+  <span class='n'>region</span> <span class='ss'>:&quot;us-east-1&quot;</span> 
+  <span class='n'>zone</span> <span class='ss'>:&quot;us-east-1b&quot;</span>
+  <span class='n'>environment</span> <span class='ss'>:stage</span>
+  <span class='n'>role</span> <span class='ss'>:app</span>
+  <span class='n'>position</span> <span class='s2'>&quot;01&quot;</span>
+  <span class='n'>user</span> <span class='no'>ENV</span><span class='o'>[</span><span class='s1'>&#39;USER&#39;</span><span class='o'>].</span><span class='n'>to_sym</span>
+<span class='k'>end</span>
+</pre></div>
+<h2 id='conclusion__more_to_come'>Conclusion / More to come</h2>
+
+<p>As I mentioned, the current release of Rudy (0.6) is in alpha status so it&#8217;s not ready for production. There&#8217;s a lot of work to do, including a lot of documentation to write, but hopefully you can already see the value of incorporating Rudy into your development process. For now, the <a href='http://github.com/solutious/rudy'>README</a> contains installation instructions and the <a href='http://opensource.solutious.com/rudy'>RDocs</a> are somewhat helpful too!</p>
+
+<h2 id='notes'>Notes</h2>
+
+<ul>
+<li><code>[1]</code> Rudy has been available on GitHub since the project began, but this release is the first one with documentation.</li>
+</ul>
+
+<div id="related">
+  <h3>Related Posts</h3>
+  <ul class="posts">
+    
+      <li><span>Dec 10 2008</span> &raquo; <a href="/blog/2008/12/10/using-amazon-ec2-in-europe">Using Amazon EC2 In Europe</a></li>
+    
+      <li><span>Apr 22 2009</span> &raquo; <a href="/blog/2009/04/22/rudy-ec2-api-tools-replacement">Rudy, A Replacement for EC2 API Tools.</a></li>
+    
+      <li><span>Sep 23 2008</span> &raquo; <a href="/blog/2008/09/23/ec2-disk-performance-linux-solaris">EC2 Disk Performance, Linux vs OpenSolaris - Preliminary Results</a></li>
+    
+  </ul>
+</div>
+
+<script>
+var idcomments_acct = 'defcf13babbc8ef58be95d5511a3b1a1';
+var idcomments_post_id;
+var idcomments_post_url;
+</script>
+<span id="IDCommentsPostTitle" style="display:none"></span>
+<script type='text/javascript'
+src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+
+
+</div>
+  
+
+<div id="footer" class="corset">
+	<a href="http://solutious.com/" class="big">Solutious</a>.
+	<span class="tagline">There's no prohibition on performance.</span>
+	Copyright 2006-2009.
+</div>
+ 	
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-4642735-3");
+pageTracker._trackPageview();
+</script>
+
+
+</body>
+</html>
+

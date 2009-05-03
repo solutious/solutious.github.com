@@ -15,7 +15,7 @@
 -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<title></title>
+	<title>{{ page.title }} -- On Deployment, Performance, and Good Natured Tools</title>
   <meta name="keywords" content="deployment,performance,testing,ec2,amazon,cloud computing,ruby,open source" />
 	<meta name="description" content="We build the best deployment and testing tools money can't buy. There's no prohibition on performance!" />
 	<meta name="author" content="Solutious Inc" />
@@ -23,31 +23,26 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<link href="/style/screen.css" media="screen" rel="Stylesheet" type="text/css" />
 	<link href="/style/print.css" media="print" rel="Stylesheet" type="text/css" />
+	<link href="/style/syntax.css" media="screen" rel="Stylesheet" type="text/css" />
+	<link href="/blog/atom.rss" rel="alternate" title="The Solutious Blog" type="application/atom+xml" />
+  
 </head>
-<body id="about">
+<body id="{{ page.bodyid }}">
 
 <div id="top">
 	<div class="corset">
 		<h1 class="logo"><a href="/">Solutious</a></h1>
 		<ul class="nav">
-			<li id="navAbout" class="first"><a href="/about/">about</a></li>
-			<li><a href="/blog/">blog</a></li>
+			<li class="first"><a href="/about/">about</a></li>
+			<li id="navBlog"><a href="/blog/">blog</a></li>
+			<li id="navArchive"><a href="/blog/archive/">archive</a></li>
 		</ul>
 	</div>
 </div>
 
-		
 
-<div class="corset">
-
-	<h2>About Solutious.</h2>
-	
-	<p>Solutious is a software company based in Montréal. Established in 2006 as a technical consultancy, we help clients establish development processes, build production environments, and prepare for launch-day. In 2008, we began building our knowledge and experience into open source tools. You can follow <a href="http://github.com/solutious" title="Our GitHub profile">our open source projects</a> on GitHub.</p>
-	
-  <p class="notice"><span class="hilite">start@solutious.com</a></p>
-
-</div>
-
+{{ content }}
+  
 
 <div id="footer" class="corset">
 	<a href="http://solutious.com/" class="big">Solutious</a>.
@@ -63,6 +58,7 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 var pageTracker = _gat._getTracker("UA-4642735-3");
 pageTracker._trackPageview();
 </script>
+
 
 </body>
 </html>

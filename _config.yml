@@ -1,7 +1,17 @@
 destination: ./_site
 auto:        false
 lsi:         true
-server_port: 4001
+server_port: 4000
 pygments:    true
-markdown:    rdiscount
+markdown:    maruku
 permalink:   pretty
+
+# From blog.solutious.com:
+#destination: ./_site
+#auto:        false
+#lsi:         true
+#server_port: 4000
+#pygments:    true
+#markdown:    maruku
+##markdown: rdiscount
+#permalink:   pretty

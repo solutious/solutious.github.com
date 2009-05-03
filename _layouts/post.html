@@ -1,0 +1,43 @@
+---
+layout: default-blog
+bodyid: blogPost
+---
+
+<div class="corset">
+
+<a name="{{ page.id }}"></a>
+<h2><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h2>
+
+<p class="author">posted by {{ page.who }} on {{ page.date | date: "%a, %b %d %Y" }}</p>
+
+<!--
+<script>
+var idcomments_acct = 'defcf13babbc8ef58be95d5511a3b1a1';
+var idcomments_post_id;
+var idcomments_post_url;
+</script>
+<script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>
+-->
+
+{{ content }}
+
+<div id="related">
+  <h3>Related Posts</h3>
+  <ul class="posts">
+    {% for post in site.related_posts limit:3 %}
+      <li><span>{{ post.date | date: "%b %d %Y" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+
+<script>
+var idcomments_acct = 'defcf13babbc8ef58be95d5511a3b1a1';
+var idcomments_post_id;
+var idcomments_post_url;
+</script>
+<span id="IDCommentsPostTitle" style="display:none"></span>
+<script type='text/javascript'
+src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+
+
+</div>

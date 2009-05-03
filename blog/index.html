@@ -1,0 +1,36 @@
+---
+layout: default-blog
+title: The Solutious Blog
+bodyid: blogHome
+---
+
+
+
+<div class="corset">
+
+   {% for post in site.posts limit:3 %}
+   <div class="entry regular">
+
+   <h2><a href="{{ post.url }}" title="Solutious Blog: {{ post.title }}">{{ post.title }}</a></h2>
+
+   <p class="author">posted by {{ post.who }} on {{ post.date | date: "%a, %b %d %Y" }}</p>
+	
+	 <!--
+	 categories [
+   {% for topic in post.topics %}
+     {{ topic }}
+   {% endfor %}
+   ]
+   -->
+   
+	  {{ post.content }}
+	 </div>
+	
+	  {% if forloop.rindex0 > 0 %}
+	    <div id="separator"></div>
+	  {% endif %}
+   {% endfor %}
+   
+   
+   <div style="margin: 40px 0 0 40px;"><h3>See <a href="/blog/archive/">the archive</a> for more</h3></div>
+</div>
