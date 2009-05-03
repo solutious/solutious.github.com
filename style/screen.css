@@ -156,6 +156,12 @@ ol, ul, li, dl, dd, dt {
 		list-style: none;
 	}
 	
+#related {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+	
+	
 #footer {
 	margin-top: 70px !important;
 	padding-top: 10px;

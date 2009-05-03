@@ -4,13 +4,29 @@
  <title>The Solutious Blog</title>
  <link href="http://blog.solutious.com/atom.xml" rel="self"/>
  <link href="http://blog.solutious.com/"/>
- <updated>2009-05-03T09:19:40-04:00</updated>
+ <updated>2009-05-03T11:27:46-04:00</updated>
  <id>http://blog.solutious.com/</id>
  <author>
    <name>Solutious Inc.</name>
    <email>info@solutious.com</email>
  </author>
  
+ 
+ <entry>
+   <title>Goodnight Sweet Prince (Dreamhost)</title>
+   <link href="http://blog.solutious.com/blog/2009/05/03/goodnight-sweet-prince-dreamhost"/>
+   <updated>2009-05-03T00:00:00-04:00</updated>
+   <id>http://blog.solutious.com/blog/2009/05/03/goodnight-sweet-prince-dreamhost</id>
+   <content type="html">&lt;p&gt;I have a difficult time putting to words the excitement I felt when GitHub announced &lt;a href='http://github.com/blog/315-cname-support-for-github-pages'&gt;CNAME support&lt;/a&gt;. And now, just a few short months later I&amp;#8217;ve finally freed myself from Dreamhost&amp;#8217;s shackles. I&amp;#8217;m now using GitHub for all my hosting needs (including solutious.com) and I must say, it feels pretty good.&lt;/p&gt;
+
+&lt;p&gt;Shared hosting has served a useful purpose over the years, but it&amp;#8217;s days are numbered. &lt;a href='http://heroku.com/pricing'&gt;Heroku&lt;/a&gt;: free. &lt;a href='http://code.google.com/appengine/'&gt;Google App Engine&lt;/a&gt;: free. &lt;a href='http://appjet.com/'&gt;AppJet&lt;/a&gt;: free. You can&amp;#8217;t argue with that.&lt;/p&gt;
+
+&lt;p&gt;GitHub is not free but CNAME support is included with all paid accounts which I already have.&lt;/p&gt;
+
+&lt;h2 id='workflow_of_the_future'&gt;Workflow of the Future&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;Me -&amp;gt; TextMate -&amp;gt; Markdown -&amp;gt; Terminal -&amp;gt; Jekyll -&amp;gt; Git -&amp;gt; You&lt;/code&gt;&lt;/pre&gt;</content>
+ </entry>
  
  <entry>
    <title>It's an outrake!</title>
