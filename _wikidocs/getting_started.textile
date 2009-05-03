@@ -2,6 +2,17 @@ With Rudy you can launch complex environments in EC2 with a single command (that
 
 *NOTE: The current release of Rudy (0.7) is now in BETA status. See [[Project Status]].*
 
+This document covers the following steps:
+
+* _Create an Amazon Web Services account_
+* _Install Rudy_
+* _Create Accounts Configuration_
+* _Create Project Configuration_
+* _Launch a Machine Group_
+* _SSH into the machine_
+* _Shutdown the Machine Group_
+
+
 h2. Create an Amazon Web Services account
 
 _Skip to this step if you have already signed up for EC2, S3, and SimpleDB._
@@ -21,7 +32,7 @@ You should now have the following identifiers:
 
 *NOTE: Your Access Identifiers are the keys to your castle. Keep them safe. If you suspect someone may have them, you can go back to the Access Identifiers page at any time to generate a new secret key. And don't forget to update your Rudy config!*
 
-h2. Install 
+h2. Install Rudy
 
 You can install Rudy via Rubygems with the command below or download as a <a href="http://github.com/solutious/rudy/tarball/latest">tar</a> or <a href="http://github.com/solutious/rudy/zipball/latest">zip</a>. 
 
