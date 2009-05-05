@@ -1,10 +1,17 @@
 ---
 layout: post
-title: Launching a Windows instance with rudy-ec2
+title: Launching a Windows EC2 instance with rudy-ec2
 who: delano
 ---
 
-Rudy is a development and deployment tool for Amazon EC2. I've written a few examples about launching Linux and Solaris instances so in this post I'm going to demonstrate how to launch a Windows instance. Launching a Windows machine image is quite similar to launching other types, but there are a couple gotchas that make it worthwhile to look at a specific example. 
+Rudy is a development and deployment tool for Amazon EC2. I've written a few examples about launching Linux and Solaris instances so in this post I'm going to demonstrate how to launch a Windows instance. Launching a Windows machine image is quite similar to launching other types, but there are a few gotchas. That's what this post about. Windows EC2 gotchas. 
+
+What you'll need:
+
+* [Rudy](http://wiki.github.com/solutious/rudy/getting-started)
+* Remote Desktop Client [for Mac](http://www.microsoft.com/mac/products/remote-desktop/default.mspx)
+* 5 minutes
+
 
 ## Select the AMI
 
