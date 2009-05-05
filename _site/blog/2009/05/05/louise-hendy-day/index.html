@@ -15,7 +15,7 @@
 -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<title>Installing sys-cpu 0.6.0 on OS X 10.5 Leopard -- On Deployment, Performance, and Good Natured Tools</title>
+	<title>Louise Hendy Day, a Celebration of Realtime Marketing -- On Deployment, Performance, and Good Natured Tools</title>
   <meta name="keywords" content="deployment,performance,testing,ec2,amazon,cloud computing,ruby,open source" />
 	<meta name="description" content="We build the best deployment and testing tools money can't buy. There's no prohibition on performance!" />
 	<meta name="author" content="Solutious Inc" />
@@ -44,10 +44,10 @@
 
 <div class="corset">
 
-<a name="/blog/2008/12/30/installing-sys-cpu-osx"></a>
-<h2><a href="/blog/2008/12/30/installing-sys-cpu-osx" title="Installing sys-cpu 0.6.0 on OS X 10.5 Leopard">Installing sys-cpu 0.6.0 on OS X 10.5 Leopard</a></h2>
+<a name="/blog/2009/05/05/louise-hendy-day"></a>
+<h2><a href="/blog/2009/05/05/louise-hendy-day" title="Louise Hendy Day, a Celebration of Realtime Marketing">Louise Hendy Day, a Celebration of Realtime Marketing</a></h2>
 
-<p class="author">posted by delano on Tue, Dec 30 2008</p>
+<p class="author">posted by delano on Tue, May 05 2009</p>
 
 <!--
 <script>
@@ -58,44 +58,29 @@ var idcomments_post_url;
 <script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>
 -->
 
-<p>I was trying to install the <a href='http://rubyforge.org/projects/sysutils' title='sysutils at Rubyforge'>sys-utils</a> Ruby libraries today and got an error while building sys-cpu on OX 10.5 Leopard. sys-cpu is a multi-platform Ruby library for accessing information about the CPUs and it contains a native extension which needs to be compiled during them installation. This is the error:</p>
+<p>If you&#8217;re like me, you woke up today thinking May 5th was Cinco de Mayo. What people like us didn&#8217;t know is that it&#8217;s also Louise Hendy Day. This is probably the first and last time you&#8217;ll hear about Louise Hendy Day, but the implications of it are pretty important.</p>
+<p style='text-align: center'><a href='http://twitter.com/#search?q=louisehendyday' style='text-decoration: none;'><img src='http://farm4.static.flickr.com/3569/3505434648_36eca44c11.jpg' border='0' /></a></p>
+<h3 id='a_fictitious_holiday'>A Fictitious Holiday</h3>
 
-<pre><code>$ sudo gem install sys-cpu
-  Building native extensions.  This could take a while...
-  ERROR:  Error installing sys-cpu:
-  ERROR: Failed to build gem native extension.
-  ...
-  cpu.c:14:17: error: kvm.h: No such file or directory
-  cpu.c:14:17: error: kvm.h: No such file or directory
-  cpu.c: In function &#39;cpu_load_avg&#39;:
-  ...
-  make: *** [cpu.o] Error 1</code></pre>
+<p>Louise Hendy Day is a fictitious holiday created by a single person, earlier today, in an attempt to get into the trending topics on Twitter. And it worked. At least for a few hours (it&#8217;s no longer a trending topic as of 16:00 EST but the <a href='http://search.twitter.com/search?q=%23louisehendyday'>flurry of messages continues</a>).</p>
 
-<p>OS X 10.5 seems to be missing a C header file, kvm.h, that&#8217;s required by sys-cpu. Here&#8217;s how you can solve the problem:</p>
+<p>Why is this important? It&#8217;s important because we&#8217;ve heard a lot about the power of the web, &#8220;social media&#8221; in particular, to reach out to build and maintain networks of clients and customers. Rarely however, do we see this power in action, <em>in real time</em>. One person generated a massive buzz literally out of nothing. The product is a faux-celebration for a holiday that doesn&#8217;t otherwise exist.</p>
 
-<ul>
-<li>Download a <a href='http://rubyforge.org/frs/download.php/20065/sys-cpu-0.6.0.tar.gz' title='sys-cpu tar.gz'>non-gem version</a> and unpack it.</li>
+<h3 id='a_new_way_to_do_business'>A New Way to Do Business</h3>
 
-<li>Get a copy of kvm.h. If you&#8217;re running OS X 10.5 that was upgraded from 10.4, you can find it in <code>/Developer/SDKs/MacOSX10.4.sdk/usr/include</code>. If not, you can download it from here: <a href='http://solutious.com/r/kvm.h'>http://solutious.com/r/kvm.h</a>.</li>
+<p>Now, there are two ways you can view Louise Hendy Day: a useless, passing fad or <em>a completely new way to do business</em>. You can communicate with current and prospective customers in real-time. It&#8217;s like having a conversation with thousands of people at the same time.</p>
 
-<li>Copy kvm.h in to sys-cpu-0.6.0/ext</li>
-
-<li>Inside of sys-cpu-0.6.0, run: <code>rake test</code> then <code>sudo rake install</code></li>
-
-<li>The following command should now run without errors: <code>ruby -r&#39;sys/cpu&#39; -e 1</code>.</li>
-</ul>
-
-<p>That&#8217;s it!</p>
+<p>Twitter won&#8217;t do this alone &#8211; there will be other service providers &#8211; but already today, right now we have a tool more powerful than any PR agency ever had. That&#8217;s pretty exciting.</p>
 
 <div id="related">
   <h3>Related Posts</h3>
   <ul class="posts">
     
-      <li><span>Apr 22 2009</span> &raquo; <a href="/blog/2009/04/22/rudy-ec2-api-tools-replacement">Rudy, A Replacement for EC2 API Tools.</a></li>
+      <li><span>Apr 10 2009</span> &raquo; <a href="/blog/2009/04/10/wordpress-to-jekyll">From WordPress to Jekyll</a></li>
     
-      <li><span>Dec 12 2008</span> &raquo; <a href="/blog/2008/12/12/tumblr-to-wordpress">From Tumblr to WordPress</a></li>
+      <li><span>Apr 21 2009</span> &raquo; <a href="/blog/2009/04/21/rudy-not-your-grandparents-deployment-tool">Rudy, not your grandparent's deployment tool</a></li>
     
-      <li><span>Apr 30 2009</span> &raquo; <a href="/blog/2009/04/30/its-an-outrake">It's an outrake!</a></li>
+      <li><span>Dec 10 2008</span> &raquo; <a href="/blog/2008/12/10/using-amazon-ec2-in-europe">Using Amazon EC2 In Europe</a></li>
     
   </ul>
 </div>

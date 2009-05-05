@@ -49,6 +49,39 @@
    
    <div class="entry regular">
 
+   <h2><a href="/blog/2009/05/05/louise-hendy-day" title="Solutious Blog: Louise Hendy Day, a Celebration of Realtime Marketing">Louise Hendy Day, a Celebration of Realtime Marketing</a></h2>
+
+   <p class="author">posted by delano on Tue, May 05 2009</p>
+	
+	 <!--
+	 categories [
+   
+     people
+   
+   ]
+   -->
+   
+	  <p>If you&#8217;re like me, you woke up today thinking May 5th was Cinco de Mayo. What people like us didn&#8217;t know is that it&#8217;s also Louise Hendy Day. This is probably the first and last time you&#8217;ll hear about Louise Hendy Day, but the implications of it are pretty important.</p>
+<p style='text-align: center'><a href='http://twitter.com/#search?q=louisehendyday' style='text-decoration: none;'><img src='http://farm4.static.flickr.com/3569/3505434648_36eca44c11.jpg' border='0' /></a></p>
+<h3 id='a_fictitious_holiday'>A Fictitious Holiday</h3>
+
+<p>Louise Hendy Day is a fictitious holiday created by a single person, earlier today, in an attempt to get into the trending topics on Twitter. And it worked. At least for a few hours (it&#8217;s no longer a trending topic as of 16:00 EST but the <a href='http://search.twitter.com/search?q=%23louisehendyday'>flurry of messages continues</a>).</p>
+
+<p>Why is this important? It&#8217;s important because we&#8217;ve heard a lot about the power of the web, &#8220;social media&#8221; in particular, to reach out to build and maintain networks of clients and customers. Rarely however, do we see this power in action, <em>in real time</em>. One person generated a massive buzz literally out of nothing. The product is a faux-celebration for a holiday that doesn&#8217;t otherwise exist.</p>
+
+<h3 id='a_new_way_to_do_business'>A New Way to Do Business</h3>
+
+<p>Now, there are two ways you can view Louise Hendy Day: a useless, passing fad or <em>a completely new way to do business</em>. You can communicate with current and prospective customers in real-time. It&#8217;s like having a conversation with thousands of people at the same time.</p>
+
+<p>Twitter won&#8217;t do this alone &#8211; there will be other service providers &#8211; but already today, right now we have a tool more powerful than any PR agency ever had. That&#8217;s pretty exciting.</p>
+	 </div>
+	
+	  
+	    <div id="separator"></div>
+	  
+   
+   <div class="entry regular">
+
    <h2><a href="/blog/2009/05/03/goodnight-sweet-prince-dreamhost" title="Solutious Blog: Goodnight Sweet Prince (Dreamhost)">Goodnight Sweet Prince (Dreamhost)</a></h2>
 
    <p class="author">posted by delano on Sun, May 03 2009</p>
@@ -63,9 +96,7 @@
    
 	  <p>I have a difficult time putting to words the excitement I felt when GitHub announced <a href='http://github.com/blog/315-cname-support-for-github-pages'>CNAME support</a>. And now, just a few short months later I&#8217;ve finally freed myself from Dreamhost&#8217;s shackles. I&#8217;m now using GitHub for all my hosting needs (including solutious.com) and I must say, it feels pretty good.</p>
 
-<p>Shared hosting has served a useful purpose over the years, but it&#8217;s days are numbered. <a href='http://heroku.com/pricing'>Heroku</a>: free. <a href='http://code.google.com/appengine/'>Google App Engine</a>: free. <a href='http://appjet.com/'>AppJet</a>: free. You can&#8217;t argue with that.</p>
-
-<p>GitHub is not free but CNAME support is included with all paid accounts which I already have.</p>
+<p>Shared hosting has served a useful purpose over the years, but it&#8217;s days are numbered. <a href='http://heroku.com/pricing'>Heroku</a>: free. <a href='http://code.google.com/appengine/'>Google App Engine</a>: free. <a href='http://appjet.com/'>AppJet</a>: free. You can&#8217;t argue with that. GitHub is not free but CNAME support is included with all paid accounts which I already have. I&#8217;m now riding the workflow of the future!</p>
 
 <h2 id='workflow_of_the_future'>Workflow of the Future</h2>
 
@@ -127,135 +158,6 @@
 </pre></div></p>
 
 <p>That means when I&#8217;m running rake the following methods are accessible from everywhere: <code>cd</code>, <code>mkdir</code>, <code>touch</code>, <code>rm</code>, &#8230;! The <code>mkdir</code> in the DSL was <em>being executed as it was parsed</em>. That&#8217;s insane. Thank the Great Scott I wasn&#8217;t testing <code>rm</code>.</p>
-	 </div>
-	
-	  
-	    <div id="separator"></div>
-	  
-   
-   <div class="entry regular">
-
-   <h2><a href="/blog/2009/04/22/rudy-ec2-api-tools-replacement" title="Solutious Blog: Rudy, A Replacement for EC2 API Tools.">Rudy, A Replacement for EC2 API Tools.</a></h2>
-
-   <p class="author">posted by delano on Wed, Apr 22 2009</p>
-	
-	 <!--
-	 categories [
-   
-     rudy
-   
-   ]
-   -->
-   
-	  <p>Rudy is a <a href='/2009/04/21/rudy-deployment-introduction/'>development and deployment tool</a> for EC2. It comes with an executable called <code>rudy-ec2</code> that can also be used as a replacement for Amazon&#8217;s EC2 API tools. The EC2 API tools are a great reference implementation but they&#8217;re unfriendly and become unwieldily when you have more than a few instances. <code>rudy-ec2</code> is an alternative to these tools that can be used on it&#8217;s own (you don&#8217;t need to start using Rudy), allowing you to incorporate Rudy into your development process gradually.</p>
-
-<h2 id='installation'>Installation</h2>
-
-<p><code>rudy-ec2</code> is included with Rudy so if you&#8217;ve already installed Rudy, you can skip to the next section.</p>
-
-<p>Download Rudy from <a href='http://github.com/solutious/rudy'>github.com</a> or install it via RubyGems:</p>
-
-<pre><code>$ sudo gem install rudy
-$ sudo gem install solutious-rudy --source http://gems.github.com/</code></pre>
-
-<p>NOTE: If you are not installing via RubyGems and running Ruby 1.8.x, you need to make sure the Ruby dependencies (see the <a href='http://github.com/solutious/rudy/blob/master/README.rdoc'>README</a>) are installed and in your LOAD<em>PATH. Ryan Tomayko wrote <a href='http://gist.github.com/54177'>a gist</a> about it.</em></p>
-
-<h2 id='configuration_3_ways_to_do_it'>Configuration, 3 ways to do it</h2>
-
-<p><code>rudy-ec2</code> needs your Amazon Web Services credentials in order to execute commands on EC2. You can configure these in 3 ways: rudy configuration, environment variables or command-line options.</p>
-
-<h3 id='rudy_configuration_method_1'>Rudy Configuration (method 1)</h3>
-
-<p><code>rudy-ec2</code> can use the same configuration as <code>rudy</code>. If you&#8217;ve already created a Rudy configuration file, you don&#8217;t need to do anything else. Otherwise, run the following commands:</p>
-
-<pre><code>$ rudy generate-config
-  [edit ~/.rudy/config with your Amazon Web Services credentials] 
-$ rudy init</code></pre>
-
-<p>NOTE: <em>The above command is</em><em>rudy</em>* and not <strong>rudy-ec2</strong>.*</p>
-
-<h3 id='environment_variables_method_2'>Environment Variables (method 2)</h3>
-
-<h4 id='bash'>Bash</h4>
-
-<p>Add the following to your <code>~/.bashrc</code> file:</p>
-
-<pre><code>AWS_ACCESS_KEY=&#39;your_aws_key&#39;
-AWS_SECRET_KEY=&#39;your_aws_secret&#39;
-AWS_ACCOUNT_NUMBER=123456789012
-export AWS_ACCESS_KEY AWS_SECRET_KEY AWS_ACCOUNT_NUMBER
-
-EC2_CERT=path/2/cert.pem
-EC2_PRIVATE_KEY=path/2/pk.pem
-export EC2_CERT EC2_PRIVATE_KEY</code></pre>
-
-<p>Then either start working in a new terminal window or run <code>source ~/.bashrc</code> to refresh your current one.</p>
-
-<h4 id='windowsdos'>Windows/DOS</h4>
-
-<p>Set your environment variables from your System Properties menu.</p>
-
-<h3 id='commandline_options_method_3'>Command-line Options (method 3)</h3>
-
-<pre><code>$ rudy-ec2 -A your_aws_key -S your_aws_secret COMMAND</code></pre>
-
-<p>NOTE: <em>If you use the command-line options, your credentials will appear in your shell history. You can run <code>history -c</code> to clear it.</em></p>
-
-<h2 id='rudyec2_commands'>rudy-ec2 Commands</h2>
-
-<p>A <code>rudy-ec2</code> command follows the same convention as <code>rudy</code> commands:</p>
-
-<pre><code>$ rudy-ec2 -h
-USAGE: rudy-ec2 [global options] COMMAND [command options]</code></pre>
-
-<p>The default command displays the current instances</p>
-
-<pre><code>$ rudy-ec2
-i-8794fcee  ec2-11-22-33-44.compute-1.amazonaws.com  (group-awesome)
-i-9e94fcf7  ec2-55-66-77-88.compute-1.amazonaws.com  (group-awesome)
-i-9394fcfa  terminated  (group-awesome)</code></pre>
-
-<p>When no arguments are given, all commands display information about the object you specify:</p>
-
-<pre><code>$ rudy-ec2 images
-Images owned by amazon
-aki-46e7002f i386   (aki-linux.2.6.21.7-2.fc8xen-xfs/vmlinuz.manifest.xml)
-aki-9800e5f1 x86_64 (ec2-public-images/vmlinuz-2.6.18-xenU-ec2-v1.0.x86_64.aki.manifest.xml)
-aki-9b00e5f2 i386   (ec2-public-images/vmlinuz-2.6.18-xenU-ec2-v1.0.i386.aki.manifest.xml)
-...
-
-$ rudy-ec2 groups
-group-awesome (authorized accounts: 123456789012:default)
-11.22.33.44/32 -&gt; tcp(22), tcp(80), tcp(443)
-55.66.77.88/32 -&gt; tcp(22), tcp(80), tcp(443)</code></pre>
-
-<p>With arguments, you can create, modify or destroy all EC2 objects:</p>
-
-<pre><code>$ rudy-ec2 instances -C -m ami-235fba4a -s m1.small -k keypair-name
-i-9394fcfa  pending  (default)
-
-$ rudy-ec2 groups -A -p 8080,8081 group-awesome
-Authorize access to group-awesome from 11.22.33.44/32
-on tcp ports: 8080, 8081
-default (authorized accounts: 123456789012:default)
-   11.22.33.44/32 -&gt; tcp(22), tcp(80), tcp(443), tcp(88), tcp(99)
-   11.22.33.44/32 -&gt; tcp(8080), tcp(8081)</code></pre>
-
-<h2 id='safety'>Safety</h2>
-
-<p>I&#8217;m always a little nervous using the Amazon AMI tools because I feel like I&#8217;m one command away from a nightmare. <code>rudy-ec2</code> solves this by prompting for user input before executing any potentially destructive actions.</p>
-
-<pre><code>$ rudy-ec2 groups -D group-awesome
-Destroying group: group-awesome
-Are you sure? To continue, resolve (7 * 5): </code></pre>
-
-<p>And you can avoid the annoyance by providing the <code>-Y</code> global</p>
-
-<pre><code>$ rudy-ec2 -Y groups -D group-awesome    # Careful!</code></pre>
-
-<h2 id='conclusion'>Conclusion</h2>
-
-<p>That&#8217;s <code>rudy-ec2</code> in a nutshell. For more information, check out the <a href='http://opensource.solutious.com/rudy'>RDocs</a>.</p>
 	 </div>
 	
 	  

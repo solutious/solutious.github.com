@@ -4,7 +4,7 @@
  <title>The Solutious Blog</title>
  <link href="http://blog.solutious.com/atom.xml" rel="self"/>
  <link href="http://blog.solutious.com/"/>
- <updated>2009-05-03T11:27:46-04:00</updated>
+ <updated>2009-05-05T16:15:20-04:00</updated>
  <id>http://blog.solutious.com/</id>
  <author>
    <name>Solutious Inc.</name>
@@ -13,15 +13,33 @@
  
  
  <entry>
+   <title>Louise Hendy Day, a Celebration of Realtime Marketing</title>
+   <link href="http://blog.solutious.com/blog/2009/05/05/louise-hendy-day"/>
+   <updated>2009-05-05T00:00:00-04:00</updated>
+   <id>http://blog.solutious.com/blog/2009/05/05/louise-hendy-day</id>
+   <content type="html">&lt;p&gt;If you&amp;#8217;re like me, you woke up today thinking May 5th was Cinco de Mayo. What people like us didn&amp;#8217;t know is that it&amp;#8217;s also Louise Hendy Day. This is probably the first and last time you&amp;#8217;ll hear about Louise Hendy Day, but the implications of it are pretty important.&lt;/p&gt;
+&lt;p style='text-align: center'&gt;&lt;a href='http://twitter.com/#search?q=louisehendyday' style='text-decoration: none;'&gt;&lt;img src='http://farm4.static.flickr.com/3569/3505434648_36eca44c11.jpg' border='0' /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id='a_fictitious_holiday'&gt;A Fictitious Holiday&lt;/h3&gt;
+
+&lt;p&gt;Louise Hendy Day is a fictitious holiday created by a single person, earlier today, in an attempt to get into the trending topics on Twitter. And it worked. At least for a few hours (it&amp;#8217;s no longer a trending topic as of 16:00 EST but the &lt;a href='http://search.twitter.com/search?q=%23louisehendyday'&gt;flurry of messages continues&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Why is this important? It&amp;#8217;s important because we&amp;#8217;ve heard a lot about the power of the web, &amp;#8220;social media&amp;#8221; in particular, to reach out to build and maintain networks of clients and customers. Rarely however, do we see this power in action, &lt;em&gt;in real time&lt;/em&gt;. One person generated a massive buzz literally out of nothing. The product is a faux-celebration for a holiday that doesn&amp;#8217;t otherwise exist.&lt;/p&gt;
+
+&lt;h3 id='a_new_way_to_do_business'&gt;A New Way to Do Business&lt;/h3&gt;
+
+&lt;p&gt;Now, there are two ways you can view Louise Hendy Day: a useless, passing fad or &lt;em&gt;a completely new way to do business&lt;/em&gt;. You can communicate with current and prospective customers in real-time. It&amp;#8217;s like having a conversation with thousands of people at the same time.&lt;/p&gt;
+
+&lt;p&gt;Twitter won&amp;#8217;t do this alone &amp;#8211; there will be other service providers &amp;#8211; but already today, right now we have a tool more powerful than any PR agency ever had. That&amp;#8217;s pretty exciting.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
    <title>Goodnight Sweet Prince (Dreamhost)</title>
    <link href="http://blog.solutious.com/blog/2009/05/03/goodnight-sweet-prince-dreamhost"/>
    <updated>2009-05-03T00:00:00-04:00</updated>
    <id>http://blog.solutious.com/blog/2009/05/03/goodnight-sweet-prince-dreamhost</id>
    <content type="html">&lt;p&gt;I have a difficult time putting to words the excitement I felt when GitHub announced &lt;a href='http://github.com/blog/315-cname-support-for-github-pages'&gt;CNAME support&lt;/a&gt;. And now, just a few short months later I&amp;#8217;ve finally freed myself from Dreamhost&amp;#8217;s shackles. I&amp;#8217;m now using GitHub for all my hosting needs (including solutious.com) and I must say, it feels pretty good.&lt;/p&gt;
 
-&lt;p&gt;Shared hosting has served a useful purpose over the years, but it&amp;#8217;s days are numbered. &lt;a href='http://heroku.com/pricing'&gt;Heroku&lt;/a&gt;: free. &lt;a href='http://code.google.com/appengine/'&gt;Google App Engine&lt;/a&gt;: free. &lt;a href='http://appjet.com/'&gt;AppJet&lt;/a&gt;: free. You can&amp;#8217;t argue with that.&lt;/p&gt;
-
-&lt;p&gt;GitHub is not free but CNAME support is included with all paid accounts which I already have.&lt;/p&gt;
+&lt;p&gt;Shared hosting has served a useful purpose over the years, but it&amp;#8217;s days are numbered. &lt;a href='http://heroku.com/pricing'&gt;Heroku&lt;/a&gt;: free. &lt;a href='http://code.google.com/appengine/'&gt;Google App Engine&lt;/a&gt;: free. &lt;a href='http://appjet.com/'&gt;AppJet&lt;/a&gt;: free. You can&amp;#8217;t argue with that. GitHub is not free but CNAME support is included with all paid accounts which I already have. I&amp;#8217;m now riding the workflow of the future!&lt;/p&gt;
 
 &lt;h2 id='workflow_of_the_future'&gt;Workflow of the Future&lt;/h2&gt;
 
