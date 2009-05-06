@@ -30,6 +30,7 @@ I also saved them for a much larger project, [Rudy](http://github.com/solutious/
 
 <a href="http://github.com/solutious/rudy/graphs/punch_card"><img src="http://farm4.static.flickr.com/3359/3506751705_89f1fb5e38_o.gif" border="0" width="400" height="150" /></a>
 
+<br/>
 
 ## In Conclusion
 

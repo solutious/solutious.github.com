@@ -4,7 +4,7 @@
  <title>The Solutious Blog</title>
  <link href="http://blog.solutious.com/atom.xml" rel="self"/>
  <link href="http://blog.solutious.com/"/>
- <updated>2009-05-06T13:01:15-04:00</updated>
+ <updated>2009-05-06T13:06:09-04:00</updated>
  <id>http://blog.solutious.com/</id>
  <author>
    <name>Solutious Inc.</name>
@@ -34,7 +34,7 @@
 &lt;h3 id='rudy_040_to_073'&gt;Rudy (0.4.0 to 0.7.3)&lt;/h3&gt;
 
 &lt;p&gt;I also saved them for a much larger project, &lt;a href='http://github.com/solutious/rudy'&gt;Rudy&lt;/a&gt;. I started Rudy in February while doing some deployment work for &lt;a href='http://rilli.com/'&gt;Rilli&lt;/a&gt;. The first frame is from version 0.4 and the second frame is version 0.5. They&amp;#8217;re so different that it would be easy to assume I made a mistake generating the animation. That difference represents a month of hard work where I wrote and re-wrote the project several times.&lt;/p&gt;
-&lt;a href='http://github.com/solutious/rudy/graphs/punch_card'&gt;&lt;img src='http://farm4.static.flickr.com/3359/3506751705_89f1fb5e38_o.gif' border='0' height='150' width='400' /&gt;&lt;/a&gt;
+&lt;a href='http://github.com/solutious/rudy/graphs/punch_card'&gt;&lt;img src='http://farm4.static.flickr.com/3359/3506751705_89f1fb5e38_o.gif' border='0' height='150' width='400' /&gt;&lt;/a&gt;&lt;br /&gt;
 &lt;h2 id='in_conclusion'&gt;In Conclusion&lt;/h2&gt;
 
 &lt;p&gt;What I love about the punch cards is that they&amp;#8217;re both informative and motivational. They give me a better understanding of how I work and how my effort relates to that of other open source developers. When I&amp;#8217;m focused on a goal like getting the next version out the door, I occasionally forget what I went through to get there. The punch cards help me remember.&lt;/p&gt;</content>
