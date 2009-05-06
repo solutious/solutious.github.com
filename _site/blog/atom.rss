@@ -4,13 +4,41 @@
  <title>The Solutious Blog</title>
  <link href="http://blog.solutious.com/atom.xml" rel="self"/>
  <link href="http://blog.solutious.com/"/>
- <updated>2009-05-05T16:30:02-04:00</updated>
+ <updated>2009-05-06T13:01:15-04:00</updated>
  <id>http://blog.solutious.com/</id>
  <author>
    <name>Solutious Inc.</name>
    <email>info@solutious.com</email>
  </author>
  
+ 
+ <entry>
+   <title>What GitHub's Punch Cards Say</title>
+   <link href="http://blog.solutious.com/blog/2009/05/06/github-punchcards"/>
+   <updated>2009-05-06T00:00:00-04:00</updated>
+   <id>http://blog.solutious.com/blog/2009/05/06/github-punchcards</id>
+   <content type="html">&lt;p&gt;I&amp;#8217;m fascinated with GitHub&amp;#8217;s &lt;a href='http://github.com/why/shoes/graphs/punch_card'&gt;punch&lt;/a&gt; &lt;a href='http://github.com/mislav/hanna/graphs/punch_card'&gt;cards&lt;/a&gt;. They&amp;#8217;re visual representations of project commits by day and hour and they&amp;#8217;re available for every public project on GitHub. Here&amp;#8217;s the punch card for &lt;a href='http://github.com/mislav/will_paginate/'&gt;mislav-will_paginate&lt;/a&gt;, one of the &lt;a href='http://github.com/popular/watched'&gt;most popular projects&lt;/a&gt; on GitHub:&lt;/p&gt;
+
+&lt;h3 id='will_paginate'&gt;will_paginate&lt;/h3&gt;
+&lt;a href='http://github.com/mislav/will_paginate/graphs/punch_card'&gt;&lt;img src='http://farm4.static.flickr.com/3382/3507637336_e1b9c97b20_o.png' border='0' height='150' width='400' /&gt;&lt;/a&gt;
+&lt;p&gt;The punch card says &lt;a href='http://github.com/mislav/'&gt;Mislav&lt;/a&gt; works hard! He committed at all hours of the day, every day of the week (the larger the dot, the greater number of commits). It&amp;#8217;s important to note, when looking at the punch cards, how many active developers have committed to the project. You could look through the &lt;a href='http://github.com/mislav/will_paginate/commits'&gt;list of commits&lt;/a&gt; but that&amp;#8217;s tedious and verbose. The quickest way to gauge how many active developers there are on a project is to look at the &lt;a href='http://github.com/mislav/will_paginate/graphs/impact'&gt;impact graph&lt;/a&gt; (note that there are several committers for will_paginate, but the vast majority are from two accounts, both of which are Mislav).&lt;/p&gt;
+
+&lt;h2 id='punch_cards_over_time'&gt;Punch Cards Over Time&lt;/h2&gt;
+
+&lt;p&gt;I thought it would be interesting to see what a punch card looked like over time. I started saving them for a few of my own projects so I could animate them.&lt;/p&gt;
+
+&lt;h3 id='rye_031_to_064'&gt;Rye (0.3.1 to 0.6.4)&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href='http://github.com/delano/rye'&gt;Rye&lt;/a&gt; is a small project that I started on April 4th for executing SSH commands from Ruby. I wrote the core of it over a couple of weekends and then iterated over the following few weeks. You can see that in the animation below.&lt;/p&gt;
+&lt;a href='http://github.com/delano/rye/graphs/punch_card'&gt;&lt;img src='http://farm4.static.flickr.com/3605/3506751765_24443ccb39_o.gif' border='0' height='150' width='400' /&gt;&lt;/a&gt;
+&lt;h3 id='rudy_040_to_073'&gt;Rudy (0.4.0 to 0.7.3)&lt;/h3&gt;
+
+&lt;p&gt;I also saved them for a much larger project, &lt;a href='http://github.com/solutious/rudy'&gt;Rudy&lt;/a&gt;. I started Rudy in February while doing some deployment work for &lt;a href='http://rilli.com/'&gt;Rilli&lt;/a&gt;. The first frame is from version 0.4 and the second frame is version 0.5. They&amp;#8217;re so different that it would be easy to assume I made a mistake generating the animation. That difference represents a month of hard work where I wrote and re-wrote the project several times.&lt;/p&gt;
+&lt;a href='http://github.com/solutious/rudy/graphs/punch_card'&gt;&lt;img src='http://farm4.static.flickr.com/3359/3506751705_89f1fb5e38_o.gif' border='0' height='150' width='400' /&gt;&lt;/a&gt;
+&lt;h2 id='in_conclusion'&gt;In Conclusion&lt;/h2&gt;
+
+&lt;p&gt;What I love about the punch cards is that they&amp;#8217;re both informative and motivational. They give me a better understanding of how I work and how my effort relates to that of other open source developers. When I&amp;#8217;m focused on a goal like getting the next version out the door, I occasionally forget what I went through to get there. The punch cards help me remember.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Louise Hendy Day, a Celebration of Realtime Marketing</title>
