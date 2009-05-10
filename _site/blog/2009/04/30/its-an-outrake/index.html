@@ -27,25 +27,54 @@
 	<link href="/blog/atom.rss" rel="alternate" title="The Solutious Blog" type="application/atom+xml" />
   
 </head>
-<body id="blogPost">
+<body class="blogPost">
 
-<div id="top">
 	<div class="corset">
-		<h1 class="logo"><a href="/">Solutious</a></h1>
-		<ul class="nav">
-			<li class="first"><a href="/about/">about</a></li>
-			<li id="navBlog"><a href="/blog/">blog</a></li>
-			<li id="navArchive"><a href="/blog/archive/">archive</a></li>
-		</ul>
+		<div class="top">
+			<div class="openSourceProjects">Open Source Projects</div>
+			<a class="logo" href="/"><h1>Solutious</h1></a>
+
+			<ul class="productNav">
+				<!--li class="ceasars"><a href="#">Ceasars</a></li>
+				<li class="drydock"><a href="#">Drydock</a></li-->
+				<li class="stella"><a href="#">Stella</a></li>
+				<li class="rudy"><a href="#">Rudy</a></li>
+			</ul>	
+			<div class="navLeftLine"></div>
+			<ul class="nav">
+				<li class="first"><a href="/">HOME</a></li>
+				<li><a href="/">ABOUT</a></li>
+				<li><a href="/">PRODUCTS</a></li>
+				<li class="on"><a href="/">BLOG</a></li>
+				<li><a href="/">CONTACT</a></li>
+			</ul>
+
+			<div class="subnav">
+				<div class="message">welcome to solutious - we like icecream and yamalows</div>
+				<ul>
+					<li class="first"><a href="#">the zoo</a></li>
+					<li><a href="#">labs</a></li>
+					<li><a href="#">miscellany</a></li>
+					<li><a href="#">you so and so</a></li>
+				</ul>
+			</div>	
+		</div>
+
+
+	<div class="left">
+	
+<div class="entry">
+
+	<div class="info">
+		<div class="month">Apr '2009</div>
+		<div class="day">30</div>
+		<!--div class="commentCount">122</div-->
 	</div>
-</div>
 
-
-
-<div class="corset">
-
-<a name="/blog/2009/04/30/its-an-outrake"></a>
-<h2><a href="/blog/2009/04/30/its-an-outrake" title="It's an outrake!">It's an outrake!</a></h2>
+	<a href="/blog/2009/04/30/its-an-outrake" title="It's an outrake!"><h2>It's an outrake!</h2></a>
+	<p class="author">posted by delano</p>
+	
+	
 
 <p class="author">posted by delano on Thu, Apr 30 2009</p>
 
@@ -58,43 +87,31 @@ var idcomments_post_url;
 <script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>
 -->
 
-<p>This is a story about Ruby mixins, Rake, and hell. After releasing <a href='http://github.com/solutious/rudy' title='Rudy: not your grandparents&apos; deployment tool'>Rudy</a> 0.6 last week, I started immediately on 0.7. This next version has a rebuilt DSL for the routines configuration, including a new syntax for running shell commands. The new syntax makes it possible to specify shell commands like methods. You can probably see where this is heading. First, a comparison of the old and new syntax:</p>
+<p>This is a story about Ruby mixins, Rake, and hell. After releasing <a href="http://github.com/solutious/rudy" title="Rudy: not your grandparents' deployment tool">Rudy</a> 0.6 last week, I started immediately on 0.7. This next version has a rebuilt DSL for the routines configuration, including a new syntax for running shell commands. The new syntax makes it possible to specify shell commands like methods. You can probably see where this is heading. First, a comparison of the old and new syntax:</p>
 
-<p><strong>Old, 0.6 syntax</strong> <div class='highlight'><pre><span class='n'>routines</span> <span class='k'>do</span>
-  <span class='n'>startup</span> <span class='k'>do</span>
-    <span class='n'>after</span> <span class='ss'>:root</span> <span class='o'>=&gt;</span> <span class='s2'>&quot;mkdir -p /path/2/create&quot;</span>
-  <span class='k'>end</span>
-<span class='k'>end</span>
-</pre></div></p>
+<p><strong>Old, 0.6 syntax</strong>
+Liquid error: No such file or directory - pygmentize -f html -l ruby</p>
 
-<p><strong>New, 0.7 syntax</strong> <div class='highlight'><pre><span class='n'>routines</span> <span class='k'>do</span>
-  <span class='n'>startup</span> <span class='k'>do</span>
-    <span class='n'>after</span> <span class='ss'>:root</span> <span class='k'>do</span>
-      <span class='n'>mkdir</span> <span class='ss'>:p</span><span class='p'>,</span> <span class='s2'>&quot;/path/2/create&quot;</span>
-    <span class='k'>end</span>
-  <span class='k'>end</span>
-<span class='k'>end</span>
-</pre></div></p>
+<p><strong>New, 0.7 syntax</strong>
+Liquid error: No such file or directory - pygmentize -f html -l ruby</p>
 
-<p>There are several advantages to using the new syntax which I&#8217;ll cover in a future post. Right now, I&#8217;ll cut to the hellish chase.</p>
+<p>There are several advantages to using the new syntax which I'll cover in a future post. Right now, I'll cut to the hellish chase.</p>
 
-<p>Both DSLs produce a configuration hash. Nothing else should happen when they&#8217;re parsed. And nothing else did happen until I tried running the tests with rake. The old syntax was fine, but I was getting some strange errors with the new syntax. Stuff like</p>
+<p>Both DSLs produce a configuration hash. Nothing else should happen when they're parsed. And nothing else did happen until I tried running the tests with rake. The old syntax was fine, but I was getting some strange errors with the new syntax. Stuff like</p>
 
-<pre><code>Error in test/10_config/30_machines_test.rb: can&#39;t convert Fixnum into String
-/usr/local/lib/ruby/1.9.1/fileutils.rb:1386:in `path&#39;</code></pre>
+<pre><code>Error in test/10_config/30_machines_test.rb: can't convert Fixnum into String
+/usr/local/lib/ruby/1.9.1/fileutils.rb:1386:in `path'
+</code></pre>
 
-<p>FileUtils? That&#8217;s weird, I don&#8217;t use FileUtils. Or do I?</p>
+<p>FileUtils? That's weird, I don't use FileUtils. Or do I?</p>
 
-<p><code>rake-0.8.4/lib/rake.rb</code> includes <a href='http://www.ruby-doc.org/core/classes/FileUtils.html'>FileUtils</a> into the RakeFileUtils module and later includes RakeFileUtils <em>into the global namespace</em>. My criminy!</p>
+<p><code>rake-0.8.4/lib/rake.rb</code> includes <a href="http://www.ruby-doc.org/core/classes/FileUtils.html">FileUtils</a> into the RakeFileUtils module and later includes RakeFileUtils <em>into the global namespace</em>. My criminy!</p>
 
-<p><strong>Offensive ruby code</strong> <div class='highlight'><pre><span class='k'>module</span> <span class='nn'>RakeFileUtils</span>
-  <span class='kp'>include</span> <span class='no'>FileUtils</span>       <span class='c1'># Nothing wrong here</span>
-<span class='k'>end</span>
-<span class='c1'># ... later on</span>
-<span class='kp'>include</span> <span class='no'>RakeFileUtils</span>     <span class='c1'># Noooooooo</span>
-</pre></div></p>
+<p><strong>Offensive ruby code</strong>
+Liquid error: No such file or directory - pygmentize -f html -l ruby</p>
 
-<p>That means when I&#8217;m running rake the following methods are accessible from everywhere: <code>cd</code>, <code>mkdir</code>, <code>touch</code>, <code>rm</code>, &#8230;! The <code>mkdir</code> in the DSL was <em>being executed as it was parsed</em>. That&#8217;s insane. Thank the Great Scott I wasn&#8217;t testing <code>rm</code>.</p>
+<p>That means when I'm running rake the following methods are accessible from everywhere: <code>cd</code>, <code>mkdir</code>, <code>touch</code>, <code>rm</code>, ...! The <code>mkdir</code> in the DSL was <em>being executed as it was parsed</em>. That's insane. Thank the Great Scott I wasn't testing <code>rm</code>.</p>
+
 
 <div id="related">
   <h3>Related Posts</h3>
@@ -120,12 +137,22 @@ src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
 
 
 </div>
-  
+	</div>
+	
+	<div class="aboutSolutious">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a mauris. Aenean fringilla, leo non ornare condimentum, tellus leo condimentum arcu, ac commodo tortor augue at justo. Praesent vehicula. Nam tellus. Proin in erat quis augue elementum ullamcorper. Phasellus sodales egestas augue. Sed odio dolor, aliquet ac, pellentesque sit amet, eleifend non, risus. Fusce ornare nunc eget leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+			<p class="signature">- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Solutious</p>
+	</div>
 
-<div id="footer" class="corset">
-	<a href="http://solutious.com/" class="big">Solutious</a>.
-	<span class="tagline">There's no prohibition on performance.</span>
-	Copyright 2006-2009.
+	<a class="aboutAuthor" href="#"></a>
+	<div class="reset"></div>
+
+	<div id="footer">
+		<a href="http://solutious.com/" class="big">Solutious</a>.
+		<span class="tagline">There's no prohibition on performance.</span>
+		Copyright 2006-2009.
+	</div>
+	
 </div>
  	
 <script type="text/javascript">

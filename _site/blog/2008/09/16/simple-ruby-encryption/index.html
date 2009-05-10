@@ -27,25 +27,54 @@
 	<link href="/blog/atom.rss" rel="alternate" title="The Solutious Blog" type="application/atom+xml" />
   
 </head>
-<body id="blogPost">
+<body class="blogPost">
 
-<div id="top">
 	<div class="corset">
-		<h1 class="logo"><a href="/">Solutious</a></h1>
-		<ul class="nav">
-			<li class="first"><a href="/about/">about</a></li>
-			<li id="navBlog"><a href="/blog/">blog</a></li>
-			<li id="navArchive"><a href="/blog/archive/">archive</a></li>
-		</ul>
+		<div class="top">
+			<div class="openSourceProjects">Open Source Projects</div>
+			<a class="logo" href="/"><h1>Solutious</h1></a>
+
+			<ul class="productNav">
+				<!--li class="ceasars"><a href="#">Ceasars</a></li>
+				<li class="drydock"><a href="#">Drydock</a></li-->
+				<li class="stella"><a href="#">Stella</a></li>
+				<li class="rudy"><a href="#">Rudy</a></li>
+			</ul>	
+			<div class="navLeftLine"></div>
+			<ul class="nav">
+				<li class="first"><a href="/">HOME</a></li>
+				<li><a href="/">ABOUT</a></li>
+				<li><a href="/">PRODUCTS</a></li>
+				<li class="on"><a href="/">BLOG</a></li>
+				<li><a href="/">CONTACT</a></li>
+			</ul>
+
+			<div class="subnav">
+				<div class="message">welcome to solutious - we like icecream and yamalows</div>
+				<ul>
+					<li class="first"><a href="#">the zoo</a></li>
+					<li><a href="#">labs</a></li>
+					<li><a href="#">miscellany</a></li>
+					<li><a href="#">you so and so</a></li>
+				</ul>
+			</div>	
+		</div>
+
+
+	<div class="left">
+	
+<div class="entry">
+
+	<div class="info">
+		<div class="month">Sep '2008</div>
+		<div class="day">16</div>
+		<!--div class="commentCount">122</div-->
 	</div>
-</div>
 
-
-
-<div class="corset">
-
-<a name="/blog/2008/09/16/simple-ruby-encryption"></a>
-<h2><a href="/blog/2008/09/16/simple-ruby-encryption" title="Simple Encryption (in Ruby)">Simple Encryption (in Ruby)</a></h2>
+	<a href="/blog/2008/09/16/simple-ruby-encryption" title="Simple Encryption (in Ruby)"><h2>Simple Encryption (in Ruby)</h2></a>
+	<p class="author">posted by delano</p>
+	
+	
 
 <p class="author">posted by delano on Tue, Sep 16 2008</p>
 
@@ -58,47 +87,10 @@ var idcomments_post_url;
 <script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>
 -->
 
-<p>I occasionally get questions on how we do authentication in Ruby so I thought I&#8217;d write this post so I could direct people here. A lot of the authentication stuff we do is based on this simple implementation of <a href='http://blog.leetsoft.com/2006/03/14/simple-encryption'>RSA key support</a>. There were a couple minor syntax errors in their <a href='http://blog.leetsoft.com/files/crypto-key.rb.txt'>crypto-key.rb</a> though so here&#8217;s a fixed version:</p>
-<div class='highlight'><pre><span class='nb'>require</span> <span class='s1'>&#39;openssl&#39;</span> 
-<span class='nb'>require</span> <span class='s1'>&#39;base64&#39;</span>	<span class='c1'># Added </span>
+<p>I occasionally get questions on how we do authentication in Ruby so I thought I'd write this post so I could direct people here. A lot of the authentication stuff we do is based on this simple implementation of <a href="http://blog.leetsoft.com/2006/03/14/simple-encryption">RSA key support</a>. There were a couple minor syntax errors in their <a href="http://blog.leetsoft.com/files/crypto-key.rb.txt">crypto-key.rb</a> though so here's a fixed version:</p>
 
-<span class='k'>module</span> <span class='nn'>Crypto</span>
-  
-  <span class='k'>def</span> <span class='nc'>self</span><span class='o'>.</span><span class='nf'>create_keys</span><span class='p'>(</span><span class='n'>priv</span> <span class='o'>=</span> <span class='s2'>&quot;rsa_key&quot;</span><span class='p'>,</span> <span class='n'>pub</span> <span class='o'>=</span> <span class='s2'>&quot;</span><span class='si'>#{</span><span class='n'>priv</span><span class='si'>}</span><span class='s2'>.pub&quot;</span><span class='p'>,</span> <span class='n'>bits</span> <span class='o'>=</span> <span class='mi'>1024</span><span class='p'>)</span>
-    <span class='n'>private_key</span> <span class='o'>=</span> <span class='no'>OpenSSL</span><span class='o'>::</span><span class='no'>PKey</span><span class='o'>::</span><span class='no'>RSA</span><span class='o'>.</span><span class='n'>new</span><span class='p'>(</span><span class='n'>bits</span><span class='p'>)</span>
-    <span class='no'>File</span><span class='o'>.</span><span class='n'>open</span><span class='p'>(</span><span class='n'>priv</span><span class='p'>,</span> <span class='s2'>&quot;w+&quot;</span><span class='p'>)</span> <span class='p'>{</span> <span class='o'>|</span><span class='n'>fp</span><span class='o'>|</span> <span class='n'>fp</span> <span class='o'>&lt;&lt;</span> <span class='n'>private_key</span><span class='o'>.</span><span class='n'>to_s</span> <span class='p'>}</span>
-    <span class='no'>File</span><span class='o'>.</span><span class='n'>open</span><span class='p'>(</span><span class='n'>pub</span><span class='p'>,</span>  <span class='s2'>&quot;w+&quot;</span><span class='p'>)</span> <span class='p'>{</span> <span class='o'>|</span><span class='n'>fp</span><span class='o'>|</span> <span class='n'>fp</span> <span class='o'>&lt;&lt;</span> <span class='n'>private_key</span><span class='o'>.</span><span class='n'>public_key</span><span class='o'>.</span><span class='n'>to_s</span> <span class='p'>}</span>    
-    <span class='n'>private_key</span>
-  <span class='k'>end</span>
-  
-  <span class='k'>class</span> <span class='nc'>Key</span>
-    <span class='k'>def</span> <span class='nf'>initialize</span><span class='p'>(</span><span class='n'>data</span><span class='p'>)</span>
-      <span class='vi'>@public</span> <span class='o'>=</span> <span class='p'>(</span><span class='n'>data</span> <span class='o'>=~</span> <span class='sr'>/^-----BEGIN (RSA|DSA) PRIVATE KEY-----$/</span><span class='p'>)</span><span class='o'>.</span><span class='n'>nil?</span>
-      <span class='vi'>@key</span> <span class='o'>=</span> <span class='no'>OpenSSL</span><span class='o'>::</span><span class='no'>PKey</span><span class='o'>::</span><span class='no'>RSA</span><span class='o'>.</span><span class='n'>new</span><span class='p'>(</span><span class='n'>data</span><span class='p'>)</span>
-    <span class='k'>end</span>
-  
-    <span class='k'>def</span> <span class='nc'>self</span><span class='o'>.</span><span class='nf'>from_file</span><span class='p'>(</span><span class='n'>filename</span><span class='p'>)</span>    
-      <span class='nb'>self</span><span class='o'>.</span><span class='n'>new</span> <span class='no'>File</span><span class='o'>.</span><span class='n'>read</span><span class='p'>(</span> <span class='n'>filename</span> <span class='p'>)</span>
-    <span class='k'>end</span>
-  
-    <span class='k'>def</span> <span class='nf'>encrypt</span><span class='p'>(</span><span class='n'>text</span><span class='p'>)</span>
-      <span class='no'>Base64</span><span class='o'>.</span><span class='n'>encode64</span><span class='p'>(</span><span class='vi'>@key</span><span class='o'>.</span><span class='n'>send</span><span class='p'>(</span><span class='s2'>&quot;</span><span class='si'>#{</span><span class='n'>key_type</span><span class='si'>}</span><span class='s2'>_encrypt&quot;</span><span class='p'>,</span> <span class='n'>text</span><span class='p'>))</span>
-    <span class='k'>end</span>
-    
-    <span class='k'>def</span> <span class='nf'>decrypt</span><span class='p'>(</span><span class='n'>text</span><span class='p'>)</span>
-      <span class='vi'>@key</span><span class='o'>.</span><span class='n'>send</span><span class='p'>(</span><span class='s2'>&quot;</span><span class='si'>#{</span><span class='n'>key_type</span><span class='si'>}</span><span class='s2'>_decrypt&quot;</span><span class='p'>,</span> <span class='no'>Base64</span><span class='o'>.</span><span class='n'>decode64</span><span class='p'>(</span><span class='n'>text</span><span class='p'>))</span>
-    <span class='k'>end</span>
-  
- <span class='k'>def</span> <span class='nf'>private?</span><span class='p'>()</span>  <span class='o'>!</span><span class='vi'>@public</span><span class='p'>;</span> <span class='k'>end</span> <span class='c1'># Added () and ;</span>
+<p>Liquid error: No such file or directory - pygmentize -f html -l ruby</p>
 
- <span class='k'>def</span> <span class='nf'>public?</span><span class='p'>()</span>   <span class='vi'>@public</span><span class='p'>;</span>  <span class='k'>end</span> <span class='c1'># Added () and ;</span>
-    
-    <span class='k'>def</span> <span class='nf'>key_type</span>
-      <span class='vi'>@public</span> <span class='p'>?</span> <span class='ss'>:public</span> <span class='p'>:</span> <span class='ss'>:private</span>
-    <span class='k'>end</span>
-  <span class='k'>end</span>
-<span class='k'>end</span>
-</pre></div>
 
 <div id="related">
   <h3>Related Posts</h3>
@@ -124,12 +116,22 @@ src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
 
 
 </div>
-  
+	</div>
+	
+	<div class="aboutSolutious">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a mauris. Aenean fringilla, leo non ornare condimentum, tellus leo condimentum arcu, ac commodo tortor augue at justo. Praesent vehicula. Nam tellus. Proin in erat quis augue elementum ullamcorper. Phasellus sodales egestas augue. Sed odio dolor, aliquet ac, pellentesque sit amet, eleifend non, risus. Fusce ornare nunc eget leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+			<p class="signature">- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Solutious</p>
+	</div>
 
-<div id="footer" class="corset">
-	<a href="http://solutious.com/" class="big">Solutious</a>.
-	<span class="tagline">There's no prohibition on performance.</span>
-	Copyright 2006-2009.
+	<a class="aboutAuthor" href="#"></a>
+	<div class="reset"></div>
+
+	<div id="footer">
+		<a href="http://solutious.com/" class="big">Solutious</a>.
+		<span class="tagline">There's no prohibition on performance.</span>
+		Copyright 2006-2009.
+	</div>
+	
 </div>
  	
 <script type="text/javascript">

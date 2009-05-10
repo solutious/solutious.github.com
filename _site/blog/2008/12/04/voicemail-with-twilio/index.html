@@ -27,25 +27,54 @@
 	<link href="/blog/atom.rss" rel="alternate" title="The Solutious Blog" type="application/atom+xml" />
   
 </head>
-<body id="blogPost">
+<body class="blogPost">
 
-<div id="top">
 	<div class="corset">
-		<h1 class="logo"><a href="/">Solutious</a></h1>
-		<ul class="nav">
-			<li class="first"><a href="/about/">about</a></li>
-			<li id="navBlog"><a href="/blog/">blog</a></li>
-			<li id="navArchive"><a href="/blog/archive/">archive</a></li>
-		</ul>
+		<div class="top">
+			<div class="openSourceProjects">Open Source Projects</div>
+			<a class="logo" href="/"><h1>Solutious</h1></a>
+
+			<ul class="productNav">
+				<!--li class="ceasars"><a href="#">Ceasars</a></li>
+				<li class="drydock"><a href="#">Drydock</a></li-->
+				<li class="stella"><a href="#">Stella</a></li>
+				<li class="rudy"><a href="#">Rudy</a></li>
+			</ul>	
+			<div class="navLeftLine"></div>
+			<ul class="nav">
+				<li class="first"><a href="/">HOME</a></li>
+				<li><a href="/">ABOUT</a></li>
+				<li><a href="/">PRODUCTS</a></li>
+				<li class="on"><a href="/">BLOG</a></li>
+				<li><a href="/">CONTACT</a></li>
+			</ul>
+
+			<div class="subnav">
+				<div class="message">welcome to solutious - we like icecream and yamalows</div>
+				<ul>
+					<li class="first"><a href="#">the zoo</a></li>
+					<li><a href="#">labs</a></li>
+					<li><a href="#">miscellany</a></li>
+					<li><a href="#">you so and so</a></li>
+				</ul>
+			</div>	
+		</div>
+
+
+	<div class="left">
+	
+<div class="entry">
+
+	<div class="info">
+		<div class="month">Dec '2008</div>
+		<div class="day">04</div>
+		<!--div class="commentCount">122</div-->
 	</div>
-</div>
 
-
-
-<div class="corset">
-
-<a name="/blog/2008/12/04/voicemail-with-twilio"></a>
-<h2><a href="/blog/2008/12/04/voicemail-with-twilio" title="A Basic Voicemail System using Twilio">A Basic Voicemail System using Twilio</a></h2>
+	<a href="/blog/2008/12/04/voicemail-with-twilio" title="A Basic Voicemail System using Twilio"><h2>A Basic Voicemail System using Twilio</h2></a>
+	<p class="author">posted by delano</p>
+	
+	
 
 <p class="author">posted by delano on Thu, Dec 04 2008</p>
 
@@ -58,27 +87,24 @@ var idcomments_post_url;
 <script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>
 -->
 
-<p>We setup a voicemail system this week using <a href='http://twilio.com/'>Twilio</a>. There are <a href='http://thethomashowecompany.com/449/twilio-comes-out'>other similar services</a> but Twilio was the first one we&#8217;ve found that&#8217;s both available (<a href='http://cloudvox.com/'>CloudVox</a> is in private beta) and <em>really</em> simple to get started.</p>
+<p>We setup a voicemail system this week using <a href="http://twilio.com/">Twilio</a>. There are <a href="http://thethomashowecompany.com/449/twilio-comes-out">other similar services</a> but Twilio was the first one we've found that's both available (<a href="http://cloudvox.com/">CloudVox</a> is in private beta) and <em>really</em> simple to get started.</p>
 
-<p>If you aren&#8217;t familiar with it, Twilio is a voice communication system with an <a href='http://www.twilio.com/docs/api_reference/TwiML/'>HTTP/XML API</a>. You create an account with them and they give you a phone number and an API key. Then you write some code that outputs XML (they have <a href='http://www.twilio.com/docs/libraries/'>libraries for Ruby, Java, Python, and PHP</a> and configure your account to point to an XML resource to handle the initial incoming call. They charge $0.03 or $0.05 cents per minute depending on whether you&#8217;re using a local or toll free number.</p>
+<p>If you aren't familiar with it, Twilio is a voice communication system with an <a href="http://www.twilio.com/docs/api_reference/TwiML/">HTTP/XML API</a>. You create an account with them and they give you a phone number and an API key. Then you write some code that outputs XML (they have <a href="http://www.twilio.com/docs/libraries/">libraries for Ruby, Java, Python, and PHP</a> and configure your account to point to an XML resource to handle the initial incoming call.  They charge $0.03 or $0.05 cents per minute depending on whether you're using a local or toll free number.</p>
 
-<p>We&#8217;ve posted <a href='http://gist.github.com/31922'>one of our test configurations</a> to Gist (we blame the PHP on the intern :p sorry Dave). Here&#8217;s our initial feedback:</p>
+<p>We've posted <a href="http://gist.github.com/31922">one of our test configurations</a> to Gist (we blame the PHP on the intern :p sorry Dave). Here's our initial feedback:</p>
 
 <ul>
-<li>The XML is based on simple verbs (<a href='http://www.twilio.com/docs/api_reference/TwiML/play'>Play</a>, <a href='http://www.twilio.com/docs/api_reference/TwiML/say'>Say</a>, <a href='http://www.twilio.com/docs/api_reference/TwiML/record'>Record</a>&#8230;) so it&#8217;s easy to get started. I&#8217;ve read complaints about using XML in this way, usually on the basis that it&#8217;s over simplified and proprietary, but I disagree. If something can be simplified, simplify it. And if it&#8217;s easy to work with, the fact that it&#8217;s a proprietary language doesn&#8217;t matter. (On a side note, is there a standard, open language for controlling voice communication systems?)</li>
-
+<li>The XML is based on simple verbs (<a href="http://www.twilio.com/docs/api_reference/TwiML/play">Play</a>, <a href="http://www.twilio.com/docs/api_reference/TwiML/say">Say</a>, <a href="http://www.twilio.com/docs/api_reference/TwiML/record">Record</a>...) so it's easy to get started. I've read complaints about using XML in this way, usually on the basis that it's over simplified and proprietary, but I disagree. If something can be simplified, simplify it. And if it's easy to work with, the fact that it's a proprietary language doesn't matter. (On a side note, is there a standard, open language for controlling voice communication systems?)</li>
 <li>The debugger is pretty cool. You can look at the recent requests and responses between their system and your web service. We solved two problems like this (XML encoding issues, <em>again</em>).</li>
-
-<li>The mp3s don&#8217;t play properly in Safari (we&#8217;re running 3.2.1). It displays a <a href='http://farm4.static.flickr.com/3234/3081614839_acdda24cac.jpg?v=0'>black screen that says &#8220;No video&#8221;</a>. Sometimes it will play after you hit the spacebar, sometimes not. Firefox is fine. <em>Update: this looks like it could be related to Flip4Mac, which I updated last week. The same thing is happening with other mp3s.</em></li>
-
-<li>I somewhat concerned about jerks calling in many times or for long durations to charge up our bill. This is an issue with all similar services but I didn&#8217;t see anything in the docs or API that would prevent this in Twilio.</li>
-
+<li>The mp3s don't play properly in Safari (we're running 3.2.1). It displays a <a href="http://farm4.static.flickr.com/3234/3081614839_acdda24cac.jpg?v=0">black screen that says "No video"</a>. Sometimes it will play after you hit the spacebar, sometimes not. Firefox is fine. <em>Update: this looks like it could be related to Flip4Mac, which I updated last week. The same thing is happening with other mp3s.</em></li>
+<li>I somewhat concerned about jerks calling in many times or for long durations to charge up our bill. This is an issue with all similar services but I didn't see anything in the docs or API that would prevent this in Twilio.</li>
 <li>The prices are reasonable for moderate use but I expect they should decrease as their customer base increases (they should be able to negotiate lower rates from their suppliers).</li>
-
-<li>Their customer service is excellent! We experienced it and so did our friends at <a href='http://dealerdiagnostics.com/'>Dealer Diagnostics</a>.</li>
+<li>Their customer service is excellent! We experienced it and so did our friends at <a href="http://dealerdiagnostics.com/">Dealer Diagnostics</a>.</li>
 </ul>
 
-<p>We&#8217;ll be looking at other options and we&#8217;ll post our findings here.</p>
+
+<p>We'll be looking at other options and we'll post our findings here.</p>
+
 
 <div id="related">
   <h3>Related Posts</h3>
@@ -104,12 +130,22 @@ src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
 
 
 </div>
-  
+	</div>
+	
+	<div class="aboutSolutious">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a mauris. Aenean fringilla, leo non ornare condimentum, tellus leo condimentum arcu, ac commodo tortor augue at justo. Praesent vehicula. Nam tellus. Proin in erat quis augue elementum ullamcorper. Phasellus sodales egestas augue. Sed odio dolor, aliquet ac, pellentesque sit amet, eleifend non, risus. Fusce ornare nunc eget leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+			<p class="signature">- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Solutious</p>
+	</div>
 
-<div id="footer" class="corset">
-	<a href="http://solutious.com/" class="big">Solutious</a>.
-	<span class="tagline">There's no prohibition on performance.</span>
-	Copyright 2006-2009.
+	<a class="aboutAuthor" href="#"></a>
+	<div class="reset"></div>
+
+	<div id="footer">
+		<a href="http://solutious.com/" class="big">Solutious</a>.
+		<span class="tagline">There's no prohibition on performance.</span>
+		Copyright 2006-2009.
+	</div>
+	
 </div>
  	
 <script type="text/javascript">

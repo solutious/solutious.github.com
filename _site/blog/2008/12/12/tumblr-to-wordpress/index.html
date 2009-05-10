@@ -27,25 +27,54 @@
 	<link href="/blog/atom.rss" rel="alternate" title="The Solutious Blog" type="application/atom+xml" />
   
 </head>
-<body id="blogPost">
+<body class="blogPost">
 
-<div id="top">
 	<div class="corset">
-		<h1 class="logo"><a href="/">Solutious</a></h1>
-		<ul class="nav">
-			<li class="first"><a href="/about/">about</a></li>
-			<li id="navBlog"><a href="/blog/">blog</a></li>
-			<li id="navArchive"><a href="/blog/archive/">archive</a></li>
-		</ul>
+		<div class="top">
+			<div class="openSourceProjects">Open Source Projects</div>
+			<a class="logo" href="/"><h1>Solutious</h1></a>
+
+			<ul class="productNav">
+				<!--li class="ceasars"><a href="#">Ceasars</a></li>
+				<li class="drydock"><a href="#">Drydock</a></li-->
+				<li class="stella"><a href="#">Stella</a></li>
+				<li class="rudy"><a href="#">Rudy</a></li>
+			</ul>	
+			<div class="navLeftLine"></div>
+			<ul class="nav">
+				<li class="first"><a href="/">HOME</a></li>
+				<li><a href="/">ABOUT</a></li>
+				<li><a href="/">PRODUCTS</a></li>
+				<li class="on"><a href="/">BLOG</a></li>
+				<li><a href="/">CONTACT</a></li>
+			</ul>
+
+			<div class="subnav">
+				<div class="message">welcome to solutious - we like icecream and yamalows</div>
+				<ul>
+					<li class="first"><a href="#">the zoo</a></li>
+					<li><a href="#">labs</a></li>
+					<li><a href="#">miscellany</a></li>
+					<li><a href="#">you so and so</a></li>
+				</ul>
+			</div>	
+		</div>
+
+
+	<div class="left">
+	
+<div class="entry">
+
+	<div class="info">
+		<div class="month">Dec '2008</div>
+		<div class="day">12</div>
+		<!--div class="commentCount">122</div-->
 	</div>
-</div>
 
-
-
-<div class="corset">
-
-<a name="/blog/2008/12/12/tumblr-to-wordpress"></a>
-<h2><a href="/blog/2008/12/12/tumblr-to-wordpress" title="From Tumblr to WordPress">From Tumblr to WordPress</a></h2>
+	<a href="/blog/2008/12/12/tumblr-to-wordpress" title="From Tumblr to WordPress"><h2>From Tumblr to WordPress</h2></a>
+	<p class="author">posted by delano</p>
+	
+	
 
 <p class="author">posted by delano on Fri, Dec 12 2008</p>
 
@@ -58,21 +87,22 @@ var idcomments_post_url;
 <script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>
 -->
 
-<p>We&#8217;re currently converting our blog from Tumblr to WordPress. We&#8217;re literally in the middle of it but I wanted to take a moment to explain why we&#8217;re moving and why we chose WordPress.</p>
+<p>We're currently converting our blog from Tumblr to WordPress. We're literally in the middle of it but I wanted to take a moment to explain why we're moving and why we chose WordPress.</p>
 
-<h2 id='why_were_moving_from_tumblr'>Why we&#8217;re moving from Tumblr</h2>
+<h2>Why we're moving from Tumblr</h2>
 
-<p>We accepted Tumblr&#8217;s strange management for group blogs and the broken archive page for FireFox. But there is one issue that is not excusable: <strong>extremely poor search engine performance</strong>. This issue was brought up a few months ago by <a href='http://www.16thletter.com/2008/05/08/why-im-kissing-tumblr-a-sad-sad-good-bye/'>Melissa Chang</a>, a <a href='http://friendfeed.com/e/bf7efe81-48eb-4bdc-629c-ee5c55a4a2f2/Why-I-m-kissing-Tumblr-a-sad-sad-good-bye-16th/'>flurry of discussion</a> ensued, and Tumblr <a href='http://staff.tumblr.com/post/35727451/weve-just-made-a-few-changes-to-make-your'>made some changes</a> Erik Dafforn posted a <a href='http://seoblog.intrapromote.com/2008/05/tumblr_and_seo.html'>more complete chronology</a>). Seven months have passed and Tumblr search engine performance still sucks.</p>
+<p>We accepted Tumblr's strange management for group blogs and the broken archive page for FireFox. But there is one issue that is not excusable: <strong>extremely poor search engine performance</strong>. This issue was brought up a few months ago by <a href="http://www.16thletter.com/2008/05/08/why-im-kissing-tumblr-a-sad-sad-good-bye/">Melissa Chang</a>, a <a href="http://friendfeed.com/e/bf7efe81-48eb-4bdc-629c-ee5c55a4a2f2/Why-I-m-kissing-Tumblr-a-sad-sad-good-bye-16th/">flurry of discussion</a> ensued, and Tumblr <a href="http://staff.tumblr.com/post/35727451/weve-just-made-a-few-changes-to-make-your">made some changes</a> Erik Dafforn posted a <a href="http://seoblog.intrapromote.com/2008/05/tumblr_and_seo.html">more complete chronology</a>). Seven months have passed and Tumblr search engine performance still sucks.</p>
 
-<h2 id='why_wordpress'>Why WordPress</h2>
+<h2>Why WordPress</h2>
 
-<p>There&#8217;s surprisingly few choices. We looked at some Ruby options Mephisto, enki, Feather, all have strange quirks. We tried them all (and others) because we thought, &#8220;Hey it&#8217;s been a few years since we installed a blog there must be a new kid on the block&#8221;. The shocking answer is, <em>no, there&#8217;s not</em> (if you&#8217;re looking for something with a reasonable installation process). Mephisto wants Rails 2.2.2. Feather has some issues with Merb and won&#8217;t install anyway because gems.datamapper.com seems to be down. Enki just wouldn&#8217;t run on Dreamhost (Passenger returned a vague error message but the logs contained nothing helpful). We thought we were on crazy pills but it appears to be reality!</p>
+<p>There's surprisingly few choices. We looked at some Ruby options Mephisto, enki, Feather, all have strange quirks. We tried them all (and others) because we thought, "Hey it's been a few years since we installed a blog there must be a new kid on the block". The shocking answer is, <em>no, there's not</em> (if you're looking for something with a reasonable installation process). Mephisto wants Rails 2.2.2. Feather has some issues with Merb and won't install anyway because gems.datamapper.com seems to be down. Enki just wouldn't run on Dreamhost (Passenger returned a vague error message but the logs contained nothing helpful). We thought we were on crazy pills but it appears to be reality!</p>
 
 <p>Why WordPress? <em>Because it works.</em></p>
 
-<p><em>Update (2008-12-19): WordPress continues to treat us well. I can&#8217;t say the same for <a href='http://disqus.com'>Disqus</a> however. The wordpress plugin returns broken HTML for the comments<em>number function (which is why we don&#8217;t display the comment count on the left)<em>.</em></em></em></p>
+<p><em>Update (2008-12-19): WordPress continues to treat us well. I can't say the same for <a href="http://disqus.com">Disqus</a> however. The wordpress plugin returns broken HTML for the comments_number function (which is why we don't display the comment count on the left)</em>.</p>
 
-<p><em>Update (2009-04-12): We <a href='/blog/2009/04/10/wordpress-to-jekyll/'>changed again</a>. The blog is now powered by the static site generator <a href='http://github.com/mojombo/jekyll'>Jekyll</a>. Our comments are now powered by <a href='http://intensedebate.com/'>Intense Debate</a>. We finally made it home</em>!</p>
+<p><em>Update (2009-04-12): We <a href="/blog/2009/04/10/wordpress-to-jekyll/">changed again</a>. The blog is now powered by the static site generator <a href="http://github.com/mojombo/jekyll">Jekyll</a>. Our comments are now powered by <a href="http://intensedebate.com/">Intense Debate</a>. We finally made it home</em>!</p>
+
 
 <div id="related">
   <h3>Related Posts</h3>
@@ -98,12 +128,22 @@ src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
 
 
 </div>
-  
+	</div>
+	
+	<div class="aboutSolutious">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a mauris. Aenean fringilla, leo non ornare condimentum, tellus leo condimentum arcu, ac commodo tortor augue at justo. Praesent vehicula. Nam tellus. Proin in erat quis augue elementum ullamcorper. Phasellus sodales egestas augue. Sed odio dolor, aliquet ac, pellentesque sit amet, eleifend non, risus. Fusce ornare nunc eget leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+			<p class="signature">- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Solutious</p>
+	</div>
 
-<div id="footer" class="corset">
-	<a href="http://solutious.com/" class="big">Solutious</a>.
-	<span class="tagline">There's no prohibition on performance.</span>
-	Copyright 2006-2009.
+	<a class="aboutAuthor" href="#"></a>
+	<div class="reset"></div>
+
+	<div id="footer">
+		<a href="http://solutious.com/" class="big">Solutious</a>.
+		<span class="tagline">There's no prohibition on performance.</span>
+		Copyright 2006-2009.
+	</div>
+	
 </div>
  	
 <script type="text/javascript">

@@ -27,21 +27,42 @@
 	<link href="/blog/atom.rss" rel="alternate" title="The Solutious Blog" type="application/atom+xml" />
   
 </head>
-<body id="blogHome">
+<body class="blogHome">
 
-<div id="top">
 	<div class="corset">
-		<h1 class="logo"><a href="/">Solutious</a></h1>
-		<ul class="nav">
-			<li class="first"><a href="/about/">about</a></li>
-			<li id="navBlog"><a href="/blog/">blog</a></li>
-			<li id="navArchive"><a href="/blog/archive/">archive</a></li>
-		</ul>
-	</div>
-</div>
+		<div class="top">
+			<div class="openSourceProjects">Open Source Projects</div>
+			<a class="logo" href="/"><h1>Solutious</h1></a>
+
+			<ul class="productNav">
+				<!--li class="ceasars"><a href="#">Ceasars</a></li>
+				<li class="drydock"><a href="#">Drydock</a></li-->
+				<li class="stella"><a href="#">Stella</a></li>
+				<li class="rudy"><a href="#">Rudy</a></li>
+			</ul>	
+			<div class="navLeftLine"></div>
+			<ul class="nav">
+				<li class="first"><a href="/">HOME</a></li>
+				<li><a href="/">ABOUT</a></li>
+				<li><a href="/">PRODUCTS</a></li>
+				<li class="on"><a href="/">BLOG</a></li>
+				<li><a href="/">CONTACT</a></li>
+			</ul>
+
+			<div class="subnav">
+				<div class="message">welcome to solutious - we like icecream and yamalows</div>
+				<ul>
+					<li class="first"><a href="#">the zoo</a></li>
+					<li><a href="#">labs</a></li>
+					<li><a href="#">miscellany</a></li>
+					<li><a href="#">you so and so</a></li>
+				</ul>
+			</div>	
+		</div>
 
 
-
+	<div class="left">
+	
 
 
 <div class="corset">
@@ -59,27 +80,37 @@
    ]
    -->
    
-	  <p>I&#8217;m fascinated with GitHub&#8217;s <a href='http://github.com/why/shoes/graphs/punch_card'>punch</a> <a href='http://github.com/mislav/hanna/graphs/punch_card'>cards</a>. They&#8217;re visual representations of project commits by day and hour and they&#8217;re available for every public project on GitHub. Here&#8217;s the punch card for <a href='http://github.com/mislav/will_paginate/'>mislav-will_paginate</a>, one of the <a href='http://github.com/popular/watched'>most popular projects</a> on GitHub:</p>
+	  <p>I'm fascinated with GitHub's <a href="http://github.com/why/shoes/graphs/punch_card">punch</a> <a href="http://github.com/mislav/hanna/graphs/punch_card">cards</a>. They're visual representations of project commits by day and hour and they're available for every public project on GitHub. Here's the punch card for <a href="http://github.com/mislav/will_paginate/">mislav-will_paginate</a>, one of the <a href="http://github.com/popular/watched">most popular projects</a> on GitHub:</p>
 
-<h3 id='will_paginate'>will_paginate</h3>
-<a href='http://github.com/mislav/will_paginate/graphs/punch_card'><img src='http://farm4.static.flickr.com/3382/3507637336_e1b9c97b20_o.png' border='0' height='150' width='400' /></a>
-<p>The punch card says <a href='http://github.com/mislav/'>Mislav</a> works hard! He committed at all hours of the day, every day of the week (the larger the dot, the greater number of commits). It&#8217;s important to note, when looking at the punch cards, how many active developers have committed to the project. You could look through the <a href='http://github.com/mislav/will_paginate/commits'>list of commits</a> but that&#8217;s tedious and verbose. The quickest way to gauge how many active developers there are on a project is to look at the <a href='http://github.com/mislav/will_paginate/graphs/impact'>impact graph</a> (note that there are several committers for will_paginate, but the vast majority are from two accounts, both of which are Mislav).</p>
+<h3>will_paginate</h3>
 
-<h2 id='punch_cards_over_time'>Punch Cards Over Time</h2>
+<p><a href="http://github.com/mislav/will_paginate/graphs/punch_card"><img src="http://farm4.static.flickr.com/3382/3507637336_e1b9c97b20_o.png" border="0" width="400" height="150" /></a></p>
+
+<p>The punch card says <a href="http://github.com/mislav/">Mislav</a> works hard! He committed at all hours of the day, every day of the week (the larger the dot, the greater number of commits). It's important to note, when looking at the punch cards, how many active developers have committed to the project. You could look through the <a href="http://github.com/mislav/will_paginate/commits">list of commits</a> but that's tedious and verbose. The quickest way to gauge how many active developers there are on a project is to look at the <a href="http://github.com/mislav/will_paginate/graphs/impact">impact graph</a> (note that there are several committers for will_paginate, but the vast majority are from two accounts, both of which are Mislav).</p>
+
+<h2>Punch Cards Over Time</h2>
 
 <p>I thought it would be interesting to see what a punch card looked like over time. I started saving them for a few of my own projects so I could animate them.</p>
 
-<h3 id='rye_031_to_064'>Rye (0.3.1 to 0.6.4)</h3>
+<h3>Rye (0.3.1 to 0.6.4)</h3>
 
-<p><a href='http://github.com/delano/rye'>Rye</a> is a small project that I started on April 4th for executing SSH commands from Ruby. I wrote the core of it over a couple of weekends and then iterated over the following few weeks. You can see that in the animation below.</p>
-<a href='http://github.com/delano/rye/graphs/punch_card'><img src='http://farm4.static.flickr.com/3605/3506751765_24443ccb39_o.gif' border='0' height='150' width='400' /></a>
-<h3 id='rudy_040_to_073'>Rudy (0.4.0 to 0.7.3)</h3>
+<p><a href="http://github.com/delano/rye">Rye</a> is a small project that I started on April 4th for executing SSH commands from Ruby. I wrote the core of it over a couple of weekends and then iterated over the following few weeks. You can see that in the animation below.</p>
 
-<p>I also saved them for a much larger project, <a href='http://github.com/solutious/rudy'>Rudy</a>. I started Rudy in February while doing some deployment work for <a href='http://rilli.com/'>Rilli</a>. The first frame is from version 0.4 and the second frame is version 0.5. They&#8217;re so different that it would be easy to assume I made a mistake generating the animation. That difference represents a month of hard work where I wrote and re-wrote the project several times.</p>
-<a href='http://github.com/solutious/rudy/graphs/punch_card'><img src='http://farm4.static.flickr.com/3359/3506751705_89f1fb5e38_o.gif' border='0' height='150' width='400' /></a><br />
-<h2 id='in_conclusion'>In Conclusion</h2>
+<p><a href="http://github.com/delano/rye/graphs/punch_card"><img src="http://farm4.static.flickr.com/3605/3506751765_24443ccb39_o.gif" border="0" width="400" height="150" /></a></p>
 
-<p>What I love about the punch cards is that they&#8217;re both informative and motivational. They give me a better understanding of how I work and how my effort relates to that of other open source developers. When I&#8217;m focused on a goal like getting the next version out the door, I occasionally forget what I went through to get there. The punch cards help me remember.</p>
+<h3>Rudy (0.4.0 to 0.7.3)</h3>
+
+<p>I also saved them for a much larger project, <a href="http://github.com/solutious/rudy">Rudy</a>. I started Rudy in February while doing some deployment work for <a href="http://rilli.com/">Rilli</a>. The first frame is from version 0.4 and the second frame is version 0.5. They're so different that it would be easy to assume I made a mistake generating the animation. That difference represents a month of hard work where I wrote and re-wrote the project several times.</p>
+
+<p><a href="http://github.com/solutious/rudy/graphs/punch_card"><img src="http://farm4.static.flickr.com/3359/3506751705_89f1fb5e38_o.gif" border="0" width="400" height="150" /></a></p>
+
+<br/>
+
+
+<h2>In Conclusion</h2>
+
+<p>What I love about the punch cards is that they're both informative and motivational. They give me a better understanding of how I work and how my effort relates to that of other open source developers. When I'm focused on a goal like getting the next version out the door, I occasionally forget what I went through to get there. The punch cards help me remember.</p>
+
 	 </div>
 	
 	  
@@ -100,19 +131,26 @@
    ]
    -->
    
-	  <p>If you&#8217;re like <a href='http://twitter.com/solutious'>me</a>, you woke up today thinking May 5th was Cinco de Mayo. What people like us didn&#8217;t know is that it&#8217;s also Louise Hendy Day. This is probably the first and last time you&#8217;ll hear about Louise Hendy Day, but the implications of it are pretty interesting.</p>
-<p style='text-align: center'><a href='http://twitter.com/#search?q=louisehendyday' style='text-decoration: none;'><img src='http://farm4.static.flickr.com/3569/3505434648_36eca44c11.jpg' border='0' /></a></p>
-<h3 id='a_fictitious_holiday'>A Fictitious Holiday</h3>
+	  <p>If you're like <a href="http://twitter.com/solutious">me</a>, you woke up today thinking May 5th was Cinco de Mayo. What people like us didn't know is that it's also Louise Hendy Day. This is probably the first and last time you'll hear about Louise Hendy Day, but the implications of it are pretty interesting.</p>
 
-<p>Louise Hendy Day is a fictitious holiday created by a <a href='https://twitter.com/louise_hendy'>single person</a>, earlier today, in an attempt to get into the trending topics on Twitter. And it worked. At least for a few hours (it&#8217;s no longer a trending topic as of 16:00 EST but the <a href='http://search.twitter.com/search?q=%23louisehendyday'>flurry of messages continues</a>).</p>
-<p style='text-align: center'><a href='http://tweetstats.com/trends' style='text-decoration: none;'><img src='http://farm4.static.flickr.com/3357/3504801219_27d736ccf8.jpg' border='0' /></a></p>
-<p>Why is this important? It&#8217;s important because we&#8217;ve heard a lot about the power of the web, &#8220;social media&#8221; in particular, to reach out to build and maintain networks of clients and customers. Rarely however, do we see this power in action, <em>in real time</em>. One person generated a massive buzz literally out of nothing. The product is a faux-celebration for a holiday that doesn&#8217;t otherwise exist.</p>
+<p style="text-align: center"><a href="http://twitter.com/#search?q=louisehendyday" style="text-decoration: none;"><img border="0" src="http://farm4.static.flickr.com/3569/3505434648_36eca44c11.jpg" /></a></p>
 
-<h3 id='a_new_way_to_do_business'>A New Way to Do Business</h3>
 
-<p>Now, there are two ways you can view Louise Hendy Day: a useless, passing fad or <em>a completely new way to do business</em>. You can communicate with current and prospective customers in real-time. It&#8217;s like having a conversation with thousands of people at the same time.</p>
+<h3>A Fictitious Holiday</h3>
 
-<p>Twitter won&#8217;t do this alone &#8211; there will be other service providers &#8211; but already today, right now we have a tool more powerful than any PR agency ever had. That&#8217;s pretty exciting.</p>
+<p>Louise Hendy Day is a fictitious holiday created by a <a href="https://twitter.com/louise_hendy">single person</a>, earlier today, in an attempt to get into the trending topics on Twitter. And it worked. At least for a few hours (it's no longer a trending topic as of 16:00 EST but the <a href="http://search.twitter.com/search?q=%23louisehendyday">flurry of messages continues</a>).</p>
+
+<p style="text-align: center"><a href="http://tweetstats.com/trends" style="text-decoration: none;"><img border="0" src="http://farm4.static.flickr.com/3357/3504801219_27d736ccf8.jpg" /></a></p>
+
+
+<p>Why is this important? It's important because we've heard a lot about the power of the web, "social media" in particular, to reach out to build and maintain networks of clients and customers. Rarely however, do we see this power in action, <em>in real time</em>. One person generated a massive buzz literally out of nothing. The product is a faux-celebration for a holiday that doesn't otherwise exist.</p>
+
+<h3>A New Way to Do Business</h3>
+
+<p>Now, there are two ways you can view Louise Hendy Day: a useless, passing fad or <em>a completely new way to do business</em>. You can communicate with current and prospective customers in real-time. It's like having a conversation with thousands of people at the same time.</p>
+
+<p>Twitter won't do this alone -- there will be other service providers -- but already today, right now we have a tool more powerful than any PR agency ever had. That's pretty exciting.</p>
+
 	 </div>
 	
 	  
@@ -133,13 +171,15 @@
    ]
    -->
    
-	  <p>I have a difficult time putting to words the excitement I felt when GitHub announced <a href='http://github.com/blog/315-cname-support-for-github-pages'>CNAME support</a>. And now, just a few short months later I&#8217;ve finally freed myself from Dreamhost&#8217;s shackles. I&#8217;m now using GitHub for all my hosting needs (including solutious.com) and I must say, it feels pretty good.</p>
+	  <p>I have a difficult time putting to words the excitement I felt when GitHub announced <a href="http://github.com/blog/315-cname-support-for-github-pages">CNAME support</a>. And now, just a few short months later I've finally freed myself from Dreamhost's shackles. I'm now using GitHub for all my hosting needs (including solutious.com) and I must say, it feels pretty good.</p>
 
-<p>Shared hosting has served a useful purpose over the years, but it&#8217;s days are numbered. <a href='http://heroku.com/pricing'>Heroku</a>: free. <a href='http://code.google.com/appengine/'>Google App Engine</a>: free. <a href='http://appjet.com/'>AppJet</a>: free. You can&#8217;t argue with that. GitHub is not free but CNAME support is included with all paid accounts which I already have. I&#8217;m now riding the workflow of the future!</p>
+<p>Shared hosting has served a useful purpose over the years, but it's days are numbered. <a href="http://heroku.com/pricing">Heroku</a>: free. <a href="http://code.google.com/appengine/">Google App Engine</a>: free. <a href="http://appjet.com/">AppJet</a>: free. You can't argue with that. GitHub is not free but CNAME support is included with all paid accounts which I already have. I'm now riding the workflow of the future!</p>
 
-<h2 id='workflow_of_the_future'>Workflow of the Future</h2>
+<h2>Workflow of the Future</h2>
 
-<pre><code>Me -&gt; TextMate -&gt; Markdown -&gt; Terminal -&gt; Jekyll -&gt; Git -&gt; You</code></pre>
+<pre><code>Me -&gt; TextMate -&gt; Markdown -&gt; Terminal -&gt; Jekyll -&gt; Git -&gt; You
+</code></pre>
+
 	 </div>
 	
 	  
@@ -148,12 +188,22 @@
    
    <div style="margin: 40px 0 0 40px;"><h3>See <a href="/blog/archive/">the archive</a> for more</h3></div>
 </div>
-  
+	</div>
+	
+	<div class="aboutSolutious">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a mauris. Aenean fringilla, leo non ornare condimentum, tellus leo condimentum arcu, ac commodo tortor augue at justo. Praesent vehicula. Nam tellus. Proin in erat quis augue elementum ullamcorper. Phasellus sodales egestas augue. Sed odio dolor, aliquet ac, pellentesque sit amet, eleifend non, risus. Fusce ornare nunc eget leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+			<p class="signature">- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Solutious</p>
+	</div>
 
-<div id="footer" class="corset">
-	<a href="http://solutious.com/" class="big">Solutious</a>.
-	<span class="tagline">There's no prohibition on performance.</span>
-	Copyright 2006-2009.
+	<a class="aboutAuthor" href="#"></a>
+	<div class="reset"></div>
+
+	<div id="footer">
+		<a href="http://solutious.com/" class="big">Solutious</a>.
+		<span class="tagline">There's no prohibition on performance.</span>
+		Copyright 2006-2009.
+	</div>
+	
 </div>
  	
 <script type="text/javascript">

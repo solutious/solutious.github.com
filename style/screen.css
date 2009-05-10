@@ -20,34 +20,27 @@ body {
 	margin: 0;
 	font-family: arial, sans-serif;
 	font-size: 12px;
-	line-height: 1.667em;
+	line-height: 1.25em;
 	}
 
 a {
-	color: black;	
+	color: #00cccc;	
 	text-decoration: none;
-	border-bottom: 1px solid #111;
 	}
-	
-	a:hover {
-		border-bottom: 1px solid #00cccc;
-		}
-	
-	body .products h3:hover,	
-	a h3:hover {
-		color: #666;
-		}	
+	body a:hover { color: #006666; }
 	
 h1, h2, h3, h4, h5, h6 {
 	font-family: Georgia, serif;
-	font-style: italic;
 	font-weight: bold;
 	color: #111;
 	}
 	
+	h2 { font-size: 30px; }
+	
 ol, ul, li, dl, dd, dt {
 	list-style: none;
-	padding-left: 10px;
+	margin: 0;
+	padding: 0;
 	}	
 	
 .reset { 
@@ -62,140 +55,154 @@ ol, ul, li, dl, dd, dt {
 //----------------------------------------------
 */
 
-#top {
-	height: 50px;
-	margin-bottom: 125px;
-	background-color: #000000;
-	border-top: 8px solid #00CCCC;
-	color: white;
+.corset {
+	width: 980px;
+	margin: 0 auto;
 	}
-	
-	#top .corset {
-		position: relative;
-		margin-top: 0px !important;
-		}
-	
-	#top .logo a {
-		position: absolute;
-		width: 305px; height: 122px;
-		padding: 15px 0 15px 0;
-		margin-left: -5px;
-		margin-bottom: 20px;
-		text-indent: -3000px;
-		background: url(../images/solutiousLogo.png) no-repeat 0 22px;
-		border-bottom: none;		
-		}
-		
-		.logo a:hover { border: 0 none !important; }
-				
-		#top h1 { margin: 0; }
-			
-	#top ul {
-		position: absolute;
-		right: 0;
-		margin: 0 -30px 0 0;
-		padding: 0;
-		font-size: 13px;
-		font-family: Georgia, serif;
-		font-style: italic;
-		font-weight: bold;
+
+.top {
+	border-top: 3px solid #00cccc;
+	}
+
+	.openSourceProjects {
+		display: block;
+		text-align: right;
+		width: 970px;
+		margin-top: 4px;
+		padding: 5px 10px 0 0;
+		border-top: 1px dotted #cccccc;
+		color: #00cccc;
+		background: url(/images/openSourceArrow.png) no-repeat right 12px;
+		font-size: 11px;
 		}
 		
-		#top ul a {
+		.logo {
 			display: block;
-			padding: 20px 20px 10px 20px;
-			color: white;
-			border-bottom: none;
+			float: left;
+			width: 289px; height: 106px;
+			text-indent: 9999px;	
+			background: url(/images/logoTagLine.png) no-repeat;
+			border: none;
 			}
 			
-			#top a:hover { color: #00cccc; border-bottom: 4px solid #00cccc; }
+			.logo h1 { margin: 0; }
 			
-		#top li { float: left; height: 100%; padding: 0; margin: 0; border-left: 1px dotted #999; }	
-		#top li.first { border: none; }
+		.productNav {
+			float: right;
+			margin-top: 10px;
+			}
+			
+			.productNav a {
+				display: block;
+				text-align: center;
+				width: 60px;
+				padding-top: 50px;
+				color: #999;
+				}
+			.productNav .stella a { background: url(/images/productNav.png) no-repeat 7px top; }
+			.productNav .rudy a { background: url(/images/productNav.png) no-repeat -54px top; }
+					
+	
+		.productNav li,
+		.nav li,
+		.subnav li {
+			float: left;
+			}
 		
-		#top li.on,
-		#about #navAbout,
-		#blogHome #navBlog,
-		#blogArchive #navArchive,
-		#blogPost #navBlog { height: 100px; border: 0; background: url(../images/navOn.png) no-repeat center 0; }
-			#top li.on a:hover { color: #fff; border: none; }
+		.navLeftLine {
+			float: left;
+			clear: left;
+			width: 557px; height: 6px;
+			padding-top: 36px;
+			background: url(/images/navLeftLine.png) repeat-x 0 bottom;
+			}
 			
+		.nav {
+			float: right;
+			clear: right;
+			width: 423px; height: 42px;
+			background: url(/images/navBack.png) no-repeat;
+			}	
+			.nav .first { margin-left: 40px; }
+			.nav a { 
+				display: block;
+				padding: 15px 0 9px;
+				margin: 0 10px;
+				color: #000;
+				font-family: Georgia, serif;
+				font-weight: bold;
+				font-size: 13px;
+				}
 			
+			.nav .on a { border-bottom: 4px solid #00cccc; }	
 			
-.corset {
-	width: 645px;
-	margin: 180px auto 0 auto;
-	}		
-	.notice { position:relative; text-align: center; margin-top: 25px; font-size: 150%; font-weight: bolder;}
-	
-	.corset pre, div.highlight {
-	        font-size: 12px;
-	        padding: 0;
-	        margin: 0;
-	        background-color: #f9f9f9;
-	        line-height: 20px; /*--Height of each line of code--*/
-	        background: url(pre_code_bg.gif) repeat-y left top; /*--Background of lined paper--*/
-	        overflow: auto; /*--If the Code exceeds the width, a scrolling is available--*/
-	        overflow-Y: hidden;  /*--Hides vertical scroll created by IE--*/
-	}
-	.corset pre code, div.highlight pre {
-				  background-color: #f9f9f9;
-	        margin: 0px 0 0 20px;  /*--Left Margin--*/
-	        padding: 18px 10px;
-	        display: block;
-	}
-	.corset ul li {
-		list-style: circle;
-	}
-	
-	.corset ul.posts li {
-		list-style: none;
-	}
-	
-	.corset ul.nav li {
-		list-style: none;
-	}
-	
-#related {
-		margin-top: 40px;
-		margin-bottom: 40px;
-	}
-	
-	
+		.subnav {
+			clear: both;
+			display: block;
+			width: 100%; height: 22px;	
+			padding-top: 5px;	
+			border-top: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+			font-family: Georgia, serif;
+			font-style: italic;
+			}		
+			
+			.subnav .message {
+				float: left;
+				padding-left: 15px;
+				background: url(/images/heart.png) no-repeat left 6px;
+				font-family: Georgia, serif;
+				font-style: italic;
+				color: #999;
+				}
+				
+			.subnav ul {
+				float: right;
+				}
+				.subnav a {
+					padding: 0 10px;
+					border-left: 1px solid #00cccc;
+					}
+					.subnav .first a { border: none; }
+					.subnav .on a { color: #006666; }
+					
 #footer {
 	margin-top: 70px !important;
 	padding-top: 10px;
-	border-top: 1px dotted black;
-	color: #333;
+	border-top: 1px dotted #666;
+	color: #999;
 	font-size: 10px;
 	text-align: center;
 	}
-	
+
 	#footer .big {
 		font-size: 12px;
 		font-family: Georgia, serif;
 		font-style: italic;
-		color: #111;
+		color: #999;
+		border-bottom: 1px solid #999;
 		}
 
 	#footer .tagline {
 		margin: 0 25px;
-		font-size: 14px;
+		font-size: 11px;
 		font-family: Georgia, serif;
 		font-style: italic;
-		color: #00CCCC;
+		color: #000;
 		}
-	
-.hilite {
-	background-color: #FCFCAA;
-	padding: 2px 4px;
+					
+					
+code {
+	display: block;
+	margin: 10px 0;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-right: 4px solid #00CCCC;
+	background: #f9f9ff;
+	font-family: Courier, serif;
 	}
-	
-.numeral {
-	color: #00cccc;
-	}	
-	
-	
+					
+					
 /*
 //----------------------------------------------
 //   P a g e   S p e c i f i c
@@ -204,246 +211,281 @@ ol, ul, li, dl, dd, dt {
 	
 /* h o m e */	
 	
-#home .corset { 
-	width: 945px !important;
-	margin-top: 120px;
-	}
-#products .corset {
-	width: 620px;
-	margin: 0 auto;
-	}	
-		
-	#home #top {
-		margin-bottom: 50px;
+	.developing {
+		width: 445px;
+		margin: 15px 0 25px;
+		padding: 15px 0 11px 55px;
+		background: url(/images/colorPieces.png) no-repeat;
+		font-family: Georgia, serif;
+		font-size: 23px;
+		line-height: 1.15em;
+		color: #999;
 		}
 	
-	#home .introduction {
-		clear: both;
-		padding: 35px 0 65px 0;
-		border-top: 1px dotted #000;
-		width: 945px;
+	.rightTools {
+		display: block;
+		width: 501px; height: 87px;
+		background: url(/images/rightTools.png) no-repeat;
+		text-indent: -9999px;
 		}
 
-		.introduction h2 {
+	.columns {
+		height: 100px;
+		margin-top: 30px;
+		padding-left: 160px;
+		background: url(/images/colorPieces.png) no-repeat 0 -105px;
+		color: #666;
+		}
+		.columns div {
 			float: left;
-			width: 410px;
-			margin: 0 52px 0 0;
-			font-size: 23px;
-			font-weight: normal;
-			line-height: 30px;
+			width: 155px;
+			margin: 0 10px;
 			}
-
-		.introduction p {
-			float: left;
-			width: 215px;
-			margin: 10px 0 0 25px;
-			line-height: 1.25em;
-			color: #666;
-			}
-			
-		.introduction .blue {
-			color: #00cccc;
+		.columns em { 
+			font-weight: bold;
+			font-style: normal;
+			color: #000;
 			}	
+
+		.intro { float: left;	}
 			
-		.products div {
-			position: relative;
-			float: left;
-			width: 280px;
-			padding-left: 145px;
-			margin-bottom: 50px;
+	.stellaOverview,
+	.rudyOverview {
+		float: right;
+		width: 290px;
+		padding-left: 115px;
+		}		
+		
+		.stellaOverview h2,
+		.rudyOverview h2 {
+			margin: 0;
+			font-size: 30px;		
 			}
 			
-			.products .stella {
-				position: relative;
-				left: -25px;
-				background: url(../images/stellaLogo.png) no-repeat;
-				}
-
-			.products .rudy {
-				position: relative;
-				left: 62px;
-				background: url(../images/rudyLogo.jpg) no-repeat;
+		.reparte {
+			margin: 10px 0 5px;
+			color: #00cccc;
+			}		
+		
+		.stellaOverview h3,
+		.rudyOverview h3 {
+			padding-top: 10px;
+			margin: 5px 0 10px;
+			font-style: italic;
+			font-weight: normal;
+			font-size: 20px;	
+			line-height: 24px;
+			border-top: 1px dotted #999;	
+			}
+		
+		.details {
+			display: block;
+			padding: 7px 12px;
+			border-top: 1px dotted #999;
+			background: url(/images/navBack.png) 0 -5px;
+			font-style: italic;
+			font-family: Georgia, serif;
+			}
+			
+			.details .beta { 
+				float: left; 
+				color: #003333;
 				}
 			
-			.products h3 {
-				font-size: 30px;
-				margin: 0;
-				}	
-				
-			.products h4 {
-				margin: 5px 0 0 0;
-				font-family: arial, sans-serif;
-				font-style: normal;
-				font-weight: normal;
-				color: #00cccc;
-				font-size: 12px;
-				}	
-				
-			.products .tagline {
-				padding: 10px 0;
-				margin: 10px 0 0 0;
-				line-height: 24px;
-				font-size: 20px;
-				font-family: Georgia, serif;
-				font-style: italic;
-				border-top: 1px dotted #000;
-				border-bottom: 1px dotted #000;
-				color: #000;
-				}	
-				
-			.products .beta,
-			.products .follow {
-				margin: 10px 0;				
-				font-family: Georgia, serif;
-				font-style: italic;
+			.details .git {
+				margin-left: 10px;
+				padding-left: 10px;
+				border-left: 1px solid #00CCCC;
+				color: #00CCCC;	
 				}
 				
-				.products .beta {
-					font-size: 15px;				
-					color: #00CCCC;				
-					}
-				
-				.products .follow a {
-					display: inline;
-					padding: 2px;
-					font-size: 14px;
-					background: #efefef; 
-					}
-					
-					.products .follow a:hover { 
-						background: #000; 
-						color: #fff; 
-						}
-						
-			.products p {
-				line-height: 15px;
+			.description {
 				font-size: 11px;
-				color: #666;
+				color: #999;
 				}	
 				
-			.products a { border-bottom: 0 none !important; }	
-			
-			.products .logo {
-				position: absolute;
-				display: block;
-				width: 129px; height: 123px;
-				margin: -245px -145px;
-				border: 0;
+	.stellaOverview {	
+				margin: 35px 0;
+				background: url(/images/stellaOverview.png) no-repeat;
 				}
-			
-#home #footer {
-	margin-top: 50px !important;
+	.rudyOverview {	background: url(/images/rudyOverview.png) no-repeat; }	
+		
+/* p r o d u c t */
+
+.left {
+	float: left;
 	}	
 
+.stellaPageOverview {
+	width: 285px;
+	margin-top: 30px;
+	padding-left: 215px;
+	background: url(/images/stellaPageOverview.png) no-repeat;
+	}		
+	
+	.stellaPageOverview h2,
+	.rudyPageOverview h2 {
+		margin: 0;
+		font-size: 65px;
+		line-height: 55px;
+		}
 
+		.productPage .reparte {
+			margin-top: 12px;
+			}
+			
+		.download { 
+			text-indent: -9999px;
+			display: block;
+			width: 288px; height: 51px;
+			margin: 15px 0;
+			background: url(/images/download.png) no-repeat;
+			}	
+			
+		.getStarted {
+			font-family: Georgia, serif;
+			font-style: italic;
+			font-size: 18px;
+			}	
+			
+			.getStarted a {
+				padding-bottom: 3px;
+				color: #000;
+				border-bottom: 4px solid #00CCCC;
+				}
+				
+.screencast {
+	display: block;
+	width: 325px; height: 100px;
+	padding: 65px 0 0 175px;
+	background: url(/images/screencast.png) no-repeat;
+	}		
+	
+	.screencast h3 {
+		margin-bottom: 10px; 
+		font-size: 20px;
+		color: #999;
+		}
+		
+	.screencast p {
+		margin: 0;
+		font-size: 15px;
+		color: #000;
+		}	
+		
+.right {
+	float:left;
+	margin-left:57px;
+	width:420px;
+	}		
+		
+	.right h4 {
+		margin-bottom: 25px;
+		font-size: 30px;
+		font-style: italic;
+		font-weight: normal;
+		line-height: 1.15em;
+		}		
+			
+	.right p {
+		color: #999;
+		}			
+
+	.right .snippetTitle {
+		margin-top: 42px;
+		font-family: Georgia, serif;
+		font-size: 18px;
+		font-style: italic;
+		}
+		
+	.right .snippetSubtitle	{
+		margin-left: 10px;
+		font-family: Georgia, serif;
+		font-style: italic;
+		font-size: 12px;
+		color: #999;
+		}
+		
+			
 /* b l o g */
 
-#disqus_thread {
-	
-	margin-top: 40px;
-}
-
+.blog .left { width: 620px; }
 .entry {
-	padding-bottom: 50px;
-	margin-top: 50px;
-	background: url(../images/dot.jpg) no-repeat bottom center;
+	position: relative;
+	float: left;
+	width: 620px;
+	margin-top: 25px;
+	padding-left: 50px;
 	}
-.entry li {
-	list-style: circle;
 	
-}
-	.entry.last {
-		padding-bottom: 0;
-		background: none;
+	.entry .info {
+		position: absolute;
+		left: 0;
+		}
+	
+	.entry .month {
+		font-size: 10px;
+		color: #666;
+		}	
+		
+	.entry .day,
+	.entry .commentCount {
+		text-align: center;		
+		width: 35px; 
+		font-family: Georgia, serif;
+		font-size: 18px;
+		color: #fff;
 		}
 		
-	.entry .info {	
-		position: absolute;
-		text-align: center;
-		margin-left: -100px;
-		padding-top: 4px;
-		color: white;
-		background: url(../images/info.jpg) no-repeat top center;
-		border-bottom: none;
+	.entry .day {
+		height: 32px;
+		margin-top: 2px;
+		padding-top: 6px;
+		background: url(/images/blogIcons.png) no-repeat;
 		}	
-
-
-		.entry .info span {
-			display: block;
-			margin: .25em 0;
-			font-family: Georgia, serif;
-			font-style: italic;
-			font-weight: bold;
-			}
-			
-			.info .day { font-size: 20px; }	
-				.info .day sup { font-size: 12px; }	
-			.info .month { font-size: 18px; }
-			.info .year { font-size: 12px; }	
-			
-		.entry .comments {
-			padding-top: 3em;
-			font-size: 12px;
-			color: #00cccc;
-			}	
-			
-			.entry .comments span { margin: 0; }
-			.entry .comments .count { font-size: 22px; }
-			
-		.author {
-			font-family: Georgia, serif;
-			font-style: italic;
-			font-weight: bold;
-			font-size: 12px;
-			color: #00cccc;
-			border-bottom: none;
-			}
-	
-	.entry h2 { display: inline; line-height: 26px;}
-		.entry h2:hover { background: white; border-bottom: 1px solid #00cccc; }
-	
-	#comment {
-		margin-top: 50px;
+		
+	.commentCount { 
+		height: 24px;
+		margin-top: 12px;
+		padding: 2px 0 0;
+		background: url(/images/blogIcons.png) no-repeat 0 -38px;
 		}	
-
-		#comment .textfield {
-			margin-right: 10px;
-			padding: 5px;
-			border: 0;
-			font-size: 14px;
-			font-family: Georgia, serif;
-			font-style: italic;
-			font-weight: bold;
-			background: #eee;
-			color: #333;
-			}
-			
-		#comment label {
-			font-size: 10px;
-			color: #999;		
-			}
 		
-		#comment .commentBox { 
-			width: 359px;
-			padding: 10px;
-			border: 3px solid #ccc;
-			font-size: 12px;
-			font-family: arial, serif;
-			}		
-		#comment .commentRules {
-			width: 305px;
-			float: left;
-			color: #999;
-			line-height: 1em;
-			}		
+	.entry h2 {
+		margin-bottom: 2px;
+		font-size: 18px;
+		border-bottom: #000;
+		}	
 		
-		#comment .submit {
-			width: 80px;
-			height: 40px;
-			border: 0;
-			font-family: Georgia, serif;
-			font-style: italic;
-			font-weight: bold;
-			background: #111;
-			color: #fff;
-			}
+	.entry .author {
+		margin: 0;
+		font-family: Georgia, serif;
+		font-style: italic;
+		font-weight: bold;
+		color: #00CCCC;
+		}	
+		
+.aboutSolutious {
+	float: right;
+	width: 250px;
+	margin-top: 10px;
+	padding-top: 85px;
+	background: url(/images/aboutSolutious.png) no-repeat;
+	font-family: Georgia, serif;
+	font-size: 14px;
+	line-height: 1.25em;
+	font-style: italic;
+	color: #999;
+	}	
+	
+	.signature {
+		font-size: 18px;
+		color: #00CCCC;
+		background: url(/images/signatureHeart.png) no-repeat 14px 2px;
+		}	
+		
+.aboutAuthor {
+	float: right;
+	width: 250px; height: 80px;
+	background: url(/images/aboutSolutious.png) no-repeat;		
+	}

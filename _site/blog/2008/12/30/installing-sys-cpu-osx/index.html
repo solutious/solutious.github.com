@@ -27,25 +27,54 @@
 	<link href="/blog/atom.rss" rel="alternate" title="The Solutious Blog" type="application/atom+xml" />
   
 </head>
-<body id="blogPost">
+<body class="blogPost">
 
-<div id="top">
 	<div class="corset">
-		<h1 class="logo"><a href="/">Solutious</a></h1>
-		<ul class="nav">
-			<li class="first"><a href="/about/">about</a></li>
-			<li id="navBlog"><a href="/blog/">blog</a></li>
-			<li id="navArchive"><a href="/blog/archive/">archive</a></li>
-		</ul>
+		<div class="top">
+			<div class="openSourceProjects">Open Source Projects</div>
+			<a class="logo" href="/"><h1>Solutious</h1></a>
+
+			<ul class="productNav">
+				<!--li class="ceasars"><a href="#">Ceasars</a></li>
+				<li class="drydock"><a href="#">Drydock</a></li-->
+				<li class="stella"><a href="#">Stella</a></li>
+				<li class="rudy"><a href="#">Rudy</a></li>
+			</ul>	
+			<div class="navLeftLine"></div>
+			<ul class="nav">
+				<li class="first"><a href="/">HOME</a></li>
+				<li><a href="/">ABOUT</a></li>
+				<li><a href="/">PRODUCTS</a></li>
+				<li class="on"><a href="/">BLOG</a></li>
+				<li><a href="/">CONTACT</a></li>
+			</ul>
+
+			<div class="subnav">
+				<div class="message">welcome to solutious - we like icecream and yamalows</div>
+				<ul>
+					<li class="first"><a href="#">the zoo</a></li>
+					<li><a href="#">labs</a></li>
+					<li><a href="#">miscellany</a></li>
+					<li><a href="#">you so and so</a></li>
+				</ul>
+			</div>	
+		</div>
+
+
+	<div class="left">
+	
+<div class="entry">
+
+	<div class="info">
+		<div class="month">Dec '2008</div>
+		<div class="day">30</div>
+		<!--div class="commentCount">122</div-->
 	</div>
-</div>
 
-
-
-<div class="corset">
-
-<a name="/blog/2008/12/30/installing-sys-cpu-osx"></a>
-<h2><a href="/blog/2008/12/30/installing-sys-cpu-osx" title="Installing sys-cpu 0.6.0 on OS X 10.5 Leopard">Installing sys-cpu 0.6.0 on OS X 10.5 Leopard</a></h2>
+	<a href="/blog/2008/12/30/installing-sys-cpu-osx" title="Installing sys-cpu 0.6.0 on OS X 10.5 Leopard"><h2>Installing sys-cpu 0.6.0 on OS X 10.5 Leopard</h2></a>
+	<p class="author">posted by delano</p>
+	
+	
 
 <p class="author">posted by delano on Tue, Dec 30 2008</p>
 
@@ -58,7 +87,8 @@ var idcomments_post_url;
 <script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>
 -->
 
-<p>I was trying to install the <a href='http://rubyforge.org/projects/sysutils' title='sysutils at Rubyforge'>sys-utils</a> Ruby libraries today and got an error while building sys-cpu on OX 10.5 Leopard. sys-cpu is a multi-platform Ruby library for accessing information about the CPUs and it contains a native extension which needs to be compiled during them installation. This is the error:</p>
+<p>I was trying to install the
+<a href="http://rubyforge.org/projects/sysutils" title="sysutils at Rubyforge">sys-utils</a> Ruby libraries today and got an error while building sys-cpu on OX 10.5 Leopard. sys-cpu is a multi-platform Ruby library for accessing information about the CPUs and it contains a native extension which needs to be compiled during them installation. This is the error:</p>
 
 <pre><code>$ sudo gem install sys-cpu
   Building native extensions.  This could take a while...
@@ -67,25 +97,24 @@ var idcomments_post_url;
   ...
   cpu.c:14:17: error: kvm.h: No such file or directory
   cpu.c:14:17: error: kvm.h: No such file or directory
-  cpu.c: In function &#39;cpu_load_avg&#39;:
+  cpu.c: In function 'cpu_load_avg':
   ...
-  make: *** [cpu.o] Error 1</code></pre>
+  make: *** [cpu.o] Error 1
+</code></pre>
 
-<p>OS X 10.5 seems to be missing a C header file, kvm.h, that&#8217;s required by sys-cpu. Here&#8217;s how you can solve the problem:</p>
+<p>OS X 10.5 seems to be missing a C header file, kvm.h, that's required by sys-cpu. Here's how you can solve the problem:</p>
 
 <ul>
-<li>Download a <a href='http://rubyforge.org/frs/download.php/20065/sys-cpu-0.6.0.tar.gz' title='sys-cpu tar.gz'>non-gem version</a> and unpack it.</li>
-
-<li>Get a copy of kvm.h. If you&#8217;re running OS X 10.5 that was upgraded from 10.4, you can find it in <code>/Developer/SDKs/MacOSX10.4.sdk/usr/include</code>. If not, you can download it from here: <a href='http://solutious.com/r/kvm.h'>http://solutious.com/r/kvm.h</a>.</li>
-
+<li>Download a <a href="http://rubyforge.org/frs/download.php/20065/sys-cpu-0.6.0.tar.gz" title="sys-cpu tar.gz">non-gem version</a> and unpack it.</li>
+<li>Get a copy of kvm.h. If you're running OS X 10.5 that was upgraded from 10.4, you can find it in <code>/Developer/SDKs/MacOSX10.4.sdk/usr/include</code>. If not, you can download it from here: <a href="http://solutious.com/r/kvm.h">http://solutious.com/r/kvm.h</a>.</li>
 <li>Copy kvm.h in to sys-cpu-0.6.0/ext</li>
-
 <li>Inside of sys-cpu-0.6.0, run: <code>rake test</code> then <code>sudo rake install</code></li>
-
-<li>The following command should now run without errors: <code>ruby -r&#39;sys/cpu&#39; -e 1</code>.</li>
+<li>The following command should now run without errors: <code>ruby -r'sys/cpu' -e 1</code>.</li>
 </ul>
 
-<p>That&#8217;s it!</p>
+
+<p>That's it!</p>
+
 
 <div id="related">
   <h3>Related Posts</h3>
@@ -111,12 +140,22 @@ src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
 
 
 </div>
-  
+	</div>
+	
+	<div class="aboutSolutious">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a mauris. Aenean fringilla, leo non ornare condimentum, tellus leo condimentum arcu, ac commodo tortor augue at justo. Praesent vehicula. Nam tellus. Proin in erat quis augue elementum ullamcorper. Phasellus sodales egestas augue. Sed odio dolor, aliquet ac, pellentesque sit amet, eleifend non, risus. Fusce ornare nunc eget leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+			<p class="signature">- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Solutious</p>
+	</div>
 
-<div id="footer" class="corset">
-	<a href="http://solutious.com/" class="big">Solutious</a>.
-	<span class="tagline">There's no prohibition on performance.</span>
-	Copyright 2006-2009.
+	<a class="aboutAuthor" href="#"></a>
+	<div class="reset"></div>
+
+	<div id="footer">
+		<a href="http://solutious.com/" class="big">Solutious</a>.
+		<span class="tagline">There's no prohibition on performance.</span>
+		Copyright 2006-2009.
+	</div>
+	
 </div>
  	
 <script type="text/javascript">

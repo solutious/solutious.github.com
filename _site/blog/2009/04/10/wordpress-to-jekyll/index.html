@@ -27,25 +27,54 @@
 	<link href="/blog/atom.rss" rel="alternate" title="The Solutious Blog" type="application/atom+xml" />
   
 </head>
-<body id="blogPost">
+<body class="blogPost">
 
-<div id="top">
 	<div class="corset">
-		<h1 class="logo"><a href="/">Solutious</a></h1>
-		<ul class="nav">
-			<li class="first"><a href="/about/">about</a></li>
-			<li id="navBlog"><a href="/blog/">blog</a></li>
-			<li id="navArchive"><a href="/blog/archive/">archive</a></li>
-		</ul>
+		<div class="top">
+			<div class="openSourceProjects">Open Source Projects</div>
+			<a class="logo" href="/"><h1>Solutious</h1></a>
+
+			<ul class="productNav">
+				<!--li class="ceasars"><a href="#">Ceasars</a></li>
+				<li class="drydock"><a href="#">Drydock</a></li-->
+				<li class="stella"><a href="#">Stella</a></li>
+				<li class="rudy"><a href="#">Rudy</a></li>
+			</ul>	
+			<div class="navLeftLine"></div>
+			<ul class="nav">
+				<li class="first"><a href="/">HOME</a></li>
+				<li><a href="/">ABOUT</a></li>
+				<li><a href="/">PRODUCTS</a></li>
+				<li class="on"><a href="/">BLOG</a></li>
+				<li><a href="/">CONTACT</a></li>
+			</ul>
+
+			<div class="subnav">
+				<div class="message">welcome to solutious - we like icecream and yamalows</div>
+				<ul>
+					<li class="first"><a href="#">the zoo</a></li>
+					<li><a href="#">labs</a></li>
+					<li><a href="#">miscellany</a></li>
+					<li><a href="#">you so and so</a></li>
+				</ul>
+			</div>	
+		</div>
+
+
+	<div class="left">
+	
+<div class="entry">
+
+	<div class="info">
+		<div class="month">Apr '2009</div>
+		<div class="day">10</div>
+		<!--div class="commentCount">122</div-->
 	</div>
-</div>
 
-
-
-<div class="corset">
-
-<a name="/blog/2009/04/10/wordpress-to-jekyll"></a>
-<h2><a href="/blog/2009/04/10/wordpress-to-jekyll" title="From WordPress to Jekyll">From WordPress to Jekyll</a></h2>
+	<a href="/blog/2009/04/10/wordpress-to-jekyll" title="From WordPress to Jekyll"><h2>From WordPress to Jekyll</h2></a>
+	<p class="author">posted by delano</p>
+	
+	
 
 <p class="author">posted by delano on Fri, Apr 10 2009</p>
 
@@ -58,13 +87,14 @@ var idcomments_post_url;
 <script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>
 -->
 
-<p>I started this blog in September 2008 with a post about <a href='/2008/09/16/simple-ruby-encryption.html'>encryption in Ruby</a>. I used <a href='http://tumblr.com/'>Tumblr</a> because I wanted something quick and simple. As it turned out, Tumblr is a great service for personal blogs but not for group and company blogs. Adding multiple users to a single blog with Tumblr is <em>strange</em>. Every user must have their own personal blog before they can be added to the group blog. I also wanted more control over the layout and content.</p>
+<p>I started this blog in September 2008 with a post about <a href="/2008/09/16/simple-ruby-encryption.html">encryption in Ruby</a>. I used <a href="http://tumblr.com/">Tumblr</a> because I wanted something quick and simple. As it turned out, Tumblr is a great service for personal blogs but not for group and company blogs. Adding multiple users to a single blog with Tumblr is <em>strange</em>. Every user must have their own personal blog before they can be added to the group blog. I also wanted more control over the layout and content.</p>
 
-<p>In December <a href='/2008/12/12/tumblr-to-wordpress.html'>I switched to WordPress</a>. It was a surprisingly pleasant experience. I could do almost everything I wanted to do with the layout and I brought the content home to our own servers. But something still did not feel right. I don&#8217;t particularly like databases at the best of times and using one for a blog is more than a bit excessive. There&#8217;s a lot of overhead involved in running a <a href='http://wordpress.org/'>WordPress</a> blog (the same thing can be said about any blog engine that combines an application with a database). There&#8217;s the system administration to keep it up to date, secure, and performing well. There are more steps than necessary to write new posts. It&#8217;s slow. That&#8217;s a lot of cake!</p>
+<p>In December <a href="/2008/12/12/tumblr-to-wordpress.html">I switched to WordPress</a>. It was a surprisingly pleasant experience. I could do almost everything I wanted to do with the layout and I brought the content home to our own servers. But something still did not feel right. I don't particularly like databases at the best of times and using one for a blog is more than a bit excessive. There's a lot of overhead involved in running a <a href="http://wordpress.org/">WordPress</a> blog (the same thing can be said about any blog engine that combines an application with a database). There's the system administration to keep it up to date, secure, and performing well. There are more steps than necessary to write new posts. It's slow. That's a lot of cake!</p>
 
-<p>So what&#8217;s the solution? <a href='http://github.com/mojombo/jekyll'>Jekyll</a>, a blog-aware, static site generator. What&#8217;s old is new again. I&#8217;ve been using Jekyll for <a href='http://solutious.com'>solutious.com</a> for about a month and I&#8217;m loving it. Unlike databases, I love files regardless of the times so using a static site is right up my alley. And now I&#8217;m using it for the blog too. There&#8217;s a lot <a href='http://www.oiledmachine.com/posts/2008/12/27/overview-of-jekyll--a-static-site-generator-written-in-ruby.html'>of positive</a> <a href='http://blog.favrik.com/2009/03/02/installing-jekyll-on-ubuntu-8-10/'>and helpful</a> <a href='http://drnicwilliams.com/2008/12/21/migrating-project-websites-to-github-pages-with-sake-tasks-new-websites-with-jekyll_generator/'>stuff written</a> <a href='http://metajack.im/2009/01/23/blogging-with-git-emacs-and-jekyll/'>about it</a> already so I won&#8217;t re-iterate that here. But I will mention that Jekyll also <a href='http://github.com/blog/402-github-pages-upgraded-to-jekyll-0-5-0'>plays nice with GitHub</a> (which is logical since it&#8217;s written by <a href='http://tom.preston-werner.com/'>Tom Preston-Werner</a>).</p>
+<p>So what's the solution? <a href="http://github.com/mojombo/jekyll">Jekyll</a>, a blog-aware, static site generator. What's old is new again. I've been using Jekyll for <a href="http://solutious.com">solutious.com</a> for about a month and I'm loving it. Unlike databases, I love files regardless of the times so using a static site is right up my alley. And now I'm using it for the blog too. There's a lot <a href="http://www.oiledmachine.com/posts/2008/12/27/overview-of-jekyll--a-static-site-generator-written-in-ruby.html">of positive</a> <a href="http://blog.favrik.com/2009/03/02/installing-jekyll-on-ubuntu-8-10/">and helpful</a> <a href="http://drnicwilliams.com/2008/12/21/migrating-project-websites-to-github-pages-with-sake-tasks-new-websites-with-jekyll_generator/">stuff written</a> <a href="http://metajack.im/2009/01/23/blogging-with-git-emacs-and-jekyll/">about it</a> already so I won't re-iterate that here. But I will mention that Jekyll also <a href="http://github.com/blog/402-github-pages-upgraded-to-jekyll-0-5-0">plays nice with GitHub</a> (which is logical since it's written by <a href="http://tom.preston-werner.com/">Tom Preston-Werner</a>).</p>
 
-<p>I&#8217;ll also mention that I like the name. Thanks TPW!</p>
+<p>I'll also mention that I like the name. Thanks TPW!</p>
+
 
 <div id="related">
   <h3>Related Posts</h3>
@@ -90,12 +120,22 @@ src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
 
 
 </div>
-  
+	</div>
+	
+	<div class="aboutSolutious">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a mauris. Aenean fringilla, leo non ornare condimentum, tellus leo condimentum arcu, ac commodo tortor augue at justo. Praesent vehicula. Nam tellus. Proin in erat quis augue elementum ullamcorper. Phasellus sodales egestas augue. Sed odio dolor, aliquet ac, pellentesque sit amet, eleifend non, risus. Fusce ornare nunc eget leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+			<p class="signature">- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Solutious</p>
+	</div>
 
-<div id="footer" class="corset">
-	<a href="http://solutious.com/" class="big">Solutious</a>.
-	<span class="tagline">There's no prohibition on performance.</span>
-	Copyright 2006-2009.
+	<a class="aboutAuthor" href="#"></a>
+	<div class="reset"></div>
+
+	<div id="footer">
+		<a href="http://solutious.com/" class="big">Solutious</a>.
+		<span class="tagline">There's no prohibition on performance.</span>
+		Copyright 2006-2009.
+	</div>
+	
 </div>
  	
 <script type="text/javascript">

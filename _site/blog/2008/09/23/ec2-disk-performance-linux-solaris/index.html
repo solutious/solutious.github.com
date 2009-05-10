@@ -27,25 +27,54 @@
 	<link href="/blog/atom.rss" rel="alternate" title="The Solutious Blog" type="application/atom+xml" />
   
 </head>
-<body id="blogPost">
+<body class="blogPost">
 
-<div id="top">
 	<div class="corset">
-		<h1 class="logo"><a href="/">Solutious</a></h1>
-		<ul class="nav">
-			<li class="first"><a href="/about/">about</a></li>
-			<li id="navBlog"><a href="/blog/">blog</a></li>
-			<li id="navArchive"><a href="/blog/archive/">archive</a></li>
-		</ul>
+		<div class="top">
+			<div class="openSourceProjects">Open Source Projects</div>
+			<a class="logo" href="/"><h1>Solutious</h1></a>
+
+			<ul class="productNav">
+				<!--li class="ceasars"><a href="#">Ceasars</a></li>
+				<li class="drydock"><a href="#">Drydock</a></li-->
+				<li class="stella"><a href="#">Stella</a></li>
+				<li class="rudy"><a href="#">Rudy</a></li>
+			</ul>	
+			<div class="navLeftLine"></div>
+			<ul class="nav">
+				<li class="first"><a href="/">HOME</a></li>
+				<li><a href="/">ABOUT</a></li>
+				<li><a href="/">PRODUCTS</a></li>
+				<li class="on"><a href="/">BLOG</a></li>
+				<li><a href="/">CONTACT</a></li>
+			</ul>
+
+			<div class="subnav">
+				<div class="message">welcome to solutious - we like icecream and yamalows</div>
+				<ul>
+					<li class="first"><a href="#">the zoo</a></li>
+					<li><a href="#">labs</a></li>
+					<li><a href="#">miscellany</a></li>
+					<li><a href="#">you so and so</a></li>
+				</ul>
+			</div>	
+		</div>
+
+
+	<div class="left">
+	
+<div class="entry">
+
+	<div class="info">
+		<div class="month">Sep '2008</div>
+		<div class="day">23</div>
+		<!--div class="commentCount">122</div-->
 	</div>
-</div>
 
-
-
-<div class="corset">
-
-<a name="/blog/2008/09/23/ec2-disk-performance-linux-solaris"></a>
-<h2><a href="/blog/2008/09/23/ec2-disk-performance-linux-solaris" title="EC2 Disk Performance, Linux vs OpenSolaris - Preliminary Results">EC2 Disk Performance, Linux vs OpenSolaris - Preliminary Results</a></h2>
+	<a href="/blog/2008/09/23/ec2-disk-performance-linux-solaris" title="EC2 Disk Performance, Linux vs OpenSolaris - Preliminary Results"><h2>EC2 Disk Performance, Linux vs OpenSolaris - Preliminary Results</h2></a>
+	<p class="author">posted by delano</p>
+	
+	
 
 <p class="author">posted by delano on Tue, Sep 23 2008</p>
 
@@ -58,83 +87,113 @@ var idcomments_post_url;
 <script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>
 -->
 
-<p>I started playing with the Solaris images on EC2 last week. I&#8217;m crazy for disk performance so I got straight to the benchmarking. These are only preliminary results because I&#8217;m only testing reading and writing medium to large files and I&#8217;m still getting a feel for the performance. In these tests I&#8217;m using the dd utility to read and write files to several mounts (local, local swap, and EBS). The test and results are below and I follow up with what will be improved on for the next test. NOTE: I&#8217;m currently waiting for a response from Sun&#8217;s EC2 support before continuing the tests.</p>
+<p>I started playing with the Solaris images on EC2 last week. I'm crazy for disk performance so I got straight to the benchmarking. These are only preliminary results because I'm only testing reading and writing medium to large files and I'm still getting a feel for the performance. In these tests I'm using the dd utility to read and write files to several mounts (local, local swap, and EBS). The test and results are below and I follow up with what will be improved on for the next test. NOTE: I'm currently waiting for a response from Sun's EC2 support before continuing the tests.</p>
 
 <p>Summary: Reading and writing medium to large files in OpenSolaris in EC2 appears to be slower than Linux. More testing is required.</p>
 
-<h2 id='tests'>Tests</h2>
+<h2>Tests</h2>
 
 <ul>
-<li>
-<p>Read/write 10MB, 100MB, 1000MB to /, /mnt/, /data, /tmp</p>
+<li>Read/write 10MB, 100MB, 1000MB to /, /mnt/, /data, /tmp
 
 <ul>
-<li>/ and /mnt are the default &#8220;local&#8221; disks</li>
-
-<li>/tmp is the default &#8220;local&#8221; swap space - /data is an EBS volume (ext3 for linux, zfs for solaris)</li>
-
-<li>See script <a href='http://solutious.com/benchmarks/disktest1-sept.17.2008/disktest1.sh.txt'>disktest1.sh</a></li>
+<li>/ and /mnt are the default "local" disks</li>
+<li>/tmp is the default "local" swap space</li>
+<li>/data is an EBS volume (ext3 for linux, zfs for solaris)</li>
+<li>See script <a href="http://solutious.com/benchmarks/disktest1-sept.17.2008/disktest1.sh.txt">disktest1.sh</a></li>
 </ul>
 </li>
 </ul>
 
-<h2 id='machines'>Machines</h2>
+
+<h2>Machines</h2>
 
 <ul>
-<li>
-<p>m1.small, Fedora 8 Linux 32-bit (<a href='http://solutious.com/benchmarks/disktest1-sept.17.2008/disktest1-linux-small.log'>test data</a>)</p>
+<li>m1.small, Fedora 8 Linux 32-bit (<a href="http://solutious.com/benchmarks/disktest1-sept.17.2008/disktest1-linux-small.log">test data</a>)</li>
+<li>m1.small, OpenSolaris 2008.05 32-bit (no test data, killed after 20 minutes)</li>
+<li>m1.large, Fedora 8 Linux 64-bit (<a href="http://solutious.com/benchmarks/disktest1-sept.17.2008/disktest1-linux-large.log">test data</a>)</li>
+<li>m1.large, Solaris Express Community Edition build 79 64-bit (<a href="http://solutious.com/benchmarks/disktest1-sept.17.2008/disktest1-solaris-large.log">test data</a>)</li>
+</ul>
+
+
+<h2>Conclusions</h2>
+
+<ul>
+<li><p>Local Disk performance: Linux is much faster.</p>
+
+<ul>
+<li>Linux vs OpenSolaris
+
+<ul>
+<li>OpenSolaris can be up to 30 times slower for 1GB+ files (2s vs 1m)</li>
+<li>About the same for 10MB and 100MB files (~0.02s)</li>
+<li>OpenSolaris swap (/tmp) performance is about 2x slower (2s vs 4s for 1GB)</li>
+</ul>
 </li>
+<li>Small Linux vs Large Linux
 
-<li>
-<p>m1.small, OpenSolaris 2008.05 32-bit (no test data, killed after 20 minutes)</p>
+<ul>
+<li>Comparable for 10MB files</li>
+<li>m1.small is amall is about 3x slower for 100MB files (0.6s vs 0.2s)</li>
+<li>m1.small is amall is about 5-8x slower for 1000MB files (12s vs 2s)</li>
+</ul>
 </li>
+<li>Small OpenSolaris vs Large OpenSolaris
 
-<li>
-<p>m1.large, Fedora 8 Linux 64-bit (<a href='http://solutious.com/benchmarks/disktest1-sept.17.2008/disktest1-linux-large.log'>test data</a>)</p>
+<ul>
+<li>The m1.small instance of OpenSolaris is really, really slow for all tests. I stopped the test after 20 minutes (note the m1.large OpenSolaris instance took 6.5 minutes)</li>
+</ul>
 </li>
-
-<li>
-<p>m1.large, Solaris Express Community Edition build 79 64-bit (<a href='http://solutious.com/benchmarks/disktest1-sept.17.2008/disktest1-solaris-large.log'>test data</a>)</p>
-
-<h2 id='conclusions'>Conclusions</h2>
+</ul>
 </li>
+<li><p>EBS Performance: Linux is faster.</p>
 
-<li>
-<p>Local Disk performance: Linux is much faster. - Linux vs OpenSolaris - OpenSolaris can be up to 30 times slower for 1GB+ files (2s vs 1m) - About the same for 10MB and 100MB files (~0.02s) - OpenSolaris swap (/tmp) performance is about 2x slower (2s vs 4s for 1GB) - Small Linux vs Large Linux - Comparable for 10MB files - m1.small is amall is about 3x slower for 100MB files (0.6s vs 0.2s) - m1.small is amall is about 5-8x slower for 1000MB files (12s vs 2s) - Small OpenSolaris vs Large OpenSolaris - The m1.small instance of OpenSolaris is really, really slow for all tests. I stopped the test after 20 minutes (note the m1.large OpenSolaris instance took 6.5 minutes)</p>
+<ul>
+<li>Linux vs OpenSolaris
+
+<ul>
+<li>Solaris performance is about 2.5x slower (2s vs 5s for 1GB)</li>
+</ul>
 </li>
+<li>Small Linux vs Large Linux
 
-<li>
-<p>EBS Performance: Linux is faster. - Linux vs OpenSolaris - Solaris performance is about 2.5x slower (2s vs 5s for 1GB) - Small Linux vs Large Linux - m1.small is about 2x slower for 10MB (0.05s vs 0.025s) - m1.small is about 2-3x slower for 100MB (0.6s vs 0.2s) - m1.small is about 7x slower for 1GB (14s vs 2s) - Small Solaris vs Large Solaris - m1.small is REALLY slow.</p>
-
-<h2 id='notes'>Notes</h2>
+<ul>
+<li>m1.small is about 2x slower for 10MB (0.05s vs 0.025s)</li>
+<li>m1.small is about 2-3x slower for 100MB (0.6s vs 0.2s)</li>
+<li>m1.small is about 7x slower for 1GB (14s vs 2s)</li>
+</ul>
 </li>
+<li>Small Solaris vs Large Solaris
 
-<li>
-<p>The times grew longer for each of the 3 runs (the first run was always the fastest). Try again with a delay in between to account for some kind of background EC2/EBS process to finish.</p>
+<ul>
+<li>m1.small is REALLY slow.</li>
+</ul>
 </li>
-
-<li>
-<p>There are occasional writes which are very slow for both platforms regardless of which test was being run.</p>
-</li>
-
-<li>
-<p>The Solaris Express Community Edition is not supported.</p>
+</ul>
 </li>
 </ul>
 
-<h2 id='what_you_can_look_forward_to_in_the_next_test'>What you can look forward to in the next test</h2>
+
+<h2>Notes</h2>
+
+<ul>
+<li>The times grew longer for each of the 3 runs (the first run was always the fastest). Try again with a delay in between to account for some kind of background EC2/EBS process to finish.</li>
+<li>There are occasional writes which are very slow for both platforms regardless of which test was being run.</li>
+<li>The Solaris Express Community Edition is not supported.</li>
+</ul>
+
+
+<h2>What you can look forward to in the next test</h2>
 
 <ul>
 <li>Use standard public EC2 images. Include the ami ID and uname output for each test to be clear in the systems used.</li>
-
 <li>Track the total run time for all tests (note: above I only have times for the two large instances).</li>
-
 <li>Use bonnie-64 test to test caching / swapping performance.</li>
-
 <li>Use bonnie++ for testing small file performance.</li>
-
 <li>Restart instances between tests, define warm-up procedure.</li>
 </ul>
+
+
 
 <div id="related">
   <h3>Related Posts</h3>
@@ -160,12 +219,22 @@ src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
 
 
 </div>
-  
+	</div>
+	
+	<div class="aboutSolutious">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a mauris. Aenean fringilla, leo non ornare condimentum, tellus leo condimentum arcu, ac commodo tortor augue at justo. Praesent vehicula. Nam tellus. Proin in erat quis augue elementum ullamcorper. Phasellus sodales egestas augue. Sed odio dolor, aliquet ac, pellentesque sit amet, eleifend non, risus. Fusce ornare nunc eget leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+			<p class="signature">- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Solutious</p>
+	</div>
 
-<div id="footer" class="corset">
-	<a href="http://solutious.com/" class="big">Solutious</a>.
-	<span class="tagline">There's no prohibition on performance.</span>
-	Copyright 2006-2009.
+	<a class="aboutAuthor" href="#"></a>
+	<div class="reset"></div>
+
+	<div id="footer">
+		<a href="http://solutious.com/" class="big">Solutious</a>.
+		<span class="tagline">There's no prohibition on performance.</span>
+		Copyright 2006-2009.
+	</div>
+	
 </div>
  	
 <script type="text/javascript">

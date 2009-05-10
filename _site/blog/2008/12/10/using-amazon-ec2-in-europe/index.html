@@ -27,25 +27,54 @@
 	<link href="/blog/atom.rss" rel="alternate" title="The Solutious Blog" type="application/atom+xml" />
   
 </head>
-<body id="blogPost">
+<body class="blogPost">
 
-<div id="top">
 	<div class="corset">
-		<h1 class="logo"><a href="/">Solutious</a></h1>
-		<ul class="nav">
-			<li class="first"><a href="/about/">about</a></li>
-			<li id="navBlog"><a href="/blog/">blog</a></li>
-			<li id="navArchive"><a href="/blog/archive/">archive</a></li>
-		</ul>
+		<div class="top">
+			<div class="openSourceProjects">Open Source Projects</div>
+			<a class="logo" href="/"><h1>Solutious</h1></a>
+
+			<ul class="productNav">
+				<!--li class="ceasars"><a href="#">Ceasars</a></li>
+				<li class="drydock"><a href="#">Drydock</a></li-->
+				<li class="stella"><a href="#">Stella</a></li>
+				<li class="rudy"><a href="#">Rudy</a></li>
+			</ul>	
+			<div class="navLeftLine"></div>
+			<ul class="nav">
+				<li class="first"><a href="/">HOME</a></li>
+				<li><a href="/">ABOUT</a></li>
+				<li><a href="/">PRODUCTS</a></li>
+				<li class="on"><a href="/">BLOG</a></li>
+				<li><a href="/">CONTACT</a></li>
+			</ul>
+
+			<div class="subnav">
+				<div class="message">welcome to solutious - we like icecream and yamalows</div>
+				<ul>
+					<li class="first"><a href="#">the zoo</a></li>
+					<li><a href="#">labs</a></li>
+					<li><a href="#">miscellany</a></li>
+					<li><a href="#">you so and so</a></li>
+				</ul>
+			</div>	
+		</div>
+
+
+	<div class="left">
+	
+<div class="entry">
+
+	<div class="info">
+		<div class="month">Dec '2008</div>
+		<div class="day">10</div>
+		<!--div class="commentCount">122</div-->
 	</div>
-</div>
 
-
-
-<div class="corset">
-
-<a name="/blog/2008/12/10/using-amazon-ec2-in-europe"></a>
-<h2><a href="/blog/2008/12/10/using-amazon-ec2-in-europe" title="Using Amazon EC2 In Europe">Using Amazon EC2 In Europe</a></h2>
+	<a href="/blog/2008/12/10/using-amazon-ec2-in-europe" title="Using Amazon EC2 In Europe"><h2>Using Amazon EC2 In Europe</h2></a>
+	<p class="author">posted by delano</p>
+	
+	
 
 <p class="author">posted by delano on Wed, Dec 10 2008</p>
 
@@ -58,48 +87,54 @@ var idcomments_post_url;
 <script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>
 -->
 
-<p>If you&#8217;re worked with EC2 before, there are a couple things you need to know to get started with launching machine instances in Europe. SSH Keys and AMIs are not shared between regions. We&#8217;re going to create both of these and then launch an instance in Europe. There&#8217;s also a new parameter <code>--region</code> which you need to use to interact with the new availability zones. Let&#8217;s giver&#8217;.</p>
+<p>If you're worked with EC2 before, there are a couple things you need to know to get started with launching machine instances in Europe. SSH Keys and AMIs are not shared between regions. We're going to create both of these and then launch an instance in Europe. There's also a new parameter <code>--region</code> which you need to use to interact with the new availability zones. Let's giver'.</p>
 
-<h2 id='create_an_s3_bucket_in_europe'>Create an S3 bucket in Europe</h2>
+<h2>Create an S3 bucket in Europe</h2>
 
-<p>AMIs are stored in S3 so you need a bucket in Europe if you don&#8217;t have one already (you&#8217;ll probably want a new one for your machine images anyway). There&#8217;s a Firefox extension called <a href='https://addons.mozilla.org/en-US/firefox/addon/3247'>S3Fox</a> that can help you do this (check the box labeled, &#8220;Place this bucket in Europe&#8221;). Note that S3Fox is quirky and ugly almost to the point where it&#8217;s offensive. But it works and it&#8217;s easier than writing a script. The free version of <a href='http://rightscale.com/'>RightScale</a> can do this too. You can also use <a href='http://s3tools.logix.cz/s3tools'>S3Tools</a> to create buckets but I&#8217;ve never used them so I can&#8217;t recommend them.</p>
+<p>AMIs are stored in S3 so you need a bucket in Europe if you don't have one already (you'll probably want a new one for your machine images anyway). There's a Firefox extension called <a href="https://addons.mozilla.org/en-US/firefox/addon/3247">S3Fox</a> that can help you do this (check the box labeled, "Place this bucket in Europe"). Note that S3Fox is quirky and ugly almost to the point where it's offensive. But it works and it's easier than writing a script. The free version of <a href="http://rightscale.com/">RightScale</a> can do this too. You can also use <a href="http://s3tools.logix.cz/s3tools">S3Tools</a> to create buckets but I've never used them so I can't recommend them.<br/>
+</p>
 
-<h2 id='copy_an_ami_from_the_us_to_eu'>Copy an AMI from the US to EU</h2>
+<h2>Copy an AMI from the US to EU</h2>
 
-<p>You have two choices: re-bundle your running instance(s) or copy your existing images with the <code>ec2-migrate-bundle</code> tool. If you choose to re-bundle, follow the steps you normally would (described in the <a href='http://docs.amazonwebservices.com/AWSEC2/2008-12-01/DeveloperGuide/index.html?bundling-an-ami-linux.html'>developer guide</a>) and then upload the bundle to Europe (also in the <a href='http://docs.amazonwebservices.com/AWSEC2/2008-12-01/DeveloperGuide/index.html?CLTRG-ami-upload-bundle.html'>developer guide</a>).</p>
+<p>You have two choices: re-bundle your running instance(s) or copy your existing images with the <code>ec2-migrate-bundle</code> tool. If you choose to re-bundle, follow the steps you normally would (described in the <a href="http://docs.amazonwebservices.com/AWSEC2/2008-12-01/DeveloperGuide/index.html?bundling-an-ami-linux.html">developer guide</a>) and then upload the bundle to Europe (also in the <a href="http://docs.amazonwebservices.com/AWSEC2/2008-12-01/DeveloperGuide/index.html?CLTRG-ami-upload-bundle.html">developer guide</a>).</p>
 
-<p>The easiest approach is to use the <code>ec2-migrate-bundle</code> tool. You&#8217;ll need to install the latest <a href='http://developer.amazonwebservices.com/connect/entry.jspa?externalID=368'>AMI tools</a> to a Linux or Windows machine near you (these <em><a href='http://developer.amazonwebservices.com/connect/message.jspa?messageID=92712'>will not work on OSX</a></em>). As a side note, the AMI tools are written in Ruby which is interesting because the <a href='http://developer.amazonwebservices.com/connect/entry.jspa?externalID=351'>API tools</a> are written in Java.</p>
+<p>The easiest approach is to use the <code>ec2-migrate-bundle</code> tool. You'll need to install the latest <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=368">AMI tools</a> to a Linux or Windows machine near you (these <em><a href="http://developer.amazonwebservices.com/connect/message.jspa?messageID=92712">will not work on OSX</a></em>). As a side note, the AMI tools are written in Ruby which is interesting because the <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=351">API tools</a> are written in Java.</p>
 
 <pre><code>$ ec2-migrate-bundle --location EU --cert /mnt/cert-*.pem --privatekey /mnt/pk-*.pem \
 --access-key ORANGEJUICE --secret-key SUp0rS3kRu7 \
 --bucket BUCKET-IN-US --destination-bucket BUCKET-IN-EU \ 
---manifest IMAGE.manifest.xml </code></pre>
+--manifest IMAGE.manifest.xml 
+</code></pre>
 
-<p>Note: If you&#8217;re running this command on an EC2 instance, you&#8217;ll need to upload your encryption keys first:</p>
+<p>Note: If you're running this command on an EC2 instance, you'll need to upload your encryption keys first:</p>
 
-<pre><code>$ scp -i PATH/2/private-key PATH/2/cert-*.pem PATH/2/pk-*.pem root@YOURMACHINE:/mnt/</code></pre>
+<pre><code>$ scp -i PATH/2/private-key PATH/2/cert-*.pem PATH/2/pk-*.pem root@YOURMACHINE:/mnt/
+</code></pre>
 
 <p>From your local machine, run the follow to tell EC2 that your new Europe image exists:</p>
 
-<pre><code>$ ec2-register --region eu-west-1 BUCKET-IN-EU/IMAGE.manifest.xml</code></pre>
+<pre><code>$ ec2-register --region eu-west-1 BUCKET-IN-EU/IMAGE.manifest.xml
+</code></pre>
 
-<h2 id='update_api_tools'>Update API Tools</h2>
+<h2>Update API Tools</h2>
 
-<p>You won&#8217;t be able to see your image yet b/c you need to update your <a href='http://developer.amazonwebservices.com/connect/entry.jspa?externalID=351'>API tools</a>. You should run these on a <em>real, physical machine</em>. Why? Because it&#8217;s a good rule of thumb for keeping your keys secure. If you copy them to a machine instance, you could forget them and they could end up being available on every instance you startup.</p>
+<p>You won't be able to see your image yet b/c you need to update your <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=351">API tools</a>. You should run these on a <em>real, physical machine</em>. Why? Because it's a good rule of thumb for keeping your keys secure. If you copy them to a machine instance, you could forget them and they could end up being available on every instance you startup.</p>
 
-<p>Now you&#8217;ll be able to see your machine images in Europe:</p>
+<p>Now you'll be able to see your machine images in Europe:</p>
 
-<pre><code>$ ec2-describe-images --region eu-west-1 -o self</code></pre>
+<pre><code>$ ec2-describe-images --region eu-west-1 -o self
+</code></pre>
 
-<p>You&#8217;ll be able to see the regions and availability zones:</p>
+<p>You'll be able to see the regions and availability zones:</p>
 
 <pre><code>$ ec2-describe-regions
-REGION	eu-west-1	eu-west-1.ec2.amazonaws.com
-REGION	us-east-1	us-east-1.ec2.amazonaws.com
+REGION  eu-west-1   eu-west-1.ec2.amazonaws.com
+REGION  us-east-1   us-east-1.ec2.amazonaws.com
 
 $ ec2-describe-availability-zones --region eu-west-1
-AVAILABILITYZONE	eu-west-1a	 available	eu-west-1
-AVAILABILITYZONE	eu-west-1b	 available	eu-west-1</code></pre>
+AVAILABILITYZONE    eu-west-1a   available  eu-west-1
+AVAILABILITYZONE    eu-west-1b   available  eu-west-1
+</code></pre>
 
 <p>You can make Europe your default region by adding the <code>EC2_URL</code> variable to your environment:</p>
 
@@ -107,51 +142,59 @@ AVAILABILITYZONE	eu-west-1b	 available	eu-west-1</code></pre>
 export EC2_URL=https://eu-west-1.ec2.amazonaws.com
 
 # Windows:
-set EC2_URL=https://eu-west-1.ec2.amazonaws.com</code></pre>
+set EC2_URL=https://eu-west-1.ec2.amazonaws.com
+</code></pre>
 
-<h2 id='create_an_ssh_key_in_europe'>Create an SSH key in Europe</h2>
+<h2>Create an SSH key in Europe</h2>
 
 <p>Before you can launch an instance in Europe, you need to create a new SSH key:</p>
 
-<pre><code>$ ec2-add-keypair eu-west-1-key --region eu-west-1</code></pre>
+<pre><code>$ ec2-add-keypair eu-west-1-key --region eu-west-1
+</code></pre>
 
-<p>The output of this command is your private key. Save it in a secure location! You&#8217;ll need to make sure it&#8217;s only readable by you (<code>chmod 600 eu-west-1-key</code>). SSH won&#8217;t use it otherwise.</p>
+<p>The output of this command is your private key. Save it in a secure location! You'll need to make sure it's only readable by you (<code>chmod 600 eu-west-1-key</code>). SSH won't use it otherwise.</p>
 
-<h2 id='create_a_security_group_in_europe'>Create a security group in Europe</h2>
+<h2>Create a security group in Europe</h2>
 
-<p>The default security group won&#8217;t allow you to SSH in to your new instance. You can create a new group with these commands:</p>
+<p>The default security group won't allow you to SSH in to your new instance. You can create a new group with these commands:</p>
 
-<pre><code>$ ec2-add-group --region eu-west-1 -d &quot;Potato Storage&quot; potato
-GROUP	potato	Potato Storage
+<pre><code>$ ec2-add-group --region eu-west-1 -d "Potato Storage" potato
+GROUP   potato  Potato Storage
 
 $ ec2-authorize --region eu-west-1 -p 22 potato
-GROUP		potato	
-PERMISSION		potato	ALLOWS	tcp	22	22	FROM	CIDR	0.0.0.0/0</code></pre>
+GROUP       potato  
+PERMISSION      potato  ALLOWS  tcp 22  22  FROM    CIDR    0.0.0.0/0
+</code></pre>
 
-<p>If security groups are new to you, be sure to check out the <a href='http://docs.amazonwebservices.com/AWSEC2/2008-12-01/DeveloperGuide/index.html?CLTRG-ami-migrate-bundle.html'>documentation</a> and <a href='http://docs.amazonwebservices.com/AmazonEC2/dg/2006-10-01/distributed-firewall-examples.html'>firewall examples</a>. <a href='http://broadcast.oreilly.com/2008/11/20-rules-for-amazon-cloud-security.html'>Twenty Rules for Amazon Cloud Security</a> is a good read too.</p>
+<p>If security groups are new to you, be sure to check out the <a href="http://docs.amazonwebservices.com/AWSEC2/2008-12-01/DeveloperGuide/index.html?CLTRG-ami-migrate-bundle.html">documentation</a> and <a href="http://docs.amazonwebservices.com/AmazonEC2/dg/2006-10-01/distributed-firewall-examples.html">firewall examples</a>. <a href="http://broadcast.oreilly.com/2008/11/20-rules-for-amazon-cloud-security.html">Twenty Rules for Amazon Cloud Security</a> is a good read too.</p>
 
-<h2 id='launch_an_instance_in_europe_finally'>Launch an instance in Europe (finally!)</h2>
+<h2>Launch an instance in Europe (finally!)</h2>
 
 <pre><code>$ ec2-run-instances --region eu-west-1 --availability-zone eu-west-1b \
---key eu-west-1-key --group potato -t m1.small ami-XXXXXXXX</code></pre>
+--key eu-west-1-key --group potato -t m1.small ami-XXXXXXXX
+</code></pre>
 
 <p>Use the following command to see when it becomes available:</p>
 
-<pre><code>$ ec2-describe-instances --region eu-west-1</code></pre>
+<pre><code>$ ec2-describe-instances --region eu-west-1
+</code></pre>
 
 <p>Once it does, log in and have some fun!</p>
 
-<pre><code>$ ssh -i PATH/2/eu-west-1-key root@ec2-XX-XXX-XX-XXX.eu-west-1.compute.amazonaws.com</code></pre>
+<pre><code>$ ssh -i PATH/2/eu-west-1-key root@ec2-XX-XXX-XX-XXX.eu-west-1.compute.amazonaws.com
+</code></pre>
 
-<h2 id='dont_forget_to_terminate_the_instance'>Don&#8217;t forget to terminate the instance!</h2>
+<h2>Don't forget to terminate the instance!</h2>
 
-<pre><code>$ ec2-terminate-instances --region eu-west-1 i-XXXXXXXX</code></pre>
+<pre><code>$ ec2-terminate-instances --region eu-west-1 i-XXXXXXXX
+</code></pre>
 
-<h2 id='extra_stuff'>Extra Stuff</h2>
+<h2>Extra Stuff</h2>
 
-<p>There&#8217;s more information about regions in the <a href='http://developer.amazonwebservices.com/connect/entry.jspa?externalID=1927&amp;categoryID=174'>Amazon EC2 Regions Guide</a>.</p>
+<p>There's more information about regions in the <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=1927&amp;categoryID=174">Amazon EC2 Regions Guide</a>.</p>
 
 <p>Enjoy running your apps in style!</p>
+
 
 <div id="related">
   <h3>Related Posts</h3>
@@ -177,12 +220,22 @@ src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
 
 
 </div>
-  
+	</div>
+	
+	<div class="aboutSolutious">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a mauris. Aenean fringilla, leo non ornare condimentum, tellus leo condimentum arcu, ac commodo tortor augue at justo. Praesent vehicula. Nam tellus. Proin in erat quis augue elementum ullamcorper. Phasellus sodales egestas augue. Sed odio dolor, aliquet ac, pellentesque sit amet, eleifend non, risus. Fusce ornare nunc eget leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+			<p class="signature">- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Solutious</p>
+	</div>
 
-<div id="footer" class="corset">
-	<a href="http://solutious.com/" class="big">Solutious</a>.
-	<span class="tagline">There's no prohibition on performance.</span>
-	Copyright 2006-2009.
+	<a class="aboutAuthor" href="#"></a>
+	<div class="reset"></div>
+
+	<div id="footer">
+		<a href="http://solutious.com/" class="big">Solutious</a>.
+		<span class="tagline">There's no prohibition on performance.</span>
+		Copyright 2006-2009.
+	</div>
+	
 </div>
  	
 <script type="text/javascript">

@@ -27,25 +27,54 @@
 	<link href="/blog/atom.rss" rel="alternate" title="The Solutious Blog" type="application/atom+xml" />
   
 </head>
-<body id="blogPost">
+<body class="blogPost">
 
-<div id="top">
 	<div class="corset">
-		<h1 class="logo"><a href="/">Solutious</a></h1>
-		<ul class="nav">
-			<li class="first"><a href="/about/">about</a></li>
-			<li id="navBlog"><a href="/blog/">blog</a></li>
-			<li id="navArchive"><a href="/blog/archive/">archive</a></li>
-		</ul>
+		<div class="top">
+			<div class="openSourceProjects">Open Source Projects</div>
+			<a class="logo" href="/"><h1>Solutious</h1></a>
+
+			<ul class="productNav">
+				<!--li class="ceasars"><a href="#">Ceasars</a></li>
+				<li class="drydock"><a href="#">Drydock</a></li-->
+				<li class="stella"><a href="#">Stella</a></li>
+				<li class="rudy"><a href="#">Rudy</a></li>
+			</ul>	
+			<div class="navLeftLine"></div>
+			<ul class="nav">
+				<li class="first"><a href="/">HOME</a></li>
+				<li><a href="/">ABOUT</a></li>
+				<li><a href="/">PRODUCTS</a></li>
+				<li class="on"><a href="/">BLOG</a></li>
+				<li><a href="/">CONTACT</a></li>
+			</ul>
+
+			<div class="subnav">
+				<div class="message">welcome to solutious - we like icecream and yamalows</div>
+				<ul>
+					<li class="first"><a href="#">the zoo</a></li>
+					<li><a href="#">labs</a></li>
+					<li><a href="#">miscellany</a></li>
+					<li><a href="#">you so and so</a></li>
+				</ul>
+			</div>	
+		</div>
+
+
+	<div class="left">
+	
+<div class="entry">
+
+	<div class="info">
+		<div class="month">Apr '2009</div>
+		<div class="day">22</div>
+		<!--div class="commentCount">122</div-->
 	</div>
-</div>
 
-
-
-<div class="corset">
-
-<a name="/blog/2009/04/22/rudy-ec2-api-tools-replacement"></a>
-<h2><a href="/blog/2009/04/22/rudy-ec2-api-tools-replacement" title="Rudy, A Replacement for EC2 API Tools.">Rudy, A Replacement for EC2 API Tools.</a></h2>
+	<a href="/blog/2009/04/22/rudy-ec2-api-tools-replacement" title="Rudy, A Replacement for EC2 API Tools."><h2>Rudy, A Replacement for EC2 API Tools.</h2></a>
+	<p class="author">posted by delano</p>
+	
+	
 
 <p class="author">posted by delano on Wed, Apr 22 2009</p>
 
@@ -58,73 +87,79 @@ var idcomments_post_url;
 <script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>
 -->
 
-<p>Rudy is a <a href='/2009/04/21/rudy-deployment-introduction/'>development and deployment tool</a> for EC2. It comes with an executable called <code>rudy-ec2</code> that can also be used as a replacement for Amazon&#8217;s EC2 API tools. The EC2 API tools are a great reference implementation but they&#8217;re unfriendly and become unwieldily when you have more than a few instances. <code>rudy-ec2</code> is an alternative to these tools that can be used on it&#8217;s own (you don&#8217;t need to start using Rudy), allowing you to incorporate Rudy into your development process gradually.</p>
+<p>Rudy is a <a href="/2009/04/21/rudy-deployment-introduction/">development and deployment tool</a> for EC2. It comes with an executable called <code>rudy-ec2</code> that can also be used as a replacement for Amazon's EC2 API tools. The EC2 API tools are a great reference implementation but they're unfriendly and become unwieldily when you have more than a few instances. <code>rudy-ec2</code> is an alternative to these tools that can be used on it's own (you don't need to start using Rudy), allowing you to incorporate Rudy into your development process gradually.</p>
 
-<h2 id='installation'>Installation</h2>
+<h2>Installation</h2>
 
-<p><code>rudy-ec2</code> is included with Rudy so if you&#8217;ve already installed Rudy, you can skip to the next section.</p>
+<p><code>rudy-ec2</code> is included with Rudy so if you've already installed Rudy, you can skip to the next section.</p>
 
-<p>Download Rudy from <a href='http://github.com/solutious/rudy'>github.com</a> or install it via RubyGems:</p>
+<p>Download Rudy from <a href="http://github.com/solutious/rudy">github.com</a> or install it via RubyGems:</p>
 
 <pre><code>$ sudo gem install rudy
-$ sudo gem install solutious-rudy --source http://gems.github.com/</code></pre>
+$ sudo gem install solutious-rudy --source http://gems.github.com/
+</code></pre>
 
-<p>NOTE: If you are not installing via RubyGems and running Ruby 1.8.x, you need to make sure the Ruby dependencies (see the <a href='http://github.com/solutious/rudy/blob/master/README.rdoc'>README</a>) are installed and in your LOAD<em>PATH. Ryan Tomayko wrote <a href='http://gist.github.com/54177'>a gist</a> about it.</em></p>
+<p>NOTE: If you are not installing via RubyGems and running Ruby 1.8.x, you need to make sure the Ruby dependencies (see the <a href="http://github.com/solutious/rudy/blob/master/README.rdoc">README</a>) are installed and in your LOAD_PATH. Ryan Tomayko wrote <a href="http://gist.github.com/54177">a gist</a> about it.</p>
 
-<h2 id='configuration_3_ways_to_do_it'>Configuration, 3 ways to do it</h2>
+<h2>Configuration, 3 ways to do it</h2>
 
 <p><code>rudy-ec2</code> needs your Amazon Web Services credentials in order to execute commands on EC2. You can configure these in 3 ways: rudy configuration, environment variables or command-line options.</p>
 
-<h3 id='rudy_configuration_method_1'>Rudy Configuration (method 1)</h3>
+<h3>Rudy Configuration (method 1)</h3>
 
-<p><code>rudy-ec2</code> can use the same configuration as <code>rudy</code>. If you&#8217;ve already created a Rudy configuration file, you don&#8217;t need to do anything else. Otherwise, run the following commands:</p>
+<p><code>rudy-ec2</code> can use the same configuration as <code>rudy</code>. If you've already created a Rudy configuration file, you don't need to do anything else. Otherwise, run the following commands:</p>
 
 <pre><code>$ rudy generate-config
   [edit ~/.rudy/config with your Amazon Web Services credentials] 
-$ rudy init</code></pre>
+$ rudy init
+</code></pre>
 
-<p>NOTE: <em>The above command is</em><em>rudy</em>* and not <strong>rudy-ec2</strong>.*</p>
+<p>NOTE: <em>The above command is <strong>rudy</strong> and not <strong>rudy-ec2</strong>.</em></p>
 
-<h3 id='environment_variables_method_2'>Environment Variables (method 2)</h3>
+<h3>Environment Variables (method 2)</h3>
 
-<h4 id='bash'>Bash</h4>
+<h4>Bash</h4>
 
 <p>Add the following to your <code>~/.bashrc</code> file:</p>
 
-<pre><code>AWS_ACCESS_KEY=&#39;your_aws_key&#39;
-AWS_SECRET_KEY=&#39;your_aws_secret&#39;
+<pre><code>AWS_ACCESS_KEY='your_aws_key'
+AWS_SECRET_KEY='your_aws_secret'
 AWS_ACCOUNT_NUMBER=123456789012
 export AWS_ACCESS_KEY AWS_SECRET_KEY AWS_ACCOUNT_NUMBER
 
 EC2_CERT=path/2/cert.pem
 EC2_PRIVATE_KEY=path/2/pk.pem
-export EC2_CERT EC2_PRIVATE_KEY</code></pre>
+export EC2_CERT EC2_PRIVATE_KEY
+</code></pre>
 
 <p>Then either start working in a new terminal window or run <code>source ~/.bashrc</code> to refresh your current one.</p>
 
-<h4 id='windowsdos'>Windows/DOS</h4>
+<h4>Windows/DOS</h4>
 
 <p>Set your environment variables from your System Properties menu.</p>
 
-<h3 id='commandline_options_method_3'>Command-line Options (method 3)</h3>
+<h3>Command-line Options (method 3)</h3>
 
-<pre><code>$ rudy-ec2 -A your_aws_key -S your_aws_secret COMMAND</code></pre>
+<pre><code>$ rudy-ec2 -A your_aws_key -S your_aws_secret COMMAND
+</code></pre>
 
 <p>NOTE: <em>If you use the command-line options, your credentials will appear in your shell history. You can run <code>history -c</code> to clear it.</em></p>
 
-<h2 id='rudyec2_commands'>rudy-ec2 Commands</h2>
+<h2>rudy-ec2  Commands</h2>
 
 <p>A <code>rudy-ec2</code> command follows the same convention as <code>rudy</code> commands:</p>
 
 <pre><code>$ rudy-ec2 -h
-USAGE: rudy-ec2 [global options] COMMAND [command options]</code></pre>
+USAGE: rudy-ec2 [global options] COMMAND [command options]
+</code></pre>
 
 <p>The default command displays the current instances</p>
 
 <pre><code>$ rudy-ec2
 i-8794fcee  ec2-11-22-33-44.compute-1.amazonaws.com  (group-awesome)
 i-9e94fcf7  ec2-55-66-77-88.compute-1.amazonaws.com  (group-awesome)
-i-9394fcfa  terminated  (group-awesome)</code></pre>
+i-9394fcfa  terminated  (group-awesome)
+</code></pre>
 
 <p>When no arguments are given, all commands display information about the object you specify:</p>
 
@@ -138,7 +173,8 @@ aki-9b00e5f2 i386   (ec2-public-images/vmlinuz-2.6.18-xenU-ec2-v1.0.i386.aki.man
 $ rudy-ec2 groups
 group-awesome (authorized accounts: 123456789012:default)
 11.22.33.44/32 -&gt; tcp(22), tcp(80), tcp(443)
-55.66.77.88/32 -&gt; tcp(22), tcp(80), tcp(443)</code></pre>
+55.66.77.88/32 -&gt; tcp(22), tcp(80), tcp(443)
+</code></pre>
 
 <p>With arguments, you can create, modify or destroy all EC2 objects:</p>
 
@@ -150,23 +186,27 @@ Authorize access to group-awesome from 11.22.33.44/32
 on tcp ports: 8080, 8081
 default (authorized accounts: 123456789012:default)
    11.22.33.44/32 -&gt; tcp(22), tcp(80), tcp(443), tcp(88), tcp(99)
-   11.22.33.44/32 -&gt; tcp(8080), tcp(8081)</code></pre>
+   11.22.33.44/32 -&gt; tcp(8080), tcp(8081)
+</code></pre>
 
-<h2 id='safety'>Safety</h2>
+<h2>Safety</h2>
 
-<p>I&#8217;m always a little nervous using the Amazon AMI tools because I feel like I&#8217;m one command away from a nightmare. <code>rudy-ec2</code> solves this by prompting for user input before executing any potentially destructive actions.</p>
+<p>I'm always a little nervous using the Amazon AMI tools because I feel like I'm one command away from a nightmare. <code>rudy-ec2</code> solves this by prompting for user input before executing any potentially destructive actions.</p>
 
 <pre><code>$ rudy-ec2 groups -D group-awesome
 Destroying group: group-awesome
-Are you sure? To continue, resolve (7 * 5): </code></pre>
+Are you sure? To continue, resolve (7 * 5): 
+</code></pre>
 
 <p>And you can avoid the annoyance by providing the <code>-Y</code> global</p>
 
-<pre><code>$ rudy-ec2 -Y groups -D group-awesome    # Careful!</code></pre>
+<pre><code>$ rudy-ec2 -Y groups -D group-awesome    # Careful!
+</code></pre>
 
-<h2 id='conclusion'>Conclusion</h2>
+<h2>Conclusion</h2>
 
-<p>That&#8217;s <code>rudy-ec2</code> in a nutshell. For more information, check out the <a href='http://opensource.solutious.com/rudy'>RDocs</a>.</p>
+<p>That's <code>rudy-ec2</code> in a nutshell. For more information, check out the <a href="http://opensource.solutious.com/rudy">RDocs</a>.</p>
+
 
 <div id="related">
   <h3>Related Posts</h3>
@@ -192,12 +232,22 @@ src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
 
 
 </div>
-  
+	</div>
+	
+	<div class="aboutSolutious">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a mauris. Aenean fringilla, leo non ornare condimentum, tellus leo condimentum arcu, ac commodo tortor augue at justo. Praesent vehicula. Nam tellus. Proin in erat quis augue elementum ullamcorper. Phasellus sodales egestas augue. Sed odio dolor, aliquet ac, pellentesque sit amet, eleifend non, risus. Fusce ornare nunc eget leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+			<p class="signature">- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Solutious</p>
+	</div>
 
-<div id="footer" class="corset">
-	<a href="http://solutious.com/" class="big">Solutious</a>.
-	<span class="tagline">There's no prohibition on performance.</span>
-	Copyright 2006-2009.
+	<a class="aboutAuthor" href="#"></a>
+	<div class="reset"></div>
+
+	<div id="footer">
+		<a href="http://solutious.com/" class="big">Solutious</a>.
+		<span class="tagline">There's no prohibition on performance.</span>
+		Copyright 2006-2009.
+	</div>
+	
 </div>
  	
 <script type="text/javascript">

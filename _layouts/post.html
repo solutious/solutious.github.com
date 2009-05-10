@@ -3,10 +3,18 @@ layout: default-blog
 bodyid: blogPost
 ---
 
-<div class="corset">
+<div class="entry">
 
-<a name="{{ page.id }}"></a>
-<h2><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h2>
+	<div class="info">
+		<div class="month">{{ page.date | date: "%b '%Y" }}</div>
+		<div class="day">{{ page.date | date: "%d" }}</div>
+		<!--div class="commentCount">122</div-->
+	</div>
+
+	<a href="{{ page.url }}" title="{{ page.title }}"><h2>{{ page.title }}</h2></a>
+	<p class="author">posted by {{ page.who }}</p>
+	
+	
 
 <p class="author">posted by {{ page.who }} on {{ page.date | date: "%a, %b %d %Y" }}</p>
 
