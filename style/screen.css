@@ -101,7 +101,8 @@ ol, ul, li, dl, dd, dt {
 				}
 			.productNav .stella a { background: url(/images/productNav.png) no-repeat 7px top; }
 			.productNav .rudy a { background: url(/images/productNav.png) no-repeat -54px top; }
-					
+			.stella .stella a,
+			.rudy .rudy a { color: #00CCCC; }		
 	
 		.productNav li,
 		.nav li,
@@ -134,7 +135,12 @@ ol, ul, li, dl, dd, dt {
 				font-size: 13px;
 				}
 			
-			.nav .on a { border-bottom: 4px solid #00cccc; }	
+			.home .navHome a,
+			.about .navAbout a,
+			.products .navProducts a,
+			.blog .navBlog a,
+			.contact .navContact a { 
+				border-bottom: 4px solid #00cccc; }	
 			
 		.subnav {
 			clear: both;
@@ -410,6 +416,10 @@ code {
 /* b l o g */
 
 .blog .left { width: 620px; }
+.archives { 
+	width: 620px;
+	margin-top: 25px;
+	}
 .entry {
 	position: relative;
 	float: left;
@@ -486,6 +496,7 @@ code {
 		
 .aboutAuthor {
 	float: right;
+	clear:right;
 	width: 250px; height: 80px;
-	background: url(/images/aboutSolutious.png) no-repeat;		
+	background: url(/images/aboutAuthor.png) no-repeat;		
 	}

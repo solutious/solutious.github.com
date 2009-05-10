@@ -134,7 +134,12 @@ ol, ul, li, dl, dd, dt {
 				font-size: 13px;
 				}
 			
-			.nav .on a { border-bottom: 4px solid #00cccc; }	
+			.home .navHome a,
+			.about .navAbout a,
+			.products .navProducts a,
+			.blog .navBlog a,
+			.contact .navContact a { 
+				border-bottom: 4px solid #00cccc; }	
 			
 		.subnav {
 			clear: both;
@@ -358,7 +363,7 @@ code {
 	display: block;
 	width: 325px; height: 100px;
 	padding: 65px 0 0 175px;
-	background: url(/images/screencast);
+	background: url(/images/screencast.png) no-repeat;
 	}		
 	
 	.screencast h3 {
@@ -410,6 +415,10 @@ code {
 /* b l o g */
 
 .blog .left { width: 620px; }
+.archives { 
+	width: 620px;
+	margin-top: 25px;
+	}
 .entry {
 	position: relative;
 	float: left;
@@ -486,6 +495,7 @@ code {
 		
 .aboutAuthor {
 	float: right;
+	clear:right;
 	width: 250px; height: 80px;
-	background: url(/images/aboutSolutious.png) no-repeat;		
+	background: url(/images/aboutAuthor.png) no-repeat;		
 	}
