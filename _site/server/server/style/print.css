@@ -1,0 +1,167 @@
+/*
+
+Title:      Solutious Print Stylesheet
+Author:     Andrew Simpson / www.andrewsimpsondesign.com
+Date: 		6:26am November 21st, 2008
+
+*/
+
+
+/*
+//----------------------------------------------
+//   G l o b a l
+//----------------------------------------------
+*/
+
+body {
+	position: relative;	
+	overflow-x: hidden;
+	margin: 0;
+	font-family: arial, sans-serif;
+	font-size: 12px;
+	line-height: 1.667em;
+	}
+
+a {
+	color: black;
+	text-decoration: none;
+	}
+	
+	a:hover {
+		border-bottom: 1px solid #66CCCC;
+		}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Georgia, serif;
+	font-style: italic;
+	font-weight: bold;
+	color: #111;
+	}
+
+	
+ol, ul, li, dl, dd, dt {
+	list-style: none;
+	padding-left: 10px;
+	}	
+	
+
+
+/*
+//----------------------------------------------
+//   L a y o u t
+//----------------------------------------------
+*/
+
+#top {
+	height: 50px;
+	margin-bottom: 125px;
+	padding-top: 8px;
+	background: transparent url(http://solutious.com/images/top.jpg) repeat-x scroll 0 0;
+	background-color: #000;
+	color: white;
+	}
+	
+	#top .corset {
+		width: 620px !important;
+		}
+		
+	.logo {
+		float: left;
+		background: none;
+		}
+
+			
+	#top ul {
+		display: none;
+		}
+		
+#footer {
+	margin-top: 70px !important;
+	padding-top: 10px;
+	border-top: 1px dotted black;
+	color: #666;
+	font-size: 10px;
+	text-align: center;
+	}
+
+	#footer .big {
+		font-size: 12px;
+		color: #111;
+		}		
+/*
+//----------------------------------------------
+//   P a g e   S p e c i f i c
+//----------------------------------------------
+*/	
+	
+/* h o m e */	
+	
+.tagline { 
+		line-height: 3em;
+		letter-spacing: -1px;
+		color: #66CCCC; 
+		}
+		
+	.tagline h2, .tagline span {
+		font-weight: normal;
+		font-size: 70px;
+		}
+		
+		.tagline .hope { display: inline; }
+		
+	.tagline span {
+		font-family: Georgia, serif;
+		font-style: italic;
+		}
+		
+#home #footer {
+	margin-top: 120px;
+	}	
+
+
+/* b l o g */
+	
+.entry {
+	padding-bottom: 50px;
+	margin-top: 50px;
+	background: url(http://solutious.com/images/dot.jpg) no-repeat bottom center;
+        page-break-before: always;
+	}
+.entry.first {
+page-break-before: auto;
+}	
+	.entry.last {
+		padding-bottom: 0;
+		background: none;
+		}
+		
+	.entry .info {	
+		position: relative;
+		color: #111;
+		}	
+		
+		.entry .info span {
+			display: inline;
+			font-family: Georgia, serif;
+			font-style: italic;
+			font-weight: bold;
+			}
+			
+			
+		.entry .comments {
+			display: none;
+			}	
+			
+		.author {
+			font-family: Georgia, serif;
+			font-style: italic;
+			font-weight: bold;
+			font-size: 1.25em;
+			color: #66CCCC;
+			}
+	
+	.entry h2 { display: block; }
+	
+	#comment {
+		display: none;
+		}
