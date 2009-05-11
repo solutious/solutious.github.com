@@ -7,34 +7,57 @@ bodyid: products stella
 <div class="left">
 	<div class="stellaPageOverview">
 		<h2>Stella</h2>
-		<p class="reparte">DID SOMEONE SAY TESTING?</p>	
+		<p class="reparte">FANCY A TEST?</p>	
 		<a class="details" href="http://github.com/solutious/stella">
-			<span class="beta">Version .7</span>
+			<span class="beta">Version 0.6</span>
 			<span class="git">Follow on GitHub</span>
 		</a>
-		<a class="download" href="#">download</a>
-		<p class="getStarted">... and then <a href="http://wiki.github.com/solutious/stella">get started here!</a></p>
+		<a class="download" href="http://github.com/solutious/stella/tarball/stella-0.6.0">download</a>
+		<!--p class="getStarted">... and then <a href="http://wiki.github.com/solutious/stella">get started here!</a></p-->
+		<p>&nbsp;<!-- or the moustache gets trimmed --></p>
 	</div>
-
+  
+  <!--
 	<a class="screencast" href="/products/stella/screencast">
 		<h3>WATCH THE SCREENCAST</h3>
 		<p>LEARN ALL ABOUT STELLA</p>
 	</a>
+  -->
 </div>
 <div class="right">
-	<h4>Did someone say testing?</h4>
-	<p>Stella is a testing tool. You define your testplans using a powerful Ruby DSL (domain specific language) and Stella takes care of the rest.</p> 
+	<h4>Run integration tests with beauty and brute strength</h4>
+	<p>Stella is a testing tool. Define testplans using a powerful Ruby DSL* and let Stella take care of the dirty details (like maintaining values between requests).</p> 
 
 	
-	<!--div class="snippetTitle">Oh look, a code snippet!<span class="snippetSubtitle">How to hack the netz!</span></div>
-	<code>
-		I’m code ();<br />
-		var = blah blah blah;<br />
-		if (adam == knew how to code)<br />
-		{<br />
-			&nbsp;&nbsp;_parent.Delano(might, seem, like < of a wizard);<br />
-		}<br />
-		// This is code. It does things.
-	</code-->
+	<div class="snippetTitle">Sample Test Plan<span class="snippetSubtitle">Add and retrieve a product</span></div>
+	<pre><code>
+testplan :product_api do
+  desc "Maintain a value between requests"
+  auth :basic, "user", "pass"
+
+  post "/upload" do
+    name "Add Product"
+    body "bill", "/path/2/file.txt"
+    header "X-Stella" => "Version 0.6"
+    param :convert => true
+    param :rand => rand(100)
+
+    response 200, 201 do |headers, body|
+      data = YAML.load(body)
+      @product_id = data[:id]    # Save a value
+    end
+  end
+
+  get "/product" do
+    name "View Product"
+    param 'id' => @product_id    # Use the saved value
+
+    response 200 do |header, body|
+      data = YAML.load(body)
+      repeat :times => 2, :wait => 1.second
+    end
+  end
+end
+	</code></pre>
 	
 </div>
