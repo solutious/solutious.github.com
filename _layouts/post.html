@@ -6,7 +6,7 @@ bodyid: blog
 <div class="entry">
 
 	<div class="info">
-		<div class="month">{{ page.date | date: "%b '%y" }}</div>
+		<div class="month">{{ page.date | date: "%b" }} '{{ page.date | date: "%y" }}</div>
 		<div class="day">{{ page.date | date: "%d" }}</div>
 		<!--div class="commentCount">122</div-->
 	</div>

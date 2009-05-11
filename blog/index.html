@@ -9,7 +9,7 @@ bodyid: blog
 <div class="entry">
 	
 	<div class="info">
-		<div class="month">{{ post.date | date: "%b '%y }}</div>
+		<div class="month">{{ post.date | date: "%b" }} '{{ post.date | date: "%y" }}</div>
 		<div class="day">{{ post.date | date: "%d" }}</div>
 		<!--div class="commentCount">122</div-->
 	</div>
