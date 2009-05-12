@@ -131,23 +131,32 @@ ol, ul, li, dl, dd, dt {
 			background: url(/images/navBack.png) no-repeat 0 top;
 			}	
 			
-			.nav .first a { margin-left: 40px; }
+			.nav .first { margin-left: 40px !important; }
+			.nav li { margin: 0 5px; }
 			.nav a { 
-				display: block;
+/*				display: block;
 				padding: 15px 0 9px;
-				margin: 0 8px;
+				margin: 0 8px; */
 				color: #000;
 				font-family: Georgia, serif;
 				font-weight: bold;
-				font-size: 13px;
 				}
+				.sIFR-active .nav li { 
+					height: 23px;
+					margin-top: 15px;
+					}
+					.nav span { 
+						font-size: 16px !important;
+						}
 			
-			.home .navHome a,
-			.about .navAbout a,
-			.products .navProducts a,
-			.blog .navBlog a,
-			.contact .navContact a { 
-				border-bottom: 4px solid #00cccc; }	
+			.home .navHome,
+			.about .navAbout,
+			.products .navProducts,
+			.blog .navBlog,
+			.contact .navContact { 
+				height: 14px;
+				border-bottom: 4px solid #00cccc;
+				}	
 			
 		.subnav {
 			position: absolute;
@@ -241,8 +250,9 @@ code {
 		display: block;
 		width: 501px; height: 87px;
 		background: url(/images/rightTools.png) no-repeat;
-		text-indent: -9999px;
 		}
+		.sIFR-active #sifrAnd { font-size: 24px; }
+		.sIFR-active #sifrRightTools { margin-top: 3px; font-size: 28px; }
 
 	.columns {
 		height: 100px;
@@ -274,16 +284,30 @@ code {
 		padding-left: 115px;
 		}		
 		
-		.stellaOverview h2,
-		.rudyOverview h2 {
-			margin: 0;
+		.productHeading {
+			display: block;
+			margin: 0 0 -15px 0;
+			padding: 0;
 			font-size: 30px;		
 			}
+			.productHeading a { color: #000; }
+						
+			#sifrH2 { display: inline; }
+			#sifrH2Link { display: block; background: blue; }
 			
 		.reparte {
 			margin: 10px 0 5px;
 			color: #00cccc;
-			}		
+			}
+			
+			.sIFR-active .stellaOverview .reparte,
+			.sIFR-active .rudyOverview .reparte {
+				margin-bottom: -10px;
+				}
+			.sIFR-active .stellaPageOverview .reparte,
+			.sIFR-active .rudyPageOverview .reparte {
+				margin-bottom: -5px;
+				}
 		
 		.stellaOverview h3,
 		.rudyOverview h3 {
@@ -349,6 +373,10 @@ code {
 		font-size: 65px;
 		line-height: 55px;
 		}
+		.sIFR-active .stellaPageOverview h2,
+		.sIFR-active .rudyPageOverview h2 {
+			margin-bottom: -25px;
+			}
 
 		.productPage .reparte {
 			margin-top: 12px;
@@ -386,13 +414,20 @@ code {
 		font-size: 20px;
 		color: #999;
 		}
+		.sIFR-active .screencast h3 { 
+			margin: 10px 0 0;
+			font-size: 28px; 
+			}
 		
 	.screencast p {
 		margin: 0;
 		font-size: 15px;
 		color: #000;
 		}	
-		
+		.sIFR-active .screencast p { 
+			font-size: 18px; 
+			}
+				
 .right {
 	float:left;
 	margin-left:57px;
