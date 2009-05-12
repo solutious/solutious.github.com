@@ -348,6 +348,11 @@ code {
 				color: #00CCCC;	
 				}
 				
+				.details:hover .beta,
+				.details:hover .git {
+					color: #336666;
+					}
+					
 			.description {
 				font-size: 11px;
 				color: #999;
