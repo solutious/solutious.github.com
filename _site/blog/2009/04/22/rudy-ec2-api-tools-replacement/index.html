@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+	
+	        (        )   (                  (        )          (
+	        )\ )  ( /(   )\ )         *   ) )\ )  ( /(          )\ )
+	       (()/(  )\()) (()/(    (  ` )  /((()/(  )\())     (  (()/(
+	        /(_))((_)\   /(_))   )\  ( )(_))/(_))((_)\      )\  /(_))
+	       (_))    ((_) (_))  _ ((_)(_(_())(_))    ((_)  _ ((_)(_))
+	       / __|  / _ \ | |  | | | ||_   _||_ _|  / _ \ | | | |/ __|
+	       \__ \ | (_) || |__| |_| |  | |   | |  | (_) || |_| |\__ \
+	       |___/  \___/ |____|\___/   |_|  |___|  \___/  \___/ |___/
+	
+	
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Solutious, The Performance Company.</title>
+  <meta name="keywords" content="deployment,performance,testing,ec2,amazon,cloud computing,ruby,open source" />
+	<meta name="description" content="We build the best deployment and testing tools money can't buy. There's no prohibition on performance!" />
+	<meta name="author" content="Solutious Inc" />
+	<meta name="verify-v1" content="/DvaKRaHTGuNyQBoIP+UgrFycJ+tPfSzWfQIwuKmqMI=" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link href="/style/screen.css" media="screen" rel="Stylesheet" type="text/css" />
+	<link href="/style/print.css" media="print" rel="Stylesheet" type="text/css" />
+	<script src="/script/sifr.js" type="text/javascript"></script>
+	<script src="/script/script.js" type="text/javascript"></script>	
+</head>
+<body class="blog">
+
+	<div class="corset">
+		<div class="top">
+			<div class="openSourceProjects">Open Source Projects</div>
+			<a class="logo" href="/"><h1>Solutious</h1></a>
+
+			<ul class="productNav">
+				<!--li class="ceasars"><a href="#">Ceasars</a></li>
+				<li class="drydock"><a href="#">Drydock</a></li-->
+				<li class="stella"><a href="/products/stella">Stella</a></li>
+				<li class="rudy"><a href="/products/rudy">Rudy</a></li>
+			</ul>
+			
+			<ul class="navLeftLine"><li>&nbsp;</li></ul>
+			<ul class="nav">
+				<li class="navHome first"><span><a href="/">HOME</a></span></li>
+				<li class="navAbout"><span><a href="/about">ABOUT</a></span></li>
+				<!--li class="navProducts"><span><a href="/products">PRODUCTS</a></span></li-->
+				<li class="navBlog"><span><a href="/blog">BLOG</a></span></li>
+				<!--li class="navContact"><span><a href="/">CONTACT</a></span></li-->
+			</ul>
+
+			<div class="subnav">
+				<div class="message">welcome to solutious - home of good natured tools</div>
+				<ul>
+					<li class="navArchive first"><a href="archive">archives</a></li>
+				</ul>
+			</div>	
+		</div>
+
+
+	<div class="left">
+	
+<div class="entry">
+
+	<div class="info">
+		<div class="month">Apr '09</div>
+		<div class="day">22</div>
+		<!--div class="commentCount">122</div-->
+	</div>
+
+	<a href="/blog/2009/04/22/rudy-ec2-api-tools-replacement" title="Rudy, A Replacement for EC2 API Tools."><h2>Rudy, A Replacement for EC2 API Tools.</h2></a>
+	<p class="author">posted by </p>
+
+<!--
+<script>
+var idcomments_acct = 'defcf13babbc8ef58be95d5511a3b1a1';
+var idcomments_post_id;
+var idcomments_post_url;
+</script>
+<script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>
+-->
+
+<p>Rudy is a <a href="/2009/04/21/rudy-deployment-introduction/">development and deployment tool</a> for EC2. It comes with an executable called <code>rudy-ec2</code> that can also be used as a replacement for Amazon's EC2 API tools. The EC2 API tools are a great reference implementation but they're unfriendly and become unwieldily when you have more than a few instances. <code>rudy-ec2</code> is an alternative to these tools that can be used on it's own (you don't need to start using Rudy), allowing you to incorporate Rudy into your development process gradually.</p>
+
+<h2>Installation</h2>
+
+<p><code>rudy-ec2</code> is included with Rudy so if you've already installed Rudy, you can skip to the next section.</p>
+
+<p>Download Rudy from <a href="http://github.com/solutious/rudy">github.com</a> or install it via RubyGems:</p>
+
+<pre><code>$ sudo gem install rudy
+$ sudo gem install solutious-rudy --source http://gems.github.com/
+</code></pre>
+
+<p>NOTE: If you are not installing via RubyGems and running Ruby 1.8.x, you need to make sure the Ruby dependencies (see the <a href="http://github.com/solutious/rudy/blob/master/README.rdoc">README</a>) are installed and in your LOAD_PATH. Ryan Tomayko wrote <a href="http://gist.github.com/54177">a gist</a> about it.</p>
+
+<h2>Configuration, 3 ways to do it</h2>
+
+<p><code>rudy-ec2</code> needs your Amazon Web Services credentials in order to execute commands on EC2. You can configure these in 3 ways: rudy configuration, environment variables or command-line options.</p>
+
+<h3>Rudy Configuration (method 1)</h3>
+
+<p><code>rudy-ec2</code> can use the same configuration as <code>rudy</code>. If you've already created a Rudy configuration file, you don't need to do anything else. Otherwise, run the following commands:</p>
+
+<pre><code>$ rudy generate-config
+  [edit ~/.rudy/config with your Amazon Web Services credentials] 
+$ rudy init
+</code></pre>
+
+<p>NOTE: <em>The above command is <strong>rudy</strong> and not <strong>rudy-ec2</strong>.</em></p>
+
+<h3>Environment Variables (method 2)</h3>
+
+<h4>Bash</h4>
+
+<p>Add the following to your <code>~/.bashrc</code> file:</p>
+
+<pre><code>AWS_ACCESS_KEY='your_aws_key'
+AWS_SECRET_KEY='your_aws_secret'
+AWS_ACCOUNT_NUMBER=123456789012
+export AWS_ACCESS_KEY AWS_SECRET_KEY AWS_ACCOUNT_NUMBER
+
+EC2_CERT=path/2/cert.pem
+EC2_PRIVATE_KEY=path/2/pk.pem
+export EC2_CERT EC2_PRIVATE_KEY
+</code></pre>
+
+<p>Then either start working in a new terminal window or run <code>source ~/.bashrc</code> to refresh your current one.</p>
+
+<h4>Windows/DOS</h4>
+
+<p>Set your environment variables from your System Properties menu.</p>
+
+<h3>Command-line Options (method 3)</h3>
+
+<pre><code>$ rudy-ec2 -A your_aws_key -S your_aws_secret COMMAND
+</code></pre>
+
+<p>NOTE: <em>If you use the command-line options, your credentials will appear in your shell history. You can run <code>history -c</code> to clear it.</em></p>
+
+<h2>rudy-ec2  Commands</h2>
+
+<p>A <code>rudy-ec2</code> command follows the same convention as <code>rudy</code> commands:</p>
+
+<pre><code>$ rudy-ec2 -h
+USAGE: rudy-ec2 [global options] COMMAND [command options]
+</code></pre>
+
+<p>The default command displays the current instances</p>
+
+<pre><code>$ rudy-ec2
+i-8794fcee  ec2-11-22-33-44.compute-1.amazonaws.com  (group-awesome)
+i-9e94fcf7  ec2-55-66-77-88.compute-1.amazonaws.com  (group-awesome)
+i-9394fcfa  terminated  (group-awesome)
+</code></pre>
+
+<p>When no arguments are given, all commands display information about the object you specify:</p>
+
+<pre><code>$ rudy-ec2 images
+Images owned by amazon
+aki-46e7002f i386   (aki-linux.2.6.21.7-2.fc8xen-xfs/vmlinuz.manifest.xml)
+aki-9800e5f1 x86_64 (ec2-public-images/vmlinuz-2.6.18-xenU-ec2-v1.0.x86_64.aki.manifest.xml)
+aki-9b00e5f2 i386   (ec2-public-images/vmlinuz-2.6.18-xenU-ec2-v1.0.i386.aki.manifest.xml)
+...
+
+$ rudy-ec2 groups
+group-awesome (authorized accounts: 123456789012:default)
+11.22.33.44/32 -&gt; tcp(22), tcp(80), tcp(443)
+55.66.77.88/32 -&gt; tcp(22), tcp(80), tcp(443)
+</code></pre>
+
+<p>With arguments, you can create, modify or destroy all EC2 objects:</p>
+
+<pre><code>$ rudy-ec2 instances -C -m ami-235fba4a -s m1.small -k keypair-name
+i-9394fcfa  pending  (default)
+
+$ rudy-ec2 groups -A -p 8080,8081 group-awesome
+Authorize access to group-awesome from 11.22.33.44/32
+on tcp ports: 8080, 8081
+default (authorized accounts: 123456789012:default)
+   11.22.33.44/32 -&gt; tcp(22), tcp(80), tcp(443), tcp(88), tcp(99)
+   11.22.33.44/32 -&gt; tcp(8080), tcp(8081)
+</code></pre>
+
+<h2>Safety</h2>
+
+<p>I'm always a little nervous using the Amazon AMI tools because I feel like I'm one command away from a nightmare. <code>rudy-ec2</code> solves this by prompting for user input before executing any potentially destructive actions.</p>
+
+<pre><code>$ rudy-ec2 groups -D group-awesome
+Destroying group: group-awesome
+Are you sure? To continue, resolve (7 * 5): 
+</code></pre>
+
+<p>And you can avoid the annoyance by providing the <code>-Y</code> global</p>
+
+<pre><code>$ rudy-ec2 -Y groups -D group-awesome    # Careful!
+</code></pre>
+
+<h2>Conclusion</h2>
+
+<p>That's <code>rudy-ec2</code> in a nutshell. For more information, check out the <a href="http://opensource.solutious.com/rudy">RDocs</a>.</p>
+
+
+<div id="related">
+  <h3>Related Posts</h3>
+  <ul class="posts">
+    
+      <li><span>Apr 21 2009</span> &raquo; <a href="/blog/2009/04/21/rudy-not-your-grandparents-deployment-tool">Rudy, not your grandparent's deployment tool</a></li>
+    
+      <li><span>Dec 10 2008</span> &raquo; <a href="/blog/2008/12/10/using-amazon-ec2-in-europe">Using Amazon EC2 In Europe</a></li>
+    
+      <li><span>Sep 23 2008</span> &raquo; <a href="/blog/2008/09/23/ec2-disk-performance-linux-solaris">EC2 Disk Performance, Linux vs OpenSolaris - Preliminary Results</a></li>
+    
+  </ul>
+</div>
+
+<script>
+var idcomments_acct = 'defcf13babbc8ef58be95d5511a3b1a1';
+var idcomments_post_id;
+var idcomments_post_url;
+</script>
+<span id="IDCommentsPostTitle" style="display:none"></span>
+<script type='text/javascript'
+src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+
+
+</div>
+	</div>
+	
+	<div class="aboutSolutious">
+			<p>Solutious is a software company based in Montréal. We develop open source software to help people perform their best. </p>
+			<p class="signature">- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Solutious</p>
+	</div>
+
+	<div class="aboutDelano">
+		<p>I'm Delano Mandelbaum, founder of Solutious Inc. I've worked for companies large and small and now I'm putting everything I've learned into building great open source tools. You can also find me on <a href="http://twitter.com/solutious">Twitter</a>.</p>
+		<p class="signature">- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Delano (@solutious.com)</p>
+	</div>
+	<div class="reset"></div>
+
+	<div id="footer">
+		<a href="http://solutious.com/" class="big">Solutious</a>.
+		<span class="tagline">There's no prohibition on performance.</span>
+		Copyright 2006-2009.
+	</div>
+	
+</div>
+ 	
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-4642735-3");
+pageTracker._trackPageview();
+</script>
+
+
+</body>
+</html>
+

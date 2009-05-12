@@ -26,7 +26,7 @@
 	<script src="/script/sifr.js" type="text/javascript"></script>
 	<script src="/script/script.js" type="text/javascript"></script>	
 </head>
-<body class="{{ page.bodyid }}">
+<body class="blog">
 
 	<div class="corset">
 		<div class="top">
@@ -52,13 +52,74 @@
 			<div class="subnav">
 				<div class="message">welcome to solutious - home of good natured tools</div>
 				<ul>
+					<li class="navArchive first"><a href="archive">archives</a></li>
 				</ul>
 			</div>	
 		</div>
 
-		
-{{ content }}
 
+	<div class="left">
+	
+<div class="entry">
+
+	<div class="info">
+		<div class="month">Sep '08</div>
+		<div class="day">16</div>
+		<!--div class="commentCount">122</div-->
+	</div>
+
+	<a href="/blog/2008/09/16/simple-ruby-encryption" title="Simple Encryption (in Ruby)"><h2>Simple Encryption (in Ruby)</h2></a>
+	<p class="author">posted by </p>
+
+<!--
+<script>
+var idcomments_acct = 'defcf13babbc8ef58be95d5511a3b1a1';
+var idcomments_post_id;
+var idcomments_post_url;
+</script>
+<script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>
+-->
+
+<p>I occasionally get questions on how we do authentication in Ruby so I thought I'd write this post so I could direct people here. A lot of the authentication stuff we do is based on this simple implementation of <a href="http://blog.leetsoft.com/2006/03/14/simple-encryption">RSA key support</a>. There were a couple minor syntax errors in their <a href="http://blog.leetsoft.com/files/crypto-key.rb.txt">crypto-key.rb</a> though so here's a fixed version:</p>
+
+<p>Liquid error: No such file or directory - pygmentize -f html -l ruby</p>
+
+
+<div id="related">
+  <h3>Related Posts</h3>
+  <ul class="posts">
+    
+      <li><span>Apr 10 2009</span> &raquo; <a href="/blog/2009/04/10/wordpress-to-jekyll">From WordPress to Jekyll</a></li>
+    
+      <li><span>Apr 21 2009</span> &raquo; <a href="/blog/2009/04/21/rudy-not-your-grandparents-deployment-tool">Rudy, not your grandparent's deployment tool</a></li>
+    
+      <li><span>Apr 30 2009</span> &raquo; <a href="/blog/2009/04/30/its-an-outrake">It's an outrake!</a></li>
+    
+  </ul>
+</div>
+
+<script>
+var idcomments_acct = 'defcf13babbc8ef58be95d5511a3b1a1';
+var idcomments_post_id;
+var idcomments_post_url;
+</script>
+<span id="IDCommentsPostTitle" style="display:none"></span>
+<script type='text/javascript'
+src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+
+
+</div>
+	</div>
+	
+	<div class="aboutSolutious">
+			<p>Solutious is a software company based in Montréal. We develop open source software to help people perform their best. </p>
+			<p class="signature">- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Solutious</p>
+	</div>
+
+	<div class="aboutDelano">
+		<p>I'm Delano Mandelbaum, founder of Solutious Inc. I've worked for companies large and small and now I'm putting everything I've learned into building great open source tools. You can also find me on <a href="http://twitter.com/solutious">Twitter</a>.</p>
+		<p class="signature">- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Delano (@solutious.com)</p>
+	</div>
 	<div class="reset"></div>
 
 	<div id="footer">
@@ -77,6 +138,7 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 var pageTracker = _gat._getTracker("UA-4642735-3");
 pageTracker._trackPageview();
 </script>
+
 
 </body>
 </html>

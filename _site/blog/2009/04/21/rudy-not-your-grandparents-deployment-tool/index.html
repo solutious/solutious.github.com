@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+	
+	        (        )   (                  (        )          (
+	        )\ )  ( /(   )\ )         *   ) )\ )  ( /(          )\ )
+	       (()/(  )\()) (()/(    (  ` )  /((()/(  )\())     (  (()/(
+	        /(_))((_)\   /(_))   )\  ( )(_))/(_))((_)\      )\  /(_))
+	       (_))    ((_) (_))  _ ((_)(_(_())(_))    ((_)  _ ((_)(_))
+	       / __|  / _ \ | |  | | | ||_   _||_ _|  / _ \ | | | |/ __|
+	       \__ \ | (_) || |__| |_| |  | |   | |  | (_) || |_| |\__ \
+	       |___/  \___/ |____|\___/   |_|  |___|  \___/  \___/ |___/
+	
+	
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Solutious, The Performance Company.</title>
+  <meta name="keywords" content="deployment,performance,testing,ec2,amazon,cloud computing,ruby,open source" />
+	<meta name="description" content="We build the best deployment and testing tools money can't buy. There's no prohibition on performance!" />
+	<meta name="author" content="Solutious Inc" />
+	<meta name="verify-v1" content="/DvaKRaHTGuNyQBoIP+UgrFycJ+tPfSzWfQIwuKmqMI=" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link href="/style/screen.css" media="screen" rel="Stylesheet" type="text/css" />
+	<link href="/style/print.css" media="print" rel="Stylesheet" type="text/css" />
+	<script src="/script/sifr.js" type="text/javascript"></script>
+	<script src="/script/script.js" type="text/javascript"></script>	
+</head>
+<body class="blog">
+
+	<div class="corset">
+		<div class="top">
+			<div class="openSourceProjects">Open Source Projects</div>
+			<a class="logo" href="/"><h1>Solutious</h1></a>
+
+			<ul class="productNav">
+				<!--li class="ceasars"><a href="#">Ceasars</a></li>
+				<li class="drydock"><a href="#">Drydock</a></li-->
+				<li class="stella"><a href="/products/stella">Stella</a></li>
+				<li class="rudy"><a href="/products/rudy">Rudy</a></li>
+			</ul>
+			
+			<ul class="navLeftLine"><li>&nbsp;</li></ul>
+			<ul class="nav">
+				<li class="navHome first"><span><a href="/">HOME</a></span></li>
+				<li class="navAbout"><span><a href="/about">ABOUT</a></span></li>
+				<!--li class="navProducts"><span><a href="/products">PRODUCTS</a></span></li-->
+				<li class="navBlog"><span><a href="/blog">BLOG</a></span></li>
+				<!--li class="navContact"><span><a href="/">CONTACT</a></span></li-->
+			</ul>
+
+			<div class="subnav">
+				<div class="message">welcome to solutious - home of good natured tools</div>
+				<ul>
+					<li class="navArchive first"><a href="archive">archives</a></li>
+				</ul>
+			</div>	
+		</div>
+
+
+	<div class="left">
+	
+<div class="entry">
+
+	<div class="info">
+		<div class="month">Apr '09</div>
+		<div class="day">21</div>
+		<!--div class="commentCount">122</div-->
+	</div>
+
+	<a href="/blog/2009/04/21/rudy-not-your-grandparents-deployment-tool" title="Rudy, not your grandparent's deployment tool"><h2>Rudy, not your grandparent's deployment tool</h2></a>
+	<p class="author">posted by </p>
+
+<!--
+<script>
+var idcomments_acct = 'defcf13babbc8ef58be95d5511a3b1a1';
+var idcomments_post_id;
+var idcomments_post_url;
+</script>
+<script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>
+-->
+
+<p><a href="http://github.com/solutious/rudy">Rudy</a> is a command-line development and deployment tool. It's been in private beta for about two months and today marks the day of the <a href="http://github.com/solutious/rudy/tree/0.6">first public release</a> <code>[1]</code>. The project is still in alpha status and many features have yet to be developed but it's already useful for exploring the features of Amazon EC2. In this post, I'll introduce Rudy's core features and demonstrate how these features can help build and manage environments in EC2.<br/>
+</p>
+
+<h2>A quick look</h2>
+
+<p>It's useful to know what working with Rudy looks like before getting into the details:</p>
+
+<pre><code>$ rudy startup            # Launch the default machine group, stage-app
+$ rudy -e dev startup     # Launch the dev-app machine group
+$ rudy machines           # List all instances running in stage-app
+$ rudy -u root ssh        # SSH to root@m-us-east-1b-stage-app-01
+$ rudy ssh uptime         # Execute the uptime command on app stage-app machines
+$ rudy shutdown           # Terminate stage-app instances
+</code></pre>
+
+<p>See also:</p>
+
+<pre><code>$ rudy -h 
+$ rudy show-commands
+$ rudy COMMAND -h
+</code></pre>
+
+<h2>Machine Groups</h2>
+
+<p>Rudy helps you build and manage machines in EC2 by organizing them into groups of <em>environments</em> and <em>roles</em>. These are called <em>machine groups</em>. You can run multiple machines with the same role. These are called <em>positions</em>. Rudy also supports running machine groups across availability <em>zones</em>. When you put all this together, you have a unique name for every machine. The default machine is:</p>
+
+<pre><code>         zone     env  role
+          v        v    v   
+    m-us-east-1b-stage-app-01
+    ^                       ^
+ "machine"                position
+</code></pre>
+
+<p><code>stage</code> is the default environment and <code>app</code> is the default role, but these can be changed too (see Defaults below). These machine groups are configured using a Ruby DSL (domain-specific language) that looks like this:</p>
+
+<p>Liquid error: No such file or directory - pygmentize -f html -l ruby</p>
+
+<p>The configuration above describes the properties for 4 machine groups: <code>dev-app</code>, <code>dev-analyzer</code>, <code>stage-app</code>, and <code>stage-analyzer</code>. Since we've defined two <code>app</code> machines per environment, that makes 6 machines:</p>
+
+<ul>
+<li><code>m-us-east-1b-dev-app-01</code></li>
+<li><code>m-us-east-1b-dev-app-02</code></li>
+<li><code>m-us-east-1b-dev-analyzer-01</code></li>
+<li><code>m-us-east-1b-stage-app-01</code></li>
+<li><code>m-us-east-1b-stage-app-02</code></li>
+<li><code>m-us-east-1b-stage-analyzer-01</code></li>
+</ul>
+
+
+<h2>Routines</h2>
+
+<p>The machines configuration describes the whats or the "physical" characteristics of the environments. The routines configuration describes the repeatable processes.</p>
+
+<p>Liquid error: No such file or directory - pygmentize -f html -l ruby</p>
+
+<p>This routines configuration describes the processes for the <code>stage-analyzer</code> group.</p>
+
+<h2>Running a Routine</h2>
+
+<pre><code>$ rudy -r analyzer startup
+Starting stage-app
+
+---  BEFORE SCRIPTS (local)  ------------------------------
+Connecting to localhost
+...
+Starting m-us-east-1b-stage-app-01
+Associating 11.22.33.44 to i-11111111
+Starting m-us-east-1b-stage-app-02
+Associating 55.66.77.88 to i-22222222
+....
+
+---  DISK ROUTINES  ---------------------------------------
+...
+
+---  AFTER SCRIPTS  ---------------------------------------
+...
+
+The following machines are now available:
+m-us-east-1b-stage-app-01  ec2-11-22-33-44.compute-1.amazonaws.com
+m-us-east-1b-stage-app-02  ec2-55-66-77-88.compute-1.amazonaws.com
+</code></pre>
+
+<h2>Defaults</h2>
+
+<p>You may be wondering where the <code>us-east-1b</code> value comes from. This is an EC2 availability zone and it's one of several default values that Rudy assumes in order to function straight "out of the box". The default values can be changed too:</p>
+
+<p>Liquid error: No such file or directory - pygmentize -f html -l ruby</p>
+
+<h2>Conclusion / More to come</h2>
+
+<p>As I mentioned, the current release of Rudy (0.6) is in alpha status so it's not ready for production. There's a lot of work to do, including a lot of documentation to write, but hopefully you can already see the value of incorporating Rudy into your development process. For now, the <a href="http://github.com/solutious/rudy">README</a> contains installation instructions and the <a href="http://opensource.solutious.com/rudy">RDocs</a> are somewhat helpful too!</p>
+
+<h2>Notes</h2>
+
+<ul>
+<li><code>[1]</code> Rudy has been available on GitHub since the project began, but this release is the first one with documentation.</li>
+</ul>
+
+
+
+<div id="related">
+  <h3>Related Posts</h3>
+  <ul class="posts">
+    
+      <li><span>Dec 10 2008</span> &raquo; <a href="/blog/2008/12/10/using-amazon-ec2-in-europe">Using Amazon EC2 In Europe</a></li>
+    
+      <li><span>Apr 22 2009</span> &raquo; <a href="/blog/2009/04/22/rudy-ec2-api-tools-replacement">Rudy, A Replacement for EC2 API Tools.</a></li>
+    
+      <li><span>Sep 23 2008</span> &raquo; <a href="/blog/2008/09/23/ec2-disk-performance-linux-solaris">EC2 Disk Performance, Linux vs OpenSolaris - Preliminary Results</a></li>
+    
+  </ul>
+</div>
+
+<script>
+var idcomments_acct = 'defcf13babbc8ef58be95d5511a3b1a1';
+var idcomments_post_id;
+var idcomments_post_url;
+</script>
+<span id="IDCommentsPostTitle" style="display:none"></span>
+<script type='text/javascript'
+src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+
+
+</div>
+	</div>
+	
+	<div class="aboutSolutious">
+			<p>Solutious is a software company based in Montréal. We develop open source software to help people perform their best. </p>
+			<p class="signature">- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Solutious</p>
+	</div>
+
+	<div class="aboutDelano">
+		<p>I'm Delano Mandelbaum, founder of Solutious Inc. I've worked for companies large and small and now I'm putting everything I've learned into building great open source tools. You can also find me on <a href="http://twitter.com/solutious">Twitter</a>.</p>
+		<p class="signature">- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Delano (@solutious.com)</p>
+	</div>
+	<div class="reset"></div>
+
+	<div id="footer">
+		<a href="http://solutious.com/" class="big">Solutious</a>.
+		<span class="tagline">There's no prohibition on performance.</span>
+		Copyright 2006-2009.
+	</div>
+	
+</div>
+ 	
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-4642735-3");
+pageTracker._trackPageview();
+</script>
+
+
+</body>
+</html>
+

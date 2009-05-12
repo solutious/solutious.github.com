@@ -26,7 +26,7 @@
 	<script src="/script/sifr.js" type="text/javascript"></script>
 	<script src="/script/script.js" type="text/javascript"></script>	
 </head>
-<body class="{{ page.bodyid }}">
+<body class="blog">
 
 	<div class="corset">
 		<div class="top">
@@ -59,7 +59,80 @@
 
 
 	<div class="left">
-	{{ content }}
+	
+<div class="entry">
+
+	<div class="info">
+		<div class="month">Dec '08</div>
+		<div class="day">30</div>
+		<!--div class="commentCount">122</div-->
+	</div>
+
+	<a href="/blog/2008/12/30/installing-sys-cpu-osx" title="Installing sys-cpu 0.6.0 on OS X 10.5 Leopard"><h2>Installing sys-cpu 0.6.0 on OS X 10.5 Leopard</h2></a>
+	<p class="author">posted by </p>
+
+<!--
+<script>
+var idcomments_acct = 'defcf13babbc8ef58be95d5511a3b1a1';
+var idcomments_post_id;
+var idcomments_post_url;
+</script>
+<script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>
+-->
+
+<p>I was trying to install the
+<a href="http://rubyforge.org/projects/sysutils" title="sysutils at Rubyforge">sys-utils</a> Ruby libraries today and got an error while building sys-cpu on OX 10.5 Leopard. sys-cpu is a multi-platform Ruby library for accessing information about the CPUs and it contains a native extension which needs to be compiled during them installation. This is the error:</p>
+
+<pre><code>$ sudo gem install sys-cpu
+  Building native extensions.  This could take a while...
+  ERROR:  Error installing sys-cpu:
+  ERROR: Failed to build gem native extension.
+  ...
+  cpu.c:14:17: error: kvm.h: No such file or directory
+  cpu.c:14:17: error: kvm.h: No such file or directory
+  cpu.c: In function 'cpu_load_avg':
+  ...
+  make: *** [cpu.o] Error 1
+</code></pre>
+
+<p>OS X 10.5 seems to be missing a C header file, kvm.h, that's required by sys-cpu. Here's how you can solve the problem:</p>
+
+<ul>
+<li>Download a <a href="http://rubyforge.org/frs/download.php/20065/sys-cpu-0.6.0.tar.gz" title="sys-cpu tar.gz">non-gem version</a> and unpack it.</li>
+<li>Get a copy of kvm.h. If you're running OS X 10.5 that was upgraded from 10.4, you can find it in <code>/Developer/SDKs/MacOSX10.4.sdk/usr/include</code>. If not, you can download it from here: <a href="http://solutious.com/r/kvm.h">http://solutious.com/r/kvm.h</a>.</li>
+<li>Copy kvm.h in to sys-cpu-0.6.0/ext</li>
+<li>Inside of sys-cpu-0.6.0, run: <code>rake test</code> then <code>sudo rake install</code></li>
+<li>The following command should now run without errors: <code>ruby -r'sys/cpu' -e 1</code>.</li>
+</ul>
+
+
+<p>That's it!</p>
+
+
+<div id="related">
+  <h3>Related Posts</h3>
+  <ul class="posts">
+    
+      <li><span>Apr 22 2009</span> &raquo; <a href="/blog/2009/04/22/rudy-ec2-api-tools-replacement">Rudy, A Replacement for EC2 API Tools.</a></li>
+    
+      <li><span>Dec 12 2008</span> &raquo; <a href="/blog/2008/12/12/tumblr-to-wordpress">From Tumblr to WordPress</a></li>
+    
+      <li><span>Apr 30 2009</span> &raquo; <a href="/blog/2009/04/30/its-an-outrake">It's an outrake!</a></li>
+    
+  </ul>
+</div>
+
+<script>
+var idcomments_acct = 'defcf13babbc8ef58be95d5511a3b1a1';
+var idcomments_post_id;
+var idcomments_post_url;
+</script>
+<span id="IDCommentsPostTitle" style="display:none"></span>
+<script type='text/javascript'
+src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+
+
+</div>
 	</div>
 	
 	<div class="aboutSolutious">

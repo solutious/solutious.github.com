@@ -26,9 +26,6 @@ body {
 a {
 	color: #00cccc;	
 	text-decoration: none;
-	outline-color: -moz-use-text-color;
-	outline-style: none;
-	outline-width: 0px;
 	}
 	body a:hover { color: #006666; }
 	
@@ -352,7 +349,7 @@ code {
 				.details:hover .git {
 					color: #336666;
 					}
-					
+				
 			.description {
 				font-size: 11px;
 				color: #999;

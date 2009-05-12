@@ -44,7 +44,7 @@ sIFR.replace(officinaBook, {
   ,css: [
 		'.sIFR-root { color: #00cccc; font-weight: bold; }'
 		,'a { color: #00cccc; text-decoration: none; }'
-	  ,'a:hover { color: #336666; }'
+    ,'a:hover { color: #336666; }'		
   ]
 });
 
