@@ -237,6 +237,10 @@ code {
 		
 		.sIFR-active .developing { font-size: 28px; }
 	
+	.freeText {
+		
+	}
+
 	.rightTools {
 		display: block;
 		width: 501px; height: 87px;
