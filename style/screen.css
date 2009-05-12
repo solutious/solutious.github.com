@@ -189,7 +189,7 @@ ol, ul, li, dl, dd, dt {
 					.archive .navArchive a { color: #006666; }
 					
 #footer {
-	margin-top: 70px !important;
+	margin-top: 30px !important;
 	padding-top: 10px;
 	border-top: 1px dotted #666;
 	color: #999;
@@ -246,6 +246,10 @@ code {
 		
 		.sIFR-active .developing { font-size: 28px; }
 	
+	.freeText {
+		
+	}
+
 	.rightTools {
 		display: block;
 		width: 501px; height: 87px;
