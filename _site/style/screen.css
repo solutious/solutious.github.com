@@ -97,6 +97,7 @@ ol, ul, li, dl, dd, dt {
 			}
 			
 			.logo h1 { margin: 0; }
+			.logo img { display: none; }
 			
 		.productNav {
 			clear: none;

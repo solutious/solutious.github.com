@@ -19,7 +19,7 @@ body {
 	font-family: arial, sans-serif;
 	font-size: 12px;
 	line-height: 1.667em;
-	width: 50%;
+	width: 450px;
 	}
 
 a {
@@ -30,11 +30,9 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Courier New', Courier, monospace;
-	font-style: italic;
 	font-weight: bold;
 	color: #111;
 	}
-
 	
 ol, ul, li, dl, dd, dt {
 	list-style: none;
@@ -48,15 +46,13 @@ ol, ul, li, dl, dd, dt {
 //   L a y o u t
 //----------------------------------------------
 */
-
-.logo {
-	position: relative;
-	display: block;
-	overflow: hidden;
+.logo img {
 	width: 289px; height: 106px;
-	text-indent: 9999px;	
-	background: url(/images/logoPrint.png) no-repeat;
-	border: none;
+	border: 0px;
+	margin-bottom: 10px;
+	}
+.logo h1 {
+	text-indent: -9999px;
 	}
 
 .openSourceProjects,
@@ -67,6 +63,10 @@ ol, ul, li, dl, dd, dt {
 	display: none; 
 	}
 
+#footer { 
+	text-align: center;
+	border-top: 1px solid #000;
+	}
 .copyright {
 	display: block;
 	}
@@ -113,6 +113,3 @@ ol, ul, li, dl, dd, dt {
 .screencast {
 	display: none;
 	}
- 
-	display
-}
