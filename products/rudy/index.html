@@ -40,15 +40,15 @@ bodyid: products rudy
 	
 	<div class="snippetTitle">Sample Machine Configuration<span class="snippetSubtitle">Create your environment</span></div>
 	<pre><code>
-env :stage do                # Define an environment
+env :stage do         # Define an environment
   ami 'ami-e348af8a'         
                              
-  role :app do               # Define a role
+  role :app do        # Define a role
     addresses '11.22.33.44'  # Use elastic IPs
                              
-    disks do                 # Create EBS volumes
-      path "/rudy/disk1" do  # and treat them like
-        size 100             # disks.
+    disks do          # Create EBS volumes
+      path "/rudy/disk1" do  
+        size 100             
         device "/dev/sdr"     
       end                       
     end
@@ -59,15 +59,15 @@ end
 
 	<div class="snippetTitle">Sample Routine Configuration<span class="snippetSubtitle">Define your processes</span></div>
 	<pre><code>
-startup do                   # $ rudy startup
-  adduser :rudy              # Create a user
-  authorize :rudy            # with passwordless logins
+startup do            # $ rudy startup
+  adduser :rudy       
+  authorize :rudy     # Enable passwordless login
                              
   disks do                   # Create a disk 
     restore "/rudy/disk1"    # from a backup
   end                       
                             
-  after :rudy do            # Run remote SSH commands
+  after :rudy do      # Run remote SSH commands
     mkdir :p, "great"       # $ mkdir -p great
     touch "great/scott"     # $ touch great/scott
     ls :l, :a               # $ ls -l -a
