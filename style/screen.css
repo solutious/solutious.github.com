@@ -348,8 +348,7 @@ code {
 				color: #00CCCC;	
 				}
 				
-				.details:hover .beta,
-				.details:hover .git {
+				.details .git:hover {
 					color: #336666;
 					}
 					
