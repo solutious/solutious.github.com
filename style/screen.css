@@ -141,7 +141,7 @@ ol, ul, li, dl, dd, dt {
 			}	
 
 			.nav .first { margin-left: 40px !important; }
-			.nav li { margin: 0 10px; width: 51px; height: 23px;}
+			.nav li { margin: 0 10px; width: 51px; }
 			.nav a { 
 				text-align: center;
 				color: #000;
