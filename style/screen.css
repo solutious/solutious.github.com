@@ -143,7 +143,7 @@ ol, ul, li, dl, dd, dt {
 			}	
 
 			.nav .first { margin-left: 40px !important; }
-			.nav li { margin: 0 10px; width: 54px; }
+			.nav li { margin: 0 10px; width: 51px; }
 			.nav a { 
 				text-align: center;
 				color: #000;
@@ -155,9 +155,12 @@ ol, ul, li, dl, dd, dt {
 					padding-top: 15px;
 					}
 				.nav span { 
-					/* For some reason, this causes the nav links to 
-					   show up offset to the right -- Delano
-					padding-left: 2px; */
+					/* A value of 2px causes the nav links to 
+					   show up offset to the right in Safari.
+					   Removing padding-left completely causes
+					   a similar issue in IE 7. 
+					   0px seems to work everywhere. -- Delano */
+					padding-left: 0px; 
 					font-size: 16px !important;
 					}
 				.sIFR-active .nav a { padding: 0 5px; }
