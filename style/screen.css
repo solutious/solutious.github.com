@@ -17,7 +17,7 @@ Date: 		  May 12th, 2009
 body {
 	position: relative;	
 	overflow-x: hidden;
-	margin: 0;
+	margin: 0 0 0 10px;
 	font-family: arial, sans-serif;
 	font-size: 12px;
 	line-height: 1.25em;
@@ -44,8 +44,6 @@ h1, h2, h3, h4, h5, h6 {
 		font-family: 'Courier New', Courier, monospace;
 		}
 		.sIFR-active h2.sifr { margin-bottom: -10px; }
-	h3 { font-size: 20px; line-height: 1.25em; height: 36px; width: 400px;}
-	  .sIFR-active h3.sifr { margin-bottom: -10px; }
 	
 ol, ul, li, dl, dd, dt {
 	list-style: none;
@@ -143,7 +141,7 @@ ol, ul, li, dl, dd, dt {
 			}	
 
 			.nav .first { margin-left: 40px !important; }
-			.nav li { margin: 0 10px; width: 51px; }
+			.nav li { margin: 0 10px; }
 			.nav a { 
 				text-align: center;
 				color: #000;
@@ -268,18 +266,19 @@ pre {
 		.sIFR-active .developing { font-size: 28px; }
 	
 	.freeText {
-		width: 769px;
+		width: 75%;
 		text-align: justify;
-	}
-	
-	.freeText p {
-		width: 24em;
-	}
-	
-	.freeText .graphicRight {
-		position: relative;
-		top: -50px;
-	}
+	}		
+		.freeText p {
+			width: 380px;
+		}
+		.freeText h3 { font-size: 20px; line-height: 1.25em; height: 36px; width: 400px;}
+		  .sIFR-active h3.sifr { margin-bottom: -10px; }
+		
+		.freeText .graphicRight {
+			position: relative;
+			top: -39px;
+		}
 
 	.rightTools {
 		display: block;
@@ -590,13 +589,20 @@ pre {
 		background: url(/images/blogIcons.png) no-repeat 0 -38px;
 		}	
 		
-	.entry h2 {
+	.entry h1 {
 		display: inline;
-		margin-bottom: 2px;
-		font-size: 18px;
+		font-size: 20px;
+		line-height: 22px;
 		font-style: italic;
-		border-bottom: 1px solid #000;
 		}	
+		
+	.entry h2 {
+		display: block;
+		font-size: 20px;
+		line-height: 22px;
+		font-style: italic;
+		margin: 22px 0 11px 0;
+		}
 		
 	.entry .author {
 		margin: 5px 0 0 0;
@@ -608,6 +614,9 @@ pre {
 		.entry a h2:hover { 
 			color: #336666; 
 			}
+	 .entry .related {
+		 margin: 44px 0 0 0;
+	}
 		
 		
 .aboutSolutious,
@@ -713,4 +722,4 @@ media type, in order not to have the printed text come out weird.
   height: 0px;
   margin-left: 42px !important;
   z-index: 0;
-}	
+}
