@@ -11,8 +11,8 @@ bodyid: blog
 		<!--div class="commentCount">122</div-->
 	</div>
 
-	<a href="{{ page.url }}" title="{{ page.title }}"><h2>{{ page.title }}</h2></a>
-	<p class="author">posted by {{ post.who }}</p>
+	<a href="{{ page.url }}" title="{{ page.title }}"><h1>{{ page.title }}</h1></a>
+	<p class="author">posted by {{ page.who }}</p>
 
 <!--
 <script>
@@ -25,7 +25,7 @@ var idcomments_post_url;
 
 {{ content }}
 
-<div id="related">
+<div class="related">
   <h3>Related Posts</h3>
   <ul class="posts">
     {% for post in site.related_posts limit:3 %}
