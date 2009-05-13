@@ -2,7 +2,7 @@
 
 Title:      Solutious Screen Stylesheet
 Author:     Andrew Simpson / www.andrewsimpsondesign.com
-Date: 		  6:26am November 21st, 2008
+Date: 		  May 12th, 2009
 
 */
 
@@ -39,7 +39,12 @@ h1, h2, h3, h4, h5, h6 {
 	}
 	
 	h2 { font-size: 30px; }
-	
+	h2.sifr { 
+		margin-bottom: 15px; 
+		font-family: 'Courier New', Courier, monospace;
+		}
+		.sIFR-active h2.sifr { margin-bottom: -10px; }
+		
 ol, ul, li, dl, dd, dt {
 	list-style: none;
 	margin: 0;
@@ -84,6 +89,7 @@ ol, ul, li, dl, dd, dt {
 		.logo {
 			position: absolute;
 			display: block;
+			overflow: hidden;
 			width: 289px; height: 106px;
 			text-indent: 9999px;	
 			background: url(/images/logoTagLine.png) no-repeat;
@@ -133,31 +139,31 @@ ol, ul, li, dl, dd, dt {
 			width: 423px; height: 42px;
 			background: url(/images/navBack.png) no-repeat 0 top;
 			}	
-			
+
 			.nav .first { margin-left: 40px !important; }
-			.nav li { margin: 0 5px; }
+			.nav li { margin: 0 10px; }
 			.nav a { 
-/*				display: block;
-				padding: 15px 0 9px;
-				margin: 0 8px; */
+				text-align: center;
 				color: #000;
-				font-family: Georgia, serif;
+				font-family: 'Courier New', Courier, monospace;
 				font-weight: bold;
 				}
-				.sIFR-active .nav li { 
+				.nav li { 
 					height: 23px;
-					margin-top: 15px;
+					padding-top: 15px;
 					}
-					.nav span { 
-						font-size: 16px !important;
-						}
-			
+				.nav span { 
+					padding-left: 2px;
+					font-size: 16px !important;
+					}
+				.sIFR-active .nav a { padding: 0 5px; }
+				.sIFR-active .nav li { margin: 0 5px; }
+				
 			.home .navHome,
 			.about .navAbout,
 			.products .navProducts,
 			.blog .navBlog,
 			.contact .navContact { 
-				height: 14px;
 				border-bottom: 4px solid #00cccc;
 				}	
 			
@@ -217,7 +223,7 @@ ol, ul, li, dl, dd, dt {
 		}
 					
 					
-code {
+pre {
 	display: block;
 	margin: 10px 0;
 	padding: 20px;
@@ -225,7 +231,11 @@ code {
 	border-right: 4px solid #00CCCC;
 	background: #f9f9ff;
 	font-family: Courier, serif;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -o-pre-wrap;
 	}
+	.right pre { width: 380px; }
 					
 					
 /*
@@ -237,12 +247,13 @@ code {
 /* h o m e */	
 	
 	.developing {
+		display: block;
 		width: 430px; height:90px;
 		margin: 15px 0 25px;
 		padding: 15px 0 0 55px;
 		background: url(/images/colorPieces.png) no-repeat;
-		font-family: Georgia, serif;
-		font-size: 23px;
+		font-family: 'Courier New', Courier, monospace;
+		font-size: 22px;
 		line-height: 1.15em;
 		color: #999;
 		}
@@ -257,9 +268,24 @@ code {
 		display: block;
 		width: 501px; height: 87px;
 		background: url(/images/rightTools.png) no-repeat;
+		font-family: 'Courier New', Courier, monospace; 
 		}
-		.sIFR-active #sifrAnd { font-size: 24px; }
-		.sIFR-active #sifrRightTools { margin-top: 3px; font-size: 28px; }
+		#sifrAnd { 
+			text-align: center;
+			display: block;
+			padding-top: 3px;
+			font-size: 24px;
+			font-style: italic;
+			color: #336666;
+			}
+		.sIFR-active #sifrAnd { height: 32px; padding: 0; font-size: 24px; }
+		#sifrRightTools { 
+			display: block;
+			margin-top: 17px;
+			font-size: 22px;
+			font-weight: bold; 
+			}
+	.sIFR-active #sifrRightTools { margin-top: 0 !important; font-size: 28px; }
 
 	.columns {
 		height: 100px;
@@ -286,34 +312,52 @@ code {
 			
 	.stellaOverview,
 	.rudyOverview {
+		position: relative;
 		float: right;
 		width: 290px;
 		padding-left: 115px;
 		}		
+		.stellaOverview {	margin: 35px 0; }
 		
+		.rudyOverviewLogo,
+		.stellaOverviewLogo {	
+			position: absolute;			
+			left: 0;
+			width: 104px; height: 104px;
+			}
+			
+			.stellaOverviewLogo {	
+				background: url(/images/stellaOverview.png) no-repeat;
+				}
+		.rudyOverviewLogo {	
+			background: url(/images/rudyOverview.png) no-repeat; 
+			}
+			
 		.productHeading {
 			display: block;
-			margin: 0 0 -15px 0;
+			margin: 0 0 -20px 0;
 			padding: 0;
 			font-size: 30px;		
+			line-height: 25px;
+			height: 35px;
+			font-family: 'Courier New', Courier, monospace;
+			font-weight: bold;
 			}
 			.productHeading a { color: #000; }
-						
-			#sifrH2 { display: inline; }
-			#sifrH2Link { display: block; background: blue; }
+			.sIFR-active .productHeading { margin-bottom: -15px; }
 			
 		.reparte {
+			height: 15px;
 			margin: 10px 0 5px;
 			color: #00cccc;
+			font-family: 'Courier New', Courier, monospace;
+			font-weight: bold;
 			}
-			
+
 			.sIFR-active .stellaOverview .reparte,
 			.sIFR-active .rudyOverview .reparte {
+				height: 22px;
 				margin-bottom: -10px;
-				}
-			.sIFR-active .stellaPageOverview .reparte,
-			.sIFR-active .rudyPageOverview .reparte {
-				margin-bottom: -5px;
 				}
 		
 		.stellaOverview h3,
@@ -358,11 +402,6 @@ code {
 				color: #999;
 				}	
 				
-	.stellaOverview {	
-				margin: 35px 0;
-				background: url(/images/stellaOverview.png) no-repeat;
-				}
-	.rudyOverview {	background: url(/images/rudyOverview.png) no-repeat; }	
 		
 /* p r o d u c t */
 
@@ -372,7 +411,8 @@ code {
 
 .stellaPageOverview,
 .rudyPageOverview {
-	width: 285px;
+	overflow: hidden;
+	width: 288px;
 	margin-top: 30px;
 	padding-left: 215px;
 	}		
@@ -384,15 +424,23 @@ code {
 		margin: 0;
 		font-size: 65px;
 		line-height: 55px;
+		font-family: 'Courier New', Courier, monospace; 
 		}
 		.sIFR-active .stellaPageOverview h2,
 		.sIFR-active .rudyPageOverview h2 {
 			margin-bottom: -25px;
 			}
 
-		.productPage .reparte {
-			margin-top: 12px;
+		.products .reparte {
+			height: 26px;
+			margin: 5px 0 -5px;
 			}
+
+			.sIFR-active .stellaPageOverview .reparte,
+			.sIFR-active .rudyPageOverview .reparte {
+				font-size: 14px;
+				margin-bottom: -5px;
+				}
 			
 		.download { 
 			text-indent: -9999px;
@@ -413,26 +461,30 @@ code {
 				color: #000;
 				border-bottom: 4px solid #00CCCC;
 				}
-				
+
 .screencast {
 	display: block;
 	width: 325px; height: 100px;
-	padding: 65px 0 0 175px;
+	padding: 84px 0 0 175px;
 	background: url(/images/screencast.png) no-repeat;
 	}		
-	
+
 	.screencast h3 {
-		margin-bottom: 10px; 
-		font-size: 20px;
+		margin: 0 0 10px; 
+		font-size: 24px;
+		font-weight: normal;
+		font-family: 'Courier New', Courier, monospace;
 		color: #999;
 		}
 		.sIFR-active .screencast h3 { 
 			margin: 10px 0 0;
 			font-size: 28px; 
 			}
-		
+
 	.screencast p {
 		margin: 0;
+		font-family: 'Courier New', Courier, monospace;
+		font-weight: bold;
 		font-size: 15px;
 		color: #000;
 		}	
@@ -441,12 +493,12 @@ code {
 			}
 				
 .right {
-	float:left;
-	margin-left:57px;
-	width:420px;
+	float: right;
+	width: 420px;
 	}		
 		
 	.right h4 {
+		margin-top: 40px;
 		margin-bottom: 25px;
 		font-size: 30px;
 		font-style: italic;
@@ -523,18 +575,24 @@ code {
 		}	
 		
 	.entry h2 {
+		display: inline;
 		margin-bottom: 2px;
 		font-size: 18px;
-		border-bottom: #000;
+		font-style: italic;
+		border-bottom: 1px solid #000;
 		}	
 		
 	.entry .author {
-		margin: 0;
+		margin: 5px 0 0 0;
 		font-family: Georgia, serif;
 		font-style: italic;
 		font-weight: bold;
 		color: #00CCCC;
 		}	
+		.entry a h2:hover { 
+			color: #336666; 
+			}
+		
 		
 .aboutSolutious,
 .aboutDelano {
@@ -559,82 +617,84 @@ code {
 .aboutSolutious {background: url(/images/aboutSolutious.png) no-repeat;	}		
 .aboutDelano {background: url(/images/aboutDelano.png) no-repeat;	}
 	
-	/*****************************************************************************
-	scalable Inman Flash Replacement (sIFR) version 3.
+/*****************************************************************************
+	s I R F
+*****************************************************************************/
 
-	Copyright 2006 – 2008 Mark Wubben, <http://novemberborn.net/>
+@media screen {
+  .sIFR-flash {
+    visibility: visible !important;
+    margin: 0;
+    padding: 0;
+  }
 
-	Older versions:
-	* IFR by Shaun Inman
-	* sIFR 1.0 by Mike Davidson, Shaun Inman and Tomas Jogin
-	* sIFR 2.0 by Mike Davidson, Shaun Inman, Tomas Jogin and Mark Wubben
+  .sIFR-replaced, .sIFR-ignore {
+    visibility: visible !important;
+  }
 
-	See also <http://novemberborn.net/sifr3> and <http://wiki.novemberborn.net/sifr3>.
+  .sIFR-alternate {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    display: block;
+    overflow: hidden;
+  }
 
-	This software is licensed and provided under the CC-GNU LGPL.
-	See <http://creativecommons.org/licenses/LGPL/2.1/>
-	*****************************************************************************/
+  .sIFR-replaced div.sIFR-fixfocus {
+    margin: 0pt; 
+    padding: 0pt; 
+    overflow: auto; 
+    letter-spacing: 0px; 
+    float: none;
+  }
+}
 
-	@media screen {
-	  .sIFR-flash {
-	    visibility: visible !important;
-	    margin: 0;
-	    padding: 0;
-	  }
+@media print {
+  .sIFR-flash {
+    display    : none !important;
+    height     : 0;
+    width      : 0;
+    position   : absolute;
+    overflow   : hidden;
+  }
 
-	  .sIFR-replaced, .sIFR-ignore {
-	    visibility: visible !important;
-	  }
+  .sIFR-alternate {
+    visibility : visible !important;
+    display    : block   !important;
+    position   : static  !important;
+    left       : auto    !important;
+    top        : auto    !important;
+    width      : auto    !important;
+    height     : auto    !important;
+  }
+}
 
-	  .sIFR-alternate {
-	    position: absolute;
-	    left: 0;
-	    top: 0;
-	    width: 0;
-	    height: 0;
-	    display: block;
-	    overflow: hidden;
-	  }
+/*
+Place CSS rules for to-be-replaced elements here. Prefix by .sIFR-active
+so they only apply if sIFR is active. Make sure to limit the CSS to the screen
+media type, in order not to have the printed text come out weird.
+*/
+@media screen {
+  /* Example:
+  .sIFR-active h1 {
+    font-family: Verdana;
+    visibility: hidden;
+  }
+  */
+}
 
-	  .sIFR-replaced div.sIFR-fixfocus {
-	    margin: 0pt; 
-	    padding: 0pt; 
-	    overflow: auto; 
-	    letter-spacing: 0px; 
-	    float: none;
-	  }
-	}
+.sIFR-dummy { 
+  width: 0px;
+  height: 0px;
+  margin-left: 42px !important;
+  z-index: 0;
+}
 
-	@media print {
-	  .sIFR-flash {
-	    display    : none !important;
-	    height     : 0;
-	    width      : 0;
-	    position   : absolute;
-	    overflow   : hidden;
-	  }
-
-	  .sIFR-alternate {
-	    visibility : visible !important;
-	    display    : block   !important;
-	    position   : static  !important;
-	    left       : auto    !important;
-	    top        : auto    !important;
-	    width      : auto    !important;
-	    height     : auto    !important;
-	  }
-	}
-
-	/*
-	Place CSS rules for to-be-replaced elements here. Prefix by .sIFR-active
-	so they only apply if sIFR is active. Make sure to limit the CSS to the screen
-	media type, in order not to have the printed text come out weird.
-	*/
-	@media screen {
-	  /* Example:
-	  .sIFR-active h1 {
-	    font-family: Verdana;
-	    visibility: hidden;
-	  }
-	  */
-	}
+.sIFR-dummy { 
+  width: 0px;
+  height: 0px;
+  margin-left: 42px !important;
+  z-index: 0;
+}	

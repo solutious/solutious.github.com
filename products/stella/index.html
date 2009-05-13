@@ -53,13 +53,13 @@ testplan :product_api do
 
     response 200, 201 do |headers, body|
       data = YAML.load(body)
-      @product_id = data[:id]    # Save a value
+      @product_id = data[:id]  # Save a value
     end
   end
 
   get "/product" do
     name "View Product"
-    param 'id' => @product_id    # Use the saved value
+    param 'id' => @product_id	  # Use the saved value
 
     response 200 do |header, body|
       data = YAML.load(body)

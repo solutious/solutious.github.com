@@ -1,9 +1,7 @@
 var officinaBook = { src: '/script/officina.swf' };
-var officinaBold = { src: '/script/officinaBold.swf' }
 
-// You probably want to switch this on, but read <http://wiki.novemberborn.net/sifr3/DetectingCSSLoad> first.
-// sIFR.useStyleCheck = true;
-sIFR.activate(officinaBook, officinaBold);
+sIFR.useStyleCheck = true;
+sIFR.activate(officinaBook);
 
 sIFR.replace(officinaBook, {
   selector: '.developing, .screencast h3'
@@ -23,13 +21,13 @@ sIFR.replace(officinaBook, {
 	,wmode: 'transparent'
   ,css: [
 		'.sIFR-root { text-align: center; font-weight: bold; color: #000000; }'
-		,'a { text-decoration: none; }'
+		,'a { text-align: center; text-decoration: none; }'
     ,'a:link { color: #000000; }'
     ,'a:hover { color: #336666; }'
   ]
 });
 sIFR.replace(officinaBook, {
-  selector: '#sifrRightTools, .productHeading, .stellaPageOverview h2, .rudyPageOverview h2, .screencast p'
+  selector: '#sifrRightTools, .productHeading, .stellaPageOverview h2, .rudyPageOverview h2, .screencast p, .sifr'
 	,wmode: 'transparent'
   ,css: [
 		'.sIFR-root { font-weight: bold; color: #000000; }'
@@ -44,16 +42,6 @@ sIFR.replace(officinaBook, {
   ,css: [
 		'.sIFR-root { color: #00cccc; font-weight: bold; }'
 		,'a { color: #00cccc; text-decoration: none; }'
-    ,'a:hover { color: #336666; }'		
+	  ,'a:hover { color: #336666; }'
   ]
 });
-
-
-/*
-sIFR.replace(officinaBook, {
-  selector: '.stellaOverview h2'
-  ,css: [
-		'.sIFR-root { color: #000000; }'
-  ]
-});
-*/
