@@ -153,7 +153,9 @@ ol, ul, li, dl, dd, dt {
 					padding-top: 15px;
 					}
 				.nav span { 
-					padding-left: 2px;
+					/* For some reason, this causes the nav links to 
+					   show up offset to the right -- Delano
+					padding-left: 2px; */
 					font-size: 16px !important;
 					}
 				.sIFR-active .nav a { padding: 0 5px; }
