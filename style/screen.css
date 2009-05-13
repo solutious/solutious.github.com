@@ -38,13 +38,15 @@ h1, h2, h3, h4, h5, h6 {
 	color: #111;
 	}
 	
-	h2 { font-size: 30px; }
+	h2 { font-size: 30px; }  # 0.66666
 	h2.sifr { 
 		margin-bottom: 15px; 
 		font-family: 'Courier New', Courier, monospace;
 		}
 		.sIFR-active h2.sifr { margin-bottom: -10px; }
-		
+	h3 { font-size: 20px; line-height: 1.25em; height: 36px; width: 400px;}
+	  .sIFR-active h3.sifr { margin-bottom: -10px; }
+	
 ol, ul, li, dl, dd, dt {
 	list-style: none;
 	margin: 0;
@@ -141,7 +143,7 @@ ol, ul, li, dl, dd, dt {
 			}	
 
 			.nav .first { margin-left: 40px !important; }
-			.nav li { margin: 0 10px; width: 51px; }
+			.nav li { margin: 0 10px; width: 54px; }
 			.nav a { 
 				text-align: center;
 				color: #000;
@@ -263,7 +265,17 @@ pre {
 		.sIFR-active .developing { font-size: 28px; }
 	
 	.freeText {
-		
+		width: 769px;
+		text-align: justify;
+	}
+	
+	.freeText p {
+		width: 24em;
+	}
+	
+	.freeText .graphicRight {
+		position: relative;
+		top: -50px;
 	}
 
 	.rightTools {
