@@ -405,6 +405,7 @@ pre {
 		
 /* a b o u t */
 
+.startAddr:after { content: "start\40solutious.com"; }
 
 .freeText {
 	width: 75%;
@@ -420,8 +421,8 @@ pre {
 		.freeText .graphicLeft {
 			position: relative;
 			float: left;
-			top: 14px;
-			left: 6px;
+			top: 240px;
+			left: 48px;
 		}
 
 		.freeText .graphicRight {
