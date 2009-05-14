@@ -37,7 +37,7 @@ Open in your browser: `http://localhost:4000/`
 
 ## Add Post
 
-Make a new file under `_posts`. Copy the filename syntax and YAML content from another post. Then build the site. That's it!
+Make a new file under `blog/_posts`. Copy the filename syntax and YAML content from another post. Then build the site. That's it!
 
 ## Templating
 

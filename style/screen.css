@@ -265,21 +265,6 @@ pre {
 		
 		.sIFR-active .developing { font-size: 28px; }
 	
-	.freeText {
-		width: 75%;
-		text-align: justify;
-	}		
-		.freeText p {
-			width: 380px;
-		}
-		.freeText h3 { font-size: 20px; line-height: 1.25em; height: 36px; width: 400px;}
-		  .sIFR-active h3.sifr { margin-bottom: -10px; }
-		
-		.freeText .graphicRight {
-			position: relative;
-			top: -39px;
-		}
-
 	.rightTools {
 		display: block;
 		width: 501px; height: 87px;
@@ -333,7 +318,7 @@ pre {
 		width: 290px;
 		padding-left: 115px;
 		}		
-		.stellaOverview {	margin: 35px 0; }
+		.rudyOverview {	margin: 35px 0; }
 		
 		.rudyOverviewLogo,
 		.stellaOverviewLogo {	
@@ -417,6 +402,37 @@ pre {
 				color: #999;
 				}	
 				
+		
+/* a b o u t */
+
+
+.freeText {
+	width: 75%;
+	text-align: justify;
+}		
+	.freeText p {
+		width: 380px;
+	}
+	.freeText h3 { font-size: 20px; line-height: 1.25em; height: 36px; width: 400px;}
+	  .sIFR-active h3.sifr { margin-bottom: -10px; }
+		.freeText h4 { font-size: 14px; line-height: 1.25em; height: 36px; }
+		  .sIFR-active h4.sifr { margin-bottom: -10px; font-style: italic; }
+		.freeText .graphicLeft {
+			position: relative;
+			float: left;
+			top: 14px;
+			left: 6px;
+		}
+
+		.freeText .graphicRight {
+			position: relative;
+			float: right;
+		}
+		
+		.freeText .textRight {
+			position: relative;
+			float: right;
+		}
 		
 /* p r o d u c t */
 
