@@ -408,7 +408,7 @@ pre {
 .startAddr:after { content: "start\40solutious.com"; }
 
 .freeText {
-	width: 75%;
+	width: 100%;
 	text-align: justify;
 }		
 	.freeText p {
@@ -421,10 +421,14 @@ pre {
 		.freeText .graphicLeft {
 			position: relative;
 			float: left;
-			top: 240px;
-			left: 48px;
 		}
-
+		.freeText .graphicLeftOldham {
+			position: relative;
+			float: left;
+			top: 240px;
+			margin-right: 20px;
+		}
+		
 		.freeText .graphicRight {
 			position: relative;
 			float: right;
@@ -432,7 +436,8 @@ pre {
 		
 		.freeText .textRight {
 			position: relative;
-			float: right;
+			float: left;
+			padding: 0 0 0 0;
 		}
 		
 /* p r o d u c t */
