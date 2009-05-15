@@ -625,7 +625,9 @@ pre {
 		font-style: italic;
 		margin: 22px 0 11px 0;
 		}
-		
+	.entry .graphic {
+		margin-left: 30px;
+	}
 	.entry .author {
 		margin: 5px 0 0 0;
 		font-family: Georgia, serif;
