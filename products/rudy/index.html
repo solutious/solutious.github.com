@@ -39,7 +39,7 @@ bodyid: products rudy
 
 	
 	<div class="snippetTitle">Sample Machine Configuration<span class="snippetSubtitle">Create your environment</span></div>
-	<pre><code>
+{% highlight ruby %}
 env :stage do         # Define an environment
   ami 'ami-e348af8a'         
                              
@@ -54,11 +54,11 @@ env :stage do         # Define an environment
     end
   end
 end
-	</code></pre>
+{% endhighlight %}
 	
 
 	<div class="snippetTitle">Sample Routine Configuration<span class="snippetSubtitle">Define your processes</span></div>
-	<pre><code>
+{% highlight ruby %}
 startup do            # $ rudy startup
   adduser :rudy       
   authorize :rudy     # Enable passwordless login
@@ -73,6 +73,6 @@ startup do            # $ rudy startup
     ls :l, :a               # $ ls -l -a
   end                          
 end
-	</code></pre>
+{% endhighlight %}
   	
 </div>
