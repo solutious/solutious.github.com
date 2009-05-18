@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 	color: #111;
 	}
 	
-	h2 { font-size: 30px; }  # 0.66666
+	h2 { font-size: 30px; line-height: 30px;}  # ratio: 0.66666
 	h2.sifr { 
 		margin-bottom: 15px; 
 		font-family: 'Courier New', Courier, monospace;
@@ -67,6 +67,20 @@ ol, ul, li, dl, dd, dt {
 	width: 980px;
 	margin: 0 auto;
 	}
+	.corset .content {
+		width: 600px;
+	  }
+	  .corset .content ul, 
+	  .corset .content ol,
+	  .corset .content li {
+		  list-style: disc;
+			list-style-position: inside;
+	  }
+	  .corset .content h1 { font-size: 30px; line-height: 34px; }
+	  .corset .content h2 { font-size: 20px; line-height: 24px; padding-top: 20px; }
+	  .corset .content h3 { font-size: 14px; line-height: 18px; padding-top: 14px; }
+	  .corset .content h4 { font-size: 9px; line-height: 12px; padding-top: 9px; }
+
 
 .top {
 	position: relative;
@@ -319,6 +333,16 @@ pre {
 		padding-left: 115px;
 		}		
 		.rudyOverview {	margin: 35px 0; }
+		.stellaOverview h3,
+		.rudyOverview h3 {
+			padding-top: 10px;
+			margin: 5px 0 10px;
+			font-style: italic;
+			font-weight: normal;
+			font-size: 20px;	
+			line-height: 24px;
+			border-top: 1px dotted #999;	
+			}
 		
 		.rudyOverviewLogo,
 		.stellaOverviewLogo {	
@@ -333,6 +357,7 @@ pre {
 		.rudyOverviewLogo {	
 			background: url(/images/rudyOverview.png) no-repeat; 
 			}
+			
 			
 		.productHeading {
 			display: block;
@@ -360,17 +385,6 @@ pre {
 				height: 22px;
 				margin-bottom: -10px;
 				}
-		
-		.stellaOverview h3,
-		.rudyOverview h3 {
-			padding-top: 10px;
-			margin: 5px 0 10px;
-			font-style: italic;
-			font-weight: normal;
-			font-size: 20px;	
-			line-height: 24px;
-			border-top: 1px dotted #999;	
-			}
 		
 		.details {
 			display: block;
@@ -446,6 +460,42 @@ pre {
 	float: left;
 	}	
 
+	
+.stellaProductOverview,
+.rudyProductOverview {
+position: relative;
+float: left;
+width: 290px;
+padding-left: 115px;
+margin: 35px 0 0 50px;
+}		
+
+.stellaProductOverview h3,
+.rudyProductOverview h3 {
+	padding-top: 10px;
+	margin: 5px 0 10px;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 20px;	
+	line-height: 24px;
+	border-top: 1px dotted #999;	
+	}
+
+		
+.rudyProductOverviewLogo,
+.stellaProductOverviewLogo {	
+	position: absolute;			
+	left: 0;
+	width: 104px; height: 104px;
+	}
+	
+	.stellaProductOverviewLogo {	
+		background: url(/images/stellaOverview.png) no-repeat;
+		}
+	.rudyProductOverviewLogo {	
+		background: url(/images/rudyOverview.png) no-repeat; 
+		}
+	
 .stellaPageOverview,
 .rudyPageOverview {
 	overflow: hidden;

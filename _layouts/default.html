@@ -44,22 +44,31 @@
 			<ul class="navLeftLine"><li>&nbsp;</li></ul>
 			<ul class="nav">
 				<li class="navHome first"><span><a href="/">HOME</a></span></li>
-				<li class="navAbout"><span><a href="/about">ABOUT</a></span></li>
-				<!--li class="navProducts"><span><a href="/products">PRODUCTS</a></span></li-->
-				<li class="navBlog"><span><a href="/blog">BLOG</a></span></li>
+				<li class="navProducts"><span><a href="/products/">PRODUCTS</a></span></li>
+				<li class="navAbout"><span><a href="/about/">ABOUT</a></span></li>
+				<li class="navBlog"><span><a href="/blog/">BLOG</a></span></li>
 				<!--li class="navContact"><span><a href="/">CONTACT</a></span></li-->
 			</ul>
 
 			<div class="subnav">
 				<div class="message">welcome to solutious - home of good natured tools</div>
 				<ul>
+				    {% for nav in page.subnav limit:10 %}
+          	  {% if forloop.index0 == 0 %}<li class="navArchive first">{% else %}<li class="navArchive">{% endif %}
+          	  <span><a href="{{ nav.link }}">{{ nav.name }}</a></span></li>
+            {% endfor %}
 				</ul>
 			</div>	
 		</div>
 
-		
+    {% if page.cotype %}
+		<div class="{{ page.cotype }}">
+		{% else %}
+		<div class="content">
+		{% endif %} 
 {{ content }}
-
+    </div>
+    
 	<div class="reset"></div>
 
 	<div id="footer">
@@ -69,7 +78,7 @@
 	</div>
 	
 </div>
-
+<!--
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -78,6 +87,7 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 var pageTracker = _gat._getTracker("UA-4642735-3");
 pageTracker._trackPageview();
 </script>
+-->
 
 </body>
 </html>
