@@ -17,7 +17,7 @@ Date: 		  May 12th, 2009
 body {
 	position: relative;	
 	overflow-x: hidden;
-	margin: 0;
+	margin: 0 0 0 10px;
 	font-family: arial, sans-serif;
 	font-size: 12px;
 	line-height: 1.25em;
@@ -38,13 +38,27 @@ h1, h2, h3, h4, h5, h6 {
 	color: #111;
 	}
 	
-	h2 { font-size: 30px; }
+	h2 { font-size: 30px; line-height: 30px;}  # ratio: 0.66666
 	h2.sifr { 
 		margin-bottom: 15px; 
 		font-family: 'Courier New', Courier, monospace;
 		}
 		.sIFR-active h2.sifr { margin-bottom: -10px; }
+	
+	.flavour {
+		margin-top: 20px;
+		padding-bottom: 12px;
+		font-family: Georgia, serif;
+		font-style: italic;
+		font-weight: normal;
+		font-size: 16px;
+		color: #00cccc;
+		}
 		
+	.margin { 
+		margin-bottom: 20px !important;
+		}
+			
 ol, ul, li, dl, dd, dt {
 	list-style: none;
 	margin: 0;
@@ -55,6 +69,9 @@ ol, ul, li, dl, dd, dt {
 	display:block;
 	clear: both;
 	}
+	
+.left { float: left; }
+img.left { padding: 0 15px 15px 0; }	
 
 
 /*
@@ -67,6 +84,20 @@ ol, ul, li, dl, dd, dt {
 	width: 980px;
 	margin: 0 auto;
 	}
+	.corset .content {
+		width: 600px;
+	  }
+	  .corset .content ul, 
+	  .corset .content ol,
+	  .corset .content li {
+		  list-style: disc;
+			list-style-position: inside;
+	  }
+	  .corset .content h1 { font-size: 30px; line-height: 34px; }
+	  .corset .content h2 { font-size: 20px; line-height: 24px; padding-top: 20px; }
+	  .corset .content h3 { font-size: 14px; line-height: 18px; padding-top: 14px; }
+	  .corset .content h4 { font-size: 9px; line-height: 12px; padding-top: 9px; }
+
 
 .top {
 	position: relative;
@@ -98,7 +129,7 @@ ol, ul, li, dl, dd, dt {
 			
 			.logo h1 { margin: 0; }
 			.logo img { display: none; }
-			
+						
 		.productNav {
 			clear: none;
 			float: right;
@@ -154,7 +185,12 @@ ol, ul, li, dl, dd, dt {
 					padding-top: 15px;
 					}
 				.nav span { 
-					padding-left: 2px;
+					/* A value of 2px causes the nav links to 
+					   show up offset to the right in Safari.
+					   Removing padding-left completely causes
+					   a similar issue in IE 7. 
+					   0px seems to work everywhere. -- Delano */
+					padding-left: 0px; 
 					font-size: 16px !important;
 					}
 				.sIFR-active .nav a { padding: 0 5px; }
@@ -197,6 +233,37 @@ ol, ul, li, dl, dd, dt {
 					}
 					.subnav .first a { border: none; }
 					.archive .navArchive a { color: #006666; }
+					
+		.leftColumn {
+			float: left;
+			width: 445px;
+			margin-right: 95px;
+			}			
+			.leftColumn h2,
+			.rightColumn h2,
+			.leftColumn .flavour,
+			.rightColumn .flavour {
+				padding-left: 15px;
+				background: url(/images/hr.png) no-repeat bottom left;
+				}
+			.leftColumn p,
+			.leftColumn img,
+			.leftColumn h3,
+			.leftColumn h4,		
+			.rightColumn p,
+			.rightColumn img,
+			.rightColumn h3,
+			.rightColumn h4 {				
+				padding-left: 15px;
+				}
+				.rightColumn p img,
+				.leftColumn p img { padding-left: 0; }
+			
+				
+		.rightColumn {
+			float: left;
+			width: 415px;
+			}			
 					
 #footer {
 	margin-top: 30px !important;
@@ -261,10 +328,6 @@ pre {
 		
 		.sIFR-active .developing { font-size: 28px; }
 	
-	.freeText {
-		
-	}
-
 	.rightTools {
 		display: block;
 		width: 501px; height: 87px;
@@ -318,7 +381,17 @@ pre {
 		width: 290px;
 		padding-left: 115px;
 		}		
-		.stellaOverview {	margin: 35px 0; }
+		.rudyOverview {	margin: 35px 0; }
+		.stellaOverview h3,
+		.rudyOverview h3 {
+			padding-top: 10px;
+			margin: 5px 0 10px;
+			font-style: italic;
+			font-weight: normal;
+			font-size: 20px;	
+			line-height: 24px;
+			border-top: 1px dotted #999;	
+			}
 		
 		.rudyOverviewLogo,
 		.stellaOverviewLogo {	
@@ -333,6 +406,7 @@ pre {
 		.rudyOverviewLogo {	
 			background: url(/images/rudyOverview.png) no-repeat; 
 			}
+			
 			
 		.productHeading {
 			display: block;
@@ -354,23 +428,12 @@ pre {
 			font-family: 'Courier New', Courier, monospace;
 			font-weight: bold;
 			}
-			
+
 			.sIFR-active .stellaOverview .reparte,
 			.sIFR-active .rudyOverview .reparte {
 				height: 22px;
 				margin-bottom: -10px;
 				}
-	
-		.stellaOverview h3,
-		.rudyOverview h3 {
-			padding-top: 10px;
-			margin: 5px 0 10px;
-			font-style: italic;
-			font-weight: normal;
-			font-size: 20px;	
-			line-height: 24px;
-			border-top: 1px dotted #999;	
-			}
 		
 		.details {
 			display: block;
@@ -393,8 +456,7 @@ pre {
 				color: #00CCCC;	
 				}
 				
-				.details:hover .beta,
-				.details:hover .git {
+				.details .git:hover {
 					color: #336666;
 					}
 					
@@ -404,12 +466,102 @@ pre {
 				}	
 				
 		
+/* a b o u t */
+
+.about .top {
+	margin-bottom: 15px;
+	}
+.startAddr:after { content: "start\40solutious.com"; }
+
+.freeText {
+	width: 100%;
+	text-align: justify;
+}		
+	.freeText p {
+		width: 380px;
+	}
+	.freeText h3 { font-size: 20px; line-height: 1.25em; height: 36px; width: 400px;}
+	  .sIFR-active h3.sifr { margin-bottom: -10px; }
+		.freeText h4 { font-size: 14px; line-height: 1.25em; height: 36px; }
+		  .sIFR-active h4.sifr { margin-bottom: -10px; font-style: italic; }
+		.freeText .graphicLeft {
+			position: relative;
+			float: left;
+		}
+		.freeText .graphicLeftOldham {
+			position: relative;
+			float: left;
+			top: 240px;
+			margin-right: 20px;
+		}
+		
+		.freeText .graphicRight {
+			position: relative;
+			float: right;
+		}
+		
+		.freeText .textRight {
+			position: relative;
+			float: left;
+			padding: 0 0 0 0;
+		}
+		
+	.aboutPageDelano {
+		margin: 12px 15px 5px 0;
+		}
+		
+	.email { 
+		font-family: Georgia, serif;
+		font-style: italic;
+		font-weight: normal;
+		font-size: 18px;
+		color: #00CCCC;
+		padding-left: 50px !important;
+		background: url(/images/signatureHeart.png) no-repeat 15px 2px;
+		}
+				
 /* p r o d u c t */
 
 .left {
 	float: left;
 	}	
 
+	
+.stellaProductOverview,
+.rudyProductOverview {
+position: relative;
+float: left;
+width: 290px;
+padding-left: 115px;
+margin: 35px 0 0 50px;
+}		
+
+.stellaProductOverview h3,
+.rudyProductOverview h3 {
+	padding-top: 10px;
+	margin: 5px 0 10px;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 20px;	
+	line-height: 24px;
+	border-top: 1px dotted #999;	
+	}
+
+		
+.rudyProductOverviewLogo,
+.stellaProductOverviewLogo {	
+	position: absolute;			
+	left: 0;
+	width: 104px; height: 104px;
+	}
+	
+	.stellaProductOverviewLogo {	
+		background: url(/images/stellaOverview.png) no-repeat;
+		}
+	.rudyProductOverviewLogo {	
+		background: url(/images/rudyOverview.png) no-repeat; 
+		}
+	
 .stellaPageOverview,
 .rudyPageOverview {
 	overflow: hidden;
@@ -436,7 +588,7 @@ pre {
 			height: 26px;
 			margin: 5px 0 -5px;
 			}
-			
+
 			.sIFR-active .stellaPageOverview .reparte,
 			.sIFR-active .rudyPageOverview .reparte {
 				font-size: 14px;
@@ -462,14 +614,14 @@ pre {
 				color: #000;
 				border-bottom: 4px solid #00CCCC;
 				}
-				
+
 .screencast {
 	display: block;
 	width: 325px; height: 100px;
 	padding: 84px 0 0 175px;
 	background: url(/images/screencast.png) no-repeat;
 	}		
-	
+
 	.screencast h3 {
 		margin: 0 0 10px; 
 		font-size: 24px;
@@ -481,7 +633,7 @@ pre {
 			margin: 10px 0 0;
 			font-size: 28px; 
 			}
-		
+
 	.screencast p {
 		margin: 0;
 		font-family: 'Courier New', Courier, monospace;
@@ -575,14 +727,23 @@ pre {
 		background: url(/images/blogIcons.png) no-repeat 0 -38px;
 		}	
 		
-	.entry h2 {
+	.entry h1 {
 		display: inline;
-		margin-bottom: 2px;
-		font-size: 18px;
+		font-size: 20px;
+		line-height: 22px;
 		font-style: italic;
-		border-bottom: 1px solid #000;
 		}	
 		
+	.entry h2 {
+		display: block;
+		font-size: 20px;
+		line-height: 22px;
+		font-style: italic;
+		margin: 22px 0 11px 0;
+		}
+	.entry .graphic {
+		margin-left: 30px;
+	}
 	.entry .author {
 		margin: 5px 0 0 0;
 		font-family: Georgia, serif;
@@ -593,6 +754,9 @@ pre {
 		.entry a h2:hover { 
 			color: #336666; 
 			}
+	 .entry .related {
+		 margin: 44px 0 0 0;
+	}
 		
 		
 .aboutSolutious,
@@ -617,83 +781,86 @@ pre {
 		
 .aboutSolutious {background: url(/images/aboutSolutious.png) no-repeat;	}		
 .aboutDelano {background: url(/images/aboutDelano.png) no-repeat;	}
+
 	
-	/*****************************************************************************
-	scalable Inman Flash Replacement (sIFR) version 3.
+/*****************************************************************************
+	s I R F
+*****************************************************************************/
 
-	Copyright 2006 – 2008 Mark Wubben, <http://novemberborn.net/>
+@media screen {
+  .sIFR-flash {
+    visibility: visible !important;
+    margin: 0;
+    padding: 0;
+  }
 
-	Older versions:
-	* IFR by Shaun Inman
-	* sIFR 1.0 by Mike Davidson, Shaun Inman and Tomas Jogin
-	* sIFR 2.0 by Mike Davidson, Shaun Inman, Tomas Jogin and Mark Wubben
+  .sIFR-replaced, .sIFR-ignore {
+    visibility: visible !important;
+  }
 
-	See also <http://novemberborn.net/sifr3> and <http://wiki.novemberborn.net/sifr3>.
+  .sIFR-alternate {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    display: block;
+    overflow: hidden;
+  }
 
-	This software is licensed and provided under the CC-GNU LGPL.
-	See <http://creativecommons.org/licenses/LGPL/2.1/>
-	*****************************************************************************/
+  .sIFR-replaced div.sIFR-fixfocus {
+    margin: 0pt; 
+    padding: 0pt; 
+    overflow: auto; 
+    letter-spacing: 0px; 
+    float: none;
+  }
+}
 
-	@media screen {
-	  .sIFR-flash {
-	    visibility: visible !important;
-	    margin: 0;
-	    padding: 0;
-	  }
+@media print {
+  .sIFR-flash {
+    display    : none !important;
+    height     : 0;
+    width      : 0;
+    position   : absolute;
+    overflow   : hidden;
+  }
 
-	  .sIFR-replaced, .sIFR-ignore {
-	    visibility: visible !important;
-	  }
+  .sIFR-alternate {
+    visibility : visible !important;
+    display    : block   !important;
+    position   : static  !important;
+    left       : auto    !important;
+    top        : auto    !important;
+    width      : auto    !important;
+    height     : auto    !important;
+  }
+}
 
-	  .sIFR-alternate {
-	    position: absolute;
-	    left: 0;
-	    top: 0;
-	    width: 0;
-	    height: 0;
-	    display: block;
-	    overflow: hidden;
-	  }
+/*
+Place CSS rules for to-be-replaced elements here. Prefix by .sIFR-active
+so they only apply if sIFR is active. Make sure to limit the CSS to the screen
+media type, in order not to have the printed text come out weird.
+*/
+@media screen {
+  /* Example:
+  .sIFR-active h1 {
+    font-family: Verdana;
+    visibility: hidden;
+  }
+  */
+}
 
-	  .sIFR-replaced div.sIFR-fixfocus {
-	    margin: 0pt; 
-	    padding: 0pt; 
-	    overflow: auto; 
-	    letter-spacing: 0px; 
-	    float: none;
-	  }
-	}
+.sIFR-dummy { 
+  width: 0px;
+  height: 0px;
+  margin-left: 42px !important;
+  z-index: 0;
+}
 
-	@media print {
-	  .sIFR-flash {
-	    display    : none !important;
-	    height     : 0;
-	    width      : 0;
-	    position   : absolute;
-	    overflow   : hidden;
-	  }
-
-	  .sIFR-alternate {
-	    visibility : visible !important;
-	    display    : block   !important;
-	    position   : static  !important;
-	    left       : auto    !important;
-	    top        : auto    !important;
-	    width      : auto    !important;
-	    height     : auto    !important;
-	  }
-	}
-
-	/*
-	Place CSS rules for to-be-replaced elements here. Prefix by .sIFR-active
-	so they only apply if sIFR is active. Make sure to limit the CSS to the screen
-	media type, in order not to have the printed text come out weird.
-	*/
-	@media screen {
-	  /* Example:
-	  .sIFR-active h1 {
-	    font-family: Verdana;
-	    visibility: hidden;
-	  }
-	  */
-	}
+.sIFR-dummy { 
+  width: 0px;
+  height: 0px;
+  margin-left: 42px !important;
+  z-index: 0;
+}

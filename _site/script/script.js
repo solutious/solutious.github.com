@@ -1,5 +1,5 @@
 var officinaBook = { src: '/script/officina.swf' };
-/*
+
 sIFR.useStyleCheck = true;
 sIFR.activate(officinaBook);
 
@@ -45,4 +45,3 @@ sIFR.replace(officinaBook, {
 	  ,'a:hover { color: #336666; }'
   ]
 });
-*/
