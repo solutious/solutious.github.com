@@ -67,9 +67,9 @@ startup do            # $ rudy startup
   end                       
                             
   after :rudy do      # Run remote SSH commands
-    mkdir :p, "great"       # $ mkdir -p great
-    touch "great/scott"     # $ touch great/scott
-    ls :l, :a               # $ ls -l -a
+    mkdir :p, "great"        # $ mkdir -p great
+    touch "great/scott"      # $ touch great/scott
+    ls :l, :a                # $ ls -l -a
   end                          
 end
 {% endhighlight %}

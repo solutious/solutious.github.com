@@ -1,0 +1,28 @@
+#!/usr/bin/ruby
+
+# Description: Invite code generator
+# Usage: ruby genvites.rb [count] [code length]
+# 
+# e.g.
+#
+# $ ruby genvites 6 3
+# in-5qgczr
+# in-enh4v4
+# in-7jjab1
+
+require 'date'
+
+chars = (ARGV.size == 1) ? ARGV[0].to_i : 6
+count = (ARGV.size == 2) ? ARGV[1].to_i : 50
+
+def strand(len, str="")
+   # An Array with ambiguous characters removed: i, l, o, 0, 1
+   chars = [("a".."z").to_a, ("0".."9").to_a].flatten - %w[i l o 0 1]
+   str << chars[rand(chars.size-1)]
+   str.size == len ? str : strand(len, str)
+end
+
+count.times do 
+  puts "in-#{strand(chars)}"
+end
+
