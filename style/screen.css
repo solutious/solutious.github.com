@@ -72,7 +72,10 @@ ol, ul, li, dl, dd, dt {
 	  }
 	  .corset .content ul, 
 	  .corset .content ol,
-	  .corset .content li {
+	  .corset .content li,
+	  .corset .left ul,
+	  .corset .left ol,
+	  .corset .left li {
 		  list-style: disc;
 			list-style-position: inside;
 	  }
