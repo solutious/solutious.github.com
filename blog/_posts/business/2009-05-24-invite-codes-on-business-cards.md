@@ -85,7 +85,7 @@ I used Photoshop so that's the process I describe here but you can use any metho
 
 ### Take it to the printers ###
 
-It's now time to [start the printing process](http://www.moo.com/en/products/) with Moo <a href="#[2]">[2]</a>. They're interface is pretty self-explanatory but so I'll only mention a few things here. 
+It's now time to [start the printing process](http://www.moo.com/en/products/) with Moo <a href="#[2]">[2]</a>. They're interface is pretty self-explanatory so I'll only mention a few things here. 
 
 If you're going with business cards, they have two batch sizes: 50 and 200. Obviously it's cheaper per card to get 200, but they have a limit of 50 unique images (i.e. invite codes) so you'll end up with duplicates (the other card types, like the mini cards allow up to 100 unique images). 
 
