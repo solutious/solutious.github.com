@@ -1,4 +1,4 @@
-# blog.solutious.com -- README
+# solutious.com -- README
 
 ***NOTE: Use Ruby 1.8.x (something is broken with syntax highlighting in 1.9)***
 
