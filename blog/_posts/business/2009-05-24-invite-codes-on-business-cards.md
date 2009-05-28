@@ -29,18 +29,19 @@ I wrote a short Ruby script to generate the invite codes in the format `in-XXXXX
 # in-enh4v4
 # in-7jjab1
 
-chars = (ARGV.size == 1) ? ARGV[0].to_i : 6
-count = (ARGV.size == 2) ? ARGV[1].to_i : 50
+LENGTH = (ARGV.size == 1) ? ARGV[0].to_i : 6
+COUNT = (ARGV.size == 2) ? ARGV[1].to_i : 50
+
+# An Array with ambiguous characters removed: i, l, o, 0, 1
+CHARS = [('a'..'z').to_a, ('0'..'9').to_a].flatten - %w[i l o 0 1]
 
 def strand(len, str='')
-   # An Array with ambiguous characters removed: i, l, o, 0, 1
-   chars = [('a'..'z').to_a, ('0'..'9').to_a].flatten - %w[i l o 0 1]
-   str << chars[rand(chars.size-1)]
+   str << CHARS[rand(CHARS.size-1)]
    str.size == len ? str : strand(len, str)
 end
 
-count.times do 
-  puts "in-#{strand(chars)}"
+COUNT.times do 
+  puts "in-#{strand(LENGTH)}"
 end
 {% endhighlight %}
 
