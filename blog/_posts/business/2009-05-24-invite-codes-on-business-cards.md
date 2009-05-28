@@ -48,7 +48,7 @@ end
 I created an invite codes file with the following commands:
 
     $ echo "InviteCode" > invites-2009-05-27.csv
-    $ ruby geninvites 6 50 > invites-2009-05-27.csv
+    $ ruby geninvites 6 50 >> invites-2009-05-27.csv
 
 ### Batch Creates Images ###
 
