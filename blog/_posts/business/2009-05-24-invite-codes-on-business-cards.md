@@ -20,7 +20,7 @@ I wrote a short Ruby script to generate the invite codes in the format `in-XXXXX
 #!/usr/bin/ruby
 
 # Description: Invite code generator
-# Usage: ruby genvites [count] [code length]
+# Usage: ruby genvites [code length] [count]
 # 
 # e.g.
 #
@@ -29,8 +29,8 @@ I wrote a short Ruby script to generate the invite codes in the format `in-XXXXX
 # in-enh4v4
 # in-7jjab1
 
-LENGTH = (ARGV.size == 1) ? ARGV[0].to_i : 6
-COUNT = (ARGV.size == 2) ? ARGV[1].to_i : 50
+LENGTH = (ARGV.shift || 6).to_i 
+COUNT  = (ARGV.shift || 50).to_i
 
 # An Array with ambiguous characters removed: i, l, o, 0, 1
 CHARS = [('a'..'z').to_a, ('0'..'9').to_a].flatten - %w[i l o 0 1]
@@ -86,7 +86,7 @@ I used Photoshop so that's the process I describe here but you can use any metho
 
 ### Take it to the printers ###
 
-It's now time to [start the printing process](http://www.moo.com/en/products/) with Moo <a href="#[2]">[2]</a>. They're interface is pretty self-explanatory so I'll only mention a few things here. 
+It's now time to [start the printing process](http://www.moo.com/en/products/) with Moo <a href="#[2]">[2]</a>. Their interface is pretty self-explanatory so I'll only mention a few things here. 
 
 If you're going with business cards, they have two batch sizes: 50 and 200. Obviously it's cheaper per card to get 200, but they have a limit of 50 unique images (i.e. invite codes) so you'll end up with duplicates (the other card types, like the mini cards allow up to 100 unique images). 
 
@@ -100,6 +100,7 @@ The only remaining choice is the type of paper: "Green" or "Classic". A few obse
 
 And that's how I put unique invite codes on business cards. It's a bit of work, but it's cheap and it gives people a reason to keep your card. Just make sure you launch the product!
 
+**Update: Improved ruby code example with feedback from [Wes](http://twitter.com/narnach) and [Filip](http://twitter.com/FiXato).**
 
 ### Notes ###
 
