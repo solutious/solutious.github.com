@@ -89,10 +89,7 @@ img.left { padding: 0 15px 15px 0; }
 	  }
 	  .corset .content ul, 
 	  .corset .content ol,
-	  .corset .content li,
-	  .corset .left ul,
-	  .corset .left ol,
-	  .corset .left li {
+	  .corset .content li {
 		  list-style: disc;
 			list-style-position: inside;
 	  }
