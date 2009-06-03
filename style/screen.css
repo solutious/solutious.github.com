@@ -474,8 +474,6 @@ pre {
 .about .top {
 	margin-bottom: 15px;
 	}
-.startAddr:after { content: "start\40solutious.com"; }
-
 .freeText {
 	width: 100%;
 	text-align: justify;
@@ -519,10 +517,12 @@ pre {
 		font-weight: normal;
 		font-size: 18px;
 		color: #00CCCC;
-		padding-left: 50px !important;
 		background: url(/images/signatureHeart.png) no-repeat 15px 2px;
 		}
-				
+		.rightColumn .email {
+			background-position: 30px 2px;
+			}
+							
 /* p r o d u c t */
 
 .left {
