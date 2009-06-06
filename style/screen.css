@@ -511,7 +511,7 @@ pre {
 		margin: 12px 15px 5px 0;
 		}
 		
-	.email { 
+	.emailSignature { 
 		font-family: Georgia, serif;
 		font-style: italic;
 		font-weight: normal;
@@ -519,9 +519,14 @@ pre {
 		color: #00CCCC;
 		background: url(/images/signatureHeart.png) no-repeat 15px 2px;
 		}
-		.rightColumn .email {
+		.rightColumn .emailSignature {
 			background-position: 30px 2px;
 			}
+							
+	.email {
+		direction:rtl;
+		unicode-bidi: bidi-override;
+		}
 							
 /* p r o d u c t */
 
