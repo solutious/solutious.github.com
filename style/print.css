@@ -70,6 +70,12 @@ ol, ul, li, dl, dd, dt {
 .copyright {
 	display: block;
 	}
+	
+.email {
+	direction:rtl;
+	unicode-bidi: bidi-override;
+	}
+	
 
 /*
 //----------------------------------------------

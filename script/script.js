@@ -45,3 +45,7 @@ sIFR.replace(officinaBook, {
 	  ,'a:hover { color: #336666; }'
   ]
 });
+
+noSpam = function( user, domain ) {
+	document.location = 'mailto:' + user + '@' + domain;
+}
