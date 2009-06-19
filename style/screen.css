@@ -752,6 +752,15 @@ margin: 35px 0 0 50px;
 	.entry .graphic {
 		margin-left: 30px;
 	}
+	.entry .graphicSubtext {
+		margin-top: 10px;
+		padding-top: 85px;
+		font-family: Georgia, serif;
+		font-size: 12px;
+		line-height: 1.25em;
+		font-style: italic;
+		color: #999;
+	}
 	.entry .author {
 		margin: 5px 0 0 0;
 		font-family: Georgia, serif;
