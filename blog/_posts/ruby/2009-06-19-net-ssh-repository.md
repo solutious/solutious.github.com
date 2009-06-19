@@ -14,11 +14,11 @@ script :root do
   make 'SysV'
 end
 {% endhighlight %} 
-*A configuration snippet from [solutious-ebstest](http://github.com/solutious/ebstest/tree/2009-06-19) demonstrating Rudy's shell script style DSL.*
+<span class="graphicSubtext">A configuration snippet from my <a href="http://github.com/solutious/ebstest/tree/2009-06-19" title="GitHub: EBS Test respository">Amazon EBS test</a> demonstrating Rudy's shell script style DSL.</span>
 
-I really appreciate the time Jamis has put in to Net::SSH and I want to make sure the library continues to be maintained. Some back story: A few weeks ago I ran into a connection problem with Solaris. The issue was related to the encryption modes supported by Net::SSH and was [first reported](http://rubyforge.org/tracker/index.php?func=detail&aid=23742&group_id=274&atid=1123) back in January. Luckily a patch was recently posted by Denis Bernard which I reviewed and applied to my local copy. Problem solved. 
+A few weeks ago I ran into a connection problem with Solaris. The issue was related to the encryption modes supported by Net::SSH and was [first reported](http://rubyforge.org/tracker/index.php?func=detail&aid=23742&group_id=274&atid=1123) back in January. Luckily a patch was recently posted by Denis Bernard which I reviewed and applied to my local copy. Problem solved. 
 
-Well, my initial problem was solved but not the greater problem of Net::SSH maintenance.
+Well, my initial problem was solved but not the greater problem of Net::SSH maintenance. I really appreciate the time Jamis has put in to Net::SSH and I want to make sure the library continues to be maintained.
 
 
 ## A New Repository##
