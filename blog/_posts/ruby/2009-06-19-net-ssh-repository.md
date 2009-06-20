@@ -29,7 +29,7 @@ I figured other people could benefit from this patch and there will likely be mo
 
 ## An Interim Maintainer ##
 
-I have a hunch there are other developers out there who are willing and able to make contributions to the project. My intent is simply to help organize that effort. I plan to apply pull requests and patches but I do not plan to continue feature development myself at this time. For those interested in contributing, I'm happily excepting patches, pull requests, and even suggestions for minor changes. You can email me at `net-ssh@solutious.com`. If this is successful and/or helpful to the community, I'll fork over Net::SCP and the rest of the crew as well. 
+I have a hunch there are other developers out there who are willing and able to make contributions to the project. My intent is simply to help organize that effort. I plan to apply pull requests and patches but I do not plan to continue feature development myself at this time. For those interested in contributing, I'm happily accepting patches, pull requests, and even suggestions for minor changes. You can email me at `net-ssh@solutious.com`. If this is successful and/or helpful to the community, I'll fork over Net::SCP and the rest of the crew as well. 
 
 A final note: I am not a security professional so if anyone has experience in this area and is interested in reviewing changes before they're pulled into the repo please contact me.
 
