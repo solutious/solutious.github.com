@@ -21,13 +21,13 @@ A few weeks ago I ran into a connection problem with Solaris. The issue was rela
 Well, my initial problem was solved but not the greater problem of Net::SSH maintenance. I really appreciate the time Jamis has put in to Net::SSH and I want to make sure the library continues to be maintained.
 
 
-## A New Repository##
+### A New Repository ###
 
 I figured other people could benefit from this patch and there will likely be more patches to come so I [forked the Net:SSH repository](http://github.com/net-ssh/net-ssh/) on GitHub with the canonical net-ssh user. I've applied the patch mentioned above, updated the test suite, and incremented the version to 2.0.12. I also added a gemspec file so the gem can be distributed via GitHub:
 
     $ sudo gem install net-ssh-net-ssh --source=http://gems.github.com/
 
-## An Interim Maintainer ##
+### An Interim Maintainer ###
 
 I have a hunch there are other developers out there who are willing and able to make contributions to the project. My intent is simply to help organize that effort. I plan to apply pull requests and patches but I do not plan to continue feature development myself at this time. For those interested in contributing, I'm happily accepting patches, pull requests, and even suggestions for minor changes. You can email me at `net-ssh@solutious.com`. If this is successful and/or helpful to the community, I'll fork over Net::SCP and the rest of the crew as well. 
 
