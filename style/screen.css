@@ -146,6 +146,7 @@ img.left { padding: 0 15px 15px 0; }
 				padding-top: 50px;
 				color: #999;
 				}
+				
 			.productNav .stella a { background: url(/images/productNav.png) no-repeat 7px top; }
 			.productNav .rudy a { background: url(/images/productNav.png) no-repeat -54px top; }
 			.stella .stella a,
@@ -534,15 +535,39 @@ pre {
 	float: left;
 	}	
 
+.mainProducts {
+	float: left;
+	}
+	
+.otherProducts {
+	float: left;
+	width: 425px; height: 550px;
+	margin-top: 35px;
+	padding-left: 100px;
+	background: url(/images/productsPageDivider.png) no-repeat 42px 55px;	
+	}
+	
+	.otherProductsHeading {
+		position: relative;
+		margin-bottom: 10px !important;
+		padding-bottom: 22px;
+		background: url(/images/otherProducts.png) no-repeat bottom;	
+		}
+		
+	.otherProducts .description {
+		margin: 0 0 20px 0;
+		padding: 5px 0; 
+		border-bottom: 1px dotted #999;
+		border-top: .15em dotted #999;
+		}	
 	
 .stellaProductOverview,
 .rudyProductOverview {
-position: relative;
-float: left;
-width: 290px;
-padding-left: 115px;
-margin: 35px 0 0 50px;
-}		
+	position: relative;
+	width: 290px;
+	padding-left: 115px;
+	margin: 35px 0 0 50px;
+	}		
 
 .stellaProductOverview h3,
 .rudyProductOverview h3 {
@@ -594,7 +619,7 @@ margin: 35px 0 0 50px;
 
 		.products .reparte {
 			height: 26px;
-			margin: 5px 0 -5px;
+			margin: 10px 0 -5px;
 			}
 
 			.sIFR-active .stellaPageOverview .reparte,
