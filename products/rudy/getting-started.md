@@ -88,6 +88,23 @@ Rudy stores metadata about your machines and disks in SimpleDB. The <tt>init</tt
   Initialized</code></pre>
 
 
+##  Authorize user@localhost ##
+
+Rudy executes local commands via SSH and unless the private keys are added to your `~/.ssh/authorize_keys` file, it will prompt you every time you run it. You can prevent this by doing one of the following: 
+
+<strong>Manually</strong>
+
+    $ cd
+    $ cat ~/.ssh/id_rsa.pub ~/.ssh/id_dsa.pub >> ~/.ssh/authorize_keys
+    $ cat ~/.ssh/id_rsa.pub ~/.ssh/id_dsa.pub >> ~/.ssh/authorize_keys2
+
+<strong>With Rye</strong>
+
+    $ rye authorize-local
+    
+NOTE: This is not sudo. It simply allows Rudy to execute the command `ssh localhost` without having to provide a password.
+
+
 ##  Create Project Configuration
 
 The project configuration tells Rudy about the machine groups you want to create. Machine groups are named after the current environment and role. In this example, we'll configure the default machine group called <tt>stage-app</tt>.
