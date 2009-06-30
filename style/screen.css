@@ -541,7 +541,7 @@ pre {
 	
 .otherProducts {
 	float: left;
-	width: 425px; height: 550px;
+	width: 425px;
 	margin-top: 35px;
 	padding-left: 100px;
 	background: url(/images/productsPageDivider.png) no-repeat 42px 55px;	
@@ -838,6 +838,9 @@ pre {
 
   .sIFR-replaced, .sIFR-ignore {
     visibility: visible !important;
+		outline-color: -moz-use-text-color;
+		outline-style: none;
+		outline-width: 0;
   }
 
   .sIFR-alternate {
