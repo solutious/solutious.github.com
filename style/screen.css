@@ -829,12 +829,6 @@ pre {
 	s I R F
 *****************************************************************************/
 
-.sIFR-replaced object {
-	outline-color: -moz-use-text-color;
-	outline-style: none;
-	outline-width: 0;
-	}
-	
 @media screen {
   .sIFR-flash {
     visibility: visible !important;
@@ -866,7 +860,7 @@ pre {
     letter-spacing: 0px; 
     float: none;
   }
-
+}
 
 @media print {
   .sIFR-flash {
@@ -886,7 +880,7 @@ pre {
     width      : auto    !important;
     height     : auto    !important;
   }
-
+}
 
 /*
 Place CSS rules for to-be-replaced elements here. Prefix by .sIFR-active
