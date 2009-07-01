@@ -3,7 +3,7 @@ layout: default
 bodyid: products rudy
 subnav: 
 - name: "getting started"
-  link: /products/rudy/getting-started.html
+  link: /projects/rudy/getting-started.html
 - name: "repository"
   link: http://github.com/solutious/rudy
 - name: "issues"

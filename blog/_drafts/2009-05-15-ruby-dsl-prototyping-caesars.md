@@ -23,7 +23,7 @@ end
 {% endhighlight %}
 
 
-[Rudy](http://solutious.com/products/rudy/) implements Caesars for all configuration. 
+[Rudy](http://solutious.com/projects/rudy/) implements Caesars for all configuration. 
 
 
 

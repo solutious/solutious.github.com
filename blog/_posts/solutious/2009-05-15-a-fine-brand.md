@@ -32,7 +32,7 @@ I had a simple, two-pronged request: a quick fix and a plan for the future. I st
 
 <a class="graphic" href="http://farm3.static.flickr.com/2448/3531715509_e8df15a3fc_o.png"><img src="http://farm3.static.flickr.com/2448/3531715509_954b63053e_m.jpg" border="0" /></a>
 
-I released the first public version of [Stella](http://solutious.com/products/stella/) around the same time and shortly after this design went up I began working on [Rudy](http://solutious.com/products/rudy/). You'll notice the title on this homepage is "The Performance Testing Company". That's because my original focus was performance testing tools (I'll talk more about the business side of things in that upcoming post). With the introduction of Rudy, a development and deployment tool, I removed the word "testing" and adjusted my approach to include the notion of human performance. Software shouldn't just perform well at run-time, it also needs to perform well at development time. 
+I released the first public version of [Stella](http://solutious.com/projects/stella/) around the same time and shortly after this design went up I began working on [Rudy](http://solutious.com/projects/rudy/). You'll notice the title on this homepage is "The Performance Testing Company". That's because my original focus was performance testing tools (I'll talk more about the business side of things in that upcoming post). With the introduction of Rudy, a development and deployment tool, I removed the word "testing" and adjusted my approach to include the notion of human performance. Software shouldn't just perform well at run-time, it also needs to perform well at development time. 
 
 
 ### March 2009, the prototype

@@ -1,82 +1,9 @@
----
-layout: default
-bodyid: products
-cotype: products-content
-projects: 
-- name: Rye 0.8
-  hook: Safe, parallel SSH from Ruby
-  link: http://github.com/delano/rye/
-  desc: Safely run SSH commands on a bunch of machines at the same time (from Ruby).
-- name: "Tryouts 0.5"
-  hook: A high-level testing library (DSL) for your Ruby codes.
-  link: http://github.com/delano/tryouts/
-  desc: Tryouts helps you automate your API and CLI tests on your Ruby projects (including performance benchmarks). It's like basketball tryouts for code.  
-- name: Gibbler 0.3
-  hook: Git-like hashes for Ruby objects
-  link: http://github.com/delano/gibbler/
-  desc: Gibbler creates SHA1 digests of your Ruby objects so you can easily tell when changes have been made. 
-- name: Caesars 0.7
-  hook: Rapid and delicious DSL prototyping in Ruby
-  link: http://github.com/delano/caesars/
-  desc: Start writing and refining your domain specific languages without worrying about the implementation. 
-- name: Drydock 0.6
-  hook: Build seaworthy command-line apps like a Captain with a powerful Ruby DSL.
-  link: http://github.com/delano/caesars/
-  desc: Drydock is a seaworthy DSL for building really powerful command line applications.
-- name: Sysinfo 0.6
-  hook: Basic, platform-specific, system information
-  link: http://github.com/delano/sysinfo/
-  desc: "SysInfo takes a very quick glance at the system it's running on and exposes the results as YAML, JSON, CSV, or TSV. It also determines a platform identifier for the system that takes the form: VM-OS-IMPLEMENTATION-ARCHITECTURE (e.g. ruby-unix-osx-x86_64)."
-- name: Storable 0.5
-  hook: Marshal Ruby classes into and out of multiple formats (yaml, json, csv, tsv)
-  link: http://github.com/delano/storable/
-  desc: It's cool to output an object as YAML or JSON. 
-- name: Annoy 0.5
-  hook: Like your annoying friend that asks you questions all the time.
-  link: http://github.com/delano/annoy/
-  desc: Annoy helps you ask questions and simple, interactive questions on the command-line. 
----
-
-
-	<div class="products-content">
-	 
-		<div class="mainProducts">
-			<div class="rudyProductOverview">
-				<a class="rudyProductOverviewLogo" href="/products/rudy"></a>
-				<span class="productHeading"><a href="/products/rudy">Rudy 0.8</a></span>
-				<p class="reparte"><a href="/products/rudy/">TO THE SERVERS, PLEASE!</a></p>	
-				<h3>Not your grandparents' EC2 deployment tool</h3>
-				<span class="details">
-					<span class="beta">Now in public beta</span>
-					<a class="git" href="http://github.com/solutious/rudy">Follow on GitHub</a>
-				</span>
-				<p class="description">Rudy is a development and deployment tool for Amazon EC2. Define infrastructure and processes using a powerful Ruby DSL* and Rudy takes care of the rest (like creating security groups and keypairs).</p>
-				<p class="description">* domain specific language</p>
-			</div>	
-
-			<div class="stellaProductOverview">
-				<a class="stellaProductOverviewLogo" href="/products/stella"></a>
-				<span class="productHeading"><a href="/products/stella">Stella 0.6</a></span>
-				<p class="reparte"><a href="/products/stella/">FANCY A TEST?</a></p>	
-				<h3>Run integration tests with beauty and brute strength</h3>
-				<span class="details">
-					<span class="beta">Now in public beta</span>
-					<a class="git" href="http://github.com/solutious/stella">Follow on GitHub</a>
-				</span>
-				<p class="description">Stella is a testing tool. Define testplans using a powerful Ruby DSL* and let Stella take care of the dirty details (like maintaining values between requests).</p>
-				<p class="description">* domain specific language</p>
-			</div>
-		</div>
-		
-		<div class="otherProducts">
-			<span class="productHeading otherProductsHeading">OTHER PROJECTS</span>
-			
-			{% for project in page.projects limit:10 %}
-    	  <span><a href="{{ project.link }}"></a></span></li>
-    	  <span class="productHeading"><a href="{{ project.link }}">{{ project.name }}</a></span>
-  			<p class="reparte"><a href="{{ project.link }}">{{ project.hook }}</a></p>
-  			<p class="description">{{ project.desc }}</p>
-      {% endfor %}
-
-      <div class="reset"></div>
-	</div>
+<html>
+<head>
+  <meta http-equiv="refresh" content="2;url=/projects/">
+  <title>Solutious.com</title>
+</head>
+<body>
+Products page has moved to <a href="/projects/">projects</a>...
+</body>
+</html>

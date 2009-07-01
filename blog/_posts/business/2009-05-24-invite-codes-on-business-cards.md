@@ -4,7 +4,7 @@ title: How to put invite codes on business cards
 who: delano
 ---
 
-When I started working on [Stella](/products/stella/) last year, my initial plan was to release it as a for-charge testing service. I figured out a way to put unique invite codes on business cards and about halfway through the project I got them printed and started handing them out to people I met at meetups and other events. It turned out to be a pretty handy way to punctuate a good conversation. The only problem was that about a month before launch I decided to switch gears and release the project as an open source tool. That was a good lesson learned! Don't give out invite codes until the product is up and running <a href="#[1]">[1]</a>. In any case, I thought I'd share the process I used to create them for anyone else that's interested in doing something similar.
+When I started working on [Stella](/projects/stella/) last year, my initial plan was to release it as a for-charge testing service. I figured out a way to put unique invite codes on business cards and about halfway through the project I got them printed and started handing them out to people I met at meetups and other events. It turned out to be a pretty handy way to punctuate a good conversation. The only problem was that about a month before launch I decided to switch gears and release the project as an open source tool. That was a good lesson learned! Don't give out invite codes until the product is up and running <a href="#[1]">[1]</a>. In any case, I thought I'd share the process I used to create them for anyone else that's interested in doing something similar.
 
 ### The Process ###
 
@@ -86,7 +86,7 @@ I used Photoshop so that's the process I describe here but you can use any metho
 
 ### Take it to the printers ###
 
-It's now time to [start the printing process](http://www.moo.com/en/products/) with Moo <a href="#[2]">[2]</a>. Their interface is pretty self-explanatory so I'll only mention a few things here. 
+It's now time to [start the printing process](http://www.moo.com/en/projects/) with Moo <a href="#[2]">[2]</a>. Their interface is pretty self-explanatory so I'll only mention a few things here. 
 
 If you're going with business cards, they have two batch sizes: 50 and 200. Obviously it's cheaper per card to get 200, but they have a limit of 50 unique images (i.e. invite codes) so you'll end up with duplicates (the other card types, like the mini cards allow up to 100 unique images). 
 

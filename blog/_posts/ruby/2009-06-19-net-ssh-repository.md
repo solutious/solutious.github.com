@@ -4,7 +4,7 @@ title: A new repository for Net::SSH
 who: delano
 ---
 
-I use [Net::SSH](http://net-ssh.rubyforge.org/) quite extensively in [Rudy](/products/rudy/) and [Rye](http://github.com/delano/rye/) so I was concerned about the future of the project when Jamis Buck [announced his departure](http://weblog.jamisbuck.org/2009/2/25/net-ssh-capistrano-and-saying-goodbye) from the project back in February. It's a great library and without it I would not be able to do this:
+I use [Net::SSH](http://net-ssh.rubyforge.org/) quite extensively in [Rudy](/projects/rudy/) and [Rye](http://github.com/delano/rye/) so I was concerned about the future of the project when Jamis Buck [announced his departure](http://weblog.jamisbuck.org/2009/2/25/net-ssh-capistrano-and-saying-goodbye) from the project back in February. It's a great library and without it I would not be able to do this:
 
 {% highlight ruby %}
 script :root do

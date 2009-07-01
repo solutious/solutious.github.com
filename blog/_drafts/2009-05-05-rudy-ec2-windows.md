@@ -9,7 +9,7 @@ Rudy is a development and deployment tool for Amazon EC2. I've written a few exa
 What you'll need:
 
 * [Rudy](http://wiki.github.com/solutious/rudy/getting-started)
-* Remote Desktop Client [for Mac](http://www.microsoft.com/mac/products/remote-desktop/default.mspx)
+* Remote Desktop Client [for Mac](http://www.microsoft.com/mac/projects/remote-desktop/default.mspx)
 * 5 minutes
 
 

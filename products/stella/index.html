@@ -1,71 +1,9 @@
----
-layout: default
-bodyid: products stella
-cotype: product
-subnav:
-- name: "repository"
-  link: http://github.com/solutious/stella
-- name: "issues"
-  link: http://github.com/solutious/stella/issues
-- name: "rdocs"
-  link: http://solutious.com//stella/
----
-
-
-<div class="left">
-	<div class="stellaPageOverview">
-		<h2>Stella</h2>
-		<p class="reparte">FANCY A TEST?</p>	
-		<a class="details" href="http://github.com/solutious/stella">
-			<span class="beta">Version 0.6</span>
-			<span class="git">Follow on GitHub</span>
-		</a>
-		<a class="download" href="http://github.com/solutious/stella/tarball/stella-0.6.0">download</a>
-		<!--p class="getStarted">... and then <a href="http://wiki.github.com/solutious/stella">get started here!</a></p-->
-		<p>&nbsp;<!-- or the moustache gets trimmed --></p>
-	</div>
-  
-  <!--
-	<a class="screencast" href="/products/stella/screencast">
-		<h3>WATCH THE SCREENCAST</h3>
-		<p>LEARN ALL ABOUT STELLA</p>
-	</a>
-  -->
-</div>
-<div class="right">
-	<h4>Run integration tests with beauty and brute strength</h4>
-	<p>Stella is a testing tool. Define testplans using a powerful Ruby DSL* and let Stella take care of the dirty details (like maintaining values between requests).</p> 
-
-	
-	<div class="snippetTitle">Sample Test Plan<span class="snippetSubtitle">Add and retrieve a product</span></div>
-{% highlight ruby %}
-testplan :product_api do
-  desc "Maintain a value between requests"
-  auth :basic, "user", "pass"
-
-  post "/upload" do
-    name "Add Product"
-    body "bill", "/path/2/file.txt"
-    header "X-Stella" => "Version 0.6"
-    param :convert => true
-    param :rand => rand(100)
-
-    response 200, 201 do |headers, body|
-      data = YAML.load(body)
-      @product_id = data[:id]  # Save a value
-    end
-  end
-
-  get "/product" do
-    name "View Product"
-    param 'id' => @product_id	  # Use the saved value
-
-    response 200 do |header, body|
-      data = YAML.load(body)
-      repeat :times => 2, :wait => 1.second
-    end
-  end
-end
-{% endhighlight %}
-	
-</div>
+<html>
+<head>
+  <meta http-equiv="refresh" content="2;url=/projects/stella/">
+  <title>Solutious.com</title>
+</head>
+<body>
+Stella page has moved to <a href="/projects/stella">projects/stella</a>...
+</body>
+</html>
