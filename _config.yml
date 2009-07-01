@@ -3,5 +3,6 @@ auto:        false
 lsi:         true
 server_port: 4000
 pygments:    true
-markdown:    maruku #rdiscount
+markdown:    maruku
+#markdown: rdiscount
 permalink:   pretty
