@@ -220,7 +220,7 @@ The Rudy command line tool has plenty of built-in documentation.
 
 ## More Examples
 
-* [EBS volume tests](http://github.com/solutious/ebstest)
+* [EBS volume tests](http://github.com/solutious/ebstest) for testing the performance of Amazon EC2 disks. 
 
 
 
