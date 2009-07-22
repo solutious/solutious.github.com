@@ -217,7 +217,10 @@ The Rudy command line tool has plenty of built-in documentation.
 * `$ rudy show-commands`
 * `$ rudy COMMAND -h`
 
+
 ## More Examples
 
-Take a look at the [examples directory](http://github.com/solutious/rudy/tree/master/examples) which contains complex machine and routine configurations.
+* [EBS volume tests](http://github.com/solutious/ebstest)
+
+
 
