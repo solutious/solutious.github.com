@@ -1,10 +1,9 @@
 ---
 layout: default
 bodyid: products rudy
-permalink: none
 subnav: 
 - name: "getting started"
-  link: /projects/rudy/getting-started.html
+  link: /projects/rudy/getting-started/
 - name: "repository"
   link: http://github.com/solutious/rudy
 - name: "issues"
@@ -18,7 +17,7 @@ subnav:
 
 This document takes you through all steps required to get started with Rudy. By the end, you'll be able to launch multiple EC2 machines with EBS volumes from a single command. 
 
-*NOTE: The current release of Rudy (0.8) is now in BETA status. *
+*NOTE: The current release of Rudy (0.9) is in BETA status. *
 
 This document covers the following steps:
 
@@ -71,39 +70,22 @@ In this step, we'll create the accounts configuration file.
 
 The accounts section of your `~/.rudy/config` file should look like this:
 
-<pre><code>  accounts do
-    aws do
+<pre><code>  accounts {
+    aws {
       name "Account Name"
       accountnum "123456789012"
       accesskey "ACCESSACCESSACCESSACCESS"
       secretkey "SECRETSECRETSECRETSECRET"
       privatekey "path/2/pk-****.pem"
       cert "path/2/cert-****.pem"
-    end
-  end</code></pre>
+    }
+  }</code></pre>
 
 Rudy stores metadata about your machines and disks in SimpleDB. The <tt>init</tt> command creates a SimpleDB domain called <tt>rudy_state</tt> to store this metadata.
 
 <pre><code>  $ rudy init
   Creating SimpleDB domain rudy_state
-  Initialized</code></pre>
-
-
-##  Authorize user@localhost ##
-
-Rudy executes local commands via SSH and unless the private keys are added to your `~/.ssh/authorize_keys` file, it will prompt you every time you run it. You can prevent this by doing one of the following: 
-
-<strong>Manually</strong>
-
-    $ cd
-    $ cat ~/.ssh/id_rsa.pub ~/.ssh/id_dsa.pub >> ~/.ssh/authorize_keys
-    $ cat ~/.ssh/id_rsa.pub ~/.ssh/id_dsa.pub >> ~/.ssh/authorize_keys2
-
-<strong>With Rye</strong>
-
-    $ rye authorize-local
-    
-NOTE: This is not sudo. It simply allows Rudy to execute the command `ssh localhost` without having to provide a password.
+  Authorizing public keys for user@localhost</code></pre>
 
 
 ##  Create Project Configuration
@@ -131,50 +113,31 @@ Yep! You can specify your own keypairs in the machines config. You can find an e
 Rudy now has all everything it needs to launch the default machine group. To launch a machine group, you call the _startup_ routine:
 
 <pre><code>$ rudy startup
+  Authorizing group: 70.49.123.222 (22, 22)
+  Starting m-us-east-1d-stage-app-01........
+  Waiting for SSH on port 22.....
+  Creating volume... 
+  Attaching vol-0023c869 to i-e523298c... 
+  Creating ext3 filesystem for /dev/sdr... 
+  Mounting at /rudy/disk1... 
 
- m-us-east-1b-stage-app-01                         awsid: i-aabbcc11 
-   -> Checking if instance is running........... done
-   -> Waiting for SSH daemon........ done
-   -> Setting hostame to m-us-east-1b-stage-app-01... done
-
-  ---  ADD USER  ---------------------------------------------------
-  
-  delano$ useradd -m -d /home/delano -s /bin/bash delano
-  
-  ---  AUTHORIZE USER  ---------------------------------------------
-  
-  delano$ authorize_keys_remote
-  
-  ---  DISKS  ------------------------------------------------------
-  Creating disk-us-east-1b-stage-app-01-rudy-disk1 
-  Creating volume...  done
-  Attaching vol-443322aa to i-aabbcc11...  done
-  Creating ext3 filesystem for /dev/sdr... done
-  Mounting at /rudy/disk1... done
-  Empty after config for delano
-  
-  ---  INFO  -------------------------------------------------------
-  Filesystem on m-us-east-1b-stage-app-01:
-    Filesystem            Size  Used Avail Use% Mounted on
-    /dev/sdr              2.0G   68M  1.9G   4% /rudy/disk1
-  
-The following machines are now available:
-m-us-east-1b-stage-app-01  ec2-11-22-33-44.compute-1.amazonaws.com</code></pre>
+  The following machines are now available:
+  m-us-east-1d-stage-app-01</code></pre>
 
 Using the `machines` command we can list the machines running in the default machine group. 
 
 <pre><code>  $ rudy machines
-  m-us-east-1b-stage-app-01  ec2-11-22-33-44.compute-1.amazonaws.com</code></pre>
+  m-us-east-1d-stage-app-01</code></pre>
 
 ##  SSH into the machine
 
 You can log into the default machine with the following command:
 
 <pre><code>  $ rudy -u root ssh
-  Connecting root`ec2-11-22-33-44.compute-1.amazonaws.com m-us-east-1b-stage-app-01
-  Linux domU-12-31-39-03-48-D4 2.6.21.7-2.fc8xen #1 SMP Fri Feb 15 12:39:36 EST 2008 i686
+  Connecting root@ec2-11-22-33-44.compute-1.amazonaws.com
+  Linux domU-12-31-39-03-48-D4 2.6.21.7-2.fc8xen #1 SMP Fri Feb 15 12:39:36 i686
   
-  root`ec2-11-22-33-44:~# </code></pre>
+  root@m-us-east-1d-stage-app-01:~# </code></pre>
 
 The <tt>-u root</tt> tells Rudy to open a connection as the root user. If you create an account on that instance, you can login as that user too. If you don't provide <tt>-u</tt> Rudy will attempt to login with the name of the current user. 
 
@@ -188,26 +151,12 @@ When you want to shutdown the machine, you use the _shutdown_ routine:
   All machines in stage-app will be shutdown
   The following filesystems will be destroyed:
   /rudy/disk1
-  Are you sure? To continue, resolve (5 * 2): 10
+  Unmounting /rudy/disk1... 
+  Detaching vol-0023c869.....
+  Destroying disk-us-east-1d-stage-app-01-rudy-disk1
   
-   m-us-east-1b-stage-app-01                       awsid: i-dd0473b4 
-     -> Checking if instance is running... done
-     -> Waiting for SSH daemon... done
-     -> Setting hostame to m-us-east-1b-stage-app-01... done
-  
-  ---  DISKS  ------------------------------------------------------
-  Destroying disk-us-east-1b-stage-app-01-rudy-disk1
-  Unmounting /rudy/disk1... done
-  Detaching vol-2b957742.... done
-  Destroying metadata... 
-  
-  ---  INFO  -------------------------------------------------------
-  Filesystem on m-us-east-1b-stage-app-01:
-    Filesystem            Size  Used Avail Use% Mounted on
-    /dev/sda2             147G  188M  140G   1% /mnt
-  
-The following instances have been destroyed:
-m-us-east-1b-stage-app-01 i-dd0473b4 </code></pre>
+  The following instances have been destroyed:
+  m-us-east-1d-stage-app-01 i-e523298c </code></pre>
 
 
 ##  Built-in Help
