@@ -45,7 +45,7 @@ env :stage do         # Define an environment
   role :app do        # Define a role
     addresses '11.22.33.44'  # Use elastic IPs
                              
-    disks do          # Create EBS volumes
+    disks do          # Define EBS volumes
       path "/rudy/disk1" do  
         size 100             
         device "/dev/sdr"     
@@ -62,11 +62,11 @@ startup do            # $ rudy startup
   adduser :rudy       
   authorize :rudy     # Enable passwordless login
                              
-  disks do                   # Create a disk 
-    restore "/rudy/disk1"    # from a backup
+  disks do                   
+    create "/rudy/disk1"     # Create an EBS volume 
   end                       
                             
-  after :rudy do      # Run remote SSH commands
+  remote :rudy do     # Run remote SSH commands
     mkdir :p, "great"        # $ mkdir -p great
     touch "great/scott"      # $ touch great/scott
     ls :l, :a                # $ ls -l -a
