@@ -4,6 +4,8 @@ title: Rudy, not your grandparent's deployment tool
 who: delano
 ---
 
+*NOTE: This post is historically accurate but out of date. See: [Rudy 0.9 Released](/blog/2009/08/10/rudy-0.9-released/).* 
+
 [Rudy](http://github.com/solutious/rudy) is a command-line development and deployment tool. It's been in private beta for about two months and today marks the day of the [first public release](http://github.com/solutious/rudy/tree/0.6) `[1]`. The project is still in alpha status and many features have yet to be developed but it's already useful for exploring the features of Amazon EC2. In this post, I'll introduce Rudy's core features and demonstrate how these features can help build and manage environments in EC2.  
 
 ## A quick look

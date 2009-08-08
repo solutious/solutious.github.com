@@ -4,6 +4,8 @@ title: Rudy, A Replacement for EC2 API Tools.
 who: delano
 ---
 
+*NOTE: This post is historically accurate but out of date. See: [Rudy 0.9 Released](/blog/2009/08/10/rudy-0.9-released/).* 
+
 Rudy is a [development and deployment tool](/2009/04/21/rudy-deployment-introduction/) for EC2. It comes with an executable called `rudy-ec2` that can also be used as a replacement for Amazon's EC2 API tools. The EC2 API tools are a great reference implementation but they're unfriendly and become unwieldily when you have more than a few instances. `rudy-ec2` is an alternative to these tools that can be used on it's own (you don't need to start using Rudy), allowing you to incorporate Rudy into your development process gradually.
 
 ## Installation
