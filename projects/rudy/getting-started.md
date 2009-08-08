@@ -17,7 +17,8 @@ subnav:
 
 This document takes you through all steps required to get started with Rudy. By the end, you'll be able to launch multiple EC2 machines with EBS volumes from a single command. 
 
-*NOTE: The current release of Rudy (0.9) is in BETA status. *
+*Note: The current release of Rudy (0.9) is in BETA status. That means Rudy is not ready for production use! See [Project Status](http://wiki.github.com/solutious/rudy/project-status).*
+
 
 This document covers the following steps:
 
