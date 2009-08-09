@@ -4,7 +4,7 @@ title: Launching a Windows EC2 instance with rudy-ec2
 who: delano
 ---
 
-Rudy is a development and deployment tool for Amazon EC2. I've written a few examples about launching Linux and Solaris instances so in this post I'm going to demonstrate how to launch a Windows instance. Launching a Windows machine image is quite similar to launching other types, but there are a few gotchas. That's what this post about. Windows EC2 gotchas. 
+Rudy is a development and deployment tool for Amazon EC2. I've written a few examples about launching Linux and Solaris instances so in this post I'm going to demonstrate how to launch a Windows instance. Launching a Windows machine image is quite similar to launching other types, but EC2 has a few Windows specific features that you need to be aware of. That's what this post about. Windows EC2 gotchas. 
 
 What you'll need:
 
