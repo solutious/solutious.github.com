@@ -81,7 +81,8 @@ You can use one of the following methods.
 
 **Via Amazon AWS Console**
 
-<span class="graphicSubtext"><a href="http://console.aws.amazon.com">console.aws.amazon.com</a></span>
+<span class="graphicSubtext"><a href="http://console.aws.amazon.com">console.aws.amazon.com</a></span><br/>
+
 
 <img class="graphic" src="/blog/assets/2009-q3/ssh-on-windows-09-securitygroup.png" border="0" />
 
