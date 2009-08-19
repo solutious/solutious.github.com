@@ -7,17 +7,21 @@ who: delano
 
 [SSH](http://en.wikipedia.org/wiki/Secure_Shell) (Secure Shell) is a network protocol that allows data to be exchanged securely between one or more devices. It's used to automate command execution and transfer files. SSH is most often associated with Linux, Unix, and other "non-Windows" operating systems, but it can run on Windows as well. This document takes you through the steps for installing an SSH server on a Windows machine. 
 
-There are [several](http://www.openssh.com/windows.html) SSH servers available for Windows, both free and commercial products. Of the software we tested, I've found [copSSH](http://www.itefix.no/copssh/) to be the easiest and also the most up to date. 
+### Overview ###
+
+
+There are [several](http://www.openssh.com/windows.html) SSH servers available for Windows, both free and commercial products. I've found [copSSH](http://www.itefix.no/copssh/) to be the easiest and also the most up to date. 
 
 * _Download the installation package_
 * _Run installer_
 * _Authorize users_
 * _Copy public key_
-* _Update Security Group_ (Amazon EC2 only)
+* _Update Security Group (Amazon EC2 only)_ 
 * _Test connection_
-* _Bundle AMI_ (Amazon EC2 only)
+* _Bundle AMI (Amazon EC2 only)_
 
-***Note: This post describes the process for enabling passwordless logins via SSH.***
+***Note: This post describes the process for enabling passwordless logins via SSH. You will not be able to login with your regular password.***
+
 
 ### Download the installation package ###
 
@@ -50,9 +54,13 @@ After completing the installation, you must authorize SSH access for at least on
 
 ### Copy Public Key ###
 
+In order to enable passwordless logins, you must copy your public keys to the Windows machine. You can find your default public keys in `~/.ssh` but you can specify others as well. Here's a basic command for creating an `authorized_keys` file. 
+
     $ cat ~/.ssh/id_rsa.pub ~/.ssh/id_dsa.pub >> ./authorized_keys
 
-<img class="graphic" src="/blog/assets/2009-q3/ssh-on-windows-08-authkeys.png" border="0" />
+This file will contain a list of your public keys, one key per line. You must upload this file (or copy and paste the contents) to `C:\Program Files\ICW\home\Administrator\.ssh\authorized_keys`. 
+
+<img class="graphic" src="/blog/assets/2009-q3/ssh-on-windows-08-authkeys.png" border="0" alt="C:\Program Files\ICW\home\Administrator\.ssh\authorized_keys" />
 
 
 ### Update Security Group ###
