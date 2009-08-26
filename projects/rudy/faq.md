@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Rudy FAQ
 bodyid: products rudy
 subnav: 
 - name: "getting started"
