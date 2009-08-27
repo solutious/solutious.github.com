@@ -73,11 +73,11 @@ end
 
 #### When you're ready, run the following command:
 
-    $ rudy -C path/2/jira.rb install
+    $ rudy --config path/2/jira.rb install
 
 Once this command finishes, you'll be able to grab the the public DNS for your new EC2 instance by running:
 
-    $ rudy -C path/2/jira.rb machines
+    $ rudy --config path/2/jira.rb machines
 
 
 ### JIRA Setup (optional) ###
@@ -125,7 +125,7 @@ end
 
 #### Take a deep breath and run:
 
-    $ rudy -C ruby/unix/jira.rb destroy
+    $ rudy --config ruby/unix/jira.rb destroy
 
 The instance is now gone. You can try to reload JIRA in your browser but sadly and perhaps slightly frightening, it's gone.
 
@@ -158,7 +158,7 @@ end
 
 #### Run the following command: ####
 
-    $ rudy -C ruby/unix/jira.rb restore
+    $ rudy --config ruby/unix/jira.rb restore
 
 Note that even if you skipped setting up JIRA, it's in the same state as you left it without having to reinstall in. If you did setup JIRA, you'll notice that it's in the same state as you left it too. However, notice how the public DNS is different. That's because it's an entirely new machine with an entirely new disk. 
 
