@@ -4,16 +4,18 @@ title: "Restore, Work, Destroy: An EC2 lifecycle"
 who: delano
 ---
 
-Most of the buzz around virtualized IT infrastructure focuses on dynamic scaling -- that is, increasing the number of machines when load is high and decreasing when load is low. There is huge value in being able to do this, but there are other valuable opportunities which get much less attention. The opportunity that I am most excited about is *temporary infrastructures.* 
+Most of the buzz around virtualized IT infrastructure focuses on dynamic scaling -- that is, increasing the number of machines when load is high and decreasing when load is low. There is huge value in being able to do this, but there are other valuable opportunities which get less attention. The opportunity that I am most excited about is *temporary infrastructures.* 
 
-Now, temporary infrastructures have  [received](http://open.blogs.nytimes.com/2008/05/21/the-new-york-times-archives-amazon-web-services-timesmachine/) [some](http://aws.typepad.com/aws/2009/08/pig-latin-high-level-data-processing-with-elastic-mapreduce.html) [attention](http://selenium-grid.seleniumhq.org/run_the_demo_on_ec2.html) but the focus is generally limited to variations of batch processing. I'd like to suggest another possibility: launching applications only for the time that you need them. 
+Now, temporary infrastructures have  [received](http://open.blogs.nytimes.com/2008/05/21/the-new-york-times-archives-amazon-web-services-timesmachine/) [some](http://aws.typepad.com/aws/2009/08/pig-latin-high-level-data-processing-with-elastic-mapreduce.html) [attention](http://selenium-grid.seleniumhq.org/run_the_demo_on_ec2.html) but the focus is generally limited to variations of batch processing. I'd like to talk about another possibility: launching applications only for the time that you need them. 
 
 
 ### A Just-in-time Issue Tracker ###
 
 Launching an application, using it, and shutting it down is interesting but it's hardly mind blowing. I'm going to kick it up a notch by demonstrating how to routinely persist an application and its data between machine instances using [Amazon EC2](http://aws.amazon.com/ec2/), [EBS volumes](http://aws.amazon.com/ebs/), and [Rudy](http://solutious.com/projects/rudy/). 
 
-Imagine being able to run an issue tracker for your team, only during business hours. I'm using [JIRA](http://www.atlassian.com/software/jira/) for this example because it is a popular bug and issue tracker that's familiar to many people. 
+Imagine being able to run an issue tracker for your team, only during business hours. Off hours the machine is shut down (along with the applications running on it). Instead of paying $75 / month for the smallest EC2 instance, you're now paying around $18. And there's a bonus: you'll be creating full daily backups as part of your regular process. 
+
+I'm using [JIRA](http://www.atlassian.com/software/jira/) for this example because it is a popular bug and issue tracker that's familiar to many people. 
 
 
 #### What you need ####
