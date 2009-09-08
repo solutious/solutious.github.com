@@ -24,11 +24,12 @@ I imagine that many, many projects are abandoned based on the notion that they w
 
 * Note the music in the background is absolutely terrible, as well as the overall sound quality. 
 
-* 
+It's not about being the best
+
 
 ## What is talent? ##
 
-When people say someone is talented, they must be referring to skill. I have to believe that because I can't imagine anyone thinking that Fernando Miyata just picked up a guitar and started cranking out those licks. That kind of playing takes thousands of hours of *attentive practice*. Malcolm Gladwell says it takes 10,000 hours and others says it's [more] or it's [less] or that it's a [stupid] thing to say. I don't know if 10,000 hours is correct or whether it's even possible to distill all human endeavor down to a single amount of requisite practice, but I do know that's it absolutely not 0 hours or even 100 hours. Given that attentive practice is no swiss picnic, it would be more accurate to describe talent as 
+When people say someone is talented, they must be referring to skill. No one would think that Fernando Miyata just picked up a guitar and started cranking out those licks. That kind of playing takes thousands of hours of *attentive practice*. Malcolm Gladwell says it takes 10,000 hours and others says it's [more] or it's [less] or that it's a [stupid] thing to say. I don't know if 10,000 hours is correct or whether it's even possible to distill all human endeavor down to a single amount of requisite practice, but I do know that's it absolutely not 0 hours or even 100 hours. Given that attentive practice is no swiss picnic, it would be more accurate to describe talent as 
 
 
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How Projects (Usage?) Grow 
+title: How fast do projects grow?
 who: delano
 ---
 
