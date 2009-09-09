@@ -36,10 +36,9 @@ Possible? Absolutely. But these opportunities require (sometimes) significant de
 
 ## The road is paved with experiments ##
 
-How do we get there? How do we get to a place that's brimming with mind-blowingly powerful IaaS tools? We get there with practice, by experimenting with EC2 or Rackspace or RightScale or Cloudkick. If you're a development manager, green light a pilot project. If you're a developer, take a look at a project like [Rudy](/projects/rudy/) or [PoolParty](http://poolpartyrb.com/) and tear it apart. 
+We need to expand our knowledge of what works and what doesn't work. So go out and experiment with EC2 or Rackspace or RightScale or Cloudkick. If you're a development manager, green light a pilot project. If you're a developer, take a look at a project like [Rudy](/projects/rudy/) or [PoolParty](http://poolpartyrb.com/) and tear it apart. 
 
-We need to expand our knowledge of what works and what doesn't work.
-
+How do we get to a place that's brimming with mind-blowingly powerful IaaS tools? Practice!
 
 
 
