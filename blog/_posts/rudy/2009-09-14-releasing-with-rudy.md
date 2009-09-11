@@ -99,10 +99,11 @@ end
 
 With the configuration above in place, I can run the release routines I created from any directory on my machine. But before I run anything, I get the project into a consistent state. 
 
-* Update the change log (usually `CHANGES.txt`)
+* Update the change log
 * Commit all my local changes. 
 * Update file manifest and dependencies in the gemspec file (if necessary)
 * Increment the release number in all appropriate locations and check in the changes with an appropriate message. 
+* Create a release tag
 
 Then I run the following simple command from the project directory:
 
@@ -112,6 +113,12 @@ There's huge value in being able to define a routine in one location yet be able
 
 For example, you'll note the `publish_github` routine creates a tag called "latest". That allows me to refer to that tag in long-running or rarely updated documentation when I talk about the most recent release. It's little things like that that make a big difference over the long run. Both in terms of my time and the visible consistency of a project. 
 
+
+## Future Additions ##
+
+Astute readers will note a couple glaring improvements than can and should be made to this process. The first is creating the release tag automatically based on the gemspec (or possibly library version). The second is removing the reliance on Rake. There are some tasks that Rake is specifically suited for, but in this case it's possible to cleanly migrate the calls for building the documentation and Rubygems into Rudy directly. 
+
+And that's it. How do you automate your release process?
 
 
 
