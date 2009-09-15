@@ -18,10 +18,10 @@ subnav:
 		<h2>Stella</h2>
 		<p class="reparte">FANCY A TEST?</p>	
 		<a class="details" href="http://github.com/solutious/stella">
-			<span class="beta">Version 0.6</span>
+			<span class="beta">Version 0.7</span>
 			<span class="git">Follow on GitHub</span>
 		</a>
-		<a class="download" href="http://github.com/solutious/stella/tarball/stella-0.6.0">download</a>
+		<a class="download" href="http://github.com/solutious/stella/tarball/0.7.0.002">download</a>
 		<!--p class="getStarted">... and then <a href="http://wiki.github.com/solutious/stella">get started here!</a></p-->
 		<p>&nbsp;<!-- or the moustache gets trimmed --></p>
 	</div>
@@ -34,38 +34,36 @@ subnav:
   -->
 </div>
 <div class="right">
-	<h4>Run integration tests with beauty and brute strength</h4>
-	<p>Stella is a testing tool. Define testplans using a powerful Ruby DSL* and let Stella take care of the dirty details (like maintaining values between requests).</p> 
+	<h4>Perform load tests with beauty and brute strength</h4>
+	<p>Stella is a powerful performance testing tool for web applications. Define test plans using a concise configuration language and Stella takes care of the dirty details (like maintaining values between requests).</p> 
 
 	
-	<div class="snippetTitle">Sample Test Plan<span class="snippetSubtitle">Add and retrieve a product</span></div>
+	<div class="snippetTitle">Sample Test Plan<span class="snippetSubtitle">A simple business finder search</span></div>
 {% highlight ruby %}
-testplan :product_api do
-  desc "Maintain a value between requests"
-  auth :basic, "user", "pass"
+usecase "Simple search" do
 
-  post "/upload" do
-    name "Add Product"
-    body "bill", "/path/2/file.txt"
-    header "X-Stella" => "Version 0.6"
-    param :convert => true
-    param :rand => rand(100)
-
-    response 200, 201 do |headers, body|
-      data = YAML.load(body)
-      @product_id = data[:id]  # Save a value
+  get "/search", "Search Results" do
+    wait 2..5
+    param :what  => 'Big Al'
+    param :where => 'Toronto'
+    response 200 do
+      listing = doc.css('div.listing').first
+      set :lid, listing['id'].match(/(\d+)/)[0]
     end
   end
+  
+  get "/listing/:lid" do      # URIs can contain
+    desc "Selected listing"   # variables. See
+    wait 1..8                 # the one set in 
+                              # the first request? 
+    response 200 do           
+      status                  # => 200
+      headers['Content-Type'] # => ['text/html']
+      body                    # => <html>...
+      doc                     # => Nokigiri doc
+    end                      
+  end                              
 
-  get "/product" do
-    name "View Product"
-    param 'id' => @product_id	  # Use the saved value
-
-    response 200 do |header, body|
-      data = YAML.load(body)
-      repeat :times => 2, :wait => 1.second
-    end
-  end
 end
 {% endhighlight %}
 	
