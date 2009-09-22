@@ -20,14 +20,14 @@ rb_sprintf("#<%s:%p>", cname, (void*)obj);
 /* Ruby 1.8 */
 snprintf(RSTRING(str)->ptr, len+1, "#<%s:0x%lx>", cname, obj);
 {% endhighlight %}
-<span class="graphicSubtext">You can find this code in the file ruby-VERSION/object.c</span>
+<span class="graphicSubtext">You can find this code in the Ruby source code in the file ruby-VERSION/object.c</span>
 
 Now, Ruby's sprintf doesn't support `%p` or `%lx` but it does support `%x`. However, there's obviously more to the story because the values still don't match up:
 
 {% highlight ruby %}
 obj = Object.new
-"#<%s:0x%x>" % [obj.class, obj.object_id]    # => #<Object:0x80813ff4>
-obj.to_s                                     # => #<Object:0x101027fe8>
+"#<%s:0x%x>" % [obj.class, obj.object_id]        # => #<Object:0x80813ff4>
+obj.to_s                                         # => #<Object:0x101027fe8>
 {% endhighlight %} 
 
 So what do we need to do to the object id to get the real hexadecimal value?
@@ -38,8 +38,8 @@ So what do we need to do to the object id to get the real hexadecimal value?
 If we take a look at the hexadecimal values in plain-old decimal, the answer becomes obvious. Can you see it?
 
 {% highlight ruby %}
-"0x80813ff4".hex                             # => 2155954164
-"0x101027fe8".hex                            # => 4311908328
+"0x80813ff4".hex                                 # => 2155954164
+"0x101027fe8".hex                                # => 4311908328
 {% endhighlight %}
 
 All we have to do is double it!
@@ -48,11 +48,11 @@ All we have to do is double it!
 ## And the answer is... ##
 
 {% highlight ruby %}
-"#<%s:0x%x>" % [obj.class, obj.object_id*2]  # => #<Object:0x101027fe8>
+"#<%s:0x%x>" % [obj.class, obj.object_id.abs*2]  # => #<Object:0x101027fe8>
 {% endhighlight %}
 
 
-*Note: I've created a tiny project called [Hexoid](http://github.com/delano/hexoid/) which handles minor formatting differences between Ruby 1.8 and 1.9. JRuby support will be supported in a later version.*
+*Note: I've created a tiny project called [Hexoid](http://github.com/delano/hexoid/) to handle the minor formatting difference between Ruby 1.8 and 1.9.*
 
 
 
