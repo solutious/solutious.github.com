@@ -1,7 +1,7 @@
 destination: ./_site
 auto:        true
 lsi:         false
-server_port: 4000
+server_port: 80
 pygments:    true
 markdown:    maruku
 #markdown: rdiscount
