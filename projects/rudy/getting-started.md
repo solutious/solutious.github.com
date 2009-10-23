@@ -10,7 +10,7 @@ subnav:
 - name: "issues"
   link: http://github.com/solutious/rudy/issues
 - name: "rdocs"
-  link: http://solutious.com/rudy/
+  link: /rudy/
 ---
 
 # Getting Started 

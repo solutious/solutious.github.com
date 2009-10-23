@@ -385,7 +385,7 @@ pre {
 		width: 290px;
 		padding-left: 115px;
 		}		
-		.rudyOverview {	margin: 35px 0; }
+		.stellaOverview {	margin: 35px 0; }
 		.stellaOverview h3,
 		.rudyOverview h3 {
 			padding-top: 10px;
@@ -777,7 +777,8 @@ pre {
 	.entry .graphic {
 		margin-left: 30px;
 	}
-	.entry .graphicSubtext {
+	/* I removed .entry b/c I use this on non-blog pages -- delano */
+	.graphicSubtext {
 		margin-top: 10px;
 		padding-top: 85px;
 		font-family: Georgia, serif;
