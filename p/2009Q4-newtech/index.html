@@ -1,0 +1,164 @@
+---
+layout: default
+title: About Solutious Inc.
+bodyid: about
+cotype: about
+---
+
+
+<div class="about page">
+ 
+	<div class="presentation">
+			<h2 class="sifr">Agile Web App Testing (with Stella)</h2>
+
+	    <h3 class="flavour margin">Montréal New Tech -- November 3, 2009</h3>
+
+			<h3 class="sifr">1. Why bother?</h3>
+			 
+			 <ul>
+  			   <em><li class="BIG">Increase quality</li></em>
+   			   <em><li class="BIG">Decrease costs</li></em>
+            <em><li class="BIG">Fail privately</li></em>
+            <em><li class="BIG">Fail Privately</li></em>
+			  </ul>
+
+			<br/><br/><br/><br/><br/><br/>
+			<br/><br/><br/><br/><br/><br/>
+			<br/><br/><br/><br/><br/><br/>
+			
+			<h3 class="sifr">2. Successful Testing Involves...</h3>
+			 
+			 <ul>
+  			   <em><li class="BIG">Understanding what your users are doing</li></em>
+   			   <em><li class="BIG">Simulating what your users are doing</li></em>
+   			   <em><li class="BIG">A way to report on tests</li></em>
+			  </ul>
+        
+      <br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/><br/><br/>
+      
+ 			<h3 class="sifr">3. Why don't people test?</h3>
+
+			 <ul>
+   			   <em><li class="BIG">Lack of time or resources</li></em>
+        		 <em><li class="BIG">Tools are complex or expensive</li></em>
+          		 <em><li class="BIG">Not aware of the value</li></em>
+			  </ul>
+			  
+{% highlight xml %}
+<?xml version="1.0"?>
+<!DOCTYPE tsung SYSTEM "/usr/local/share/tsung/tsung-1.0.dtd">
+<tsung loglevel="notice" version="1.0">
+
+  <!-- Client side setup -->
+  <clients>
+    <client host="localhost" use_controller_vm="true"/>
+  </clients>
+  
+  <!-- Server side setup -->
+  <servers>
+    <server host="example.com" port="80" type="tcp"></server>
+  </servers>
+
+  <load>
+  <!-- several arrival phases can be set: for each phase, you can set
+  the mean inter-arrival time between new clients and the phase
+  duration -->
+   <arrivalphase phase="1" duration="1" unit="minute">
+     <users interarrival="2" unit="second"></users>
+   </arrivalphase>
+  </load>
+
+  <options>
+   <option type="ts_http" name="user_agent">
+    <user_agent probability="80">Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.8) Gecko/20050513 Galeon/1.3.21</user_agent>
+    <user_agent probability="20">Mozilla/5.0 (Windows; U; Windows NT 5.2; fr-FR; rv:1.7.8) Gecko/20050511 Firefox/1.0.4</user_agent>
+   </option>
+  </options>
+
+  <sessions>
+    <session name='rec20091022-22:12' probability='100'  type='ts_http'>
+      <request><http url='http://example.com/' version='1.1' method='GET'></http></request>
+      <request><http url='http://theme.example.com/default/css/display.css?version=0.8.1' version='1.1' method='GET'></http></request>
+      <request><http url='/base/css/print.css?version=0.8.1' version='1.1' method='GET'></http></request>
+      <request><http url='http://example.com/js/jquery.min.js?version=0.8.1' version='1.1' method='GET'></http></request>
+      <request><http url='http://theme.example.com/base/css/display.css' version='1.1' method='GET'></http></request>
+
+      <thinktime random='true' value='2'/>
+
+      <request><http url='/jrnc' version='1.1' method='GET'></http></request>
+      <request><http url='http://theme.example.com/base/images/icons/icon_foaf.gif' version='1.1' method='GET'></http></request>
+      <request><http url='/default/default-avatar-profile.png' version='1.1' method='GET'></http></request>
+
+      <thinktime random='true' value='8'/>
+
+      <request><http url='http://example.com/trebek' version='1.1' method='GET'></http></request>
+      <request><http url='http://theme.example.com/default/default-avatar-mini.png' version='1.1' method='GET'></http></request>
+
+      <thinktime random='true' value='4'/>
+
+      <request><http url='http://example.com/trebek/replies' version='1.1' method='GET'></http></request>
+
+      <thinktime random='true' value='2'/>
+
+      <request><http url='/trebek/all' version='1.1' method='GET'></http></request>
+    </session>
+  </sessions>
+</tsung>
+{% endhighlight %}
+<span class="graphicSubtext">An example of the XML configuration used by <a href="http://tsung.erlang-projects.org/">Tsung</a></span>
+
+	<br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/>
+	
+  <h3 class="sifr">4. Stella Configuration Example</h3>
+
+{% highlight ruby %}
+ desc "Product Finder"
+
+ usecase 100, "Simple search" do
+   resource :search_terms, list('search_terms.txt')
+
+   get "/", "Homepage" do
+     wait 1..3
+   end
+
+   get "/search", "Search Results" do
+     wait 2..3
+     param :what  => random(:search_terms)
+     param :where => random(['Toronto', 'Vancouver', 'Montreal'])
+     response 200 do
+       listing = doc.css('div.listing').first
+       set :lid, listing['id'].match(/(\d+)/)[0]
+     end
+     response 404 do 
+       fail "No results"
+     end
+   end
+
+   get "/listing/:lid" do 
+     desc "Selected listing"
+     wait 1..4    
+   end               
+
+ end
+ {% endhighlight %}
+ <span class="graphicSubtext">An example of the Ruby configuration used by <a href="/projects/stella/">Stella</a></span>
+
+
+	<br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/>
+	
+  <h3 class="sifr">Thank You!</h3>
+  
+  <p class="emailSignature">- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delano (@solutious.com)</p>
+
+	</div>
+
+</div>
+
+
+

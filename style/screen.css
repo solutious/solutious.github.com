@@ -237,7 +237,31 @@ img.left { padding: 0 15px 15px 0; }
 					}
 					.subnav .first a { border: none; }
 					.archive .navArchive a { color: #006666; }
-					
+		
+		.presentation {
+			float: left;
+			width: 800px;
+			margin-right: 95px;
+			}
+		.presentation h2 {
+			font-size: 45px; line-height: 45px;
+		}
+		
+		.presentation h3 {
+			font-size: 30px; line-height: 30px;
+		}
+		
+		.presentation p, .presentation li {
+			font-size: 24px; line-height: 34px;
+		}
+		.presentation li {
+		  list-style: disc;
+			list-style-position: inside;
+	  }
+		.presentation .flavour {
+			padding-left: 15px;
+			background: url(/images/hr.png) no-repeat bottom left;
+			}
 		.leftColumn {
 			float: left;
 			width: 445px;
