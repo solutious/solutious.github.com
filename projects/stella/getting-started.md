@@ -87,7 +87,7 @@ usecase 25, "YAML API" do
   end
 
   get "/listing/:lid.yaml", "Select Listing" do
-    param :lid => rsequential(:listing_ids)    
+    param :lid => *sequential*(:listing_ids)    
     response 200 do
       repeat 7
     end
