@@ -80,7 +80,7 @@ projects:
 			{% for project in page.projects limit:10 %}
     	  <span><a href="{{ project.link }}"></a></span></li>
     	  <span class="productHeading"><a href="{{ project.link }}">{{ project.name }}</a></span>
-  			<p class="reparte"><a href="{{ project.link }}">{{ project.hook }}</a></p>
+  			<a class="reparte" href="{{ project.link }}">{{ project.hook }}<div class="reset"></div></a>
   			<p class="description">{{ project.desc }}</p>
       {% endfor %}
 

@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 		margin-bottom: 15px; 
 		font-family: 'Courier New', Courier, monospace;
 		}
-		.sIFR-active h2.sifr { margin-bottom: -10px; }
+		.cufon-active h2.sifr { margin-bottom: -10px; }
 	
 	.flavour {
 		margin-top: 20px;
@@ -107,7 +107,20 @@ img.left { padding: 0 15px 15px 0; }
 	height: 190px;
 	border-top: 3px solid #00cccc;
 	}
-
+		
+	.logo {
+		position: absolute;
+		display: block;
+		overflow: hidden;
+		width: 289px; height: 106px;
+		text-indent: 9999px;	
+		background: url(/images/logoTagLine.png) no-repeat;
+		border: none;
+		}
+		
+		.logo h1 { margin: 0; }
+		.logo img { display: none; }
+	
 	.openSourceProjects {
 		display: block;
 		text-align: right;
@@ -120,37 +133,55 @@ img.left { padding: 0 15px 15px 0; }
 		font-size: 11px;
 		}
 		
-		.logo {
-			position: absolute;
+	.speaking {
+		position: absolute;
+		top: 10px;
+		left: 667px;
+		font-size: 11px;
+		}
+		.speaking .speakingAt {
+			margin: 0 0 8px;
+			color: #00cccc;
+			background: url(/images/openSourceArrow.png) no-repeat right 7px;
+			}
+		.speaking a {
 			display: block;
-			overflow: hidden;
-			width: 289px; height: 106px;
-			text-indent: 9999px;	
-			background: url(/images/logoTagLine.png) no-repeat;
-			border: none;
+			margin-bottom: 4px;
 			}
 			
-			.logo h1 { margin: 0; }
-			.logo img { display: none; }
-						
-		.productNav {
-			clear: none;
-			float: right;
-			margin: 10px;
-			}
-			
-			.productNav a {
-				display: block;
-				text-align: center;
-				width: 60px;
-				padding-top: 50px;
-				color: #999;
+			.speaking .event {
+				margin: 0px;
+				font-size: 16px;
+				font-weight: bold;
+				font-family: 'Courier New', Courier, monospace;
+				color: #333;
 				}
 				
-			.productNav .stella a { background: url(/images/productNav.png) no-repeat 7px top; }
-			.productNav .rudy a { background: url(/images/productNav.png) no-repeat -54px top; }
-			.stella .stella a,
-			.rudy .rudy a { color: #00CCCC; }		
+			.speaking .specifics {
+				margin: 0;
+				color: #999;
+				}
+				.speaking a:hover p { color: #006666; }
+				
+												
+	.productNav {
+		clear: none;
+		float: right;
+		margin: 10px;
+		}
+		
+		.productNav a {
+			display: block;
+			text-align: center;
+			width: 60px;
+			padding-top: 50px;
+			color: #999;
+			}
+			
+		.productNav .stella a { background: url(/images/productNav.png) no-repeat 7px top; }
+		.productNav .rudy a { background: url(/images/productNav.png) no-repeat -54px top; }
+		.stella .stella a,
+		.rudy .rudy a { color: #00CCCC; }		
 	
 		.productNav li,
 		.nav li,
@@ -197,8 +228,8 @@ img.left { padding: 0 15px 15px 0; }
 					padding-left: 0px; 
 					font-size: 16px !important;
 					}
-				.sIFR-active .nav a { padding: 0 5px; }
-				.sIFR-active .nav li { margin: 0 5px; }
+				.cufon-active .nav a { padding: 0 5px; }
+				.cufon-active .nav li { margin: 0 5px; }
 				
 			.home .navHome,
 			.about .navAbout,
@@ -354,7 +385,7 @@ pre {
 		color: #999;
 		}
 		
-		.sIFR-active .developing { font-size: 28px; }
+		.cufon-active .developing { font-size: 28px; line-height: 1.05em; }
 	
 	.rightTools {
 		display: block;
@@ -370,14 +401,14 @@ pre {
 			font-style: italic;
 			color: #336666;
 			}
-		.sIFR-active #sifrAnd { height: 32px; padding: 0; font-size: 24px; }
+		.cufon-active #sifrAnd { height: 32px; padding: 0; font-size: 24px; }
 		#sifrRightTools { 
 			display: block;
 			margin-top: 17px;
 			font-size: 22px;
 			font-weight: bold; 
 			}
-	.sIFR-active #sifrRightTools { margin-top: 0 !important; font-size: 28px; }
+	.cufon-active #sifrRightTools { margin-top: 0 !important; font-size: 27px; }
 
 	.columns {
 		height: 100px;
@@ -447,7 +478,7 @@ pre {
 			font-weight: bold;
 			}
 			.productHeading a { color: #000; }
-			.sIFR-active .productHeading { margin-bottom: -15px; }
+			.cufon-active .productHeading { margin-bottom: -15px; }
 			
 		.reparte {
 			height: 15px;
@@ -457,8 +488,8 @@ pre {
 			font-weight: bold;
 			}
 
-			.sIFR-active .stellaOverview .reparte,
-			.sIFR-active .rudyOverview .reparte {
+			.cufon-active .stellaOverview .reparte,
+			.cufon-active .rudyOverview .reparte {
 				height: 22px;
 				margin-bottom: -10px;
 				}
@@ -507,9 +538,9 @@ pre {
 		width: 380px;
 	}
 	.freeText h3 { font-size: 20px; line-height: 1.25em; height: 36px; width: 400px;}
-	  .sIFR-active h3.sifr { margin-bottom: -10px; }
+	  .cufon-active h3.sifr { margin-bottom: -10px; }
 		.freeText h4 { font-size: 14px; line-height: 1.25em; height: 36px; }
-		  .sIFR-active h4.sifr { margin-bottom: -10px; font-style: italic; }
+		  .cufon-active h4.sifr { margin-bottom: -10px; font-style: italic; }
 		.freeText .graphicLeft {
 			position: relative;
 			float: left;
@@ -636,20 +667,25 @@ pre {
 		line-height: 55px;
 		font-family: 'Courier New', Courier, monospace; 
 		}
-		.sIFR-active .stellaPageOverview h2,
-		.sIFR-active .rudyPageOverview h2 {
+		.cufon-active .stellaPageOverview h2,
+		.cufon-active .rudyPageOverview h2 {
 			margin-bottom: -25px;
 			}
 
 		.products .reparte {
-			height: 26px;
-			margin: 10px 0 -5px;
+			margin: 10px 0 0;
+			}
+		
+		.products .otherProducts .reparte {
+			display: block;
+			height: auto;
+			margin: 10px 0 5px;
 			}
 
-			.sIFR-active .stellaPageOverview .reparte,
-			.sIFR-active .rudyPageOverview .reparte {
+			.cufon-active .stellaPageOverview .reparte,
+			.cufon-active .rudyPageOverview .reparte {
 				font-size: 14px;
-				margin-bottom: -5px;
+				margin-top: 30px;
 				}
 			
 		.download { 
@@ -686,7 +722,7 @@ pre {
 		font-family: 'Courier New', Courier, monospace;
 		color: #999;
 		}
-		.sIFR-active .screencast h3 { 
+		.cufon-active .screencast h3 { 
 			margin: 10px 0 0;
 			font-size: 28px; 
 			}
@@ -698,7 +734,7 @@ pre {
 		font-size: 15px;
 		color: #000;
 		}	
-		.sIFR-active .screencast p { 
+		.cufon-active .screencast p { 
 			font-size: 18px; 
 			}
 				
@@ -848,95 +884,3 @@ pre {
 		
 .aboutSolutious {background: url(/images/aboutSolutious.png) no-repeat;	}		
 .aboutDelano {background: url(/images/aboutDelano.png) no-repeat;	}
-
-	
-/*****************************************************************************
-	s I R F
-*****************************************************************************/
-
-.sIFR-replaced object {
-	outline-color: -moz-use-text-color;
-	outline-style: none;
-	outline-width: 0;
-	}
-	
-@media screen {
-  .sIFR-flash {
-    visibility: visible !important;
-    margin: 0;
-    padding: 0;
-  }
-
-  .sIFR-replaced, .sIFR-ignore {
-    visibility: visible !important;
-		outline-color: -moz-use-text-color;
-		outline-style: none;
-		outline-width: 0;
-  }
-
-  .sIFR-alternate {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 0;
-    height: 0;
-    display: block;
-    overflow: hidden;
-  }
-
-  .sIFR-replaced div.sIFR-fixfocus {
-    margin: 0pt; 
-    padding: 0pt; 
-    overflow: auto; 
-    letter-spacing: 0px; 
-    float: none;
-  }
-}
-
-@media print {
-  .sIFR-flash {
-    display    : none !important;
-    height     : 0;
-    width      : 0;
-    position   : absolute;
-    overflow   : hidden;
-  }
-
-  .sIFR-alternate {
-    visibility : visible !important;
-    display    : block   !important;
-    position   : static  !important;
-    left       : auto    !important;
-    top        : auto    !important;
-    width      : auto    !important;
-    height     : auto    !important;
-  }
-}
-
-/*
-Place CSS rules for to-be-replaced elements here. Prefix by .sIFR-active
-so they only apply if sIFR is active. Make sure to limit the CSS to the screen
-media type, in order not to have the printed text come out weird.
-*/
-@media screen {
-  /* Example:
-  .sIFR-active h1 {
-    font-family: Verdana;
-    visibility: hidden;
-  }
-  */
-}
-
-.sIFR-dummy { 
-  width: 0px;
-  height: 0px;
-  margin-left: 42px !important;
-  z-index: 0;
-}
-
-.sIFR-dummy { 
-  width: 0px;
-  height: 0px;
-  margin-left: 42px !important;
-  z-index: 0;
-}
