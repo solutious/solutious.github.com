@@ -17,7 +17,7 @@ subnav:
 
 This document will get you started with Stella in about 5 minutes. By the end you'll be able to run sophisticated tests on your web applications. 
 
-*Note: The current release of Stella (0.7) is in BETA status. That means Stella is still a work in progress, but I wanted to make it available as soon as it was useful.*
+*Note: The current release of Stella (0.8) is in BETA status. That means Stella is still a work in progress, but I wanted to make it available as soon as it was useful.*
 
 This document covers the following steps:
 
