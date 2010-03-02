@@ -14,20 +14,25 @@ The documentation for `Object#to_s` tells us that the value is based on the obje
 Looking at the source code for `to_s`, we can see that it's using `sprintf` to create the hexadecimal value. From `object.c`:
 
 {% highlight c %}
+
 /* Ruby 1.9 */
 rb_sprintf("#<%s:%p>", cname, (void*)obj);
 
 /* Ruby 1.8 */
 snprintf(RSTRING(str)->ptr, len+1, "#<%s:0x%lx>", cname, obj);
+
 {% endhighlight %}
+
 <span class="graphicSubtext">You can find this code in the Ruby source code in the file ruby-VERSION/object.c</span>
 
 Now, Ruby's sprintf doesn't support `%p` or `%lx` but it does support `%x`. However, there's obviously more to the story because the values still don't match up:
 
 {% highlight ruby %}
+
 obj = Object.new
 "#<%s:0x%x>" % [obj.class, obj.object_id]        # => #<Object:0x80813ff4>
 obj.to_s                                         # => #<Object:0x101027fe8>
+
 {% endhighlight %} 
 
 So what do we need to do to the object id to get the real hexadecimal value?
