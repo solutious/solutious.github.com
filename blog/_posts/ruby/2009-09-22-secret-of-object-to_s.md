@@ -9,7 +9,7 @@ There's something about Ruby that I've wanted to know for a long time: *where do
 
 ## When in doubt, look at the code ##
 
-The documentation for `Object#to_s` tells us that the value is based on the object id: "Returns a string representing obj. The default to_s prints the object‘s class and an encoding of the object id."
+The documentation for `Object#to_s` tells us that the value is based on the object id: "Returns a string representing obj. The default `to_s` prints the object‘s class and an encoding of the object id."
 
 Looking at the source code for `to_s`, we can see that it's using `sprintf` to create the hexadecimal value. From `object.c`:
 
