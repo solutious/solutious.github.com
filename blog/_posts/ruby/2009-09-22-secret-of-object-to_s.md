@@ -33,6 +33,12 @@ obj.to_s                                         # => #<Object:0x101027fe8>
 
 So what do we need to do to the object id to get the real hexadecimal value?
 
+<div class='highlight'>
+  <pre><code class='ruby'>...</code></pre>
+</div>
+<div class='highlight'>
+  <pre></pre> 
+</div>
 
 ## A tiny calculation ##
 
