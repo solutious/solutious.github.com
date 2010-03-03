@@ -20,7 +20,6 @@ rb_sprintf("#<%s:%p>", cname, (void*)obj);
 /* Ruby 1.8 */
 snprintf(RSTRING(str)->ptr, len+1, "#<%s:0x%lx>", cname, obj);
 {% endhighlight %}
-
 <span class="graphicSubtext">You can find this code in the Ruby source code in the file ruby-VERSION/object.c</span>
 
 Now, Ruby's sprintf doesn't support `%p` or `%lx` but it does support `%x`. However, there's obviously more to the story because the values still don't match up:
@@ -33,12 +32,6 @@ obj.to_s                                         # => #<Object:0x101027fe8>
 
 So what do we need to do to the object id to get the real hexadecimal value?
 
-<div class='highlight'>
-  <pre><code class='ruby'>...</code></pre>
-</div>
-<div class='highlight'>
-  <pre></pre> 
-</div>
 
 ## A tiny calculation ##
 
