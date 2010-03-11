@@ -39,6 +39,7 @@ subnav:
 
 	
 	<div class="snippetTitle">Sample Machine Configuration<span class="snippetSubtitle">Create your environment</span></div>
+
 {% highlight ruby %}
 env :stage do         # Define an environment
   ami 'ami-e348af8a'         
@@ -58,6 +59,9 @@ end
 	
 
 	<div class="snippetTitle">Sample Routine Configuration<span class="snippetSubtitle">Define your processes</span></div>
+
+
+
 {% highlight ruby %}
 startup do            # $ rudy startup
   adduser :rudy       

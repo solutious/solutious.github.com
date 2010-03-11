@@ -41,6 +41,8 @@ subnav:
 
 	
 	<div class="snippetTitle">Sample Test Plan<span class="snippetSubtitle">A simple business finder search</span></div>
+	
+
 {% highlight ruby %}
 usecase "Simple search" do
 
