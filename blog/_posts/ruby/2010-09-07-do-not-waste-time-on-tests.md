@@ -4,7 +4,7 @@ title: Don't waste your time writing tests
 who: delano
 ---
 
-I don't enjoy wasted effort. Not many people do. When it comes to testing software, I've often felt like I was wasting my time. And sometimes I was. Not often, but enough that I thought to myself, *there's got to be a better way.*
+I don't enjoy wasted effort. Not many people do. When it comes to testing the code I write, I've often felt like I was wasting my time. And sometimes I was. Not often, but enough that it got me thinking, *there's got to be a better way.*
 
 ## Some problems I have with tests and testing ##
 
@@ -19,7 +19,7 @@ I don't enjoy wasted effort. Not many people do. When it comes to testing softwa
 
 ## My solution: treat tests as sample code ##
 
-It's the most simple solution I can think without going over: write code exactly as it's used in the wild and put the test definitions in comments so they don't get in the way. That way all the code you see is code that could appear IRL. Even in the worst case scenario where I have no way to know whether the time was well spent, *the work doubles as documentation.* That's a huge win.
+It's the most simple solution I can think without going over: write code exactly as it's used in the wild and put the test definitions in comments. That way all the code you see is code that could appear IRL. Even in the worst case scenario where I have no way to know whether the time was well spent, *the work doubles as documentation.* That's a huge win.
 
 To get this to work in Ruby, I wrote a library called [Tryouts](http://github.com/delano/tryouts). (Thanks to [Martin Aumont](http://mynyml.com/) and [Alexis Sellier](http://cloudhead.io/) for working on various implementation ideas with me.)
 
@@ -80,11 +80,6 @@ Rye::Cmd.remove_command :rm
 
 And yes, it runs:
 
-<span class="graphic" href="/blog/assets/2010-q3/running-tryouts.png"><img src="/blog/assets/2010-q3/running-tryouts.png" alt="Running Tryouts on the command line" border="0" /></span>
+<span class="graphic"><img src="/blog/assets/2010-q3/running-tryouts.png" alt="Running Tryouts on the command line" border="0"></span>
 <br/>
-
-
-
-
-
 
