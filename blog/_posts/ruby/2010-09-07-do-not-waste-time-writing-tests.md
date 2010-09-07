@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Don't waste your time writing tests
+title: Don't waste time writing tests
 who: delano
 ---
 
@@ -31,21 +31,11 @@ require 'rye'
 # Setup
 @local_sandbox = File.join(Rye.sysinfo.tmpdir, 'rye-tryouts')
 @lbox = Rye::Box.new 'localhost'
-Rye::Cmd.add_command :rm
 
-
-## sandbox should not exist
-@lbox.file_exists? @local_sandbox
-#=> false
-
-## create sandbox
-@lbox.mkdir :p, @local_sandbox
-@lbox.file_exists? @local_sandbox
-#=> true
 
 ## upload file
 @lbox.file_upload 'README.rdoc', @local_sandbox
-@lbox.file_exists? @local_sandbox
+@lbox.file_exists? File.join(@local_sandbox, 'README.rdoc')
 #=> true
 
 ## download file
@@ -59,27 +49,13 @@ content = @lbox.file_download File.join(@local_sandbox, 'README.rdoc')
 content.class
 #=> StringIO
 
-## downloaded StringIO matches file content
-file = @lbox.file_download File.join(@local_sandbox, 'README.rdoc')
-file.rewind
-file.read == File.read(File.join(@local_sandbox, 'README.rdoc'))
-#=> true
-
-## destroy sandbox
-Rye::Cmd.add_command :rm
-@lbox.rm :r, :f, @local_sandbox
-@lbox.file_exists? @local_sandbox
-#=> false
-
 
 # Teardown
 @lbox.rm @downloaded_file
-Rye::Cmd.remove_command :rm
 {% endhighlight %}
 <span class="graphicSubtext">An example of the <a href="http://github.com/delano/tryouts" title="Don't waste your time writing tests">Tryouts</a> test syntax that doubles as sample code. <a href="http://github.com/delano/rye/tree/master/try/" title="Rye: Safe, parallel access to Unix shells from Ruby">More examples</a>.</span>
 
-And yes, it runs:
+And yep, it runs:
 
-<span class="graphic"><img src="/blog/assets/2010-q3/running-tryouts.png" alt="Running Tryouts on the command line" border="0"></span>
-<br/>
+<img class="graphic" src="/blog/assets/2010-q3/running-tryouts.png" alt="Running Tryouts on the command line" border="0" />
 
