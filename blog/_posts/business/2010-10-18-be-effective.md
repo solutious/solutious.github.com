@@ -20,7 +20,9 @@ I'll be honest: I'm not [Bo Jackson](http://en.wikipedia.org/wiki/Bo_Jackson). I
 
 ## Just good enough (for now) ##
 
-Every endeavour has an ideal outcome and the actual outcome. My mistake was comparing the actual outcome with the ideal one in my head and feeling bad that I wasn't living up to my own expectations. So I started evaluating my performance against 70% of the ideal -- not to legitimize mediocre work but to be more realistic. When you're working on many things, you need to take time from somewhere. You can always 
+Every endeavour has an ideal outcome and an actual outcome. My mistake was comparing the actual outcome with the ideal one in my head and feeling bad that I wasn't living up to my own expectations. So I started evaluating my performance against 70% of the ideal -- not to legitimize mediocre work but to be realistic. 
+
+When you're working on any sufficiently ambitious project, you need to find time somewhere. You can pretend you can do everything all the time and be exhausted. Or you can be honest with yourself and feel good about your work. You can always follow up with a second effort later on. 
 
 *So be 70% effective.* It's surprising how much you can accomplish by consistently achieving modest goals. 
 
