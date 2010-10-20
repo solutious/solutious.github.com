@@ -10,13 +10,13 @@ Starting a company is very different than working in a larger organization. When
 
 What didn't work:
 
-* **Working myself to exhaustion.** This obviously was not sustainable and it took an unreasonable long time to recover. It also didn't increase the quality of my output. 
+* **Working myself to exhaustion.** This obviously was not sustainable and it took an unreasonably long time to recover. It also didn't increase the quality of my output. 
 
 * **Focusing on just a couple things.** I wrote some great code that I couldn't build a service around. It was fun and I became a better programmer but again, it wasn't sustainable.
 
 * **Doing nothing.** This turned out to be the worst solution of the three. It sounded like a great idea and I got some rest but it's no way to earn a living. 
 
-I'll be honest: I'm not [Bo Jackson](http://en.wikipedia.org/wiki/Bo_Jackson). I realized that if I was going to feel good about my work and motivated over the long haul I'd need to redefine what it meant to be done something. 
+I'll be honest: I'm not [Bo Jackson](http://en.wikipedia.org/wiki/Bo_Jackson). I realized that if I was going to feel good about my work and remain motivated over the long haul I'd need to redefine what it meant to be done something. 
 
 ## Just good enough (for now) ##
 
