@@ -32,7 +32,7 @@ The generated site is built under `_site`.
 
     $ jekyll --server
 
-Open in your browser: `http://localhost:4000/`
+Open in your browser: `http://localhost:8000/`
 
 
 ## Add Post
@@ -52,7 +52,7 @@ See:
 * [Template variables](http://github.com/mojombo/jekyll/blob/master/README.textile)
 * [Liquid for Designers](http://wiki.github.com/tobi/liquid/liquid-for-designers)
 * [A blog using Jekyll](http://www.oiledmachine.com/posts/)
-  * [The blog source codes](http://github.com/baz/posts/tree/master)
+* [The blog source codes](http://github.com/baz/posts/tree/master)
   
   
   
