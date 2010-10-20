@@ -53,6 +53,7 @@ See:
 * [Liquid for Designers](http://wiki.github.com/tobi/liquid/liquid-for-designers)
 * [A blog using Jekyll](http://www.oiledmachine.com/posts/)
 * [The blog source codes](http://github.com/baz/posts/tree/master)
-  
+
+There's no prohibition on performance.  
   
   
