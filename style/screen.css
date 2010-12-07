@@ -893,7 +893,7 @@ pre {
 		 margin: 44px 0 0 0;
 	}
 		
-		
+.aboutStella,		
 .aboutSolutious,
 .aboutDelano {
 	float: right;
@@ -913,8 +913,9 @@ pre {
 		color: #00CCCC;
 		background: url(/images/signatureHeart.png) no-repeat 14px 2px;
 		}	
-		
-.aboutSolutious {background: url(/images/aboutSolutious.png) no-repeat;	}		
-.aboutDelano {background: url(/images/aboutDelano.png) no-repeat;	}
+
+.aboutStella { background: url(/images/aboutStella.png) no-repeat; }			
+.aboutSolutious { background: url(/images/aboutSolutious.png) no-repeat; }		
+.aboutDelano { background: url(/images/aboutDelano.png) no-repeat; }
 
 
