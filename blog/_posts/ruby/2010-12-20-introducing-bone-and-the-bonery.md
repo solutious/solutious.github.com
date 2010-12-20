@@ -4,7 +4,7 @@ title: Introducing Bone and the Bonery
 who: delano
 ---
 
-*Whoa, whoa, whoa, whoa, whoa. There's still plenty of meat on that bone. Now you take this home, throw in in a pot, add some broth, a potato. Baby you got a stew goin'.* -- Carl Weathers
+*Whoa, whoa, whoa, whoa, whoa. There's still plenty of meat on that bone. Now you take this home, throw it in a pot, add some broth, a potato. Baby you got a stew goin'.* -- Carl Weathers
 
 <img src="https://github.com/solutious/bone/raw/gh-pages/bone.png" width="220" height="186" align="right" border="0" style="padding-left:30px; padding-bottom: 30px;" />
 
