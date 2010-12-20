@@ -45,7 +45,7 @@ I use bone everywhere. Some examples:
 
 * I store all my configuration files in there so I can make one simple command to get a copy. (keys: `redis-server-2.2`, `nginx-0.7`, etc...)
 * In backup scripts, I make a call to bone to store the latest path. (`bs-backup-latest`)
-* I store the ip addresses of various machines so when I start new machines the scripts that on them will always grab the updated addresses.
+* I store the ip addresses of various machines so when I start new machines the scripts that on them will always grab the updated addresses. (`bs-redis-master`, `bs-prod-fe`)
 
 ## Behind the scenes ##
 
