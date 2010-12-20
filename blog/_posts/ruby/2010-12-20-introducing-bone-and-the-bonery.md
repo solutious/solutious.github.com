@@ -24,11 +24,11 @@ delano@prodfe$ bone dbmaster
 192.168.1.1
 {% endhighlight %}   
 
+The values you set on the command-line are available in your Ruby code like regular environment variables.
+
 {% highlight ruby %}
 require 'bone'
 
-# The values you set on the command-line are available
-# in your Ruby code like regular environment variables.
 Bone[:dbmaster]      #=> 192.168.1.1
 Bone[:dbmaster] = '10.0.1.1'
 Bone[:dbmaster]      #=> 10.0.1.1
