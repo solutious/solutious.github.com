@@ -4,7 +4,7 @@ title: "Why public monitoring is important"
 who: delano
 ---
 
-There was an issue on Amazon EC2 yesterday that affected the response times for a large number of their customers (myself included). I first noticed the issue when [blamestella.com](https://www.blamestella.com/) began to get very slow (around 11:45 PST). I checked Stella's public report for EC2 performance and other sites were having issues as well:
+There was an issue on Amazon EC2 yesterday that affected the response times for a non-trivial number of their customers (myself included). I first noticed the issue when [blamestella.com](https://www.blamestella.com/) began to get very slow (around 11:45 PST). I checked Stella's public report for EC2 performance and other sites were having issues as well:
 
 <p class="graphic"><a href="/blog/assets/2011-q1/stella-ec2-status-2011-02-08.png"><img src="/blog/assets/2011-q1/stella-ec2-status-s-2011-02-08.png" alt="Stella EC2 Report for February 8, 2011" border="0" /></a><br/><span class="graphicSubtext"><a href="https://www.blamestella.com/vendor/ec2/report" title="EC2 Status - Stella">Stella EC2 Report</a> on February 8th, 2011</span></p>
 
