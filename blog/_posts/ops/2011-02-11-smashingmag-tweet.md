@@ -54,4 +54,4 @@ The 2% conversion rate is consistent with the burst of traffic last month from [
 
 I had a great time yesterday handling the new traffic and responding to feedback. Welcome to everyone who [signed up](https://www.blamestella.com/pricing) and thanks to all the people who tweeted, [sent feedback](https://www.blamestella.com/feedback) to Tucker, and ran checkups. And thank you [@smashingmag](http://twitter.com/smashingmag)!
 
-You can also [comment on the Hacker News thread](http://news.ycombinator.com/item?id=2208556).
+
