@@ -37,7 +37,7 @@ The 2% conversion rate is consistent with the burst of traffic last month from [
 
 * Short, interesting tag lines are affective. It seems obvious now but "is your site fast?" is the result of about 6 months of iteration. It's a good tagline because it's very short but it's immediately apparent whether Stella would be useful to you. By making your own strong tagline, you're also making it easier for people to tell your story. 
 
-* *Edit*: I also need to give a huge shout out to the guys at [the Still Brandworks](http://stillbrandworks.com). They're the heavy-duty muscle behind the UI/UX which is generating a lot of the positive attention!
+* *Edit: I also need to give a huge shout out to the guys at [the Still Brandworks](http://stillbrandworks.com). They're the heavy-duty muscle behind the UI/UX which is generating a lot of the positive attention!*
 
 
 ## What could have gone better ##
