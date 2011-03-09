@@ -6,7 +6,7 @@ who: delano
 
 [Stella](https://www.blamestella.com/) was down for about an hour and a half this morning, including checkups and monitors. I received a notification at 9am (PST) and the site returned to normal at 10:40am. Here is a screenshot of  [status.blamestella.com](http://status.blamestella.com) form this morning:
 
-http://solutious.com/blog/assets/2011-q1/bs-outage-03-09.png
+<a href="http://solutious.com/blog/assets/2011-q1/bs-outage-03-09.png"><img src="http://solutious.com/blog/assets/2011-q1/bs-outage-03-09-s.png" border="0" /></a>
 
 ### The symptoms ###
 
