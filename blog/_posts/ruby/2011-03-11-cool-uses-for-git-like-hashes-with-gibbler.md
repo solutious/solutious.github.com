@@ -4,8 +4,6 @@ title: Some cool uses of Git-like hashes in Ruby (with Gibbler)
 who: delano
 ---
 
-http://delano.github.com/gibbler/img/whoababy.gif
-
 Cryptographic hashes like are pretty cool. They're often use a checksums for large files because they're fast, consistent, and well, secure. A lot of opensource software packages are distributed with the MD5 or SHA1 hash so that you can verify that all the bits are in the correct place (i.e. that the file you downloaded is identical to the one being served). If you've used Mercurial or Git, you've seen them used there too to track commits, objects, and trees. 
 
 Hashes can also be a useful tool in your code and I wrote [Gibbler](https://github.com/delano/gibbler) to make it easy to do that. Why not use Ruby's `hash` method? Because the return values are inconsistent between runs.
@@ -160,6 +158,15 @@ end
 
 
 There are many more uses for hashes in your Ruby codes. I'm interested to hear some. Do you implement them in your projects?
+
+## Installing Gibbler ##
+
+    gem install gibbler
+
+* [code](https://github.com/delano/gibbler) at Github
+* [gem](https://rubygems.org/gems/gibbler) on Rubyforge
+* [documentation](http://goldensword.ca/gibbler/)
+* [screencast](http://www.rubypulse.com/episode-0.3-gibbler.html) by Alex Peuchert.
 
 
 ## Mini-F.A.Q. ##
