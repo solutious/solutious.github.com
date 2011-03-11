@@ -206,7 +206,7 @@ msg2.gibbler                  #=> 7f68056cf34cd42cbb3dee1f81535100ae783fe9
 
 Yep, you can change the digest type globally or per call.
 
-{% highlight ruby %}  
+{% highlight ruby %}
 :a.gibbler                     #=> cd55a626c21b5580141442e789201e7e64276da9
 
 Gibbler.digest_type = Digest::MD5
@@ -217,7 +217,7 @@ Gibbler.digest_type = Digest::MD5
 
 You can also shorten and change the base of the digest:
 
-{% highlight ruby %}  
+{% highlight ruby %}
 :kimmy.gibbler                #=> 52be7494a602d85ff5d8a8ab4ffe7f1b171587df
 :kimmy.gibbler.shorten        #=> 52be7494a602d85ff5d8
 :kimmy.gibbler.shorten(10)    #=> 52be7494a6
