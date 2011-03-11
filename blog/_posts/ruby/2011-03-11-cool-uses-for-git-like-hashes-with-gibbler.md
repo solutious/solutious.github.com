@@ -69,7 +69,7 @@ By the way, if you prefer literal method names, you can require `gibbler/aliases
 
 {% highlight ruby %}
 require 'gibbler/aliases'
-'tea'.digest                  #=> 2e124aa78e365a6222bfa0f1c725181ab5d33440
+'tea'.digest                  #=> 6ef1ccef723f8f6c048399cfa5f46a781f559137
 {% endhighlight %}
 
 
