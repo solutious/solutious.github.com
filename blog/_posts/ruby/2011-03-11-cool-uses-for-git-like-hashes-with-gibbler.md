@@ -165,8 +165,8 @@ There are many more uses for hashes in your Ruby codes. I'm interested to hear s
 
 * [code](https://github.com/delano/gibbler) at Github
 * [gem](https://rubygems.org/gems/gibbler) on Rubyforge
-* [documentation](http://goldensword.ca/gibbler/)
-* [screencast](http://www.rubypulse.com/episode-0.3-gibbler.html) by Alex Peuchert.
+* [documentation](http://goldensword.ca/gibbler/) via RDocs
+* [screencast](http://www.rubypulse.com/episode-0.3-gibbler.html) by Alex Peuchert
 
 
 ## Mini-F.A.Q. ##
