@@ -4,7 +4,7 @@ title: An update on yesterday's Stella outage (it was the Redis configuration)
 who: delano
 ---
 
-After I reported on the [blamestella.com](http://blamestella.com) outage yesterday, I did a bit more investigation and made a few changes to the operations of the site. To recap, yesterday at 9am PST the site became unresponsive and the background workers stopped running. I also couldn't SSH in to the main backend machine and ultimately had to reboot it to get back in. After looking into it further, it looks like there were multiple factors at play.
+After I reported on the Stella [outage yesterday](http://solutious.com/blog/2011/03/09/morning-stella-outage/), I did a bit more investigation and made a few changes to the operations of the site. To recap, yesterday at 9am PST the site became unresponsive and the background workers stopped running. I also couldn't SSH in to the main backend machine and ultimately had to reboot it to get back in. After looking into it further, it looks like there were multiple factors at play.
 
 
 ## Root Cause, revisited ##
