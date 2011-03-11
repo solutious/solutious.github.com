@@ -184,7 +184,7 @@ Gibbler.secret = '4cea880a75df6c8b1fa2'
 {% endhighlight %}
 
 
-***What if attributes are added or removed to a field?***
+***What if attributes are added or removed to a class?***
 
 Use the `gibbler` class method to explicitly define the names and order of variables you want to use for the digest.
 
@@ -201,4 +201,29 @@ msg.from = 't2@example.com'
 msg2.gibbler                  #=> 7f68056cf34cd42cbb3dee1f81535100ae783fe9
 {% endhighlight %}
 
+
+***Can I use something other than SHA-1?***
+
+Yep, you can change the digest type globally or per call.
+
+{% highlight ruby %}  
+:a.gibbler                     #=> cd55a626c21b5580141442e789201e7e64276da9
+
+Gibbler.digest_type = Digest::MD5
+:a.gibbler                     #=> ef8de1a0d178ce85999a4b54840c21e0
+
+:a.gibbler(Digest::SHA256)     #=> f5fa26a66724c32df25f872fd691dd18e03cc2347a...
+{% endhighlight %}
+
+You can also shorten and change the base of the digest:
+
+{% highlight ruby %}  
+:kimmy.gibbler                #=> 52be7494a602d85ff5d8a8ab4ffe7f1b171587df
+:kimmy.gibbler.shorten        #=> 52be7494a602d85ff5d8
+:kimmy.gibbler.shorten(10)    #=> 52be7494a6
+:kimmy.gibbler.base(36)       #=> 9nydr6mpv6w4k8ngo3jtx0jz1n97h7j
+:kimmy.gibbler.base(10)       #=> 472384540402900668368761869477227308873774630879
+:kimmy.gibbler.to_i           #=> 472384540402900668368761869477227308873774630879
+:kimmy.gibbler.base(2)        #=> 101001010111110011101001001010010100110000...
+{% endhighlight %}
 
