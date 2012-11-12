@@ -6,8 +6,7 @@
 
 ### Install the gems
 
-     gem sources -a http://gems.github.com
-     sudo gem install mojombo-jekyll -V --no-ri --no-rdoc
+     sudo gem install jekyll -V --no-ri --no-rdoc
      sudo gem install rdiscount -V --no-ri --no-rdoc 
 
 ### Optional dependencies:
