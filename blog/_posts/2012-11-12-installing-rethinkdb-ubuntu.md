@@ -4,6 +4,8 @@ title: Installing RethinkDB on Ubuntu
 who: delano
 ---
 
+**Update: The [installation docs](http://www.rethinkdb.com/docs/install/) for Ubuntu have been updated to make the requirements more clear.**
+
 [RethinkDB](http://www.rethinkdb.com/) has been getting some more attention in the past few days, starting with [a Hacker News post last Friday](http://news.ycombinator.com/item?id=4763879). The project (and company) was founded in 2009, [launched the 1.0 release](http://techcrunch.com/2011/06/06/rethinkdb-expands-beyond-ssds-launches-its-speedy-database-to-the-public/) last year, and although there's still some work to do in terms of stability and portability, it looks promising.
 
 In their words:
@@ -21,19 +23,27 @@ I only just got it running after much trial and error so I documented the experi
 * Only runs on x86_64 Linux 
 * Depends on [kernel 2.6.37](https://github.com/rethinkdb/rethinkdb/issues/6#issuecomment-10263097) or greater 
 * No RPM ([soon](https://twitter.com/rethinkdb/status/267785958278176769))
-* Possible issue with <strike>ext4 with journaling and/or</strike> encrypted partitions (still investigating)
-* Some compilation issues on Debian/CentOS (ditto)
+* <strike>Possible issue with ext4 with journaling and/or encrypted partitions</strike> (update from Slava below)
+* <strike>Some compilation issues on Debian/CentOS</strike> (working on a Debian post now)
 
 **Update (Nov 12 @ 16:50 PST): Success with ext2 and ext3/ext4 with journaling enabled.**
 
-So make sure you're running the 64-bit of version Ubuntu with a non-encrypted ext2, ext3 or ext4 partition and that the kernel version is greater than 2.6.37. Then:
+**Update (Nov 13): Comment from Slava (below):**
+
+* ***We'll be providing binaries for most platforms and even old kernels, though it will take a bit of time to work out. The portability team here is working around the clock to make it happen.***
+
+* ***Rethink doesn't work on encrypted file systems because they don't support direct io. It makes sense in production, but it'd be nice to have a backup mode for trying in dev. See [issue #47](https://github.com/rethinkdb/rethinkdb/issues/47).***
+
+So make sure you're running the 64-bit of version Ubuntu with a non-encrypted ext2, ext3 or ext4 partition and that the kernel version is 2.6.37 or greater. Then:
 
     $ sudo apt-get install software-properties-common  # installs add-apt-repository
     $ sudo add-apt-repository ppa:rethinkdb/ppa
     $ sudo apt-get update
     $ sudo apt-get install rethinkdb
     
-    
+Things are changing almost hourly so be sure to check their [community page](http://www.rethinkdb.com/community/) and [follow RethinkDB on Twitter](https://twitter.com/rethinkdb) for the latest info.
+
+
 #### Checking whether journaling is enabled ####
 
 Look for the `has_journal` option in the following output:
@@ -51,5 +61,3 @@ The kernel version is displayed immediately to the right of the hostname:
     $ uname -a
     Linux bs-dev-01 3.5.0-17-generic #28-Ubuntu SMP Tue Oct 9 19:31:23 UTC 2012 x86_64 x86_64 x86_64 GNU/Linux
     
-
-I'm going to continue investigating and update this post as I go along. Things are changing almost hourly so be sure to check their [community page](http://www.rethinkdb.com/community/) and [follow RethinkDB on Twitter](https://twitter.com/rethinkdb) for the latest info.
