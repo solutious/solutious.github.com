@@ -4,6 +4,8 @@ title: All future Net-SSH gem releases will now be signed (as of 2.6.5)
 who: delano
 ---
 
+***Updated (2013-02-06@13:00PST): Doh. Some previously updated gems were broken. See below. ***
+
 In response to the [recent vulnerabilities](/blog/assets/2013/RubyGems13013IncidentStatus.html) with rubygems.org, I spent the morning signing and re-releasing the [Net-SSH family](https://github.com/net-ssh) of ruby gems. The discussion on [how to properly handle code signing](http://guides.rubygems.org/publishing/#gem-security) is still ongoing so this could be just an interrim measure; however, the severity of the problem makes it necessary to have a solution in place now.
 
 ## Current Signed Releases ##
@@ -11,10 +13,10 @@ In response to the [recent vulnerabilities](/blog/assets/2013/RubyGems13013Incid
 As of today, all net-ssh releases will be [signed](http://docs.rubygems.org/read/chapter/21) and verifiable with the public certificate at the end of this post.
 
 * **net-ssh 2.6.5+** ([rubygems](https://rubygems.org/gems/net-ssh/versions/2.6.5), [github](https://github.com/net-ssh/net-ssh/tree/v2.6.5))
-* **net-scp 1.0.6+** ([rubygems](https://rubygems.org/gems/net-scp/versions/1.0.6), [github](https://github.com/net-ssh/net-scp/tree/v1.0.6))
-* **net-sftp 2.1.1** ([rubygems](https://rubygems.org/gems/net-sftp/versions/2.1.1), [github](https://github.com/net-ssh/net-sftp/tree/v2.1.1))
-* **net-ssh-gateway 1.1.2** ([rubygems](https://rubygems.org/gems/net-ssh-gateway/versions/1.1.2), [github](https://github.com/net-ssh/net-ssh-gateway/tree/v1.1.2))
-* **net-ssh-multi 1.1.2** ([rubygems](https://rubygems.org/gems/net-ssh-multi/versions/1.1.2), [github](https://github.com/net-ssh/net-ssh-multi/tree/v1.1.2))
+* **net-scp 1.1.0+** ([rubygems](https://rubygems.org/gems/net-scp/versions/1.1.0), [github](https://github.com/net-ssh/net-scp/tree/v1.1.0))
+* **net-sftp 2.2.0** ([rubygems](https://rubygems.org/gems/net-sftp/versions/2.2.0), [github](https://github.com/net-ssh/net-sftp/tree/v2.2.0))
+* **net-ssh-gateway 1.2.0** ([rubygems](https://rubygems.org/gems/net-ssh-gateway/versions/1.2.0), [github](https://github.com/net-ssh/net-ssh-gateway/tree/v1.2.0))
+* **net-ssh-multi 1.2.0** ([rubygems](https://rubygems.org/gems/net-ssh-multi/versions/1.2.0), [github](https://github.com/net-ssh/net-ssh-multi/tree/v1.2.0))
 
 
 ## Installation ##
@@ -28,9 +30,27 @@ To do this, you need to add the public certificate to local trust gem certs (oth
     $ curl -O https://raw.github.com/net-ssh/net-ssh/master/gem-public_cert.pem
     $ gem cert --add gem-public_cert.pem
 
-If you have any trouble let me know and I’ll give you a hand.
+## Broken versions ##
 
-***Updated (2013-02-06@11:05PST): Updated gem versions.***
+The following gems were broken:
+
+* net-ssh-gateway-1.1.1
+* net-ssh-gateway-1.1.2
+* net-ssh-multi-1.1.1
+* net-ssh-multi-1.1.2
+* net-scp-1.0.5
+* net-scp-1.0.6
+
+They've been yanked from rubygems.org but if already have them on your system, you will need to remove them manually.
+
+    $ gem uninstall -v 1.1.1 net-ssh-multi
+    $ gem uninstall -v 1.1.2 net-ssh-multi
+    $ gem uninstall -v 1.1.1 net-ssh-gateway
+    $ gem uninstall -v 1.1.2 net-ssh-gateway
+    $ gem uninstall -v 1.0.5 net-scp
+    $ gem uninstall -v 1.0.6 net-scp
+
+If you have any trouble let me know at net-ssh@solutious.com.
 
 ## Public certificate ###
 
