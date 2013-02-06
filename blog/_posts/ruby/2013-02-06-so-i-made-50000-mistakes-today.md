@@ -4,7 +4,9 @@ title: So I made over 52,000 mistakes today
 who: delano
 ---
 
-Earlier today I [updated](/blog/2013/02/06/net-ssh-gem-code-signed/) the net-ssh family of Ruby gems and I broke one of the rules of [semantic versioning](http://semver.org/). Rule #8:
+Earlier today I [updated](/blog/2013/02/06/net-ssh-gem-code-signed/) the net-ssh family of Ruby gems and I broke one of the rules of [semantic versioning](http://semver.org/).
+
+**Specifically, rule #8:**
 
     8. Minor version Y (x.Y.z | x > 0) MUST be incremented if new,
     backwards compatible functionality is introduced to the public API.
