@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Net-SSH 2.6.5+ gem is now signed
+title: All future Net-SSH gem releases will now be signed (as of 2.6.5)
 who: delano
 ---
 
