@@ -11,10 +11,10 @@ In response to the [recent vulnerabilities](/blog/assets/2013/RubyGems13013Incid
 As of today, all net-ssh releases will be [signed](http://docs.rubygems.org/read/chapter/21) and verifiable with the public certificate at the end of this post.
 
 * **net-ssh 2.6.5+** ([rubygems](https://rubygems.org/gems/net-ssh/versions/2.6.5), [github](https://github.com/net-ssh/net-ssh/tree/v2.6.5))
-* **net-scp 1.0.5+** ([rubygems](https://rubygems.org/gems/net-scp/versions/1.0.5), [github](https://github.com/net-ssh/net-scp/tree/v1.0.5))
-* **net-sftp 2.1.0** ([rubygems](https://rubygems.org/gems/net-sftp/versions/2.1.0), [github](https://github.com/net-ssh/net-sftp/tree/v2.1.0))
-* **net-ssh-gateway 1.1.1** ([rubygems](https://rubygems.org/gems/net-ssh-gateway/versions/1.1.1), [github](https://github.com/net-ssh/net-ssh-gateway/tree/v1.1.1))
-* **net-ssh-multi 1.1.1** ([rubygems](https://rubygems.org/gems/net-ssh-multi/versions/1.1.1), [github](https://github.com/net-ssh/net-ssh-multi/tree/v1.1.1))
+* **net-scp 1.0.6+** ([rubygems](https://rubygems.org/gems/net-scp/versions/1.0.6), [github](https://github.com/net-ssh/net-scp/tree/v1.0.6))
+* **net-sftp 2.1.1** ([rubygems](https://rubygems.org/gems/net-sftp/versions/2.1.1), [github](https://github.com/net-ssh/net-sftp/tree/v2.1.1))
+* **net-ssh-gateway 1.1.2** ([rubygems](https://rubygems.org/gems/net-ssh-gateway/versions/1.1.2), [github](https://github.com/net-ssh/net-ssh-gateway/tree/v1.1.2))
+* **net-ssh-multi 1.1.2** ([rubygems](https://rubygems.org/gems/net-ssh-multi/versions/1.1.2), [github](https://github.com/net-ssh/net-ssh-multi/tree/v1.1.2))
 
 
 ## Installation ##
@@ -29,6 +29,8 @@ To do this, you need to add the public certificate to local trust gem certs (oth
     $ gem cert --add gem-public_cert.pem
 
 If you have any trouble let me know and I’ll give you a hand.
+
+***Updated (2013-02-06@11:05PST): Updated gem versions.***
 
 ## Public certificate ###
 
