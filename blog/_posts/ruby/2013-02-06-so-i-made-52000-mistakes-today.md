@@ -11,7 +11,7 @@ Earlier today I [updated](/blog/2013/02/06/net-ssh-gem-code-signed/) the net-ssh
     8. Minor version Y (x.Y.z | x > 0) MUST be incremented if new,
     backwards compatible functionality is introduced to the public API.
 
-I broke [Chef](tickets.opscode.com/browse/CHEF-3835). I broke [Vagrant](https://github.com/mitchellh/vagrant/issues/1355). net-ssh is pretty far upstream so in just a couple hours there were over 52,000 installs of the offending gems, *much to the chagrin of sysadmins and devops folks everywhere.*
+I broke [Chef](http://tickets.opscode.com/browse/CHEF-3835). I broke [Vagrant](https://github.com/mitchellh/vagrant/issues/1355). net-ssh is pretty far upstream so in just a couple hours there were over 52,000 installs of the offending gems, *much to the chagrin of sysadmins and devops folks everywhere.*
 
 *Note: If you have any of the following gems installed on your system, you should remove them: net-ssh-gateway-1.1.1, net-ssh-gateway-1.1.2, net-ssh-multi-1.1.1, net-ssh-multi-1.1.2, net-scp-1.0.5, and net-scp-1.0.6. See my [previous post](/blog/2013/02/06/net-ssh-gem-code-signed/).*
 
