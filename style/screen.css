@@ -15,7 +15,7 @@ Date: 		  May 12th, 2009
 */
 
 body {
-	position: relative;	
+	position: relative;
 	overflow-x: hidden;
 	margin: 0 0 0 10px;
 	font-family: arial, sans-serif;
@@ -24,27 +24,27 @@ body {
 	}
 
 a {
-	color: #00cccc;	
+	color: #00cccc;
 	text-decoration: none;
 	outline-color: -moz-use-text-color;
 	outline-style: none;
 	outline-width: 0px;
 	}
 	body a:hover { color: #006666; }
-	
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: Georgia, serif;
 	font-weight: bold;
 	color: #111;
 	}
-	
+
 	h2 { font-size: 30px; line-height: 30px;}  # ratio: 0.66666
-	h2.sifr { 
-		margin-bottom: 15px; 
+	h2.sifr {
+		margin-bottom: 15px;
 		font-family: 'Courier New', Courier, monospace;
 		}
 		.cufon-active h2.sifr { margin-bottom: -10px; }
-	
+
 	.flavour {
 		margin-top: 20px;
 		padding-bottom: 12px;
@@ -54,24 +54,24 @@ h1, h2, h3, h4, h5, h6 {
 		font-size: 16px;
 		color: #00cccc;
 		}
-		
-	.margin { 
+
+	.margin {
 		margin-bottom: 20px !important;
 		}
-			
+
 ol, ul, li, dl, dd, dt {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	}	
-	
-.reset { 
+	}
+
+.reset {
 	display:block;
 	clear: both;
 	}
-	
+
 .left { float: left; }
-img.left { padding: 0 15px 15px 0; }	
+img.left { padding: 0 15px 15px 0; }
 
 
 /*
@@ -87,7 +87,7 @@ img.left { padding: 0 15px 15px 0; }
 	.corset .content {
 		width: 600px;
 	  }
-	  .corset .content ul, 
+	  .corset .content ul,
 	  .corset .content ol,
 	  .corset .content li,
 	  .corset .left ul,
@@ -107,20 +107,20 @@ img.left { padding: 0 15px 15px 0; }
 	height: 190px;
 	border-top: 3px solid #00cccc;
 	}
-		
+
 	.logo {
 		position: absolute;
 		display: block;
 		overflow: hidden;
 		width: 289px; height: 106px;
-		text-indent: 9999px;	
+		text-indent: 9999px;
 		background: url(/images/logoTagLine.png) no-repeat;
 		border: none;
 		}
-		
+
 		.logo h1 { margin: 0; }
 		.logo img { display: none; }
-	
+
 	.openSourceProjects {
 		display: block;
 		text-align: right;
@@ -132,7 +132,7 @@ img.left { padding: 0 15px 15px 0; }
 		background: url(/images/openSourceArrow.png) no-repeat right 12px;
 		font-size: 11px;
 		}
-		
+
 	.speaking {
 		position: absolute;
 		top: 10px;
@@ -148,7 +148,7 @@ img.left { padding: 0 15px 15px 0; }
 			display: block;
 			margin-bottom: 4px;
 			}
-			
+
 			.speaking .event {
 				margin: 0px;
 				font-size: 16px;
@@ -156,20 +156,20 @@ img.left { padding: 0 15px 15px 0; }
 				font-family: 'Courier New', Courier, monospace;
 				color: #333;
 				}
-				
+
 			.speaking .specifics {
 				margin: 0;
 				color: #999;
 				}
 				.speaking a:hover p { color: #006666; }
-				
-												
+
+
 	.productNav {
 		clear: none;
 		float: right;
 		margin: 10px;
 		}
-		
+
 		.productNav a {
 			display: block;
 			text-align: center;
@@ -177,18 +177,19 @@ img.left { padding: 0 15px 15px 0; }
 			padding-top: 50px;
 			color: #999;
 			}
-			
+
+		.productNav .ots a { background: url(/images/ots-logo-48.png) no-repeat 7px top; }
 		.productNav .stella a { background: url(/images/productNav.png) no-repeat 7px top; }
 		.productNav .rudy a { background: url(/images/productNav.png) no-repeat -54px top; }
 		.stella .stella a,
-		.rudy .rudy a { color: #00CCCC; }		
-	
+		.rudy .rudy a { color: #00CCCC; }
+
 		.productNav li,
 		.nav li,
 		.subnav li {
 			float: left;
 			}
-		
+
 		.navLeftLine {
 			position: absolute;
 			display: block;
@@ -198,58 +199,58 @@ img.left { padding: 0 15px 15px 0; }
 			width: 557px; height: 6px;
 			background: url(/images/navLeftLine.png) repeat-x;
 			}
-			
+
 		.nav {
 			position: absolute;
 			display: block;
 			right: 0; top: 115px;
 			width: 423px; height: 42px;
 			background: url(/images/navBack.png) no-repeat 0 top;
-			}	
+			}
 
 			.nav .first { margin-left: 40px !important; }
 			.nav li { margin: 0 10px; }
-			.nav a { 
+			.nav a {
 				text-align: center;
 				color: #000;
 				font-family: 'Courier New', Courier, monospace;
 				font-weight: bold;
 				}
-				.nav li { 
+				.nav li {
 					height: 23px;
 					padding-top: 15px;
 					}
-				.nav span { 
-					/* A value of 2px causes the nav links to 
+				.nav span {
+					/* A value of 2px causes the nav links to
 					   show up offset to the right in Safari.
 					   Removing padding-left completely causes
-					   a similar issue in IE 7. 
+					   a similar issue in IE 7.
 					   0px seems to work everywhere. -- Delano */
-					padding-left: 0px; 
+					padding-left: 0px;
 					font-size: 16px !important;
 					}
 				.cufon-active .nav a { padding: 0 5px; }
 				.cufon-active .nav li { margin: 0 5px; }
-				
+
 			.home .navHome,
 			.about .navAbout,
 			.products .navProducts,
 			.blog .navBlog,
-			.contact .navContact { 
+			.contact .navContact {
 				border-bottom: 4px solid #00cccc;
-				}	
-			
+				}
+
 		.subnav {
 			position: absolute;
 			top: 157px;
-			width: 100%; height: 22px;	
-			padding-top: 5px;	
+			width: 100%; height: 22px;
+			padding-top: 5px;
 			border-top: 1px dotted #ccc;
 			border-bottom: 1px dotted #ccc;
 			font-family: Georgia, serif;
 			font-style: italic;
-			}		
-			
+			}
+
 			.subnav .message {
 				float: left;
 				padding-left: 15px;
@@ -258,7 +259,7 @@ img.left { padding: 0 15px 15px 0; }
 				font-style: italic;
 				color: #999;
 				}
-				
+
 			.subnav ul {
 				float: right;
 				}
@@ -268,7 +269,7 @@ img.left { padding: 0 15px 15px 0; }
 					}
 					.subnav .first a { border: none; }
 					.archive .navArchive a { color: #006666; }
-		
+
 		.presentation {
 			float: left;
 			width: 800px;
@@ -277,11 +278,11 @@ img.left { padding: 0 15px 15px 0; }
 		.presentation h2 {
 			font-size: 45px; line-height: 45px;
 		}
-		
+
 		.presentation h3 {
 			font-size: 30px; line-height: 30px;
 		}
-		
+
 		.presentation p, .presentation li {
 			font-size: 24px; line-height: 34px;
 		}
@@ -297,7 +298,7 @@ img.left { padding: 0 15px 15px 0; }
 			float: left;
 			width: 445px;
 			margin-right: 95px;
-			}			
+			}
 			.leftColumn h2,
 			.rightColumn h2,
 			.leftColumn .flavour,
@@ -308,22 +309,22 @@ img.left { padding: 0 15px 15px 0; }
 			.leftColumn p,
 			.leftColumn img,
 			.leftColumn h3,
-			.leftColumn h4,		
+			.leftColumn h4,
 			.rightColumn p,
 			.rightColumn img,
 			.rightColumn h3,
-			.rightColumn h4 {				
+			.rightColumn h4 {
 				padding-left: 15px;
 				}
 				.rightColumn p img,
 				.leftColumn p img { padding-left: 0; }
-			
-				
+
+
 		.rightColumn {
 			float: left;
 			width: 415px;
-			}			
-					
+			}
+
 #footer {
 	margin-top: 30px !important;
 	padding-top: 10px;
@@ -349,10 +350,10 @@ img.left { padding: 0 15px 15px 0; }
 		font-style: italic;
 		color: #000;
 		}
-					
+
 	#footer .status {
 	  margin: 20px;
-	}	
+	}
 pre {
 	display: block;
 	margin: 10px 0;
@@ -366,16 +367,16 @@ pre {
 	white-space: -o-pre-wrap;
 	}
 	.right pre { width: 380px; }
-					
-					
+
+
 /*
 //----------------------------------------------
 //   P a g e   S p e c i f i c
 //----------------------------------------------
-*/	
-	
-/* h o m e */	
-	
+*/
+
+/* h o m e */
+
 	.developing {
 		display: block;
 		width: 430px; height:90px;
@@ -387,16 +388,16 @@ pre {
 		line-height: 1.15em;
 		color: #999;
 		}
-		
+
 		.cufon-active .developing { font-size: 28px; line-height: 1.05em; }
-	
+
 	.rightTools {
 		display: block;
 		width: 501px; height: 87px;
 		background: url(/images/rightTools.png) no-repeat;
-		font-family: 'Courier New', Courier, monospace; 
+		font-family: 'Courier New', Courier, monospace;
 		}
-		#sifrAnd { 
+		#sifrAnd {
 			text-align: center;
 			display: block;
 			padding-top: 3px;
@@ -405,11 +406,11 @@ pre {
 			color: #336666;
 			}
 		.cufon-active #sifrAnd { height: 32px; padding: 0; font-size: 24px; }
-		#sifrRightTools { 
+		#sifrRightTools {
 			display: block;
 			margin-top: 17px;
 			font-size: 22px;
-			font-weight: bold; 
+			font-weight: bold;
 			}
 	.cufon-active #sifrRightTools { margin-top: 0 !important; font-size: 27px; }
 
@@ -425,24 +426,24 @@ pre {
 			width: 155px;
 			margin: 0 10px;
 			}
-		.columns em { 
+		.columns em {
 			font-weight: bold;
 			font-style: normal;
 			color: #000;
-			}	
+			}
 
-		.intro { 
+		.intro {
 			float: left;
 			width: 510px;
 			}
-			
+
 	.stellaOverview,
 	.rudyOverview {
 		position: relative;
 		float: right;
 		width: 290px;
 		padding-left: 115px;
-		}		
+		}
 		.stellaOverview {	margin: 35px 0; }
 		.stellaOverview h3,
 		.rudyOverview h3 {
@@ -450,31 +451,31 @@ pre {
 			margin: 5px 0 10px;
 			font-style: italic;
 			font-weight: normal;
-			font-size: 20px;	
+			font-size: 20px;
 			line-height: 24px;
-			border-top: 1px dotted #999;	
+			border-top: 1px dotted #999;
 			}
-		
+
 		.rudyOverviewLogo,
-		.stellaOverviewLogo {	
-			position: absolute;			
+		.stellaOverviewLogo {
+			position: absolute;
 			left: 0;
 			width: 104px; height: 104px;
 			}
-			
-			.stellaOverviewLogo {	
+
+			.stellaOverviewLogo {
 				background: url(/images/stellaOverview.png) no-repeat;
 				}
-		.rudyOverviewLogo {	
-			background: url(/images/rudyOverview.png) no-repeat; 
+		.rudyOverviewLogo {
+			background: url(/images/rudyOverview.png) no-repeat;
 			}
-			
-			
+
+
 		.productHeading {
 			display: block;
 			margin: 0 0 -20px 0;
 			padding: 0;
-			font-size: 30px;		
+			font-size: 30px;
 			line-height: 25px;
 			height: 35px;
 			font-family: 'Courier New', Courier, monospace;
@@ -482,7 +483,7 @@ pre {
 			}
 			.productHeading a { color: #000; }
 			.cufon-active .productHeading { margin-bottom: -15px; }
-			
+
 		.reparte {
 			height: 15px;
 			margin: 10px 0 5px;
@@ -496,7 +497,7 @@ pre {
 				height: 22px;
 				margin-bottom: -10px;
 				}
-		
+
 		.details {
 			display: block;
 			padding: 7px 12px;
@@ -505,29 +506,29 @@ pre {
 			font-style: italic;
 			font-family: Georgia, serif;
 			}
-			
-			.details .beta { 
-				float: left; 
+
+			.details .beta {
+				float: left;
 				color: #003333;
 				}
-			
+
 			.details .git {
 				margin-left: 10px;
 				padding-left: 10px;
 				border-left: 1px solid #00CCCC;
-				color: #00CCCC;	
+				color: #00CCCC;
 				}
-				
+
 				.details .git:hover {
 					color: #336666;
 					}
-					
+
 			.description {
 				font-size: 11px;
 				color: #999;
-				}	
-				
-		
+				}
+
+
 /* a b o u t */
 
 .about .top {
@@ -536,7 +537,7 @@ pre {
 .freeText {
 	width: 100%;
 	text-align: justify;
-}		
+}
 	.freeText p {
 		width: 380px;
 	}
@@ -554,23 +555,23 @@ pre {
 			top: 240px;
 			margin-right: 20px;
 		}
-		
+
 		.freeText .graphicRight {
 			position: relative;
 			float: right;
 		}
-		
+
 		.freeText .textRight {
 			position: relative;
 			float: left;
 			padding: 0 0 0 0;
 		}
-		
+
 	.aboutPageDelano {
 		margin: 12px 15px 5px 0;
 		}
-		
-	.emailSignature { 
+
+	.emailSignature {
 		font-family: Georgia, serif;
 		font-style: italic;
 		font-weight: normal;
@@ -581,51 +582,51 @@ pre {
 		.rightColumn .emailSignature {
 			background-position: 30px 2px;
 			}
-							
+
 	.email {
 		direction:rtl;
 		unicode-bidi: bidi-override;
 		}
-							
+
 /* p r o d u c t */
 
 .left {
 	float: left;
-	}	
+	}
 
 .mainProducts {
 	float: left;
 	}
-	
+
 .otherProducts {
 	float: left;
 	width: 425px;
 	margin-top: 35px;
 	padding-left: 100px;
-	background: url(/images/productsPageDivider.png) no-repeat 42px 55px;	
+	background: url(/images/productsPageDivider.png) no-repeat 42px 55px;
 	}
-	
+
 	.otherProductsHeading {
 		position: relative;
 		margin-bottom: 10px !important;
 		padding-bottom: 22px;
-		background: url(/images/otherProducts.png) no-repeat bottom;	
+		background: url(/images/otherProducts.png) no-repeat bottom;
 		}
-		
+
 	.otherProducts .description {
 		margin: 0 0 20px 0;
-		padding: 5px 0; 
+		padding: 5px 0;
 		border-bottom: 1px dotted #999;
 		border-top: .15em dotted #999;
-		}	
-	
+		}
+
 .stellaProductOverview,
 .rudyProductOverview {
 	position: relative;
 	width: 290px;
 	padding-left: 115px;
 	margin: 35px 0 0 50px;
-	}		
+	}
 
 .stellaProductOverview h3,
 .rudyProductOverview h3 {
@@ -633,42 +634,42 @@ pre {
 	margin: 5px 0 10px;
 	font-style: italic;
 	font-weight: normal;
-	font-size: 20px;	
+	font-size: 20px;
 	line-height: 24px;
-	border-top: 1px dotted #999;	
+	border-top: 1px dotted #999;
 	}
 
-		
+
 .rudyProductOverviewLogo,
-.stellaProductOverviewLogo {	
-	position: absolute;			
+.stellaProductOverviewLogo {
+	position: absolute;
 	left: 0;
 	width: 104px; height: 104px;
 	}
-	
-	.stellaProductOverviewLogo {	
+
+	.stellaProductOverviewLogo {
 		background: url(/images/stellaOverview.png) no-repeat;
 		}
-	.rudyProductOverviewLogo {	
-		background: url(/images/rudyOverview.png) no-repeat; 
+	.rudyProductOverviewLogo {
+		background: url(/images/rudyOverview.png) no-repeat;
 		}
-	
+
 .stellaPageOverview,
 .rudyPageOverview {
 	overflow: hidden;
 	width: 288px;
 	margin-top: 30px;
 	padding-left: 215px;
-	}		
-	.stellaPageOverview { background: url(/images/stellaPageOverview.png) no-repeat; }	
-	.rudyPageOverview { background: url(/images/rudyPageOverview.png) no-repeat; }	
-	
+	}
+	.stellaPageOverview { background: url(/images/stellaPageOverview.png) no-repeat; }
+	.rudyPageOverview { background: url(/images/rudyPageOverview.png) no-repeat; }
+
 	.stellaPageOverview h2,
 	.rudyPageOverview h2 {
 		margin: 0;
 		font-size: 65px;
 		line-height: 55px;
-		font-family: 'Courier New', Courier, monospace; 
+		font-family: 'Courier New', Courier, monospace;
 		}
 		.cufon-active .stellaPageOverview h2,
 		.cufon-active .rudyPageOverview h2 {
@@ -678,7 +679,7 @@ pre {
 		.products .reparte {
 			margin: 10px 0 0;
 			}
-		
+
 		.products .otherProducts .reparte {
 			display: block;
 			height: auto;
@@ -690,21 +691,21 @@ pre {
 				font-size: 14px;
 				margin-top: 30px;
 				}
-			
-		.download { 
+
+		.download {
 			text-indent: -9999px;
 			display: block;
 			width: 288px; height: 51px;
 			margin: 15px 0;
 			background: url(/images/download.png) no-repeat;
-			}	
-			
+			}
+
 		.getStarted {
 			font-family: Georgia, serif;
 			font-style: italic;
 			font-size: 18px;
-			}	
-			
+			}
+
 			.getStarted a {
 				padding-bottom: 3px;
 				color: #000;
@@ -716,18 +717,18 @@ pre {
 	width: 325px; height: 100px;
 	padding: 84px 0 0 175px;
 	background: url(/images/screencast.png) no-repeat;
-	}		
+	}
 
 	.screencast h3 {
-		margin: 0 0 10px; 
+		margin: 0 0 10px;
 		font-size: 24px;
 		font-weight: normal;
 		font-family: 'Courier New', Courier, monospace;
 		color: #999;
 		}
-		.cufon-active .screencast h3 { 
+		.cufon-active .screencast h3 {
 			margin: 10px 0 0;
-			font-size: 28px; 
+			font-size: 28px;
 			}
 
 	.screencast p {
@@ -736,16 +737,16 @@ pre {
 		font-weight: bold;
 		font-size: 15px;
 		color: #000;
-		}	
-		.cufon-active .screencast p { 
-			font-size: 18px; 
+		}
+		.cufon-active .screencast p {
+			font-size: 18px;
 			}
-				
+
 .right {
 	float: right;
 	width: 420px;
-	}		
-		
+	}
+
 	.right h4 {
 		margin-top: 40px;
 		margin-bottom: 25px;
@@ -753,11 +754,11 @@ pre {
 		font-style: italic;
 		font-weight: normal;
 		line-height: 1.15em;
-		}		
-			
+		}
+
 	.right p {
 		color: #999;
-		}			
+		}
 
 	.right .snippetTitle {
 		margin-top: 42px;
@@ -765,7 +766,7 @@ pre {
 		font-size: 18px;
 		font-style: italic;
 		}
-		
+
 	.right .snippetSubtitle	{
 		margin-left: 10px;
 		font-family: Georgia, serif;
@@ -773,12 +774,12 @@ pre {
 		font-size: 12px;
 		color: #999;
 		}
-		
-			
+
+
 /* b l o g */
 
 .blog .left { width: 620px; }
-.archives { 
+.archives {
 	width: 620px;
 	margin-top: 25px;
 	}
@@ -789,19 +790,19 @@ pre {
 	margin-top: 25px;
 	padding-left: 50px;
 	}
-	
+
 	.entry .largeText {
     font-family: Georgia, serif;
-    font-size: 25px;  
+    font-size: 25px;
     letter-spacing: 1px;
     font-weight: bold;
   }
   .entry .defaultContent {
     color: #ccc;
   }
-  
+
   .entry input {
-    background: #fff transparent; 
+    background: #fff transparent;
   	border: 1px solid #ccc;
   	-webkit-border-radius: 3px 3px 3px 3px;
   	-moz-border-radius: 3px 3px 3px 3px;
@@ -826,42 +827,42 @@ pre {
 		position: absolute;
 		left: 0;
 		}
-	
+
 	.entry .month {
 		font-size: 10px;
 		color: #666;
-		}	
-		
+		}
+
 	.entry .day,
 	.entry .commentCount {
-		text-align: center;		
-		width: 35px; 
+		text-align: center;
+		width: 35px;
 		font-family: Georgia, serif;
 		font-size: 18px;
 		color: #fff;
 		}
-		
+
 	.entry .day {
 		height: 32px;
 		margin-top: 2px;
 		padding-top: 6px;
 		background: url(/images/blogIcons.png) no-repeat;
-		}	
-		
-	.commentCount { 
+		}
+
+	.commentCount {
 		height: 24px;
 		margin-top: 12px;
 		padding: 2px 0 0;
 		background: url(/images/blogIcons.png) no-repeat 0 -38px;
-		}	
-		
+		}
+
 	.entry h1 {
 		display: inline;
 		font-size: 28px;
 		line-height: 28px;
 		font-style: italic;
-		}	
-		
+		}
+
 	.entry h2 {
 		display: block;
 		font-size: 20px;
@@ -888,15 +889,15 @@ pre {
 		font-style: italic;
 		font-weight: bold;
 		color: #00CCCC;
-		}	
-		.entry a h2:hover { 
-			color: #336666; 
+		}
+		.entry a h2:hover {
+			color: #336666;
 			}
 	 .entry .related {
 		 margin: 44px 0 0 0;
 	}
-		
-.aboutStella,		
+
+.aboutStella,
 .aboutSolutious,
 .aboutDelano {
 	float: right;
@@ -909,16 +910,16 @@ pre {
 	line-height: 1.25em;
 	font-style: italic;
 	color: #999;
-	}	
-	
+	}
+
 	.signature {
 		font-size: 18px;
 		color: #00CCCC;
 		background: url(/images/signatureHeart.png) no-repeat 14px 2px;
-		}	
+		}
 
-.aboutStella { background: url(/images/aboutStella.png) no-repeat; }			
-.aboutSolutious { background: url(/images/aboutSolutious.png) no-repeat; }		
+.aboutStella { background: url(/images/aboutStella.png) no-repeat; }
+.aboutSolutious { background: url(/images/aboutSolutious.png) no-repeat; }
 .aboutDelano { background: url(/images/aboutDelano.png) no-repeat; }
 
 
